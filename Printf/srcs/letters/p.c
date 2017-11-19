@@ -14,6 +14,6 @@
 
 int		p(va_list argp, const char *arg, int *index, t_flag *flag)
 {
-	ft_print_adress(va_arg(argp, void*));
+	ft_print_memory(va_arg(argp, void*), 1);
 	return (0);
 }

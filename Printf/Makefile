@@ -25,20 +25,21 @@ INCLUDE	= /include/ft_printf.h
 %.o: %.c
 		gcc $(CFLAGS) -I$(INCLUDE) -o $@ -c $<
 
-SRCS	=	srcs/ft_printf.c		\
-			srcs/basic/ft_putint.c		\
+SRCS	=	srcs/ft_printf.c				\
+			srcs/basic/ft_putint.c			\
 			srcs/basic/ft_atoi.c			\
-			srcs/basic/ft_putstr.c		\
-			srcs/basic/ft_putchar.c		\
-			srcs/basic/ft_putuint.c		\
-			srcs/basic/ft_putlong.c		\
-			srcs/basic/ft_putdouble.c	\
+			srcs/basic/ft_putstr.c			\
+			srcs/basic/ft_putchar.c			\
+			srcs/basic/ft_putuint.c			\
+			srcs/basic/ft_putlong.c			\
+			srcs/basic/ft_putdouble.c		\
 			srcs/basic/ft_itoa.c			\
-			srcs/basic/ft_itoa_double.c	\
-			srcs/basic/ft_strnew.c		\
+			srcs/basic/ft_itoa_double.c		\
+			srcs/basic/ft_strnew.c			\
 			srcs/basic/ft_putshort.c		\
-			srcs/basic/ft_putnbr_base.c	\
-			srcs/basic/ft_print_bits.c	\
+			srcs/basic/ft_putnbr_base.c		\
+			srcs/basic/ft_print_memory.c	\
+			srcs/basic/ft_print_bits.c		\
 			srcs/letters/a.c				\
 			srcs/letters/b.c				\
 			srcs/letters/c.c				\

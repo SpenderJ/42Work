@@ -28,6 +28,7 @@ typedef struct		t_flag
 	int		diez;
 }					t_flag;
 
+void		*ft_print_memory(void *addr, unsigned int size);
 int			ft_atoi(const char *str);
 void		ft_print_adress(void *buf);
 void		ft_print_bits(void *buf);

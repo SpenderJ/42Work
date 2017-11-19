@@ -18,7 +18,6 @@ int		main(int argc, char **argv)
 	size_t		fdp;
 
 	scanf("%d", &fdp);
-	printf("[%p]\n", &fdp);
 	ft_printf("[%p]\n", &fdp);
 	return (0);
 }
