@@ -19,11 +19,9 @@ int		ft_printf(const char *restrict list, ...)
 {
 	int			i;
 	va_list		argp;
-	int			index;
 	t_flag		*flag;
 
 	i = -1;
-	index = 0;
 	va_start(argp, list);
 	if ((flag = malloc(sizeof(t_flag))) == NULL)
 		return (0);

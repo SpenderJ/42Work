@@ -14,5 +14,13 @@
 
 int		u(va_list argp, const char *arg, int *index, t_flag *flag)
 {
-	return (-1);
+	unsigned int	tmp;
+
+
+	(void)arg;
+	(void)index;
+	(void)flag;
+	tmp = (unsigned int)va_arg(argp, int);
+	ft_putint((unsigned int)tmp);
+	return (0);
 }

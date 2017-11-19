@@ -14,5 +14,9 @@
 
 int		q(va_list argp, const char *arg, int *index, t_flag *flag)
 {
+	(void)arg;
+	(void)index;
+	(void)argp;
+	(void)flag;
 	return (-1);
 }

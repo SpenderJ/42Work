@@ -14,5 +14,9 @@
 
 int		w(va_list argp, const char *arg, int *index, t_flag *flag)
 {
+	(void)argp;
+	(void)arg;
+	(void)index;
+	(void)flag;
 	return (-1);
 }

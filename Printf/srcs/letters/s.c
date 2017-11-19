@@ -14,5 +14,9 @@
 
 int		s(va_list argp, const char *arg, int *index, t_flag *flag)
 {
-	return (-1);
+	(void)arg;
+	(void)index;
+	(void)flag;
+	ft_putstr(va_arg(argp, char *));
+	return (0);
 }
