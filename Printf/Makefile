@@ -26,45 +26,45 @@ INCLUDE	= /include/ft_printf.h
 		gcc $(CFLAGS) -I$(INCLUDE) -o $@ -c $<
 
 SRCS	=	srcs/ft_printf.c		\
-			basic/ft_putint.c		\
-			basic/ft_atoi.c			\
-			basic/ft_putstr.c		\
-			basic/ft_putchar.c		\
-			basic/ft_putuint.c		\
-			basic/ft_putlong.c		\
-			basic/ft_putdouble.c	\
-			basic/ft_itoa.c			\
-			basic/ft_itoa_double.c	\
-			basic/ft_strnew.c		\
-			basic/ft_putshort.c		\
-			basic/ft_putnbr_base.c	\
-			basic/ft_print_bits.c	\
-			letters/a.c				\
-			letters/b.c				\
-			letters/c.c				\
-			letters/d.c				\
-			letters/e.c				\
-			letters/f.c				\
-			letters/g.c				\
-			letters/h.c				\
-			letters/i.c				\
-			letters/j.c				\
-			letters/k.c				\
-			letters/l.c				\
-			letters/m.c				\
-			letters/n.c				\
-			letters/o.c				\
-			letters/p.c				\
-			letters/q.c				\
-			letters/r.c				\
-			letters/s.c				\
-			letters/t.c				\
-			letters/u.c				\
-			letters/v.c				\
-			letters/w.c				\
-			letters/x.c				\
-			letters/y.c				\
-			letters/z.c
+			srcs/basic/ft_putint.c		\
+			srcs/basic/ft_atoi.c			\
+			srcs/basic/ft_putstr.c		\
+			srcs/basic/ft_putchar.c		\
+			srcs/basic/ft_putuint.c		\
+			srcs/basic/ft_putlong.c		\
+			srcs/basic/ft_putdouble.c	\
+			srcs/basic/ft_itoa.c			\
+			srcs/basic/ft_itoa_double.c	\
+			srcs/basic/ft_strnew.c		\
+			srcs/basic/ft_putshort.c		\
+			srcs/basic/ft_putnbr_base.c	\
+			srcs/basic/ft_print_bits.c	\
+			srcs/letters/a.c				\
+			srcs/letters/b.c				\
+			srcs/letters/c.c				\
+			srcs/letters/d.c				\
+			srcs/letters/e.c				\
+			srcs/letters/f.c				\
+			srcs/letters/g.c				\
+			srcs/letters/h.c				\
+			srcs/letters/i.c				\
+			srcs/letters/j.c				\
+			srcs/letters/k.c				\
+			srcs/letters/l.c				\
+			srcs/letters/m.c				\
+			srcs/letters/n.c				\
+			srcs/letters/o.c				\
+			srcs/letters/p.c				\
+			srcs/letters/q.c				\
+			srcs/letters/r.c				\
+			srcs/letters/s.c				\
+			srcs/letters/t.c				\
+			srcs/letters/u.c				\
+			srcs/letters/v.c				\
+			srcs/letters/w.c				\
+			srcs/letters/x.c				\
+			srcs/letters/y.c				\
+			srcs/letters/z.c
 
 all:	$(NAME)
 
