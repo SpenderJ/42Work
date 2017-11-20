@@ -22,7 +22,7 @@ int		main(int argc, char **argv)
 	i = 42;
 	test = 4002,20009;
 	ntm = strdup("Yo mon bro");
-	printf("%#E\n", test);
-	ft_printf("%#E\n", test);
+	printf("%.7o, %d\n", i, i);
+	ft_printf("%.7o, %d\n", i, i);
 	return (0);
 }

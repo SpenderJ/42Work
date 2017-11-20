@@ -31,6 +31,9 @@ SRCS	=	srcs/ft_printf.c				\
 			srcs/basic/ft_putstr.c			\
 			srcs/basic/ft_putchar.c			\
 			srcs/basic/ft_putuint.c			\
+			srcs/basic/ft_strlen.c			\
+			srcs/basic/ft_strrev.c			\
+			srcs/basic/ft_getnbr_base.c		\
 			srcs/basic/ft_putlong.c			\
 			srcs/basic/ft_putdouble.c		\
 			srcs/basic/ft_itoa.c			\

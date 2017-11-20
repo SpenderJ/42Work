@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   o.c                                                :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/18 15:52:44 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/06 14:25:53 by juspende          #+#    #+#             */
+/*   Updated: 2017/11/09 18:05:10 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
 
-int		o(va_list argp, const char *arg, int *index, t_flag *flag)
+int		ft_strlen(char *str)
 {
-	char	*tmp;
-	int		c;
+	int		i;
 
-	c = 0;
-	(void)arg;
-	(void)index;
-	(void)flag;
-	tmp = ft_getnbr_base(va_arg(argp, int), "01234567");
-	if (ft_strlen(tmp) < flag->point && flag->point != 0)
-		while (ft_strlen(tmp) < flag->point--)
-			ft_putchar('0');
-	ft_putstr(tmp);
-	return (0);
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i] != '\0')
+		i = i + 1;
+	return (i);
 }

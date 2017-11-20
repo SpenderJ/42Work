@@ -23,6 +23,9 @@ int		f(va_list argp, const char *arg, int *index, t_flag *flag)
 		ft_putchar('+');
 	if (tmp >= 0 && flag->pos == 1)
 		ft_putchar(' ');
-	ft_putstr(ft_itoa_double(tmp, -1));
+	if (flag->comma != 0)
+		ft_putstr(ft_itoa_double(tmp, flag->point));
+	else
+		ft_putstr(ft_itoa_double(tmp, -1));
 	return (0);
 }

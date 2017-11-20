@@ -37,7 +37,6 @@ int		ft_printf(const char *restrict list, ...)
 		else
 			ft_putchar(list[*i]);
 	}
-	ft_putchar('\n');
 	return (0);
 }
 
@@ -47,7 +46,9 @@ void	init_struct(t_flag *flag)
 	flag->pos = 0;
 	flag->space = 0;
 	flag->zero = 0;
+	flag->comma = 0;
 	flag->diez = 0;
+	flag->point = 0;
 	return ;
 }
 
@@ -61,6 +62,12 @@ int		arg_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 		pointer = letter_parser[(int)(arg[0] + 32) - 97];
 	else if ((char)arg[0] >= 'a' && (char)arg[0] <= 'z')
 		pointer = letter_parser[(int)arg[0] - 97];
+	else if (((char)arg[0] >= '1' && (char)arg[0] <= '9') ||
+	((char)arg[0] == '.'))
+	{
+		if ((ret = precision_pars(argp, arg, index, flag)) == -1)
+			return (-1);
+	}
 	else
 		if ((ret = flag_parser(argp, arg, index, flag)) == -1)
 			return (-1);
@@ -69,6 +76,22 @@ int		arg_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 		ret = (*pointer)(argp, arg, index, flag);
 	*index = *index + 1;
 	return (ret);
+}
+
+int		precision_pars(va_list argp, const char *arg, int *index, t_flag *flag)
+{
+	int		c;
+	int		nbr;
+
+	c = 0;
+	if (arg[c] == '.' && (flag->comma = 1) == 1)
+		++c;
+	nbr = ft_atoi(&arg[c]);
+	flag->point = nbr;
+	while (arg[c] >= '0' && arg[c] <= '9')
+		++c;
+	*index = (*index + c) - 1;
+	return (arg_parser(argp, &arg[c], index, flag));
 }
 
 int		flag_parser(va_list argp, const char *arg, int *index, t_flag *flag)

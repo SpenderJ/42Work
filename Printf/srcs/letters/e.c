@@ -27,7 +27,7 @@ int		e(va_list argp, const char *arg, int *index, t_flag *flag)
 		ft_putchar('-');
 	while (tmp > 10 && ++i)
 		tmp = tmp / 10;
-	ft_putdouble(tmp, -1);
+	(flag->comma != 0 ? ft_putdouble(tmp, flag->point) : ft_putdouble(tmp, -1));
 	if (i > 0)
 	{
 		if ((char)arg[0] == 'e')

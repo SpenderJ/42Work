@@ -26,8 +26,14 @@ typedef struct		t_flag
 	int		space;
 	int		zero;
 	int		diez;
+	int		comma;
+	int		point;
 }					t_flag;
 
+int			ft_strlen(char *str);
+char		*ft_getnbr_base(int nbr, char *base);
+char		*ft_strrev(char *str);
+int			precision_pars(va_list argp, const char *arg, int *index, t_flag *flag);
 void		*ft_print_memory(void *addr, unsigned int size);
 int			ft_atoi(const char *str);
 void		ft_print_adress(void *buf);
