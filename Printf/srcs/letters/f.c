@@ -14,9 +14,15 @@
 
 int		f(va_list argp, const char *arg, int *index, t_flag *flag)
 {
+	double	tmp;
 	(void)arg;
 	(void)index;
 	(void)flag;
-	ft_putstr(ft_itoa_double(va_arg(argp, double), -1));
+	tmp = va_arg(argp, double);
+	if (tmp >= 0 && flag->pos == 1)
+		ft_putchar('+');
+	if (tmp >= 0 && flag->pos == 1)
+		ft_putchar(' ');
+	ft_putstr(ft_itoa_double(tmp, -1));
 	return (0);
 }

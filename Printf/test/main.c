@@ -15,9 +15,14 @@
 
 int		main(int argc, char **argv)
 {
-	size_t		fdp;
+	int		i;
+	char	*ntm;
+	double	test;
 
-	scanf("%d", &fdp);
-	ft_printf("[%p]\n", &fdp);
+	i = 42;
+	test = 4002,20009;
+	ntm = strdup("Yo mon bro");
+	printf("%+E\n", test);
+	ft_printf("%+E\n", test);
 	return (0);
 }

@@ -17,25 +17,25 @@ int		(*letter_parser[26])(va_list, const char*, int*, t_flag*) =
 
 int		ft_printf(const char *restrict list, ...)
 {
-	int			i;
+	int			*i;
 	va_list		argp;
 	t_flag		*flag;
 
-	i = -1;
+	*i = -1;
 	va_start(argp, list);
 	if ((flag = malloc(sizeof(t_flag))) == NULL)
 		return (0);
 	init_struct(flag);
-	while (list[++i] != '\0')
+	while (list[++*i] != '\0')
 	{
-		if (list[i] == '%')
+		if (list[*i] == '%')
 		{
-			if (arg_parser(argp, &list[i + 1], &i, flag) == -1)
+			if (arg_parser(argp, &list[*i + 1], i, flag) == -1)
 				return (0);
 			init_struct(flag);
 		}
 		else
-			ft_putchar(list[i]);
+			ft_putchar(list[*i]);
 	}
 	return (0);
 }
@@ -55,14 +55,14 @@ int		arg_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 	int		ret;
 	int		(*pointer)(va_list, const char*, int*, t_flag*);
 
-	*index = *index + 1;
 	ret = 0;
 	if ((char)arg[0] >= 'A' && (char)arg[0] <= 'Z')
 		pointer = letter_parser[(int)(arg[0] + 32) - 97];
 	else if ((char)arg[0] >= 'a' && (char)arg[0] <= 'z')
 		pointer = letter_parser[(int)arg[0] - 97];
 	else
-		ret = flag_parser(argp, arg, index, flag);
+		if ((ret = flag_parser(argp, arg, index, flag)) == -1)
+			return (-1);
 	if (((char)arg[0] >= 'a' && (char)arg[0] <= 'z') || ((char)arg[0] >= 'A' &&
 				(char)arg[0] <= 'Z'))
 		ret = (*pointer)(argp, arg, index, flag);
@@ -92,5 +92,5 @@ int		flag_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 	else
 		return (-1);
 	*index = *index + 1;
-	return (arg_parser(argp, arg, index, flag));
+	return (arg_parser(argp, &arg[1], index, flag));
 }

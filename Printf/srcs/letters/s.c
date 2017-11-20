@@ -14,9 +14,12 @@
 
 int		s(va_list argp, const char *arg, int *index, t_flag *flag)
 {
+	char	*tmp;
+
 	(void)arg;
 	(void)index;
 	(void)flag;
-	ft_putstr(va_arg(argp, char *));
+	tmp = va_arg(argp, char*);
+	ft_putstr(tmp);
 	return (0);
 }

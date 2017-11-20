@@ -19,14 +19,12 @@ int		e(va_list argp, const char *arg, int *index, t_flag *flag)
 
 	(void)index;
 	(void)arg;
-	(void)flag;
-	i = 0;
-	tmp = va_arg(argp, double);
-	if (tmp < 0)
-	{
+	if ((tmp = va_arg(argp, double)) == tmp && tmp >= 0 && flag->pos == 1)
+		ft_putchar('+');
+	else if (tmp >= 0 && flag->space == 1)
+		ft_putchar(' ');
+	if ((i = 0) == 0 && tmp < 0 && (tmp = -tmp) == tmp)
 		ft_putchar('-');
-		tmp = -tmp;
-	}
 	while (tmp > 10 && ++i)
 		tmp = tmp / 10;
 	ft_putdouble(tmp, -1);
@@ -36,6 +34,8 @@ int		e(va_list argp, const char *arg, int *index, t_flag *flag)
 			ft_putstr("e+");
 		else
 			ft_putstr("E+");
+		if (i < 10)
+			ft_putchar('0');
 		ft_putint(i);
 	}
 	return (0);

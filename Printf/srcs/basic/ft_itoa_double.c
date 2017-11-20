@@ -43,10 +43,12 @@ static char	*add_next(char *str, int index, double nbr)
 	while (str[++i] != '\0')
 		;
 	str[i] = '.';
-	while (index-- > 0 && (nbr = nbr * 10) != 0)
+	nbr = nbr * 10;
+	while (index-- > 0 && nbr != 0)
 	{
-		str[++i] = (int)nbr + 48;
-		nbr = nbr - (str[i] - 48);
+		str[++i] = nbr + '0';
+		nbr = nbr - (str[i] - '0');
+		nbr = nbr * 10;
 	}
 	str[++i] = '\0';
 	return (str);

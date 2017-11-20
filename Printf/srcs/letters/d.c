@@ -14,9 +14,16 @@
 
 int		d(va_list argp, const char *arg, int *index, t_flag *flag)
 {
+	int		tmp;
+
 	(void)arg;
 	(void)flag;
 	(void)index;
-	ft_putint(va_arg(argp, int));
+	tmp = va_arg(argp, int);
+	if (tmp >= 0 && flag->pos == 1)
+		ft_putchar('+');
+	if (tmp >= 0 && flag->space == 1)
+		ft_putchar(' ');
+	ft_putint(tmp);
 	return (0);
 }
