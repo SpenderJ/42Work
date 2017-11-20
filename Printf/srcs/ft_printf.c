@@ -37,6 +37,7 @@ int		ft_printf(const char *restrict list, ...)
 		else
 			ft_putchar(list[*i]);
 	}
+	ft_putchar('\n');
 	return (0);
 }
 
