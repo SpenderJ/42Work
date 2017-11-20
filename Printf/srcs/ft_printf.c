@@ -66,6 +66,7 @@ int		arg_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 	if (((char)arg[0] >= 'a' && (char)arg[0] <= 'z') || ((char)arg[0] >= 'A' &&
 				(char)arg[0] <= 'Z'))
 		ret = (*pointer)(argp, arg, index, flag);
+	*index = *index + 1;
 	return (ret);
 }
 
