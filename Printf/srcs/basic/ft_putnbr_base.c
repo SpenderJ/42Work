@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 22:37:51 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/18 15:49:46 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/22 17:02:30 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int		my_error(char *base)
 	return (0);
 }
 
-void			ft_putnbr_base(int nbr, char *base)
+void			ft_putnbr_base(int nbr, char *base, t_flag *flag)
 {
 	char			str[4096];
 	unsigned int	i;
@@ -55,7 +55,7 @@ void			ft_putnbr_base(int nbr, char *base)
 	while (base[i] != '\0')
 		i = i + 1;
 	if (nbr < 0)
-		ft_putchar('-');
+		ft_putchar('-', flag);
 	if (nbr < 0)
 		nb = -nbr;
 	else
@@ -67,5 +67,5 @@ void			ft_putnbr_base(int nbr, char *base)
 	}
 	str[x++] = base[(nb % i)];
 	while (--x >= 0)
-		ft_putchar(str[x]);
+		ft_putchar(str[x], flag);
 }

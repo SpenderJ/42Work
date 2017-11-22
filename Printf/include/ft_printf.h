@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/22 14:19:25 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/22 17:03:36 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,20 @@ int			ft_strlen(char *str);
 char		*ft_getnbr_base(int nbr, char *base);
 char		*ft_strrev(char *str);
 int			precision_pars(va_list argp, const char *arg, int *index, t_flag *flag);
-void		*ft_print_memory(void *addr, unsigned int size);
+void		*ft_print_memory(void *addr, unsigned int size, t_flag *flag);
 int			ft_atoi(const char *str);
-void		ft_print_adress(void *buf);
-void		ft_print_bits(void *buf);
-void		ft_putnbr_base(int nbr, char *base);
-void		ft_putshort(short int nb);
+void		ft_print_adress(void *buf, t_flag *flag);
+void		ft_print_bits(void *buf, t_flag *flag);
+void		ft_putnbr_base(int nbr, char *base, t_flag *flag);
+void		ft_putshort(short int nb, t_flag *flag);
 char		*ft_strnew(size_t size);
 int			ft_printf(const char *list, ...);
-void		ft_putstr(const char *str);
-void		ft_putchar(char c);
-void		ft_putint(int n);
-void		ft_putuint(unsigned int nb);
-void		ft_putlong(long nb);
-void		ft_putdouble(double nb, int index);
+void		ft_putstr(const char *str, t_flag *flag);
+void		ft_putchar(char c, t_flag *flag);
+void		ft_putint(int n, t_flag *flag);
+void		ft_putuint(unsigned int nb, t_flag *flag);
+void		ft_putlong(long nb, t_flag *flag);
+void		ft_putdouble(double nb, int index, t_flag *flag);
 int			arg_parser(va_list argp, const char *arg, int *index, t_flag *flag);
 void		init_struct(t_flag *flag);
 char		*ft_itoa(int nb);

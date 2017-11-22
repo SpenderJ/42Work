@@ -6,13 +6,13 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 16:36:28 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/18 17:48:24 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/22 17:01:31 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
 
-void		ft_print_bits(void *buf)
+void		ft_print_bits(void *buf, t_flag *flag)
 {
 	char	*ptr;
 	int		i;
@@ -24,16 +24,15 @@ void		ft_print_bits(void *buf)
 	{
 		while (--j >= 0)
 		{
-			ft_putnbr_base((ptr[i] >> j) & 1, "0123456789ABCEDF");
+			ft_putnbr_base((ptr[i] >> j) & 1, "0123456789ABCEDF", flag);
 		}
 	}
 }
 
-void		ft_print_adress(void *buf)
+void		ft_print_adress(void *buf, t_flag *flag)
 {
 	char	*ptr;
 
 	ptr = (char *)buf;
-	printf("coucou %s\n", ptr);
-	ft_putnbr_base(ft_atoi(ptr), "0123456789ABCDEF");
+	ft_putnbr_base(ft_atoi(ptr), "0123456789ABCDEF", flag);
 }

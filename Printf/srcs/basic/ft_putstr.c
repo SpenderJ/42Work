@@ -6,14 +6,14 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:23:13 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/22 15:33:01 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/22 17:02:41 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
 #include <unistd.h>
 
-void	ft_putstr(char const *s)
+void	ft_putstr(char const *s, t_flag *flag)
 {
 	int		i;
 
@@ -22,5 +22,6 @@ void	ft_putstr(char const *s)
 		return ;
 	while (s[i] != '\0')
 		++i;
+	flag->charn = flag->charn + i;
 	write(1, (char *)s, i);
 }

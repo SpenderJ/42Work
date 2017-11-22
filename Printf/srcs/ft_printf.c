@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/22 15:25:05 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/22 17:12:22 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,13 @@ int		ft_printf(const char *restrict list, ...)
 		if (list[*i] == '%')
 		{
 			if (arg_parser(argp, &list[*i + 1], i, flag) == -1)
-				return (0);
+				return (flag->charn);
 			init_struct(flag);
 		}
 		else
-		{
-			ft_putchar(list[*i]);
-			flag->charn = flag->charn + 1;
-		}
+			ft_putchar(list[*i], flag);
 	}
-	return (0);
+	return (flag->charn);
 }
 
 void	init_struct(t_flag *flag)
@@ -117,7 +114,7 @@ int		flag_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 		flag->diez = 1;
 	else if (check == '%')
 	{
-		ft_putchar('%');
+		ft_putchar('%', flag);
 		return (0);
 	}
 	else
