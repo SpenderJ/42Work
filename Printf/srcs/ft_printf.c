@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/22 17:12:22 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/22 17:20:09 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		ft_printf(const char *restrict list, ...)
 	if ((flag = malloc(sizeof(t_flag))) == NULL)
 		return (0);
 	init_struct(flag);
+	flag->charn = 0;
 	while (list[++*i] != '\0')
 	{
 		if (list[*i] == '%')
@@ -51,7 +52,6 @@ void	init_struct(t_flag *flag)
 	flag->comma = 0;
 	flag->diez = 0;
 	flag->point = 0;
-	flag->charn = 0;
 	return ;
 }
 
