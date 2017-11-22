@@ -6,11 +6,11 @@
 /*   By: alucas- <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 09:17:45 by alucas-           #+#    #+#             */
-/*   Updated: 2017/07/06 09:17:47 by alucas-          ###   ########.fr       */
+/*   Updated: 2017/11/21 11:46:08 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_putchar(char c);
+#include "../../include/ft_printf.h"
 
 static int	ft_putnbr_base_n(long nbr, char *base, int n)
 {

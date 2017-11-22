@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/17 15:54:06 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/22 15:25:05 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int		ft_printf(const char *restrict list, ...)
 	va_list		argp;
 	t_flag		*flag;
 
+	if ((i = malloc(sizeof(int) * 2)) == NULL)
+		return (-1);
 	*i = -1;
 	va_start(argp, list);
 	if ((flag = malloc(sizeof(t_flag))) == NULL)
@@ -35,7 +37,10 @@ int		ft_printf(const char *restrict list, ...)
 			init_struct(flag);
 		}
 		else
+		{
 			ft_putchar(list[*i]);
+			flag->charn = flag->charn + 1;
+		}
 	}
 	return (0);
 }
@@ -49,6 +54,7 @@ void	init_struct(t_flag *flag)
 	flag->comma = 0;
 	flag->diez = 0;
 	flag->point = 0;
+	flag->charn = 0;
 	return ;
 }
 

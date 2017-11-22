@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:55:55 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/18 17:06:48 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/22 16:20:59 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static char	*goodmalloc(long n, int index)
 static char	*add_next(char *str, int index, double nbr)
 {
 	int		i;
+	int		ret;
 
 	i = -1;
 	while (str[++i] != '\0')
@@ -46,9 +47,9 @@ static char	*add_next(char *str, int index, double nbr)
 	nbr = nbr * 10;
 	while (index-- > 0 && nbr != 0)
 	{
-		str[++i] = nbr + '0';
-		nbr = nbr - (str[i] - '0');
-		nbr = nbr * 10;
+		ret = (int)(nbr);
+		str[++i] = ret + '0';
+		nbr = (nbr - ret) * 10;
 	}
 	str[++i] = '\0';
 	return (str);
@@ -82,5 +83,5 @@ char		*ft_itoa_double(double n, int index)
 	str[(int)c] = '\0';
 	if (nbr == 0)
 		return (str);
-	return (add_next(str, index, nbr));
+	return (add_next(str, index, (nbr)));
 }

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:47:34 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/18 17:09:03 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/22 16:22:39 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int		main(int argc, char **argv)
 	double	test;
 
 	i = 42;
-	test = 4002,20009;
+	test = 9999.987614321;
 	ntm = strdup("Yo mon bro");
-	printf("%.7o, %d\n", i, i);
-	ft_printf("%.7o, %d\n", i, i);
+	printf("%.7e, %d\n", test, i);
+	ft_printf("coucou %.7e\n", "test");
 	return (0);
 }

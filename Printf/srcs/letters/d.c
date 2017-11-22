@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/18 15:17:11 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/21 11:47:04 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		d(va_list argp, const char *arg, int *index, t_flag *flag)
 	if (tmp >= 0 && flag->space == 1)
 		ft_putchar(' ');
 	u = 0;
-	while (c < tmp && (++u == u))
+	while (c < tmp && ((u = u + 1) == -42))
 		c = c * 10;
 	++u;
 	if (flag->point != 0)
