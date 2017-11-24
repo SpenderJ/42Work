@@ -21,6 +21,7 @@ int		o(va_list argp, const char *arg, int *index, t_flag *flag)
 	(void)arg;
 	(void)index;
 	(void)flag;
+	larg_flag(flag);
 	tmp = ft_getnbr_base(va_arg(argp, int), "01234567");
 	if (ft_strlen(tmp) < flag->point && flag->point != 0)
 		while (ft_strlen(tmp) < flag->point--)

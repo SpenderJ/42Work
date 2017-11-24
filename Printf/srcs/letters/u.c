@@ -20,6 +20,9 @@ int		u(va_list argp, const char *arg, int *index, t_flag *flag)
 	(void)arg;
 	(void)index;
 	(void)flag;
+	larg_flag(flag);
+	while (flag->point-- > 0)
+		ft_putchar('0', flag);
 	tmp = (unsigned int)va_arg(argp, int);
 	ft_putint((unsigned int)tmp, flag);
 	return (0);

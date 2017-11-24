@@ -18,6 +18,7 @@ int		x(va_list argp, const char *arg, int *index, t_flag *flag)
 
 	(void)index;
 	(void)flag;
+	larg_flag(flag);
 	tmp = (unsigned int)va_arg(argp, int);
 	if (arg[0] == 'X')
 		ft_putnbr_base((int)tmp, "0123456789ABCDEF", flag);

@@ -17,6 +17,7 @@ int		c(va_list argp, const char *arg, int *index, t_flag *flag)
 	(void)index;
 	(void)flag;
 	(void)arg;
+	larg_flag(flag);
 	ft_putchar(va_arg(argp, int), flag);
 	return (0);
 }

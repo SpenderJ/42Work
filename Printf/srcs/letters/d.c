@@ -30,10 +30,11 @@ int		d(va_list argp, const char *arg, int *index, t_flag *flag)
 	u = 0;
 	while (c < tmp && ((u = u + 1) == -42))
 		c = c * 10;
-	++u;
 	if (flag->point != 0)
-		while (u++ <= flag->point)
+		while (++u <= flag->point)
 			ft_putchar('0', flag);
+	else if (flag->larg != 0)
+		larg_flag(flag);
 	ft_putint(tmp, flag);
 	return (0);
 }

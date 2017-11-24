@@ -85,6 +85,9 @@ void		*ft_print_memory(void *addr, unsigned int size, t_flag *flag)
 
 	i = 0;
 	ft_putstr("0x", flag);
+	if (flag->point != 0)
+		while (flag->point-- > 0)
+			ft_putchar('0', flag);
 	while (i < (int)size)
 	{
 		len = size - i;

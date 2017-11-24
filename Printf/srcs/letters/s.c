@@ -19,6 +19,7 @@ int		s(va_list argp, const char *arg, int *index, t_flag *flag)
 	(void)arg;
 	(void)index;
 	(void)flag;
+	larg_flag(flag);
 	tmp = va_arg(argp, char*);
 	if (flag->comma == 0 && flag->point != 0)
 		tmp[flag->point] = '\0';

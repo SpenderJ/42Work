@@ -37,6 +37,7 @@ SRCS	=	srcs/ft_printf.c				\
 			srcs/basic/ft_putlong.c			\
 			srcs/basic/ft_putdouble.c		\
 			srcs/basic/ft_itoa.c			\
+			srcs/basic/larg_flag.c			\
 			srcs/basic/ft_itoa_double.c		\
 			srcs/basic/ft_strnew.c			\
 			srcs/basic/ft_putshort.c		\

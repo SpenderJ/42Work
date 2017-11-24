@@ -52,6 +52,7 @@ void	init_struct(t_flag *flag)
 	flag->comma = 0;
 	flag->diez = 0;
 	flag->point = 0;
+	flag->larg = 0;
 	return ;
 }
 
@@ -88,9 +89,15 @@ int		precision_pars(va_list argp, const char *arg, int *index, t_flag *flag)
 
 	c = 0;
 	if (arg[c] == '.' && (flag->comma = 1) == 1)
+	{
 		++c;
-	nbr = ft_atoi(&arg[c]);
-	flag->point = nbr;
+		flag->point = ft_atoi(&arg[c]);
+	}
+	else
+	{
+		nbr = ft_atoi(&arg[c]);
+		flag->point = nbr;
+	}
 	while (arg[c] >= '0' && arg[c] <= '9')
 		++c;
 	*index = (*index + c) - 1;

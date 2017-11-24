@@ -28,9 +28,11 @@ typedef struct		t_flag
 	int		diez;
 	int		comma;
 	int		point;
+	int		larg;
 	int		charn;
 }					t_flag;
 
+void		larg_flag(t_flag *flag);
 int			ft_strlen(char *str);
 char		*ft_getnbr_base(int nbr, char *base);
 char		*ft_strrev(char *str);
