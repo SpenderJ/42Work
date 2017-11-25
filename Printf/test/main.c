@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:47:34 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/22 17:18:50 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/25 16:39:48 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		main(int argc, char **argv)
 	test = 9999.987614321;
 	ntm = strdup("Yo mon bro");
 //	printf("%.7e, %d\n", test, i);
-	printf("%d\n", ft_printf("%%"));
+	printf("%x\n", 42);
+	ft_printf("%x\n", 42);
 	return (0);
 }

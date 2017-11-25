@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/22 17:20:09 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/25 18:19:11 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ void	init_struct(t_flag *flag)
 	flag->diez = 0;
 	flag->point = 0;
 	flag->larg = 0;
+	flag->h = 0;
+	flag->l = 0;
+	flag->ll = 0;
 	return ;
 }
 
@@ -62,6 +65,8 @@ int		arg_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 	int		(*pointer)(va_list, const char*, int*, t_flag*);
 
 	ret = 0;
+	if ((char)arg[0] == '\0')
+		return (-1);
 	if ((char)arg[0] >= 'A' && (char)arg[0] <= 'Z')
 		pointer = letter_parser[(int)(arg[0] + 32) - 97];
 	else if ((char)arg[0] >= 'a' && (char)arg[0] <= 'z')
@@ -73,8 +78,7 @@ int		arg_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 			return (-1);
 	}
 	else
-		if ((ret = flag_parser(argp, arg, index, flag)) == -1)
-			return (-1);
+		return (ret = flag_parser(argp, arg, index, flag));
 	if (((char)arg[0] >= 'a' && (char)arg[0] <= 'z') || ((char)arg[0] >= 'A' &&
 				(char)arg[0] <= 'Z'))
 		ret = (*pointer)(argp, arg, index, flag);
@@ -96,7 +100,7 @@ int		precision_pars(va_list argp, const char *arg, int *index, t_flag *flag)
 	else
 	{
 		nbr = ft_atoi(&arg[c]);
-		flag->point = nbr;
+		flag->larg = nbr;
 	}
 	while (arg[c] >= '0' && arg[c] <= '9')
 		++c;
@@ -121,7 +125,10 @@ int		flag_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 		flag->diez = 1;
 	else if (check == '%')
 	{
+		flag->larg = flag->larg - 1;
+		larg_flag_before(flag);
 		ft_putchar('%', flag);
+		larg_flag_after(flag);
 		return (0);
 	}
 	else

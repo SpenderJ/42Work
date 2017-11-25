@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/22 16:32:23 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/25 17:43:32 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int		h(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	short int	i;
 	int			tmp;
+	int			(*pointer)(va_list, const char*, int*, t_flag*);
 
-	(void)arg;
-	(void)index;
-	(void)flag;
 	tmp = va_arg(argp, int);
 	i = (short int)tmp;
-	ft_putshort(i, flag);
-	return (0);
+	*index = *index + 1;
+	flag->h = 1;
+	pointer = letter_parser[(int)arg[1] - 97];
+	return ((*pointer)(argp, arg, index, flag));
 }
