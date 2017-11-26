@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/25 17:43:14 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/26 16:21:13 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,22 @@ typedef struct		t_flag
 	int		larg;
 	int		charn;
 	int		h;
+	int		hh;
 	int		ll;
 	int		l;
+	int		j;
+	int		z;
 }					t_flag;
 
+void		length_modif_uox(va_list argp, t_flag *flag, intmax_t *tmp);
+void		length_modif_di(va_list argp, t_flag *flag, intmax_t *tmp);
 int			(*letter_parser[26])(va_list, const char*, int*, t_flag*);
 void		larg_flag_before(t_flag *flag);
 void		larg_flag_after(t_flag *flag);
 int			ft_strlen(char *str);
 char		*ft_strdup(const char *str);
-char		*ft_getnbr_base(int nbr, char *base);
-char		*ft_getnbr_base_ui(unsigned int nbr, char *base);
+char		*ft_getnbr_base(intmax_t nbr, char *base);
+char		*ft_getnbr_base_ui(intmax_t nbr, char *base);
 char		*ft_strrev(char *str);
 int			precision_pars(va_list argp, const char *arg, int *index, t_flag *flag);
 void		*ft_print_memory(void *addr, unsigned int size, t_flag *flag);
@@ -54,7 +59,7 @@ char		*ft_strnew(size_t size);
 int			ft_printf(const char *list, ...);
 void		ft_putstr(const char *str, t_flag *flag);
 void		ft_putchar(char c, t_flag *flag);
-void		ft_putint(int n, t_flag *flag);
+void		ft_putint(intmax_t n, t_flag *flag);
 void		ft_putuint(unsigned int nb, t_flag *flag);
 void		ft_putlong(long nb, t_flag *flag);
 void		ft_putdouble(double nb, int index, t_flag *flag);

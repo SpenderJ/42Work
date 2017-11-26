@@ -6,16 +6,60 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 18:19:29 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/25 18:36:02 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/26 16:45:42 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
 
-void		length_modif(va_list argp, t_flag *flag, intmax_t *tmp)
+void		length_modif_di(va_list argp, t_flag *flag, intmax_t *tmp)
 {
+	short	c;
+	int		i;
+
 	if (flag->h != 0)
-		*tmp = va_arg(argp, signed short int);
+	{
+		i = va_arg(argp, int);
+		c = (short)i;
+		*tmp = c;
+	}
+	else if (flag->hh != 0)
+		*tmp = va_arg(argp, int);
 	else if (flag->l != 0)
-		*tmp = va_arg(argp, long);
+		*tmp = va_arg(argp, long int);
+	else if (flag->ll != 0)
+		*tmp = va_arg(argp, unsigned long int);
+	else if (flag->j != 0)
+		*tmp = va_arg(argp, intmax_t);
+	else if (flag->z != 0)
+		*tmp = va_arg(argp, size_t);
+	else
+		*tmp = va_arg(argp, int);
+	return ;
+}
+
+void		length_modif_uox(va_list argp, t_flag *flag, intmax_t *tmp)
+{
+	unsigned short		c;
+	unsigned int		i;
+
+	if (flag->h != 0)
+	{
+		i = va_arg(argp, int);
+		c = (unsigned short)i;
+		*tmp = c;
+	}
+	else if (flag->hh != 0)
+		*tmp = va_arg(argp, unsigned int);
+	else if (flag->l != 0)
+		*tmp = va_arg(argp, unsigned long int);
+	else if (flag->ll != 0)
+		*tmp = va_arg(argp, unsigned long long int);
+	else if (flag->j != 0)
+		*tmp = va_arg(argp, uintmax_t);
+	else if (flag->z != 0)
+		*tmp = va_arg(argp, size_t);
+	else
+		*tmp = va_arg(argp, unsigned int);
+	return ;
 }

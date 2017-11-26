@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/25 18:36:00 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/26 14:40:39 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ int		d(va_list argp, const char *arg, int *index, t_flag *flag)
 	(void)arg;
 	(void)index;
 	c = 1;
-	if (flag->h == 0 && flag->ll == 0 && flag->l == 0)
-		tmp = va_arg(argp, int);
-	else
-		length_modif(argp, flag, &tmp);
+	length_modif_di(argp, flag, &tmp);
 	if (tmp >= 0 && flag->pos == 1)
 		ft_putchar('+', flag);
 	if (tmp >= 0 && flag->space == 1)

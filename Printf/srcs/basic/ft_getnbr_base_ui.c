@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 22:37:51 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/25 16:47:02 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/26 16:45:59 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,16 @@ static int		my_error(char *base)
 	return (0);
 }
 
-char			*ft_getnbr_base_ui(unsigned int nbr, char *base)
+char			*ft_getnbr_base_ui(intmax_t nbr, char *base)
 {
 	char			*str;
-	unsigned int	i;
+	intmax_t		i;
 	int				x;
-	unsigned int	nb;
+	intmax_t		nb;
 
 	i = 0;
 	x = 0;
-	if ((str = ft_strnew(42)) == NULL)
-		return (NULL);
-	if (my_error(base) == 84)
+	if ((str = ft_strnew(4096)) == NULL)
 		return (NULL);
 	while (base[i] != '\0')
 		i = i + 1;
