@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 18:19:29 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/26 16:45:42 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/26 17:45:06 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void		length_modif_uox(va_list argp, t_flag *flag, intmax_t *tmp)
 	else if (flag->ll != 0)
 		*tmp = va_arg(argp, unsigned long long int);
 	else if (flag->j != 0)
-		*tmp = va_arg(argp, uintmax_t);
+		*tmp = va_arg(argp, intmax_t);
 	else if (flag->z != 0)
 		*tmp = va_arg(argp, size_t);
 	else

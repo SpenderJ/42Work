@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/26 17:05:10 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/26 17:40:09 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ void	init_struct(t_flag *flag)
 	flag->h = 0;
 	flag->l = 0;
 	flag->ll = 0;
+	flag->hh = 0;
+	flag->h = 0;
+	flag->j = 0;
+	flag->z = 0;
 	return ;
 }
 
