@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/27 19:30:43 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/27 19:33:32 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,11 @@ static void	larg_flag_before_d(t_flag *flag)
 	}
 	else if (flag->neg != 0)
 		return ;
-	if (flag->zero != 0)
-	{
-		(flag->pos != 0 && flag->nbr >= 0 ? ft_putchar('+', flag) : c);
-		(flag->space != 0 && flag->nbr >= 0 && flag->pos == 0 ?
-		 ft_putchar(' ', flag) : c);
-		c = '0';
-	}
+	(flag->pos != 0 && flag->nbr >= 0 && flag->zero != 0
+	 ? ft_putchar('+', flag) : c);
+	(flag->space != 0 && flag->nbr >= 0 && flag->pos == 0 && flag->zero != 0 ?
+	 ft_putchar(' ', flag) : c);
+	(flag->zero != 0 ? (c = '0') : c);
 	(flag->comma != 0 ? flag->larg += flag->tilt : c);
 	while (flag->larg-- > flag->point)
 		ft_putchar(c, flag);
