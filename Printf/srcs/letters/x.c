@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/26 17:11:00 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/27 11:36:44 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,17 @@ int		x(va_list argp, const char *arg, int *index, t_flag *flag)
 		fnl = ft_getnbr_base_ui(tmp, "0123456789ABCDEF");
 	else
 		fnl = ft_getnbr_base_ui(tmp, "0123456789abcdef");
-	if (ft_strlen(fnl) < flag->larg)
+	if (fnl[0] != '0')
 		flag->larg = flag->larg - ft_strlen(fnl);
-	else
-		flag->larg = 0;
-	larg_flag_before(flag);
+	if (flag->zero == 0)
+		larg_flag_before(flag);
+	if (flag->diez != 0 && fnl[0] != '0')
+	{
+		ft_putstr("0", flag);
+		ft_putchar(arg[0], flag);
+	}
+	if (flag->zero != 0)
+		larg_flag_before(flag);
 	ft_putstr(fnl, flag);
 	larg_flag_after(flag);
 	free (fnl);

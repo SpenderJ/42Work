@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/26 17:40:09 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/27 10:49:58 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,8 @@ int		precision_pars(va_list argp, const char *arg, int *index, t_flag *flag)
 	if (arg[c] == '.' && (flag->comma = 1) == 1)
 	{
 		++c;
-		flag->point = ft_atoi(&arg[c]);
+		if ((flag->point = ft_atoi(&arg[c])) == -1)
+			return (0);
 	}
 	else
 	{
