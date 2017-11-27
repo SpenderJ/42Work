@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/27 16:49:33 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/27 16:51:31 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int		d(va_list argp, const char *arg, int *index, t_flag *flag)
 	(flag->space == 1 && tmp >= 0 ? --flag->larg : flag->larg);
 	(tmp < 0 ? --flag->larg : (neg = 84));
 	(neg != 84 ? tmp *= -1 : tmp);
-//	while (c < tmp && ((++u)))
-//		c *= 10;
 	u = int_len(tmp);
 	(neg != 84 ? tmp = tmp * -1 : tmp);
 	flag->larg -= u;
