@@ -14,7 +14,7 @@
 
 int		x(va_list argp, const char *arg, int *index, t_flag *flag)
 {
-	intmax_t		tmp;
+	uintmax_t		tmp;
 	char			*fnl;
 
 	(void)index;

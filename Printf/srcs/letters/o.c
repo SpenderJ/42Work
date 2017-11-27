@@ -15,10 +15,8 @@
 int		o(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	char		*tmp;
-	int			c;
-	intmax_t	sent;
+	uintmax_t	sent;
 
-	c = 0;
 	(void)arg;
 	(void)index;
 	length_modif_uox(argp, flag, &sent);

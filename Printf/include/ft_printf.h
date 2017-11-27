@@ -39,7 +39,7 @@ typedef struct		t_flag
 	int		z;
 }					t_flag;
 
-void		length_modif_uox(va_list argp, t_flag *flag, intmax_t *tmp);
+void		length_modif_uox(va_list argp, t_flag *flag, uintmax_t *tmp);
 void		length_modif_di(va_list argp, t_flag *flag, intmax_t *tmp);
 int			(*letter_parser[26])(va_list, const char*, int*, t_flag*);
 void		larg_flag_before(t_flag *flag);
@@ -47,7 +47,7 @@ void		larg_flag_after(t_flag *flag);
 int			ft_strlen(char *str);
 char		*ft_strdup(const char *str);
 char		*ft_getnbr_base(intmax_t nbr, char *base);
-char		*ft_getnbr_base_ui(intmax_t nbr, char *base);
+char		*ft_getnbr_base_ui(uintmax_t nbr, char *base);
 char		*ft_strrev(char *str);
 int			precision_pars(va_list argp, const char *arg, int *index, t_flag *flag);
 void		*ft_print_memory(void *addr, unsigned int size, t_flag *flag);

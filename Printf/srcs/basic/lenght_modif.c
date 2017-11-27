@@ -38,7 +38,7 @@ void		length_modif_di(va_list argp, t_flag *flag, intmax_t *tmp)
 	return ;
 }
 
-void		length_modif_uox(va_list argp, t_flag *flag, intmax_t *tmp)
+void		length_modif_uox(va_list argp, t_flag *flag, uintmax_t *tmp)
 {
 	unsigned short		c;
 	unsigned int		i;
@@ -56,7 +56,7 @@ void		length_modif_uox(va_list argp, t_flag *flag, intmax_t *tmp)
 	else if (flag->ll != 0)
 		*tmp = va_arg(argp, unsigned long long int);
 	else if (flag->j != 0)
-		*tmp = va_arg(argp, intmax_t);
+		*tmp = va_arg(argp, uintmax_t);
 	else if (flag->z != 0)
 		*tmp = va_arg(argp, size_t);
 	else
