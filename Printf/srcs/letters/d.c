@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/27 19:33:32 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/27 19:46:54 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,29 @@
 
 static void	larg_flag_before_d(t_flag *flag)
 {
-	char		c;
-
-	c = ' ';
-	if (flag->neg != 0 && flag->point != 0)
+	flag->c = ' ';
+	if (flag->neg != 0 && flag->point != 0 && (flag->larg -= flag->point) != -9)
 	{
-		flag->larg -= flag->point;
-		(flag->pos != 0 && flag->nbr >= 0 ? ft_putchar('+', flag) : c);
+		(flag->pos != 0 && flag->nbr >= 0 ? ft_putchar('+', flag) : flag->c);
 		while (flag->point-- > flag->tilt)
 			ft_putchar('0', flag);
-		(flag->space != 0 && flag->nbr >= 0 && flag->pos == 0 ?
-		 ft_putchar(' ', flag) : c);
-		return ;
+		return (flag->space != 0 && flag->nbr >= 0 && flag->pos == 0 ?
+		 ft_putchar(' ', flag) : flag->c);
 	}
 	else if (flag->neg != 0)
 		return ;
 	(flag->pos != 0 && flag->nbr >= 0 && flag->zero != 0
-	 ? ft_putchar('+', flag) : c);
+	 ? ft_putchar('+', flag) : flag->c);
 	(flag->space != 0 && flag->nbr >= 0 && flag->pos == 0 && flag->zero != 0 ?
-	 ft_putchar(' ', flag) : c);
-	(flag->zero != 0 ? (c = '0') : c);
-	(flag->comma != 0 ? flag->larg += flag->tilt : c);
+	 ft_putchar(' ', flag) : flag->c);
+	(flag->zero != 0 ? (flag->c = '0') : flag->c);
+	(flag->comma != 0 ? flag->larg += flag->tilt : flag->c);
 	while (flag->larg-- > flag->point)
-		ft_putchar(c, flag);
+		ft_putchar(flag->c, flag);
 	(flag->pos != 0 && flag->nbr >= 0 && flag->zero == 0
-	 ? ft_putchar('+', flag) : c);
+	 ? ft_putchar('+', flag) : flag->c);
 	(flag->space != 0 && flag->nbr >= 0 && flag->zero == 0 && flag->pos == 0
-	 ? ft_putchar(' ', flag) : c);
+	 ? ft_putchar(' ', flag) : flag->c);
 	while (flag->point-- > flag->tilt)
 		ft_putchar('0', flag);
 }
