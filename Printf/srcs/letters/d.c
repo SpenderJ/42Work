@@ -6,13 +6,68 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/27 17:25:59 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/27 19:30:43 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
 
-int		d(va_list argp, const char *arg, int *index, t_flag *flag)
+static void	larg_flag_before_d(t_flag *flag)
+{
+	char		c;
+
+	c = ' ';
+	if (flag->neg != 0 && flag->point != 0)
+	{
+		flag->larg -= flag->point;
+		(flag->pos != 0 && flag->nbr >= 0 ? ft_putchar('+', flag) : c);
+		while (flag->point-- > flag->tilt)
+			ft_putchar('0', flag);
+		(flag->space != 0 && flag->nbr >= 0 && flag->pos == 0 ?
+		 ft_putchar(' ', flag) : c);
+		return ;
+	}
+	else if (flag->neg != 0)
+		return ;
+	if (flag->zero != 0)
+	{
+		(flag->pos != 0 && flag->nbr >= 0 ? ft_putchar('+', flag) : c);
+		(flag->space != 0 && flag->nbr >= 0 && flag->pos == 0 ?
+		 ft_putchar(' ', flag) : c);
+		c = '0';
+	}
+	(flag->comma != 0 ? flag->larg += flag->tilt : c);
+	while (flag->larg-- > flag->point)
+		ft_putchar(c, flag);
+	(flag->pos != 0 && flag->nbr >= 0 && flag->zero == 0
+	 ? ft_putchar('+', flag) : c);
+	(flag->space != 0 && flag->nbr >= 0 && flag->zero == 0 && flag->pos == 0
+	 ? ft_putchar(' ', flag) : c);
+	while (flag->point-- > flag->tilt)
+		ft_putchar('0', flag);
+}
+
+static void	larg_flag_after_d(t_flag *flag)
+{
+	int			i;
+	char		c;
+
+	i = 0;
+	c = ' ';
+	if (flag->neg == 0)
+		return ;
+	if (flag->point != 0)
+		c = '0';
+	if (flag->comma != 0)
+		flag->larg += flag->tilt;
+	while (i < flag->larg)
+	{
+		++i;
+		ft_putchar(' ', flag);
+	}
+}
+
+int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	intmax_t		tmp;
 	int				c;
@@ -22,24 +77,27 @@ int		d(va_list argp, const char *arg, int *index, t_flag *flag)
 	u = ((int)arg & (int)index & 0);
 	neg = 0;
 	length_modif_di(argp, flag, &tmp);
+	(flag->comma != 0 && flag->point > flag->larg ? flag->larg = flag->point :
+	 flag->larg);
 	((c = 1) == 1 && flag->pos == 1 && tmp >= 0 ? --flag->larg : flag->larg);
 	(flag->space == 1 && tmp >= 0 ? --flag->larg : flag->larg);
 	(tmp < 0 ? --flag->larg : (neg = 84));
 	u = int_len(tmp);
+	flag->tilt = u;
 	flag->larg -= u;
-	(tmp >= 0 && flag->pos == 1 ? ft_putchar('+', flag) : (neg = 22));
+	flag->nbr = tmp;
 	(tmp >= 0 && flag->space == 1 && neg == 22 ? ft_putchar(' ', flag) : c);
 	(tmp < 0 && flag->zero != 0 ? ft_putchar('-', flag) : (neg = 9));
 	(tmp < 0 && tmp > -9223372036854775807 ? tmp *= -1 : (neg = 128));
-	larg_flag_before(flag);
+	larg_flag_before_d(flag);
 	(neg != 128 && flag->zero == 0 ? ft_putchar('-', flag) : (neg = 45));
 	(tmp < -9223372036854775807 ? ft_putstr("-9223372036854775808", flag) :
 	 ft_putint(tmp, flag));
-	larg_flag_after(flag);
+	larg_flag_after_d(flag);
 	return (0);
 }
 
-int		int_len(intmax_t nbr)
+int			int_len(intmax_t nbr)
 {
 	uintmax_t	tmp;
 
@@ -68,7 +126,7 @@ int		int_len(intmax_t nbr)
 	return (int_len2(tmp));
 }
 
-int		int_len2(uintmax_t nbr)
+int			int_len2(uintmax_t nbr)
 {
 	if (nbr > 1000000000)
 		return (10);
