@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/27 11:36:44 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/27 12:13:06 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int		x(va_list argp, const char *arg, int *index, t_flag *flag)
 	char			*fnl;
 
 	(void)index;
-	(void)flag;
 	length_modif_uox(argp, flag, &tmp);
 	if ((char)arg[0] == 'X')
 		fnl = ft_getnbr_base_ui(tmp, "0123456789ABCDEF");
@@ -26,6 +25,7 @@ int		x(va_list argp, const char *arg, int *index, t_flag *flag)
 		fnl = ft_getnbr_base_ui(tmp, "0123456789abcdef");
 	if (fnl[0] != '0')
 		flag->larg = flag->larg - ft_strlen(fnl);
+	(flag->diez != 0 ? flag->larg = flag->larg - 2 : flag->larg);
 	if (flag->zero == 0)
 		larg_flag_before(flag);
 	if (flag->diez != 0 && fnl[0] != '0')

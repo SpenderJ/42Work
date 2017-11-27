@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/27 11:02:50 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/27 16:48:28 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct		t_flag
 	int		z;
 }					t_flag;
 
+int			int_len(uint64_t nbr);
+int			int_len2(uint64_t nbr);
 void		length_modif_uox(va_list argp, t_flag *flag, uintmax_t *tmp);
 void		length_modif_di(va_list argp, t_flag *flag, intmax_t *tmp);
 int			(*letter_parser[26])(va_list, const char*, int*, t_flag*);

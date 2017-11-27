@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/27 10:53:24 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/27 15:54:25 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	larg_flag_before(t_flag *flag)
 		return ;
 	if (flag->zero != 0)
 		c = '0';
-	if (flag->diez != 0)
-		i = i + 2;
 	while (i < flag->larg)
 	{
 		++i;
@@ -41,8 +39,6 @@ void	larg_flag_after(t_flag *flag)
 	c = ' ';
 	if (flag->neg == 0)
 		return ;
-	if (flag->diez != 0)
-		i = i + 2;
 	while (i < flag->larg)
 	{
 		++i;
