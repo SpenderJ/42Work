@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/28 11:01:08 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 11:05:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,8 @@ int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 	((c = 1) == 1 && flag->pos == 1 && tmp >= 0 ? --flag->larg : flag->larg);
 	(flag->space == 1 && tmp >= 0 ? --flag->larg : flag->larg);
 	(tmp < 0 ? --flag->larg : (neg = 84));
-	u = int_len(tmp);
-	flag->tilt = u;
-	flag->larg -= u;
+	flag->tilt = int_len(tmp);
+	flag->larg -= int_len(tmp);
 	flag->nbr = tmp;
 	(tmp < 0 && flag->zero != 0 ? ft_putchar('-', flag) : (neg = 9));
 	(tmp < 0 && tmp > -9223372036854775807 ? tmp *= -1 : (neg = 128));
