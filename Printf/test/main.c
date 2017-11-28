@@ -20,8 +20,8 @@ int		main(int argc, char **argv)
 	int		i1;
 	int		i2;
 
-	i1 = printf("(%-15Z)\n");
-	i2 = ft_printf("(%-15Z)\n");
+	i1 = printf("(%5.12d)\n", 128);
+	i2 = ft_printf("(%5.12d)\n", 128);
 	printf("Printf = %d\nFt_Printf = %d\n", i1, i2);
 	return (0);
 }
