@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/26 16:22:11 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 11:51:15 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@ int		u(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	uintmax_t	tmp;
 
-	(void)arg;
 	(void)index;
-	(void)flag;
-	larg_flag_before(flag);
+	if (arg[0] == 'U')
+		flag->l = 1;
+	length_modif_uox(argp, flag, &tmp);
+	flag->point -= int_len(tmp);
 	while (flag->point-- > 0)
 		ft_putchar('0', flag);
-	length_modif_uox(argp, flag, &tmp);
-	ft_putint(tmp, flag);
+	flag->larg -= int_len(tmp);
+	larg_flag_before(flag);
+	ft_putuint(tmp, flag);
 	larg_flag_after(flag);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/28 10:57:55 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 11:35:24 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int			ft_printf(const char *list, ...);
 void		ft_putstr(const char *str, t_flag *flag);
 void		ft_putchar(char c, t_flag *flag);
 void		ft_putint(intmax_t n, t_flag *flag);
-void		ft_putuint(unsigned int nb, t_flag *flag);
+void		ft_putuint(uintmax_t nb, t_flag *flag);
 void		ft_putlong(long nb, t_flag *flag);
 void		ft_putdouble(double nb, int index, t_flag *flag);
 int			arg_parser(va_list argp, const char *arg, int *index, t_flag *flag);
