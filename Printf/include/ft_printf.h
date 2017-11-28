@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/28 13:30:50 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 14:14:51 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct		t_flag
 	int		cpy;
 }					t_flag;
 
+int			free_main(t_flag *flag, int *i, int returned);
+void		free_tab(char **tab);
 int			int_len(intmax_t nbr);
 int			int_len2(uintmax_t nbr);
 void		length_modif_uox(va_list argp, t_flag *flag, uintmax_t *tmp);
