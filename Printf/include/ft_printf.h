@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/27 20:16:14 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 10:57:55 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct		t_flag
 	int		tilt;
 	int		nbr;
 	char	c;
+	int		cpy;
 }					t_flag;
 
 int			int_len(intmax_t nbr);

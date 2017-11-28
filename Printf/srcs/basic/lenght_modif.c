@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 18:19:29 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/27 16:14:05 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 10:58:52 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void		length_modif_di(va_list argp, t_flag *flag, intmax_t *tmp)
 	short	c;
 	int		i;
 
+	flag->cpy = flag->point;
 	if (flag->h != 0)
 	{
 		i = va_arg(argp, int);
