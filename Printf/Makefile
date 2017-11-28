@@ -18,7 +18,7 @@ NAME	= libftprintf.a
 
 OBJS	= $(SRCS:.c=.o)
 
-CFLAGS	= -Wall -Wextra
+CFLAGS	= -Wall -Wextra -d
 
 INCLUDE	= /include/ft_printf.h
 
