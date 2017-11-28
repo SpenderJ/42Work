@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/28 15:06:41 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 17:05:50 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,18 @@ int		z(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	int		(*pointer)(va_list, const char*, int*, t_flag*);
 
-	*index = *index + 1;
 	if (arg[0] == 'Z')
 	{
+		if (flag->larg != 0)
+			*index -= 1;
+		*index = *index + int_len(flag->larg) + 1;
+		flag->larg -= 1;
+		larg_flag_before(flag);
 		ft_putchar(arg[0], flag);
+		larg_flag_after(flag);
 		return (-1);
 	}
+	*index = *index + 1;
 	flag->z = 1;
 	if (arg[1] >= 'a')
 		pointer = letter_parser[(int)arg[1] - 97];
