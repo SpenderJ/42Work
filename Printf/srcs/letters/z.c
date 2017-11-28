@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/28 14:57:21 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 15:06:41 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int		z(va_list argp, const char *arg, int *index, t_flag *flag)
 		pointer = letter_parser[(int)arg[1] - 97];
 	else
 		pointer = letter_parser[(int)arg[1] - 97 + 32];
-	return ((*pointer)(argp, arg, index, flag));
+	return ((*pointer)(argp, &arg[1], index, flag));
 }
