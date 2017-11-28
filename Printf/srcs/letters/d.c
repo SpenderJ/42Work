@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/27 20:16:09 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 09:48:58 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 	larg_flag_before_d(flag);
 	(neg != 128 && flag->zero == 0 && flag->comma == 0
 	? ft_putchar('-', flag) : (neg = 45));
-	(tmp < -9223372036854775807 ? ft_putstr("-9223372036854775808", flag) :
-	ft_putint(tmp, flag));
+	(tmp < -9223372036854775807 ? ft_putstr("-9223372036854775808", flag) : c);
+	(tmp >= -9223372036854775807 && ((flag->comma == 0) || (flag->comma != 0 && flag->point != 0)) ? ft_putint(tmp, flag) : c);
 	larg_flag_after_d(flag);
 	return (0);
 }
