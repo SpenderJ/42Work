@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/28 13:44:23 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 15:04:34 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,46 +100,46 @@ int			int_len(intmax_t nbr)
 		tmp = (uintmax_t)-nbr;
 	else
 		tmp = (uintmax_t)nbr;
-	if (tmp > 1000000000000000000)
+	if (tmp >= 1000000000000000000)
 		return (19);
-	else if (tmp > 100000000000000000)
+	else if (tmp >= 100000000000000000)
 		return (18);
-	else if (tmp > 10000000000000000)
+	else if (tmp >= 10000000000000000)
 		return (17);
-	else if (tmp > 1000000000000000)
+	else if (tmp >= 1000000000000000)
 		return (16);
-	else if (tmp > 100000000000000)
+	else if (tmp >= 100000000000000)
 		return (15);
-	else if (tmp > 10000000000000)
+	else if (tmp >= 10000000000000)
 		return (14);
-	else if (tmp > 1000000000000)
+	else if (tmp >= 1000000000000)
 		return (13);
-	else if (tmp > 100000000000)
+	else if (tmp >= 100000000000)
 		return (12);
-	else if (tmp > 10000000000)
+	else if (tmp >= 10000000000)
 		return (11);
 	return (int_len2(tmp));
 }
 
 int			int_len2(uintmax_t nbr)
 {
-	if (nbr > 1000000000)
+	if (nbr >= 1000000000)
 		return (10);
-	else if (nbr > 100000000)
+	else if (nbr >= 100000000)
 		return (9);
-	else if (nbr > 10000000)
+	else if (nbr >= 10000000)
 		return (8);
-	else if (nbr > 1000000)
+	else if (nbr >= 1000000)
 		return (7);
-	else if (nbr > 100000)
+	else if (nbr >= 100000)
 		return (6);
-	else if (nbr > 10000)
+	else if (nbr >= 10000)
 		return (5);
-	else if (nbr > 1000)
+	else if (nbr >= 1000)
 		return (4);
-	else if (nbr > 100)
+	else if (nbr >= 100)
 		return (3);
-	else if (nbr > 10)
+	else if (nbr >= 10)
 		return (2);
 	else if (nbr > 1)
 		return (1);

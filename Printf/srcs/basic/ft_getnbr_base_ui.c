@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 22:37:51 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/26 16:45:59 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 14:30:53 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char			*ft_getnbr_base_ui(uintmax_t nbr, char *base)
 
 	i = 0;
 	x = 0;
-	if ((str = ft_strnew(4096)) == NULL)
+	if ((str = ft_strnew(96)) == NULL)
 		return (NULL);
 	nb = nbr;
 	while (base[i] != '\0')
