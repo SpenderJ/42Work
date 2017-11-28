@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/28 13:15:23 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 13:44:23 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,10 @@ int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	intmax_t		tmp;
 	int				c;
-	int				u;
 	int				neg;
 
-	u = ((int)arg & (int)index & 0);
-	neg = 0;
+	(arg[0] == 'D' ? flag->l = 1 : (int)flag);
+	neg = ((int)index & 0);
 	length_modif_di(argp, flag, &tmp);
 	(flag->comma != 0 && flag->point > flag->larg ? flag->larg = flag->point :
 	flag->larg);

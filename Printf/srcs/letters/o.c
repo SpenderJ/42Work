@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/28 13:16:16 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/28 13:48:46 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		o(va_list argp, const char *arg, int *index, t_flag *flag)
 	char		*tmp;
 	uintmax_t	sent;
 
-	(void)arg;
+	(arg[0] == 'O' ? flag->l = 1 : (int)flag);
 	(void)index;
 	length_modif_uox(argp, flag, &sent);
 	tmp = ft_getnbr_base_ui(sent, "01234567");
