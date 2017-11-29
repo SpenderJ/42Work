@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 08:20:54 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 19:18:29 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		e(va_list argp, const char *arg, int *index, t_flag *flag)
 	while (tmp > 10 && ++i)
 		tmp = tmp / 10;
 	(flag->comma != 0 ? ft_putdouble(tmp, flag->point, flag) :
-	 ft_putdouble(tmp, -1, flag));
+	ft_putdouble(tmp, -1, flag));
 	if (i > 0)
 	{
 		(char)arg[0] == 'e' ? ft_putstr("e+", flag) : ft_putstr("E+", flag);

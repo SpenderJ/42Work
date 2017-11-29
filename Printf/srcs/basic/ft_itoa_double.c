@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:55:55 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/22 17:08:42 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 19:30:07 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ static char	*add_next(char *str, int index, double nbr)
 	nbr = nbr * 10;
 	while (index-- > 0 && nbr != 0)
 	{
-		ret = (int)(nbr);
+		if ((int)nbr != 9)
+			ret = (int)(nbr + 0.1);
+		else
+			ret = (int)(nbr);
 		str[++i] = ret + '0';
 		nbr = (nbr - ret) * 10;
 	}
