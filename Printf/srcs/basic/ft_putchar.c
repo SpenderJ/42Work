@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:21:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 14:04:32 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 18:35:12 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ft_putnstr(char *str, t_flag *flag, int *c)
 	size_t	n;
 	char	*tmp;
 
+
 	i = ft_strlen(flag->printed);
 	n = ft_strchr(str, 37);
 	if ((tmp = malloc(sizeof(char) * (i + n + 1))) == NULL)
@@ -50,6 +51,7 @@ void	ft_putnstr(char *str, t_flag *flag, int *c)
 	flag->printed = ft_strdup(tmp);
 	free (tmp);
 	flag->charn += n;
-	*c +=(n - 1);
+	if (*c != -1)
+		*c +=(n - 1);
 	return ;
 }

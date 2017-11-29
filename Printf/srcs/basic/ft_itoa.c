@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:55:55 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 15:07:27 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 18:13:53 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,51 +14,46 @@
 #include "../../include/ft_printf.h"
 #include <string.h>
 
-static char	*goodmalloc(long n)
+int			ft_uintlen(uintmax_t n, int base)
 {
-	long		c;
-	long		d;
+	int			i;
+
+	i = 1;
+	while (n /= base)
+		++i;
+	return (i);
+}
+
+char		*ft_itoa(uintmax_t n, int base)
+{
+	int			i;
 	char		*str;
 
-	c = 1;
-	d = 0;
-	if (n < 0)
-		n = -n;
-	d = int_len(n);
-	str = ft_strnew((int)d + 1);
-	if (str == NULL)
+	if (base > 30)
 		return (NULL);
+	i = ft_uintlen(n, base);
+	if (!(str = malloc((i + 1) * sizeof(char))))
+		return (NULL);
+	i = ft_uintstr(str, n, base);
+	str[i] = '\0';
 	return (str);
 }
 
-char		*ft_itoa(int n)
+int			ft_uintstr(char *dst, uintmax_t n, int base)
 {
-	int					neg;
-	char				*str;
-	long				c;
-	long				i;
-	long				nbr;
+	int			i;
+	static char	digits[31] = "0123456789abcdefghijklmnopqrs";
 
-	c = 0;
-	i = 1;
-	neg = (n >= 0) ? 1 : -1;
-	nbr = (long)n;
-	if ((str = goodmalloc(nbr)) == NULL)
-		return (NULL);
-	if (neg == -1 && (nbr = -nbr) >= 0)
-		str[c++] = '-';
-	while (i <= nbr)
-		i = i * 10;
-	if (nbr == 0)
-		str[c++] = '0';
-	while ((i = i / 10) >= 1)
+	if (base > 30)
+		return (0);
+	if (n == 0)
+		return ((int)(((*dst = '0') & 0) + 1));
+	i = int_len(n);
+	dst += i - 1;
+	while (n)
 	{
-		str[c++] = (nbr / i + 48);
-		nbr = nbr - (str[c - 1] - 48) * i;
+		*dst-- = digits[n % base];
+		n /= base;
 	}
-	str[c] = '\0';
-	return (str);
+	return (i);
 }
-
-char		*ft_itoa_big(uintmax_t nbr)
-{

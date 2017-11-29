@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 14:23:43 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 17:54:42 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # define LLNEGMAX -9223372036854775807
+
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
@@ -45,6 +46,11 @@ typedef struct		t_flag
 	char	*printed;
 }					t_flag;
 
+void		larg_flag_after_d(t_flag *flag);
+void		larg_flag_before_d2(t_flag *flag, char *str, int i);
+void		larg_flag_before_d(t_flag *flag);
+int			ft_uintlen(uintmax_t n, int base);
+int			ft_uintstr(char *dst, uintmax_t n, int base);
 char		*ft_strcat(char *dest, char *src);
 char		*ft_strncat(char *dest, char *src, size_t len);
 int			ft_strchr(const char *str, int c);
@@ -80,7 +86,7 @@ void		ft_putlong(long nb, t_flag *flag);
 void		ft_putdouble(double nb, int index, t_flag *flag);
 int			arg_parser(va_list argp, const char *arg, int *index, t_flag *flag);
 int			init_struct(t_flag *flag);
-char		*ft_itoa(int nb);
+char		*ft_itoa(uintmax_t n, int base);
 char		*ft_itoa_double(double nb, int index);
 int			flag_parser(va_list argp, const char *arg, int *index, t_flag *flag);
 int			a(va_list argp, const char *arg, int *index, t_flag *flag);

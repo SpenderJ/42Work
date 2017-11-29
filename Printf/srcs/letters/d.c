@@ -6,59 +6,69 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 14:35:13 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 18:18:23 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
 
-static void	larg_flag_before_d(t_flag *flag)
+void		larg_flag_before_d(t_flag *flag)
 {
-	flag->c = ' ';
-	if (flag->neg && flag->point && (flag->larg -= flag->point) != -9)
-	{
-		flag->pos && flag->nbr >= 0 ? ft_putchar('+', flag) : flag->c;
-		while (flag->point-- > flag->tilt)
-			ft_putchar('0', flag);
-		return (flag->space && flag->nbr >= 0 && !flag->pos ?
-		ft_putchar(' ', flag) : flag->c);
-	}
-	else if (flag->neg)
+	char	*str;
+	int		i;
+
+	i = -1;
+	flag->space && flag->nbr > 0 ? flag->larg -= 1 : (int)flag;
+	flag->pos && flag->nbr > 0 ? flag->larg -= 1 : (int)flag;
+	if ((str = malloc(sizeof(char) * (flag->larg > flag->point ? flag->larg + flag->tilt : flag->point))) == NULL)
 		return ;
-	flag->pos && flag->nbr >= 0 && flag->zero ? ft_putchar('+', flag) : flag;
-	flag->space && flag->nbr >= 0 && !flag->pos && flag->zero ?
-	ft_putchar(' ', flag) : flag->c;
-	flag->zero && !flag->comma ? (flag->c = '0') : flag->c;
-	flag->larg ? flag->larg += flag->tilt : flag->c;
-	flag->comma && flag->zero && flag->nbr < 0 ? ft_putchar('-', flag) : c;
-	while (flag->larg-- > (flag->point > flag->tilt ? flag->point : flag->tilt))
-		ft_putchar(flag->c, flag);
-	flag->pos && flag->nbr >= 0 && !flag->zero ? ft_putchar('+', flag)
-	: flag->c;
-	flag->space && flag->nbr >= 0 && !flag->zero && !flag->pos ?
-	ft_putchar(' ', flag) : flag->c;
-	while (flag->point-- > flag->tilt)
-		ft_putchar('0', flag);
+	flag->zero ? (flag->c = '0') : (flag->c = ' ');
+	flag->space && flag->nbr > 0 ? (str[++i] = ' ') : (int)flag;
+	if (!flag->neg && !flag->zero && flag->larg > flag->point && flag->nbr > 0 && flag->larg  > flag->tilt)
+		while (flag->larg-- > (flag->point > flag->tilt ? flag->point : flag->tilt))
+			str[++i] = flag->c;
+	flag->nbr < 0 ? str[++i] = '-' : (int)flag;
+	flag->nbr >= 0 && flag->pos ? str[++i] = '+' : (int)flag;
+	larg_flag_before_d2(flag, str, i);
 }
 
-static void	larg_flag_after_d(t_flag *flag)
+void		larg_flag_before_d2(t_flag *flag, char *str, int i)
 {
-	int			i;
-	char		c;
+	int		c;
 
-	i = 0;
-	c = ' ';
+	c = -1;
+	if (flag->neg && flag->point > flag->tilt)
+		while (flag->point-- > flag->tilt)
+			str[++i] = '0';
+	flag->larg += flag->tilt;
+	if (flag->neg)
+		return ;
+	if (flag->larg > flag->point && flag->larg > flag->tilt)
+		while (flag->larg-- > (flag->point > flag->tilt ? flag->point : flag->tilt))
+			str[++i] = flag->c;
+	if (flag->point >flag->tilt)
+		while (flag->point-- > flag->tilt)
+			str[++i] = '0';
+	str[++i] = '\0';
+	ft_putnstr(str, flag, &c);
+}
+
+void		larg_flag_after_d(t_flag *flag)
+{
+	char	*str;
+	int		i;
+	int		c;
+
+	i = -1;
+	c = -1;
 	if (!flag->neg)
 		return ;
-	if (flag->point)
-		c = '0';
-	if (flag->comma)
-		flag->larg += flag->tilt;
-	while (i < flag->larg)
-	{
-		++i;
-		ft_putchar(' ', flag);
-	}
+	if ((str = malloc(sizeof(char) * (flag->larg + 1))) == NULL)
+		return ;
+	while (flag->larg-- > (flag->tilt > flag->point ? flag->tilt : flag->point))
+		str[++i] = flag->c;
+	str[++i] = '\0';
+	ft_putnstr(str, flag, &c);
 }
 
 int			d(va_list argp, const char *arg, int *index, t_flag *flag)
@@ -69,12 +79,13 @@ int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 
 	arg[0] == 'D' ? flag->l = 1 : (int)flag;
 	neg = ((int)index & 0);
+	c = -1;
 	length_modif_di(argp, flag, &tmp);
 	flag->tilt = int_len(tmp);
 	flag->larg -= int_len(tmp);
 	flag->nbr = tmp;
 	larg_flag_before_d(flag);
-	ft_itoa(tmp, flag);
+	ft_putnstr(ft_itoa(tmp, 10), flag, &c);
 	larg_flag_after_d(flag);
 	return (0);
 }
