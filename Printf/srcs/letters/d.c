@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 10:40:56 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 14:35:13 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,19 +70,11 @@ int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 	arg[0] == 'D' ? flag->l = 1 : (int)flag;
 	neg = ((int)index & 0);
 	length_modif_di(argp, flag, &tmp);
-	flag->comma && flag->point > flag->larg ? flag->larg = flag->point :
-	flag->point;
-	(c = 1) == 1 && flag->pos == 1 && tmp >= 0 ? --flag->larg : flag->larg;
-	flag->space && tmp >= 0 ? --flag->larg : flag->larg;
-	tmp < 0 ? --flag->larg : (neg = 84);
 	flag->tilt = int_len(tmp);
 	flag->larg -= int_len(tmp);
 	flag->nbr = tmp;
-	tmp < 0 && flag->zero ? ft_putchar('-', flag) : (neg = 9);
-	tmp < 0 && tmp > LLNEGMAX ? tmp *= -1 : (neg = 128);
 	larg_flag_before_d(flag);
-	neg != 128 && !flag->zero && !flag->comma ? ft_putchar('-', flag) : neg;
-	tmp < LLNEGMAX ? ft_putstr("LLNEGMAX", flag) : ft_putint(tmp, flag);
+	ft_itoa(tmp, flag);
 	larg_flag_after_d(flag);
 	return (0);
 }

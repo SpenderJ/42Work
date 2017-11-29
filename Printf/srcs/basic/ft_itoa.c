@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:55:55 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 10:44:49 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 15:07:27 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ static char	*goodmalloc(long n)
 	d = 0;
 	if (n < 0)
 		n = -n;
-	while (c < n)
-	{
-		c = c * 10;
-		++d;
-	}
+	d = int_len(n);
 	str = ft_strnew((int)d + 1);
 	if (str == NULL)
 		return (NULL);
@@ -63,3 +59,6 @@ char		*ft_itoa(int n)
 	str[c] = '\0';
 	return (str);
 }
+
+char		*ft_itoa_big(uintmax_t nbr)
+{

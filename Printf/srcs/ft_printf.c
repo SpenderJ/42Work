@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 12:57:59 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 14:11:19 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		ft_printf(const char *restrict list, ...)
 			ft_putnstr((char *)&list[i], flag, &i);
 	}
 	va_end(argp);
+	write(1, flag->printed, flag->charn);
 	return (free_main(flag, flag->charn));
 }
 

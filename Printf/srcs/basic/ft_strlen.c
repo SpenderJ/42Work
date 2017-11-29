@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:25:53 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 11:15:23 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 13:53:24 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 size_t		ft_strlen(char *str)
 {
 	size_t		result;
-	uint64_t	*i;
+	uint32_t	*i;
 
 	result = 0;
-	i = (uint64_t *)str;
+	i = (uint32_t *)str;
 	while (42)
 	{
 		if (!(*i & 0x000000ff))
@@ -30,5 +30,6 @@ size_t		ft_strlen(char *str)
 		if (!(*i & 0xff000000))
 			return result + 3;
 		result += 4;
+		++i;
 	}
 }

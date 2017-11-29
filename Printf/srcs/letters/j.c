@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 08:21:04 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 13:27:55 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int		j(va_list argp, const char *arg, int *index, t_flag *flag)
 	*index = *index + 1;
 	flag->j = 1;
 	if (arg[1] >= 'a')
-		pointer = letter_parser[(int)arg[1] - 97];
+		pointer = g_letter_parser[(int)arg[1] - 97];
 	else
-		pointer = letter_parser[(int)arg[1] - 97 + 32];
+		pointer = g_letter_parser[(int)arg[1] - 97 + 32];
 	return ((*pointer)(argp, &arg[1], index, flag));
 }

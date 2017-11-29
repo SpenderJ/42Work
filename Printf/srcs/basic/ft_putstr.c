@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:23:13 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 08:49:14 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 14:04:52 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,45 @@
 void	ft_putstr(char const *s, t_flag *flag)
 {
 	int		i;
+	int		c;
+	char	*tmp;
 
 	i = 0;
+	c = 0;
 	if (!s)
-	{
-		ft_putstr("(null)", flag);
-		return ;
-	}
-	while (s[i] != '\0')
-		++i;
+		return (ft_putstr("(null)", flag));
+	c = ft_strlen(flag->printed);
+	i = ft_strlen((char *)s);
 	if (flag->comma == 1 && flag->point <= 0)
 		return ;
+	if ((tmp = malloc(sizeof(char) * (i + c))) == NULL)
+		return ;
+	ft_strcat(tmp, flag->printed);
+	ft_strcat(tmp, (char *)s);
 	flag->charn = flag->charn + i;
-	write(1, (char *)s, i);
+	free (flag->printed);
+	flag->printed = tmp;
 }
 
 void	ft_putoctal(char const *s, t_flag *flag)
 {
 	int		i;
+	int		c;
+	char	*tmp;
 
 	i = 0;
+	c = 0;
 	if (!s)
-	{
-		ft_putstr("(null)", flag);
-		return ;
-	}
-	while (s[i] != '\0')
-		++i;
+		return (ft_putstr("(null)", flag));
+	i = ft_strlen((char *)s);
+	c = ft_strlen(flag->printed);
 	if (flag->comma && !flag->point && !flag->diez)
 		return ;
+	if ((tmp = malloc(sizeof(char) * (i + c))) == NULL)
+		return ;
+	ft_strcat(tmp, flag->printed);
+	ft_strcat(tmp, (char *)s);
 	flag->charn = flag->charn + i;
-	write(1, (char *)s, i);
+	free (flag->printed);
+	flag->printed = tmp;
 }
