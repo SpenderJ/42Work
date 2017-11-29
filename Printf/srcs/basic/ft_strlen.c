@@ -19,6 +19,8 @@ size_t		ft_strlen(char *str)
 
 	result = 0;
 	i = (uint32_t *)str;
+	if (!str)
+		return (0);
 	while (42)
 	{
 		if (!(*i & 0x000000ff))

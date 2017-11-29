@@ -21,16 +21,14 @@ int		ft_printf(const char *restrict list, ...)
 	i = -1;
 	va_start(argp, list);
 	if ((flag = malloc(sizeof(t_flag))) == NULL ||
-			((flag->printed = malloc(sizeof(char) * (1))) == NULL))
+			((flag->printed = ft_strnew(2)) == NULL))
 		return (0);
 	flag->charn = 0;
 	while (list[++i] != '\0')
 	{
+		init_struct(flag);
 		if (list[i] == '%' && list[i + 1] != '\0')
-		{
-			init_struct(flag);
 			arg_parser(argp, &list[i + 1], &i, flag);
-		}
 		else if (list[i] != '%')
 			ft_putnstr((char *)&list[i], flag, &i);
 	}

@@ -29,18 +29,11 @@ void	ft_putstr(char const *s, t_flag *flag)
 		return ;
 	if ((tmp = malloc(sizeof(char) * (i + c + 1))) == NULL)
 		return ;
-	printf("#DEBUG Strcat de %s + %s\n", flag->printed, s);
 	ft_strcat(tmp, flag->printed);
-	printf("yo\n");
 	ft_strcat(tmp, (char *)s);
-	printf("tg\n");
 	flag->charn = flag->charn + i;
-	printf("ah\n");
 	free(flag->printed);
-	printf("ztf [%s]\n", tmp);
 	flag->printed = ft_strdup(tmp);
-	printf("koi\n");
-	printf("#OUT with [%s]\n", flag->printed);
 	free(tmp);
 }
 

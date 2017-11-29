@@ -22,7 +22,7 @@ char	*ft_strdup(const char *src)
 		return (NULL);
 	while (src[i] != '\0')
 		++i;
-	if ((str = malloc(sizeof(char) * (i + 1))) == NULL)
+	if ((str = malloc(sizeof(char) * (i + 2))) == NULL)
 		return (NULL);
 	i = 0;
 	printf("a %s\n\n", src);
