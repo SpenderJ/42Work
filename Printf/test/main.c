@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:47:34 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 19:29:41 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 19:34:47 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int		main(int argc, char **argv)
 	long long ll = 9223372036854775807;
 
 	c = '0';
-	i1 = printf("%e\n", 9.90);
-	i2 = ft_printf("%e\n", 9.90);
+	i1 = printf("%e\n", 1.42);
+	i2 = ft_printf("%e\n", 1.42);
 	printf("Printf = %d\nFt_Printf = %d\n", i1, i2);
 	return (0);
 }

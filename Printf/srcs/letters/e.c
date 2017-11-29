@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 19:18:29 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 20:01:07 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		e(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	int		i;
 	double	tmp;
+	int		c;
 
 	(void)index;
 	larg_flag_before(flag);
@@ -30,13 +31,11 @@ int		e(va_list argp, const char *arg, int *index, t_flag *flag)
 		tmp = tmp / 10;
 	(flag->comma != 0 ? ft_putdouble(tmp, flag->point, flag) :
 	ft_putdouble(tmp, -1, flag));
-	if (i > 0)
-	{
-		(char)arg[0] == 'e' ? ft_putstr("e+", flag) : ft_putstr("E+", flag);
-		if (i < 10)
-			ft_putchar('0', flag);
-		ft_putint(i, flag);
-	}
+	(char)arg[0] == 'e' ? ft_putstr("e+", flag) : ft_putstr("E+", flag);
+	if (i < 10)
+		ft_putchar('0', flag);
+	c = -1;
+	ft_putnstr(ft_itoa(i, 10), flag, &c);
 	larg_flag_after(flag);
 	return (0);
 }

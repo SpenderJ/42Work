@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:23:13 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 14:04:52 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 20:03:59 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,21 @@ void	ft_putstr(char const *s, t_flag *flag)
 	i = ft_strlen((char *)s);
 	if (flag->comma == 1 && flag->point <= 0)
 		return ;
-	if ((tmp = malloc(sizeof(char) * (i + c))) == NULL)
+	if ((tmp = malloc(sizeof(char) * (i + c + 1))) == NULL)
 		return ;
+	printf("#DEBUG Strcat de %s + %s\n", flag->printed, s);
 	ft_strcat(tmp, flag->printed);
+	printf("yo\n");
 	ft_strcat(tmp, (char *)s);
+	printf("tg\n");
 	flag->charn = flag->charn + i;
-	free (flag->printed);
-	flag->printed = tmp;
+	printf("ah\n");
+	free(flag->printed);
+	printf("ztf [%s]\n", tmp);
+	flag->printed = ft_strdup(tmp);
+	printf("koi\n");
+	printf("#OUT with [%s]\n", flag->printed);
+	free(tmp);
 }
 
 void	ft_putoctal(char const *s, t_flag *flag)
@@ -55,6 +63,7 @@ void	ft_putoctal(char const *s, t_flag *flag)
 	ft_strcat(tmp, flag->printed);
 	ft_strcat(tmp, (char *)s);
 	flag->charn = flag->charn + i;
-	free (flag->printed);
-	flag->printed = tmp;
+	free(flag->printed);
+	flag->printed = ft_strdup(tmp);
+	free(tmp);
 }
