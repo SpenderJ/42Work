@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/06 13:06:32 by juspende          #+#    #+#              #
-#    Updated: 2017/11/28 12:53:33 by juspende         ###   ########.fr        #
+#    Updated: 2017/11/29 08:05:14 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME	= libftprintf.a
 
 OBJS	= $(SRCS:.c=.o)
 
-CFLAGS	= -Wall -Wextra -d
+CFLAGS	= -Wall -Wextra -O3
 
 INCLUDE	= /include/ft_printf.h
 
