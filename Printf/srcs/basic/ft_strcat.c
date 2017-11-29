@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_all.c                                         :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/28 12:50:35 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 10:55:21 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/06 14:28:53 by juspende          #+#    #+#             */
+/*   Updated: 2017/11/29 11:25:33 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
 
-int		free_main(t_flag *flag, int returned)
+char	*ft_strcat(char *dest, char *src)
 {
-	free (flag);
-	return (returned);
-}
+	int	i;
+	int	a;
 
-void	free_tab(char **tab)
-{
-	int		i;
-
-	i = -1;
-	if (!tab)
-		return ;
-	while (tab[++i] != NULL)
-		free (tab[i]);
-	free (tab);
+	i = 0;
+	a = 0;
+	while (dest[a] != '\0')
+		a = a + 1;
+	while (src[i] != '\0')
+	{
+		dest[a] = src[i];
+		a = a + 1;
+		i = i + 1;
+	}
+	dest[a] = '\0';
+	return (dest);
 }

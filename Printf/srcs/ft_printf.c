@@ -6,43 +6,37 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 08:19:03 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 12:57:59 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int		(*letter_parser[26])(va_list, const char*, int*, t_flag*) =
-{a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z};
-
 int		ft_printf(const char *restrict list, ...)
 {
-	int			*i;
+	int			i;
 	va_list		argp;
 	t_flag		*flag;
 
-	if ((i = malloc(sizeof(int) * 2)) == NULL)
-		return (-1);
-	*i = -1;
+	i = -1;
 	va_start(argp, list);
-	if ((flag = malloc(sizeof(t_flag))) == NULL)
+	if ((flag = malloc(sizeof(t_flag))) == NULL ||
+			((flag->printed = malloc(sizeof(char) * (1))) == NULL))
 		return (0);
 	flag->charn = 0;
-	while (list[++*i] != '\0')
+	while (list[++i] != '\0')
 	{
-		init_struct(flag);
-		if (list[*i] == '%' && list[*i + 1] != '\0')
-		{
-			if (arg_parser(argp, &list[*i + 1], i, flag) == -1)
-				ft_putchar(list[*i], flag);
-		}
-		else if (list[*i] != '%')
-			ft_putchar(list[*i], flag);
+		if (list[i] == '%' && list[i + 1] != '\0' && init_struct(flag))
+			arg_parser(argp, &list[i + 1], &i, flag) == -1 ?
+				ft_putnstr((char *)&list[i], flag, &i) : flag;
+		else if (list[i] != '%')
+			ft_putnstr((char *)&list[i], flag, &i);
 	}
-	return (free_main(flag, i, flag->charn));
+	va_end(argp);
+	return (free_main(flag, flag->charn));
 }
 
-void	init_struct(t_flag *flag)
+int		init_struct(t_flag *flag)
 {
 	flag->neg = 0;
 	flag->pos = 0;
@@ -62,8 +56,11 @@ void	init_struct(t_flag *flag)
 	flag->tilt = 0;
 	flag->nbr = 0;
 	flag->cpy = -1;
-	return ;
+	return (1);
 }
+
+int		(*g_letter_parser[26])(va_list, const char*, int*, t_flag*) =
+{a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z};
 
 int		arg_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 {
@@ -74,9 +71,9 @@ int		arg_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 	if ((char)arg[0] == '\0')
 		return (-1);
 	if ((char)arg[0] >= 'A' && (char)arg[0] <= 'Z')
-		pointer = letter_parser[(int)(arg[0] + 32) - 97];
+		pointer = g_letter_parser[(int)(arg[0] + 32) - 97];
 	else if ((char)arg[0] >= 'a' && (char)arg[0] <= 'z')
-		pointer = letter_parser[(int)arg[0] - 97];
+		pointer = g_letter_parser[(int)arg[0] - 97];
 	else if (((char)arg[0] >= '1' && (char)arg[0] <= '9') ||
 	((char)arg[0] == '.'))
 	{
@@ -130,9 +127,8 @@ int		flag_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 		flag->zero = 1;
 	else if (check == '#')
 		flag->diez = 1;
-	else if (check == '%')
+	else if (check == '%' && (flag->larg -= 1))
 	{
-		flag->larg = flag->larg - 1;
 		larg_flag_before(flag);
 		ft_putchar('%', flag);
 		larg_flag_after(flag);

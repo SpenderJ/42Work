@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 08:49:59 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 10:56:25 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int		o(va_list argp, const char *arg, int *index, t_flag *flag)
 	larg_flag_before(flag);
 	if (flag->diez && tmp[0] != '0')
 		ft_putchar('0', flag);
-	if (ft_strlen(tmp) < flag->point && flag->comma)
-		while (ft_strlen(tmp) < flag->point--)
+	if ((int)ft_strlen(tmp) < flag->point && flag->comma)
+		while ((int)ft_strlen(tmp) < flag->point--)
 		{
 			ft_putchar('0', flag);
 			--flag->larg;

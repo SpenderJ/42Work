@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 10:35:17 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 12:56:34 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,22 @@ typedef struct		t_flag
 	int		nbr;
 	char	c;
 	int		cpy;
+	char	*printed;
 }					t_flag;
 
-int			free_main(t_flag *flag, int *i, int returned);
+char		*ft_strcat(char *dest, char *src);
+char		*ft_strncat(char *dest, char *src, size_t len);
+int			ft_strchr(const char *str, int c);
+void		ft_putnstr(char *str, t_flag *flag, int *c);
+int			free_main(t_flag *flag, int returned);
 void		free_tab(char **tab);
 int			int_len(intmax_t nbr);
 int			int_len2(uintmax_t nbr);
 void		length_modif_uox(va_list argp, t_flag *flag, uintmax_t *tmp);
 void		length_modif_di(va_list argp, t_flag *flag, intmax_t *tmp);
-int			(*letter_parser[26])(va_list, const char*, int*, t_flag*);
 void		larg_flag_before(t_flag *flag);
 void		larg_flag_after(t_flag *flag);
-size_t			ft_strlen(char *str);
+size_t		ft_strlen(char *str);
 char		*ft_strdup(const char *str);
 char		*ft_getnbr_base(intmax_t nbr, char *base);
 char		*ft_getnbr_base_ui(uintmax_t nbr, char *base);
@@ -75,7 +79,7 @@ void		ft_putuint(uintmax_t nb, t_flag *flag);
 void		ft_putlong(long nb, t_flag *flag);
 void		ft_putdouble(double nb, int index, t_flag *flag);
 int			arg_parser(va_list argp, const char *arg, int *index, t_flag *flag);
-void		init_struct(t_flag *flag);
+int			init_struct(t_flag *flag);
 char		*ft_itoa(int nb);
 char		*ft_itoa_double(double nb, int index);
 int			flag_parser(va_list argp, const char *arg, int *index, t_flag *flag);
@@ -105,5 +109,6 @@ int			w(va_list argp, const char *arg, int *index, t_flag *flag);
 int			x(va_list argp, const char *arg, int *index, t_flag *flag);
 int			y(va_list argp, const char *arg, int *index, t_flag *flag);
 int			z(va_list argp, const char *arg, int *index, t_flag *flag);
+int			(*g_letter_parser[26])(va_list, const char*, int*, t_flag*);
 
 #endif
