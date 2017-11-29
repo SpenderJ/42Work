@@ -15,7 +15,6 @@
 
 void	ft_putchar(char c, t_flag *flag)
 {
-	unsigned char	d;
 	size_t			i;
 	char			*tmp;
 
@@ -23,7 +22,6 @@ void	ft_putchar(char c, t_flag *flag)
 	printf("#Debug Putchar entree = [%s] + [%c]\n", flag->printed, c);
 	if ((tmp = malloc(sizeof(char) * (i + 2))) == NULL)
 		return ;
-	d = (unsigned char)c;
 	printf("Ouille\n");
 	ft_strcat(tmp, flag->printed);
 	free(flag->printed);

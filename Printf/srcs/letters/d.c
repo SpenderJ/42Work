@@ -18,17 +18,17 @@ void		larg_flag_before_d(t_flag *flag)
 	int		i;
 
 	i = -1;
-	flag->space && flag->nbr > 0 ? flag->larg -= 1 : (int)flag;
-	flag->pos && flag->nbr > 0 ? flag->larg -= 1 : (int)flag;
+	flag->space && flag->nbr > 0 ? flag->larg -= 1 : flag->larg;
+	flag->pos && flag->nbr > 0 ? flag->larg -= 1 : flag->larg;
 	if ((str = malloc(sizeof(char) * (flag->larg > flag->point ? flag->larg + flag->tilt : flag->point))) == NULL)
 		return ;
 	flag->zero ? (flag->c = '0') : (flag->c = ' ');
-	flag->space && flag->nbr > 0 ? (str[++i] = ' ') : (int)flag;
+	flag->space && flag->nbr > 0 ? (str[++i] = ' ') : flag->larg;
 	if (!flag->neg && !flag->zero && flag->larg > flag->point && flag->nbr > 0 && flag->larg  > flag->tilt)
 		while (flag->larg-- > (flag->point > flag->tilt ? flag->point : flag->tilt))
 			str[++i] = flag->c;
-	flag->nbr < 0 ? str[++i] = '-' : (int)flag;
-	flag->nbr >= 0 && flag->pos ? str[++i] = '+' : (int)flag;
+	flag->nbr < 0 ? str[++i] = '-' : flag->larg;
+	flag->nbr >= 0 && flag->pos ? str[++i] = '+' : flag->larg;
 	larg_flag_before_d2(flag, str, i);
 }
 
@@ -75,10 +75,9 @@ int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	intmax_t		tmp;
 	int				c;
-	int				neg;
 
-	arg[0] == 'D' ? flag->l = 1 : (int)flag;
-	neg = ((int)index & 0);
+	arg[0] == 'D' ? flag->l = 1 : flag->l;
+	(void)index;
 	c = -1;
 	length_modif_di(argp, flag, &tmp);
 	flag->tilt = int_len(tmp);
