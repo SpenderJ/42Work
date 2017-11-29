@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/28 17:02:47 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 08:26:32 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	larg_flag_before_d(t_flag *flag)
 	flag->space && flag->nbr >= 0 && !flag->pos && flag->zero ?
 	ft_putchar(' ', flag) : flag->c;
 	flag->zero && !flag->comma ? (flag->c = '0') : flag->c;
-	flag->zero && flag->comma ? (flag->point--) && (flag->larg--) : flag->c;
+	flag->zero && flag->comma ? (flag->point) && (flag->larg) : flag->c;
 	flag->comma ? flag->larg += flag->tilt : flag->c;
 	flag->comma && !flag->zero && flag->nbr < 0 ? ft_putchar('-', flag) : c;
 	while (flag->larg-- > flag->point)
@@ -138,8 +138,6 @@ int			int_len2(uintmax_t nbr)
 		return (3);
 	else if (nbr >= 10)
 		return (2);
-	else if (nbr > 1)
-		return (1);
 	else
-		return (0);
+		return (1);
 }

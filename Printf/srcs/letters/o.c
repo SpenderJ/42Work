@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 08:06:59 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 08:49:59 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@ int		o(va_list argp, const char *arg, int *index, t_flag *flag)
 	tmp = ft_getnbr_base_ui(sent, "01234567");
 	if (tmp[0] != '0' && tmp[1] != '\0')
 		flag->larg = flag->larg - ft_strlen(tmp);
-	if (flag->diez != 0)
+	if (flag->diez)
 		--flag->larg;
 	larg_flag_before(flag);
-	if (flag->diez != 0 && tmp[0] != '0')
+	if (flag->diez && tmp[0] != '0')
 		ft_putchar('0', flag);
-	if (ft_strlen(tmp) < flag->point && flag->comma != 0)
+	if (ft_strlen(tmp) < flag->point && flag->comma)
 		while (ft_strlen(tmp) < flag->point--)
 		{
 			ft_putchar('0', flag);
 			--flag->larg;
 		}
-	ft_putstr(tmp, flag);
+	ft_putoctal(tmp, flag);
 	free (tmp);
 	larg_flag_after(flag);
 	return (0);
