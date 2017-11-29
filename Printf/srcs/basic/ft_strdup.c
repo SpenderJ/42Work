@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:26:35 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 20:32:28 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 21:35:56 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,15 @@ char	*ft_strdup(const char *src)
 	int		i;
 
 	i = 0;
-	if (src == NULL)
+	if (!src)
 		return (NULL);
 	while (src[i] != '\0')
 		++i;
 	if ((str = malloc(sizeof(char) * (i + 2))) == NULL)
 		return (NULL);
-	i = 0;
-	printf("a %s\n\n", src);
-	while (src[i] != '\0')
-	{
-//		printf("wut\n");
+	i = -1;
+	while (src[++i] != '\0')
 		str[i] = src[i];
-		++i;
-	}
 	str[i] = '\0';
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:29:00 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 11:25:05 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 21:36:41 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strncat(char *dest, char *src, size_t nb)
 	if (dest)
 		while (dest[++a] != '\0')
 			;
-	if (a == -1)
+	if ((int)a == -1)
 		++a;
 	if (src)
 		while (src[++i] != '\0' && i < nb)

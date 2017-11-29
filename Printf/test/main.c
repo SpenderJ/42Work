@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:47:34 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 19:34:47 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 21:48:41 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 int		main(int argc, char **argv)
 {
 	int		i2;
+	int		i1;
 
-	i2 = ft_printf("%e\n", 1.42);
+	i2 = printf("%10x\n", 42);
+	i1 = ft_printf("%10x\n", 42);
 	return (0);
 }
