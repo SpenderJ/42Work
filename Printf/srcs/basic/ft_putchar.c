@@ -24,6 +24,7 @@ void	ft_putchar(char c, t_flag *flag)
 	if ((tmp = malloc(sizeof(char) * (i + 2))) == NULL)
 		return ;
 	d = (unsigned char)c;
+	printf("Ouille\n");
 	ft_strcat(tmp, flag->printed);
 	free(flag->printed);
 	tmp[i] = (unsigned char)c;

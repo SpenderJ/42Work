@@ -19,8 +19,14 @@ char	*ft_strcat(char *dest, char *src)
 
 	i = -1;
 	a = -1;
+	printf("a\n");
 	if (dest)
+	{
+		printf("Hummm\n");
 		while (dest[++a] != '\0')
+			;
+	}
+	printf("aok\n");
 	if (a == -1)
 		++a;
 	if (src)

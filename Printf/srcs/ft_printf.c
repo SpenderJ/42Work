@@ -21,7 +21,7 @@ int		ft_printf(const char *restrict list, ...)
 	i = -1;
 	va_start(argp, list);
 	if ((flag = malloc(sizeof(t_flag))) == NULL ||
-			((flag->printed = ft_strnew(2)) == NULL))
+			((flag->printed = ft_strdup("")) == NULL))
 		return (0);
 	flag->charn = 0;
 	while (list[++i] != '\0')
