@@ -6,13 +6,14 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 08:49:40 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 10:35:17 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define LLNEGMAX -9223372036854775807
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
@@ -52,7 +53,7 @@ void		length_modif_di(va_list argp, t_flag *flag, intmax_t *tmp);
 int			(*letter_parser[26])(va_list, const char*, int*, t_flag*);
 void		larg_flag_before(t_flag *flag);
 void		larg_flag_after(t_flag *flag);
-int			ft_strlen(char *str);
+size_t			ft_strlen(char *str);
 char		*ft_strdup(const char *str);
 char		*ft_getnbr_base(intmax_t nbr, char *base);
 char		*ft_getnbr_base_ui(uintmax_t nbr, char *base);

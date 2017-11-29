@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 08:26:32 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/29 10:26:52 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,9 @@ static void	larg_flag_before_d(t_flag *flag)
 	flag->space && flag->nbr >= 0 && !flag->pos && flag->zero ?
 	ft_putchar(' ', flag) : flag->c;
 	flag->zero && !flag->comma ? (flag->c = '0') : flag->c;
-	flag->zero && flag->comma ? (flag->point) && (flag->larg) : flag->c;
-	flag->comma ? flag->larg += flag->tilt : flag->c;
-	flag->comma && !flag->zero && flag->nbr < 0 ? ft_putchar('-', flag) : c;
-	while (flag->larg-- > flag->point)
+	flag->larg ? flag->larg += flag->tilt : flag->c;
+	flag->comma && flag->zero && flag->nbr < 0 ? ft_putchar('-', flag) : c;
+	while (flag->larg-- > (flag->point > flag->tilt ? flag->point : flag->tilt))
 		ft_putchar(flag->c, flag);
 	flag->pos && flag->nbr >= 0 && !flag->zero ? ft_putchar('+', flag)
 	: flag->c;
@@ -72,7 +71,7 @@ int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 	neg = ((int)index & 0);
 	length_modif_di(argp, flag, &tmp);
 	flag->comma && flag->point > flag->larg ? flag->larg = flag->point :
-	flag->larg;
+	flag->point;
 	(c = 1) == 1 && flag->pos == 1 && tmp >= 0 ? --flag->larg : flag->larg;
 	flag->space && tmp >= 0 ? --flag->larg : flag->larg;
 	tmp < 0 ? --flag->larg : (neg = 84);
@@ -80,11 +79,10 @@ int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 	flag->larg -= int_len(tmp);
 	flag->nbr = tmp;
 	tmp < 0 && flag->zero ? ft_putchar('-', flag) : (neg = 9);
-	tmp < 0 && tmp > -9223372036854775807 ? tmp *= -1 : (neg = 128);
+	tmp < 0 && tmp > LLNEGMAX ? tmp *= -1 : (neg = 128);
 	larg_flag_before_d(flag);
 	neg != 128 && !flag->zero && !flag->comma ? ft_putchar('-', flag) : neg;
-	tmp < -9223372036854775807 ? ft_putstr("-9223372036854775808", flag) :
-	ft_putint(tmp, flag);
+	tmp < LLNEGMAX ? ft_putstr("LLNEGMAX", flag) : ft_putint(tmp, flag);
 	larg_flag_after_d(flag);
 	return (0);
 }
