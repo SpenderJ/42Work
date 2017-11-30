@@ -29,6 +29,7 @@ void	ft_putstr(char const *s, t_flag *flag)
 		return ;
 	if ((tmp = malloc(sizeof(char) * (i + c + 2))) == NULL)
 		return ;
+	tmp[0] = '\0';
 	ft_strcat(tmp, flag->printed);
 	ft_strcat(tmp, (char *)s);
 	flag->charn = flag->charn + i;
@@ -53,6 +54,7 @@ void	ft_putoctal(char const *s, t_flag *flag)
 		return ;
 	if ((tmp = malloc(sizeof(char) * (i + c))) == NULL)
 		return ;
+	tmp[0] = '\0';
 	ft_strcat(tmp, flag->printed);
 	ft_strcat(tmp, (char *)s);
 	flag->charn = flag->charn + i;
