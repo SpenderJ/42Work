@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 17:23:41 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 21:36:30 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,15 @@ int		p(va_list argp, const char *arg, int *index, t_flag *flag)
 	(void)index;
 	stack = va_arg(argp, void*);
 	tmp = (unsigned long int)stack;
-	flag->larg = flag->larg - 2;
-	str = ft_getnbr_base_ui(tmp, "01234567889abcdef");
-	flag->larg -= ft_strlen(str);
+	str = ft_getnbr_base_ui(tmp, "0123456789abcdef");
+	if (str[0] == '0' && flag->comma)
+		flag->point += 1;
+	flag->tilt = ft_strlen(str);
+	flag->larg -= flag->tilt;
+	flag->point -= flag->tilt;
+	flag->point < 0 ? flag->point = 0 : flag->point;
+	flag->larg -= flag->point;
+	flag->larg -= 2;
 	larg_flag_before(flag);
 	ft_print_memory(stack, 1, flag);
 	larg_flag_after(flag);

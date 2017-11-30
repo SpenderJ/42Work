@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_memory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alucas- <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/06 09:17:45 by alucas-           #+#    #+#             */
-/*   Updated: 2017/11/28 15:12:37 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/30 21:07:59 by juspende          #+#    #+#             */
+/*   Updated: 2017/11/30 21:35:22 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	ft_putnbr_base_n(long nbr, char *base, int n, t_flag *flag)
 	int i;
 
 	i = 0;
+	if (nbr == 0)
+		return (0);
 	if (nbr < 0)
 	{
 		++i;
@@ -84,10 +86,16 @@ void		*ft_print_memory(void *addr, unsigned int size, t_flag *flag)
 	int		len;
 
 	i = 0;
-	ft_putstr("0x", flag);
-	if (flag->point != 0)
+	ft_putchar('0', flag);
+	ft_putchar('x', flag);
+	if (flag->point > 0)
 		while (flag->point-- > 0)
 			ft_putchar('0', flag);
+	if ((long)(char *)addr == 0 && !flag->comma)
+	{
+		ft_putchar('0', flag);
+		return (addr);
+	}
 	while (i < (int)size)
 	{
 		len = size - i;

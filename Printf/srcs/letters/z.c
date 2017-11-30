@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 17:28:08 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 21:43:21 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		z(va_list argp, const char *arg, int *index, t_flag *flag)
 	if (arg[0] == 'Z')
 	{
 		if (flag->larg)
-			*index = *index + int_len(flag->larg) - 1;
+			*index = *index + int_len(flag->larg) + (flag->neg ? -1 : 1);
 		flag->larg -= 1;
 		larg_flag_before(flag);
 		ft_putchar(arg[0], flag);
