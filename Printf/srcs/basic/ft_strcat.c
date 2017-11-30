@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:28:53 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 08:45:25 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 16:41:34 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ char	*ft_strcat(char *dest, char *src)
 		++ptr;
 	while ((*ptr++ = *src++))
 		;
+	*ptr = '\0';
 	return (dest);
 }

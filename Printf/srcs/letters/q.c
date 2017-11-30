@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 08:21:16 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 17:23:49 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int		q(va_list argp, const char *arg, int *index, t_flag *flag)
 	(void)index;
 	(void)argp;
 	(void)flag;
-	*index = *index + int_len(flag->larg);
+	if (flag->larg)
+		*index = *index + int_len(flag->larg) - 1;
 	flag->larg -= 1;
 	larg_flag_before(flag);
 	ft_putchar(arg[0], flag);

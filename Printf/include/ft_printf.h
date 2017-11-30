@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 10:37:13 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 14:57:29 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int			ft_uintstr(char *dst, uintmax_t n, int base);
 char		*ft_strcat(char *dest, char *src);
 char		*ft_strncat(char *dest, char *src, size_t len);
 int			ft_strchr(const char *str, int c);
-void		ft_putnstr(char *str, t_flag *flag, int *c);
+void		ft_putnstr(void *str, t_flag *flag, int *c);
 int			free_main(t_flag *flag, int returned);
 void		free_tab(char **tab);
 int			int_len(intmax_t nbr);

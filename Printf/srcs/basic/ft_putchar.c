@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:21:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 09:54:54 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 17:07:40 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,22 @@ void	ft_putchar(char c, t_flag *flag)
 {
 	size_t			i;
 	char			*tmp;
-	unsigned char	d;
 
-	i = ft_strlen(flag->printed);
-	if ((tmp = malloc(sizeof(char) * (i + 3))) == NULL)
+	i = flag->charn;
+	if ((tmp = malloc(sizeof(char) * (i + 2))) == NULL)
 		return ;
 	tmp[0] = '\0';
 	ft_strcat(tmp, flag->printed);
 	free(flag->printed);
-	i = ft_strlen(tmp);
-	d = (unsigned char)c;
-	tmp[i] = d;
+	i = flag->charn;
+	tmp[i] = c;
 	tmp[i + 1] = '\0';
 	flag->printed = ft_strdup(tmp);
 	free(tmp);
 	flag->charn += 1;
-	return ;
 }
 
-void	ft_putnstr(char *str, t_flag *flag, int *c)
+void	ft_putnstr(void *str, t_flag *flag, int *c)
 {
 	size_t	i;
 	size_t	n;

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 11:57:23 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 20:05:39 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,28 @@ void		larg_flag_before_d(t_flag *flag)
 
 	i = -1;
 	flag->nbr < 0 ? flag->larg -= 1 : flag->larg;
-	flag->space && flag->nbr > 0 && !flag->pos ? flag->larg -= 1 : flag->larg;
-	flag->pos && flag->nbr > 0 ? flag->larg -= 1 : flag->larg;
-	flag->zero ? flag->larg -= 1 : flag->larg;
-	if ((str = malloc(sizeof(char) * (flag->larg + flag->tilt + 2 + flag->point + 2))) == NULL)
+	flag->comma ? flag->zero = 0 : flag->zero;
+	flag->pos ? flag->larg -= 1 : flag->larg;
+	flag->space && flag->nbr >= 0 && !flag->pos ? flag->larg -= 1 : flag->larg;
+	flag->space && flag->nbr >= 0 && flag->zero ? ft_putchar(' ', flag) : i;
+	flag->pos && flag->nbr < 0 ? flag->larg += 1 : flag->larg;
+	flag->point -= flag->tilt;
+	flag->point < 0 ? flag->point = 0 : flag->point;
+	flag->larg -= flag->point;
+	if ((str = malloc(sizeof(char) * (flag->larg + flag->tilt + flag->point + 30))) == NULL)
 		return ;
 	str[0] = '\0';
 	flag->zero && !flag->neg ? (flag->c = '0') : (flag->c = ' ');
 	flag->space && flag->nbr > 0 && !flag->pos ? (str[++i] = ' ') : flag->larg;
 	flag->nbr < 0 && flag->c == '0' ? str[++i] = '-' : flag->c;
 	flag->nbr >= 0 && flag->pos && flag->c != ' ' ? str[++i] = '+' : flag->c;
-	if (!flag->neg && flag->larg > flag->point && flag->nbr > 0 && flag->larg > flag->tilt)
-		while (flag->larg-- > (flag->point >= flag->tilt ? flag->point : flag->tilt))
-			str[++i] = flag->c;
+	while (flag->larg-- > 0 && !flag->neg)
+		str[++i] = flag->c;
+	str[++i] = '\0';
+	--i;
 	larg_flag_before_d2(flag, str, i);
 }
+
 
 void		larg_flag_before_d2(t_flag *flag, char *str, int i)
 {
@@ -45,22 +52,20 @@ void		larg_flag_before_d2(t_flag *flag, char *str, int i)
 		if (flag->nbr < 0)
 			str[++i] = '-';
 		flag->nbr >= 0 && flag->pos ? str[++i] = '+' : flag->c;
-		while (flag->point-- > flag->tilt)
+		while (flag->point-- > 0)
 			str[++i] = '0';
 		str[++i] = '\0';
 		ft_putnstr(str, flag, &c);
 		flag->larg += flag->tilt;
 		return ;
 	}
-	flag->larg += flag->tilt;
-	if (flag->larg > flag->point && flag->larg > flag->tilt)
-		while (flag->larg >= (flag->point > flag->tilt ? flag->point : flag->tilt))
-			str[++i] = flag->c;
+	while (flag->larg-- > 0)
+		str[++i] = flag->c;
 	flag->nbr < 0 && flag->c == ' ' ? str[++i] = '-' : flag->larg;
-	flag->nbr >= 0 && flag->pos && flag->c == ' ' ? str[++i] = '+' : flag->larg;
-	if (flag->point > flag->tilt)
-		while (flag->point-- > flag->tilt)
-			str[++i] = '0';
+	flag->nbr >= 0 && flag->pos && flag->c == ' ' ? str[++i] = '+' :
+		flag->larg;
+	while (flag->point-- > 0)
+		str[++i] = '0';
 	str[++i] = '\0';
 	ft_putnstr(str, flag, &c);
 }
@@ -98,8 +103,8 @@ int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 	flag->tilt = int_len(tmp);
 	flag->larg -= int_len(tmp);
 	flag->nbr = tmp;
-	if (flag->comma && !flag->point && !flag->nbr)
-		b = 1;
+	if (flag->comma && !flag->point && !flag->nbr && (b = 1))
+		flag->larg += 1;
 	larg_flag_before_d(flag);
 	if (tmp < 0)
 		ptr = -tmp;
