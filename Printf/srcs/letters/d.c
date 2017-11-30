@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 21:45:29 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 08:58:11 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void		larg_flag_before_d(t_flag *flag)
 	i = -1;
 	flag->space && flag->nbr > 0 ? flag->larg -= 1 : flag->larg;
 	flag->pos && flag->nbr > 0 ? flag->larg -= 1 : flag->larg;
-	if ((str = malloc(sizeof(char) * (flag->larg > flag->point ? flag->larg + flag->tilt : flag->point))) == NULL)
+	if ((str = malloc(sizeof(char) * (flag->larg > flag->point ? flag->larg + flag->tilt + 2 : flag->point + 2))) == NULL)
 		return ;
 	flag->zero ? (flag->c = '0') : (flag->c = ' ');
 	flag->space && flag->nbr > 0 ? (str[++i] = ' ') : flag->larg;
@@ -38,13 +38,16 @@ void		larg_flag_before_d2(t_flag *flag, char *str, int i)
 
 	c = -1;
 	if (flag->neg && flag->point > flag->tilt)
-		while (flag->point-- > flag->tilt)
+	{
+		while (flag->point-- >= flag->tilt)
 			str[++i] = '0';
-	flag->larg += flag->tilt;
-	if (flag->neg)
+		str[i] = '\0';
+		ft_putnstr(str, flag, &c);
 		return ;
+	}
+	flag->larg += flag->tilt;
 	if (flag->larg > flag->point && flag->larg > flag->tilt)
-		while (flag->larg-- > (flag->point > flag->tilt ? flag->point : flag->tilt))
+		while (flag->larg-- >= (flag->point > flag->tilt ? flag->point : flag->tilt))
 			str[++i] = flag->c;
 	if (flag->point >flag->tilt)
 		while (flag->point-- > flag->tilt)

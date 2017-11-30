@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:28:53 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 21:36:45 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 08:45:25 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,12 @@
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int		i;
-	int		a;
+	char	*ptr;
 
-	i = -1;
-	a = -1;
-	printf("a\n");
-	if (dest)
-	{
-		printf("Hummm\n");
-		while (dest[++a] != '\0')
-			;
-	}
-	printf("aok\n");
-	if (a == -1)
-		++a;
-	if (src)
-		while (src[++i] != '\0')
-			dest[a++] = src[i];
-	if (a == -1)
-		++a;
-	dest[a] = '\0';
+	ptr = dest;
+	while (*ptr)
+		++ptr;
+	while ((*ptr++ = *src++))
+		;
 	return (dest);
 }

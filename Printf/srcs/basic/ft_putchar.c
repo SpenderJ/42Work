@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:21:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 22:11:10 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 09:06:59 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,17 @@ void	ft_putchar(char c, t_flag *flag)
 	char			*tmp;
 
 	i = ft_strlen(flag->printed);
-	printf("#Debug Putchar entree = [%s] + [%c]\n", flag->printed, c);
-	if ((tmp = malloc(sizeof(char) * (i + 2))) == NULL)
+	if ((tmp = malloc(sizeof(char) * (i + 3))) == NULL)
 		return ;
-	printf("Ouille\n");
+	tmp[0] = '\0';
 	ft_strcat(tmp, flag->printed);
 	free(flag->printed);
+	i = ft_strlen(tmp);
 	tmp[i] = (unsigned char)c;
 	tmp[i + 1] = '\0';
 	flag->printed = ft_strdup(tmp);
 	free(tmp);
-	printf("#Debug Putchar sortie = [%s]\n", flag->printed);
-	flag->charn = flag->charn + 1;
+	flag->charn += 1;
 	return ;
 }
 
