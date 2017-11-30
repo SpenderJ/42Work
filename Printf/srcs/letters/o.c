@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 20:59:28 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 22:20:08 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 static void	parser_o_flags(t_flag *flag, char *tmp)
 {
-	flag->diez ? flag->larg -= 1 : flag->larg;
-	flag->point -= ft_strlen(tmp);
-	flag->larg -= ft_strlen(tmp);
+	flag->tilt = ft_strlen(tmp);
+	flag->diez ? flag->tilt += 1 : flag->larg;
+	flag->point -= flag->tilt;
+	flag->larg -= flag->tilt;
 	if (flag->point < 0)
 		flag->point = 0;
 	flag->larg -= flag->point;
@@ -33,8 +34,9 @@ int		o(va_list argp, const char *arg, int *index, t_flag *flag)
 	(void)index;
 	length_modif_uox(argp, flag, &sent);
 	tmp = ft_getnbr_base_ui(sent, "01234567");
-	if (flag->comma && !flag->point && !sent)
+	if (flag->comma && !flag->point && tmp[0] == '0')
 		b = -1;
+	b == -1 ? flag->larg += 1 : flag->larg;
 	parser_o_flags(flag, tmp);
 	larg_flag_before(flag);
 	if (flag->diez && tmp[0] != '0')
