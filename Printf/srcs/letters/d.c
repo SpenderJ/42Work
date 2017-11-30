@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 08:58:11 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 11:57:23 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,20 @@ void		larg_flag_before_d(t_flag *flag)
 	int		i;
 
 	i = -1;
-	flag->space && flag->nbr > 0 ? flag->larg -= 1 : flag->larg;
+	flag->nbr < 0 ? flag->larg -= 1 : flag->larg;
+	flag->space && flag->nbr > 0 && !flag->pos ? flag->larg -= 1 : flag->larg;
 	flag->pos && flag->nbr > 0 ? flag->larg -= 1 : flag->larg;
-	if ((str = malloc(sizeof(char) * (flag->larg > flag->point ? flag->larg + flag->tilt + 2 : flag->point + 2))) == NULL)
+	flag->zero ? flag->larg -= 1 : flag->larg;
+	if ((str = malloc(sizeof(char) * (flag->larg + flag->tilt + 2 + flag->point + 2))) == NULL)
 		return ;
-	flag->zero ? (flag->c = '0') : (flag->c = ' ');
-	flag->space && flag->nbr > 0 ? (str[++i] = ' ') : flag->larg;
-	if (!flag->neg && !flag->zero && flag->larg > flag->point && flag->nbr > 0 && flag->larg  > flag->tilt)
-		while (flag->larg-- > (flag->point > flag->tilt ? flag->point : flag->tilt))
+	str[0] = '\0';
+	flag->zero && !flag->neg ? (flag->c = '0') : (flag->c = ' ');
+	flag->space && flag->nbr > 0 && !flag->pos ? (str[++i] = ' ') : flag->larg;
+	flag->nbr < 0 && flag->c == '0' ? str[++i] = '-' : flag->c;
+	flag->nbr >= 0 && flag->pos && flag->c != ' ' ? str[++i] = '+' : flag->c;
+	if (!flag->neg && flag->larg > flag->point && flag->nbr > 0 && flag->larg > flag->tilt)
+		while (flag->larg-- > (flag->point >= flag->tilt ? flag->point : flag->tilt))
 			str[++i] = flag->c;
-	flag->nbr < 0 ? str[++i] = '-' : flag->larg;
-	flag->nbr >= 0 && flag->pos ? str[++i] = '+' : flag->larg;
 	larg_flag_before_d2(flag, str, i);
 }
 
@@ -37,19 +40,25 @@ void		larg_flag_before_d2(t_flag *flag, char *str, int i)
 	int		c;
 
 	c = -1;
-	if (flag->neg && flag->point > flag->tilt)
+	if (flag->neg)
 	{
-		while (flag->point-- >= flag->tilt)
+		if (flag->nbr < 0)
+			str[++i] = '-';
+		flag->nbr >= 0 && flag->pos ? str[++i] = '+' : flag->c;
+		while (flag->point-- > flag->tilt)
 			str[++i] = '0';
-		str[i] = '\0';
+		str[++i] = '\0';
 		ft_putnstr(str, flag, &c);
+		flag->larg += flag->tilt;
 		return ;
 	}
 	flag->larg += flag->tilt;
 	if (flag->larg > flag->point && flag->larg > flag->tilt)
-		while (flag->larg-- >= (flag->point > flag->tilt ? flag->point : flag->tilt))
+		while (flag->larg >= (flag->point > flag->tilt ? flag->point : flag->tilt))
 			str[++i] = flag->c;
-	if (flag->point >flag->tilt)
+	flag->nbr < 0 && flag->c == ' ' ? str[++i] = '-' : flag->larg;
+	flag->nbr >= 0 && flag->pos && flag->c == ' ' ? str[++i] = '+' : flag->larg;
+	if (flag->point > flag->tilt)
 		while (flag->point-- > flag->tilt)
 			str[++i] = '0';
 	str[++i] = '\0';
@@ -68,7 +77,7 @@ void		larg_flag_after_d(t_flag *flag)
 		return ;
 	if ((str = malloc(sizeof(char) * (flag->larg + 1))) == NULL)
 		return ;
-	while (flag->larg-- > (flag->tilt > flag->point ? flag->tilt : flag->point))
+	while (flag->larg-- >= (flag->tilt > flag->point ? flag->tilt : flag->point))
 		str[++i] = flag->c;
 	str[++i] = '\0';
 	ft_putnstr(str, flag, &c);
@@ -78,7 +87,10 @@ int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	intmax_t		tmp;
 	int				c;
+	uintmax_t		ptr;
+	int				b;
 
+	b = 0;
 	arg[0] == 'D' ? flag->l = 1 : flag->l;
 	(void)index;
 	c = -1;
@@ -86,8 +98,15 @@ int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 	flag->tilt = int_len(tmp);
 	flag->larg -= int_len(tmp);
 	flag->nbr = tmp;
+	if (flag->comma && !flag->point && !flag->nbr)
+		b = 1;
 	larg_flag_before_d(flag);
-	ft_putnstr(ft_itoa(tmp, 10), flag, &c);
+	if (tmp < 0)
+		ptr = -tmp;
+	else
+		ptr = tmp;
+	if (b != 1)
+		ft_putnstr(ft_itoa(ptr, 10), flag, &c);
 	larg_flag_after_d(flag);
 	return (0);
 }

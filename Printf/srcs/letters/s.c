@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 09:02:56 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 09:40:41 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int		s(va_list argp, const char *arg, int *index, t_flag *flag)
 	(void)arg;
 	(void)index;
 	(void)flag;
-	tmp = ft_strdup(va_arg(argp, char*));
+	tmp = va_arg(argp, char*);
+	if (!tmp)
+		tmp = ft_strdup("(null)");
 	if (flag->larg != 0 && (int)ft_strlen(tmp) > flag->larg)
 		tmp[flag->larg] = '\0';
 	if (flag->comma != 0 && (int)ft_strlen(tmp) > flag->point)

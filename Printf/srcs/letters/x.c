@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 22:04:10 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 09:26:46 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int		x(va_list argp, const char *arg, int *index, t_flag *flag)
 		fnl = ft_getnbr_base_ui(tmp, "0123456789ABCDEF");
 	else
 		fnl = ft_getnbr_base_ui(tmp, "0123456789abcdef");
-	printf("fnl = %s\n", fnl);
 	if (fnl[0] != '0')
 		flag->larg = flag->larg - ft_strlen(fnl);
 	(flag->diez != 0 ? flag->larg = flag->larg - 2 : flag->larg);

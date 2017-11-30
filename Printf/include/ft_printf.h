@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 17:54:42 by juspende         ###   ########.fr       */
+/*   Updated: 2017/11/30 10:37:13 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,26 @@
 
 typedef struct		t_flag
 {
-	int		neg;
-	int		pos;
-	int		space;
-	int		zero;
-	int		diez;
-	int		comma;
-	int		point;
-	int		larg;
-	int		charn;
-	int		h;
-	int		hh;
-	int		ll;
-	int		l;
-	int		j;
-	int		z;
-	int		tilt;
-	int		nbr;
-	char	c;
-	int		cpy;
-	char	*printed;
+	int			neg;
+	int			pos;
+	int			space;
+	int			zero;
+	int			diez;
+	int			comma;
+	int			point;
+	int			larg;
+	int			charn;
+	int			h;
+	int			hh;
+	int			ll;
+	int			l;
+	int			j;
+	int			z;
+	int			tilt;
+	intmax_t	nbr;
+	char		c;
+	int			cpy;
+	char		*printed;
 }					t_flag;
 
 void		larg_flag_after_d(t_flag *flag);
