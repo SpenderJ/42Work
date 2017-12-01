@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 17:22:58 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/01 12:14:03 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ int		c(va_list argp, const char *arg, int *index, t_flag *flag)
 		free (flag->printed);
 		flag->printed = ft_strnew(2);
 	}
-	else
+	else if(arg[0] == 'C' || flag->l)
 		ft_putchar(i, flag);
+	else
+		ft_printchar(i, flag);
 	larg_flag_after(flag);
 	return (0);
 }

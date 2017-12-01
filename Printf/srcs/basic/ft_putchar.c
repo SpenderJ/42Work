@@ -6,14 +6,14 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:21:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 17:07:40 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/01 12:06:02 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "../../include/ft_printf.h"
 
-void	ft_putchar(char c, t_flag *flag)
+void	ft_printchar(char c, t_flag *flag)
 {
 	size_t			i;
 	char			*tmp;
@@ -52,4 +52,28 @@ void	ft_putnstr(void *str, t_flag *flag, int *c)
 	if (*c != -1)
 		*c +=(n - 1);
 	return ;
+}
+
+void	ft_putchar(wchar_t c, t_flag *flag)
+{
+	if (c <= 0x7F)
+		ft_printchar(c, flag);
+	else if (c <= 0x7FF)
+	{
+		ft_printchar((c >> 6) | 0xC0, flag);
+		ft_printchar((c & 0x3F) | 0x80, flag);
+	}
+	else if (c <= 0xFFFF)
+	{
+		ft_printchar((c >> 12) | 0xE0, flag);
+		ft_printchar(((c >> 6) & 0x3F) | 0x80, flag);
+		ft_printchar((c & 0x3F) | 0x80, flag);
+	}
+	else if (c <= 0x10FFFF)
+	{
+		ft_printchar((c >> 18) | 0xF0, flag);
+		ft_printchar(((c >> 12) & 0x3F) | 0x80, flag);
+		ft_printchar(((c >> 6) & 0x3F) | 0x80, flag);
+		ft_printchar((c & 0x3F) | 0x80, flag);
+	}
 }

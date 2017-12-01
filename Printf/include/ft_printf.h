@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 14:57:29 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/01 11:53:11 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ char		*ft_strnew(size_t size);
 int			ft_printf(const char *list, ...);
 void		ft_putstr(const char *str, t_flag *flag);
 void		ft_putoctal(const char *str, t_flag *flag);
-void		ft_putchar(char c, t_flag *flag);
+void		ft_putchar(wchar_t c, t_flag *flag);
+void		ft_printchar(char c, t_flag *flag);
 void		ft_putint(intmax_t n, t_flag *flag);
 void		ft_putuint(uintmax_t nb, t_flag *flag);
 void		ft_putlong(long nb, t_flag *flag);
