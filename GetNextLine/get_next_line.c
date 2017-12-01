@@ -17,7 +17,7 @@ static int			ft_check(char **buffer, char **line)
 	char			*tmp;
 
 	tmp = ft_strchr(*buffer, '\n');
-	if (tmp != NULL)
+	if (tmp)
 	{
 		*line = ft_strsub(*buffer, 0, tmp - *buffer);
 		ft_memmove(*buffer, tmp + 1, ft_strlen(tmp));
@@ -59,15 +59,16 @@ int					get_next_line(int const fd, char **line)
 	static char		*buffer[2147483647];
 	int				result;
 
-	if (!line || fd < 0)
+	if (!line || fd < 0 || fd > 255)
 		return (-1);
 	if (buffer[fd] && ft_check(&buffer[fd], line))
 		return (1);
-	if ((result = ft_read(fd, &buffer[fd], line)) != 0)
+	result = ft_read(fd, &buffer[fd], line);
+	if (result != 0)
 		return (result);
 	if (buffer[fd] == NULL || buffer[fd][0] == '\0')
 		return (0);
 	*line = buffer[fd];
-	ft_memdel((void **)&buffer[fd]);
+	buffer[fd] = NULL;
 	return (1);
 }
