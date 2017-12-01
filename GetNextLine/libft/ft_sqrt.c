@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/15 16:31:14 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/01 09:34:12 by juspende         ###   ########.fr       */
+/*   Created: 2017/07/09 09:55:14 by juspende          #+#    #+#             */
+/*   Updated: 2017/11/12 05:27:29 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <fcntl.h>
-# include "libft/libft.h"
+int		ft_sqrt(int nb)
+{
+	int	i;
+	int	res;
 
-# define BUFF_SIZE 8
-
-int					get_next_line(int const fd, char **line);
-
-#endif
+	i = 1;
+	res = 0;
+	if (nb < 0)
+		return (0);
+	while (res < nb)
+	{
+		res = i * i;
+		i = i + 1;
+	}
+	if (res > nb)
+		return (i - 1);
+	return (0);
+}

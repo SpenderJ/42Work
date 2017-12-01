@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/15 16:31:14 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/01 09:34:12 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/06 14:54:55 by juspende          #+#    #+#             */
+/*   Updated: 2017/11/09 18:07:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include <stdio.h>
+#include <string.h>
+#include "libft.h"
 
-# include <fcntl.h>
-# include "libft/libft.h"
+char		*ft_strnstr(const char *str, const char *to_find, size_t len)
+{
+	size_t		i;
 
-# define BUFF_SIZE 8
-
-int					get_next_line(int const fd, char **line);
-
-#endif
+	i = 0;
+	if (to_find[0] == '\0')
+		return ((char *)str);
+	while (str[i] != '\0' && i + ft_strlen(to_find) <= len)
+	{
+		if (ft_strncmp((char *)&str[i], (char *)to_find, ft_strlen(to_find))
+				== 0)
+			return ((char *)&str[i]);
+		i = i + 1;
+	}
+	return (NULL);
+}

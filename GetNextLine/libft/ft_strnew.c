@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/15 16:31:14 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/01 09:34:12 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/08 13:11:03 by juspende          #+#    #+#             */
+/*   Updated: 2017/11/11 19:25:49 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <fcntl.h>
-# include "libft/libft.h"
+char	*ft_strnew(size_t size)
+{
+	char	*tofill;
+	size_t	n;
 
-# define BUFF_SIZE 8
-
-int					get_next_line(int const fd, char **line);
-
-#endif
+	n = -1;
+	if ((tofill = malloc(sizeof(char) * (size + 1))) == NULL)
+		return (NULL);
+	while (++n <= size)
+		tofill[n] = '\0';
+	return (tofill);
+}

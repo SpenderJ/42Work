@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/15 16:31:03 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/16 14:37:11 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/01 09:36:50 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ static int			ft_check(char **buffer, char **line)
 	tmp = ft_strchr(*buffer, '\n');
 	if (tmp != NULL)
 	{
-	  *line = ft_strsub(*buffer, 0, tmp - *buffer);
+		*line = ft_strsub(*buffer, 0, tmp - *buffer);
 		ft_memmove(*buffer, tmp + 1, ft_strlen(tmp));
 		tmp = NULL;
 		return (1);
 	}
-	tmp = NULL;
 	return (0);
 }
 
@@ -57,10 +56,10 @@ static	int			ft_read(int fd, char **buffer, char **line)
 
 int					get_next_line(int const fd, char **line)
 {
-	static char		*buffer[256];
+	static char		*buffer[2147483647];
 	int				result;
 
-	if (!line || fd < 0 || fd > 255)
+	if (!line || fd < 0)
 		return (-1);
 	if (buffer[fd] && ft_check(&buffer[fd], line))
 		return (1);
