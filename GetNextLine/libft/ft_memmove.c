@@ -16,23 +16,13 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*t1;
-	char	*t2;
-	size_t	i;
-	char	*tmp;
+	unsigned char	*str;
 
-	i = -1;
-	t1 = (char*)src;
-	t2 = (char*)dst;
-	if ((tmp = malloc(sizeof(char) * len)) == NULL)
-		return (dst);
-	if (len <= 0)
-		return (dst);
-	while (++i < len)
-		tmp[i] = t1[i];
-	i = -1;
-	while (++i < len)
-		t2[i] = tmp[i];
-	free(tmp);
-	return (t2);
+	if (!dst || !src)
+		return (NULL);
+	str = (unsigned char*)malloc(sizeof(*str) * len);
+	ft_memcpy(str, src, len);
+	ft_memcpy(dst, str, len);
+	free(str);
+	return (dst);
 }

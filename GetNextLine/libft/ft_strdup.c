@@ -15,20 +15,21 @@
 
 char	*ft_strdup(const char *src)
 {
-	char	*str;
 	int		i;
+	char	*dup;
 
 	i = 0;
-	while (src[i] != '\0')
-		++i;
-	if ((str = malloc(sizeof(char) * (i + 1))) == NULL)
+	dup = (char *)malloc(ft_strlen(src) + 1);
+	if (dup == NULL)
 		return (NULL);
-	i = 0;
-	while (src[i] != '\0')
+	else
 	{
-		str[i] = src[i];
-		++i;
+		while (src[i])
+		{
+			dup[i] = src[i];
+			i++;
+		}
+		dup[i] = '\0';
+		return (dup);
 	}
-	str[i] = '\0';
-	return (str);
 }
