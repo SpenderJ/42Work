@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 16:53:17 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 17:06:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static int	big_c(va_list argp, const char *arg, int *index, t_flag *flag)
 		empty_buffer(flag);
 		write(1, &s[0], 1);
 		flag->charn += 1;
+		larg_flag_after_s(flag);
 		return (0);
 	}
 	if (ft_wstrlen(s[0]) == -1 && (flag->instantquit = LEAVE))
@@ -38,6 +39,7 @@ static int	big_c(va_list argp, const char *arg, int *index, t_flag *flag)
 	while (s && s[++i])
 		ft_putchar_s(s[i], flag);
 	larg_flag_after_s(flag);
+	free(s);
 	return (0);
 }
 
@@ -50,6 +52,7 @@ int		c(va_list argp, const char *arg, int *index, t_flag *flag)
 		return (big_c(argp, arg, index, flag));
 	larg_flag_before(flag);
 	i = va_arg(argp, int);
+	empty_buffer(flag);
 	if (i == 0)
 	{
 		write(1, flag->printed, flag->charn);
@@ -57,11 +60,14 @@ int		c(va_list argp, const char *arg, int *index, t_flag *flag)
 		flag->charn += 1;
 		free (flag->printed);
 		flag->printed = ft_strnew(2);
+		larg_flag_after(flag);
+		return (0);
 	}
 	else if(arg[0] == 'C' || flag->l)
-		ft_printchar(i, flag);
+		ft_printwchar(i, flag);
 	else
-		ft_printchar(i, flag);
+		ft_printwchar(i, flag);
+	flag->charn += 1;
 	larg_flag_after(flag);
 	return (0);
 }
