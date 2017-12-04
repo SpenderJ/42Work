@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:23:13 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 17:07:56 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 08:38:23 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,13 @@ void	ft_putoctal(char const *s, t_flag *flag)
 	free(flag->printed);
 	flag->printed = ft_strdup(tmp);
 	free(tmp);
+}
+
+void	ft_puts(char *str, t_flag *flag)
+{
+	empty_buffer(flag);
+	if (!str)
+		return ;
+	write(1, str, ft_strlen(str));
+	flag->charn += ft_strlen(str);
 }

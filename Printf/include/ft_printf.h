@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/01 11:53:11 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 08:49:09 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define LIBFT_H
 
 # define LLNEGMAX -9223372036854775807
+# define LEAVE -1
 
+# include <wchar.h>
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
@@ -44,8 +46,16 @@ typedef struct		t_flag
 	char		c;
 	int			cpy;
 	char		*printed;
+	int			instantquit;
 }					t_flag;
 
+void		ft_putchar_s(wchar_t c, t_flag *flag);
+void		ft_puts(char *str, t_flag *flag);
+void		larg_flag_before_s(t_flag *flag);
+void		larg_flag_after_s(t_flag *flag);
+void		empty_buffer(t_flag *flag);
+void		ft_putwchar(char c, t_flag *flag);
+int			ft_wstrlen(wint_t c);
 void		larg_flag_after_d(t_flag *flag);
 void		larg_flag_before_d2(t_flag *flag, char *str, int i);
 void		larg_flag_before_d(t_flag *flag);
@@ -81,6 +91,7 @@ void		ft_putstr(const char *str, t_flag *flag);
 void		ft_putoctal(const char *str, t_flag *flag);
 void		ft_putchar(wchar_t c, t_flag *flag);
 void		ft_printchar(char c, t_flag *flag);
+void		ft_printwchar(char c, t_flag *flag);
 void		ft_putint(intmax_t n, t_flag *flag);
 void		ft_putuint(uintmax_t nb, t_flag *flag);
 void		ft_putlong(long nb, t_flag *flag);

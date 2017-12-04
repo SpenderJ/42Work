@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:21:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/01 12:06:02 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 08:49:11 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,26 +54,57 @@ void	ft_putnstr(void *str, t_flag *flag, int *c)
 	return ;
 }
 
+void	ft_printwchar(char c, t_flag *flag)
+{
+	empty_buffer(flag);
+	write(1, &c, 1);
+	//	flag->charn += 1;
+}
+
 void	ft_putchar(wchar_t c, t_flag *flag)
 {
 	if (c <= 0x7F)
 		ft_printchar(c, flag);
 	else if (c <= 0x7FF)
 	{
-		ft_printchar((c >> 6) | 0xC0, flag);
-		ft_printchar((c & 0x3F) | 0x80, flag);
+		ft_printwchar((c >> 6) | 0xC0, flag);
+		ft_printwchar((c & 0x3F) | 0x80, flag);
 	}
 	else if (c <= 0xFFFF)
 	{
-		ft_printchar((c >> 12) | 0xE0, flag);
-		ft_printchar(((c >> 6) & 0x3F) | 0x80, flag);
-		ft_printchar((c & 0x3F) | 0x80, flag);
+		ft_printwchar((c >> 12) | 0xE0, flag);
+		ft_printwchar(((c >> 6) & 0x3F) | 0x80, flag);
+		ft_printwchar((c & 0x3F) | 0x80, flag);
 	}
 	else if (c <= 0x10FFFF)
 	{
-		ft_printchar((c >> 18) | 0xF0, flag);
-		ft_printchar(((c >> 12) & 0x3F) | 0x80, flag);
-		ft_printchar(((c >> 6) & 0x3F) | 0x80, flag);
-		ft_printchar((c & 0x3F) | 0x80, flag);
+		ft_printwchar((c >> 18) | 0xF0, flag);
+		ft_printwchar(((c >> 12) & 0x3F) | 0x80, flag);
+		ft_printwchar(((c >> 6) & 0x3F) | 0x80, flag);
+		ft_printwchar((c & 0x3F) | 0x80, flag);
+	}
+}
+
+void	ft_putchar_s(wchar_t c, t_flag *flag)
+{
+	if (c <= 0x7F)
+		ft_printwchar(c, flag);
+	else if (c <= 0x7FF)
+	{
+		ft_printwchar((c >> 6) | 0xC0, flag);
+		ft_printwchar((c & 0x3F) | 0x80, flag);
+	}
+	else if (c <= 0xFFFF)
+	{
+		ft_printwchar((c >> 12) | 0xE0, flag);
+		ft_printwchar(((c >> 6) & 0x3F) | 0x80, flag);
+		ft_printwchar((c & 0x3F) | 0x80, flag);
+	}
+	else if (c <= 0x10FFFF)
+	{
+		ft_printwchar((c >> 18) | 0xF0, flag);
+		ft_printwchar(((c >> 12) & 0x3F) | 0x80, flag);
+		ft_printwchar(((c >> 6) & 0x3F) | 0x80, flag);
+		ft_printwchar((c & 0x3F) | 0x80, flag);
 	}
 }

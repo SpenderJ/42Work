@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:25:53 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/29 13:53:24 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/03 16:52:47 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,18 @@ size_t		ft_strlen(char *str)
 		result += 4;
 		++i;
 	}
+}
+
+int		ft_wstrlen(wint_t c)
+{
+	if (c <= 0x7F)
+		return (1);
+	else if (c <= 0x7FF)
+		return (MB_CUR_MAX < 2 ? -1 : 2);
+	else if (c <= 0xFFFF)
+		return (MB_CUR_MAX < 3 ? -1 : 3);
+	else if (c <= 0x10FFFF)
+		return (MB_CUR_MAX < 4 ? -1 : 4);
+	else
+		return (-1);
 }
