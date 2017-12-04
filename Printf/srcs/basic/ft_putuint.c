@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 15:06:32 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/28 11:44:14 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 14:52:25 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@ void	ft_putuint(uintmax_t nb, t_flag *flag)
 		ft_putuint(i % 10, flag);
 	}
 	else
-		ft_putchar(i + '0', flag);
+	{
+		flag->charn += 1;
+		ft_printwchar(i + '0', flag);
+	}
 }
