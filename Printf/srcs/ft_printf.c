@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 11:54:07 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 13:24:47 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ int		flag_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 		empty_buffer(flag);
 		ft_printwchar('%', flag);
 		flag->charn += 1;
-		larg_flag_after(flag);
+		larg_flag_after_s(flag);
 		*index = *index + 1;
 		return (0);
 	}
