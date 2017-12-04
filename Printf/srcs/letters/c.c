@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 10:05:04 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 11:22:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,18 @@ static int	big_c(va_list argp, const char *arg, int *index, t_flag *flag)
 	int			i;
 
 	i = -1;
+	(void)index;
+	(void)arg;
 	if ((s = malloc(sizeof(wint_t) * (2))) == NULL)
 		return (0);
 	s[0] = va_arg(argp, wint_t);
 	s[1] = '\0';
 	if (ft_wstrlen(s[0]) == -1 && (flag->instantquit = LEAVE))
 		return (0);
+	flag->charn += ft_wstrlen(s[0]);
 	while (s && s[++i])
 		ft_putchar_s(s[i], flag);
-	larg_flag_after(flag);
+//	larg_flag_after(flag);
 	return (0);
 }
 
@@ -35,7 +38,7 @@ int		c(va_list argp, const char *arg, int *index, t_flag *flag)
 	unsigned char	i;
 
 	flag->larg = flag->larg - 1;
-	if (arg[0] == 'C')
+	if (arg[0] == 'C' || flag->l)
 		return (big_c(argp, arg, index, flag));
 	larg_flag_before(flag);
 	i = va_arg(argp, int);

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/03 17:00:12 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 11:54:07 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int		ft_printf(const char *restrict list, ...)
 			arg_parser(argp, &list[i + 1], &i, flag);
 		else if (list[i] != '%')
 			ft_putnstr((char *)&list[i], flag, &i);
+		if (flag->instantquit != 0)
+			return (-1);
 	}
 	va_end(argp);
 	write(1, flag->printed, ft_strlen(flag->printed));
@@ -57,6 +59,7 @@ int		init_struct(t_flag *flag)
 	flag->tilt = 0;
 	flag->nbr = 0;
 	flag->cpy = -1;
+	flag->instantquit = 0;
 	return (1);
 }
 
@@ -115,23 +118,22 @@ int		precision_pars(va_list argp, const char *arg, int *index, t_flag *flag)
 
 int		flag_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 {
-	char	check;
-
-	check = (char)arg[0];
-	if (check == '-')
+	if (arg[0] == '-')
 		flag->neg = 1;
-	else if (check == '+')
+	else if (arg[0] == '+')
 		flag->pos = 1;
-	else if (check == ' ')
+	else if (arg[0] == ' ')
 		flag->space = 1;
-	else if (check == '0')
+	else if (arg[0] == '0')
 		flag->zero = 1;
-	else if (check == '#')
+	else if (arg[0] == '#')
 		flag->diez = 1;
-	else if (check == '%' && (flag->larg -= 1))
+	else if (arg[0] == '%' && (flag->larg -= 1))
 	{
 		larg_flag_before(flag);
-		ft_putchar('%', flag);
+		empty_buffer(flag);
+		ft_printwchar('%', flag);
+		flag->charn += 1;
 		larg_flag_after(flag);
 		*index = *index + 1;
 		return (0);

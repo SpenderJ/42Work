@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 10:06:25 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 11:44:41 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int		s(va_list argp, const char *arg, int *index, t_flag *flag)
 
 	i = -1;
 	b = 0;
-	if (arg[0] == 'S')
+	if (arg[0] == 'S' || flag->l)
 		return (big_s(argp, arg, index, flag));
 	tmp = va_arg(argp, char*);
 	if (!tmp && !flag->comma)

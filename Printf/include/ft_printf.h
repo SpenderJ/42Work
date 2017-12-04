@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 08:49:09 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 11:45:03 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char		*ft_getnbr_base(intmax_t nbr, char *base);
 char		*ft_getnbr_base_ui(uintmax_t nbr, char *base);
 char		*ft_strrev(char *str);
 int			precision_pars(va_list argp, const char *arg, int *index, t_flag *flag);
-void		*ft_print_memory(void *addr, unsigned int size, t_flag *flag);
+void		*ft_print_memory(char *addr, unsigned int size, t_flag *flag);
 int			ft_atoi(const char *str);
 void		ft_print_adress(void *buf, t_flag *flag);
 void		ft_print_bits(void *buf, t_flag *flag);
