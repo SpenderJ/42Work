@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 13:08:24 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 16:35:35 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		p(va_list argp, const char *arg, int *index, t_flag *flag)
 	stack = va_arg(argp, void*);
 	tmp = (unsigned long int)stack;
 	str = ft_getnbr_base_ui(tmp, "0123456789abcdef");
+	flag->nbr = flag->point;
 	if (str[0] == '0' && flag->comma)
 		flag->point += 1;
 	flag->tilt = ft_strlen(str);
