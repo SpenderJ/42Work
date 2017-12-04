@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 15:03:39 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 16:53:17 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@ static int	big_c(va_list argp, const char *arg, int *index, t_flag *flag)
 		return (0);
 	s[0] = va_arg(argp, wint_t);
 	s[1] = '\0';
+	if (s[0] == 0)
+	{
+		empty_buffer(flag);
+		write(1, &s[0], 1);
+		flag->charn += 1;
+		return (0);
+	}
 	if (ft_wstrlen(s[0]) == -1 && (flag->instantquit = LEAVE))
 		return (0);
 	flag->charn += ft_wstrlen(s[0]);
