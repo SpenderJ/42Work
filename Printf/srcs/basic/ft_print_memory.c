@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 21:07:59 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 21:35:22 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/04 09:07:55 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void		*ft_print_memory(void *addr, unsigned int size, t_flag *flag)
 	i = 0;
 	ft_putchar('0', flag);
 	ft_putchar('x', flag);
+	larg_flag_before(flag);
 	if (flag->point > 0)
 		while (flag->point-- > 0)
 			ft_putchar('0', flag);
