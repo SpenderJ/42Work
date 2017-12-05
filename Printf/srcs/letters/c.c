@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 20:20:56 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 20:30:17 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ static int	big_c(va_list argp, const char *arg, int *index, t_flag *flag)
 
 int			big_c2(va_list argp, wint_t *s, int i, t_flag *flag)
 {
+	(void)argp;
 	if (ft_wstrlen(s[0]) == -1 && (flag->instantquit = LEAVE))
 	{
 		free(s);

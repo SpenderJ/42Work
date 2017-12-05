@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 19:41:40 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 20:29:02 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int			big_s2(va_list argp, wint_t *tmp, int b, t_flag *flag)
 
 	size = 0;
 	i = -1;
+	(void)argp;
 	while (tmp && (size += ft_wstrlen(tmp[++i])) && size <= flag->nbr &&
 			tmp[i] && b >= 0 && flag->tilt != 0)
 		;
