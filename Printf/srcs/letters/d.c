@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 16:52:19 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 18:03:05 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ int			d(va_list argp, const char *arg, int *index, t_flag *flag)
 	else
 		ptr = tmp;
 	if (b != 1)
-		ft_putnstr(ft_itoa(ptr, 10), flag, &c);
+		ft_putnstr_free(ft_itoa(ptr, 10), flag, &c);
 	larg_flag_after_d(flag);
 	return (0);
 }
