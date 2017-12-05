@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 16:37:42 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 19:41:40 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,15 +98,13 @@ int			s(va_list argp, const char *arg, int *index, t_flag *flag)
 		(tmp = ft_strdup(tmp));
 	if (flag->comma && (int)ft_strlen(tmp) > flag->point && flag->point > 0)
 		tmp[flag->point] = '\0';
-	if (flag->comma && !flag->point && (b = -1))
+	if (flag->comma && flag->point <= 0 && (b = -1))
 		;
+	b == -1 ? (flag->larg += ft_strlen(tmp)) : flag->larg;
 	flag->larg = flag->larg - ft_strlen(tmp);
 	larg_flag_before(flag);
 	if (b != -1)
 		ft_putnstr(tmp, flag, &i);
-	if (b == -1 && (b = ft_strlen(tmp)))
-		while (b-- > 0)
-			ft_putchar(' ', flag);
 	larg_flag_after(flag);
 	free(tmp);
 	return (0);

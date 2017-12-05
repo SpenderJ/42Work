@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 16:43:57 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 20:20:12 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int		arg_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 	else if ((char)arg[0] >= 'a' && (char)arg[0] <= 'z')
 		pointer = g_letter_parser[(int)arg[0] - 97];
 	else if (((char)arg[0] >= '1' && (char)arg[0] <= '9') ||
-	((char)arg[0] == '.'))
+	((char)arg[0] == '.') || ((char)arg[0] == '*'))
 	{
 		if ((ret = precision_pars(argp, arg, index, flag)) == -1)
 			return (-1);
@@ -96,21 +96,27 @@ int		arg_parser(va_list argp, const char *arg, int *index, t_flag *flag)
 int		precision_pars(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	int		c;
-	int		nbr;
 
-	c = 0;
-	if (arg[c] == '.' && (flag->comma = 1) == 1)
+	if (arg[0] == '.' && (flag->comma = 1) == 1)
 	{
-		++c;
-		if ((flag->point = ft_atoi(&arg[c])) == -1)
+		if (arg[(c = 1)] == '*')
+			flag->point = va_arg(argp, int);
+		else if ((flag->point = ft_atoi(&arg[c])) == -1)
 			return (0);
+		arg[c] == '*' && flag->point < 0 ? (flag->comma = 0) : flag->comma;
+		arg[c] == '*' && flag->point < 0 ? (flag->point = 0) : flag->point;
 	}
 	else
 	{
-		nbr = ft_atoi(&arg[c]);
-		flag->larg = nbr;
+		if (arg[(c = 0)] == '*')
+			(flag->larg = va_arg(argp, int)) < 0 ?
+				(flag->neg = 1) : flag->neg;
+		arg[c] != '*' ? (flag->larg = ft_atoi(&arg[c])) : flag->larg;
+		arg[c] == '*' && flag->larg < 0 ? flag->larg *= -1 : flag->larg;
 	}
 	while (arg[c] >= '0' && arg[c] <= '9')
+		++c;
+	if ((c == 0 && arg[c] == '*') || (arg[0] == '.' && arg[1] == '*'))
 		++c;
 	*index = (*index + c) - 1;
 	return (arg_parser(argp, &arg[c], index, flag));

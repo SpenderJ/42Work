@@ -6,13 +6,13 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 18:37:23 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 20:20:56 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
 
-static int		big_c(va_list argp, const char *arg, int *index, t_flag *flag)
+static int	big_c(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	wint_t		*s;
 	int			i;
