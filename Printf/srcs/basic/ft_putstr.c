@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:23:13 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 16:32:12 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 17:53:20 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_putoctal(char const *s, t_flag *flag)
 	c = ft_strlen(flag->printed);
 	if (flag->comma && !flag->point && !flag->diez)
 		return ;
-	if ((tmp = malloc(sizeof(char) * (i + c))) == NULL)
+	if ((tmp = malloc(sizeof(char) * (i + c) + 96)) == NULL)
 		return ;
 	tmp[0] = '\0';
 	ft_strcat(tmp, flag->printed);
