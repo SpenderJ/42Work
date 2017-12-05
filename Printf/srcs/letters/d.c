@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/30 20:05:39 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 16:52:19 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,18 @@ void		larg_flag_before_d2(t_flag *flag, char *str, int i)
 		str[++i] = '\0';
 		ft_putnstr(str, flag, &c);
 		flag->larg += flag->tilt;
+		free(str);
 		return ;
 	}
 	while (flag->larg-- > 0)
 		str[++i] = flag->c;
 	flag->nbr < 0 && flag->c == ' ' ? str[++i] = '-' : flag->larg;
-	flag->nbr >= 0 && flag->pos && flag->c == ' ' ? str[++i] = '+' :
-		flag->larg;
+	flag->nbr >= 0 && flag->pos && flag->c == ' ' ? str[++i] = '+' : flag->larg;
 	while (flag->point-- > 0)
 		str[++i] = '0';
 	str[++i] = '\0';
 	ft_putnstr(str, flag, &c);
+	free(str);
 }
 
 void		larg_flag_after_d(t_flag *flag)
@@ -86,6 +87,7 @@ void		larg_flag_after_d(t_flag *flag)
 		str[++i] = flag->c;
 	str[++i] = '\0';
 	ft_putnstr(str, flag, &c);
+	free(str);
 }
 
 int			d(va_list argp, const char *arg, int *index, t_flag *flag)

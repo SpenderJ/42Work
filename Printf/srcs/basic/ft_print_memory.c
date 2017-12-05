@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 21:07:59 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 16:38:39 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 16:31:38 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void		*ft_print_memory(char *addr, unsigned int size, t_flag *flag)
 	if (!flag->zero)
 		larg_flag_before(flag);
 	ft_putnstr("0x", flag, &b);
-//	printf("flag->comma = %d, flag->nbr = %d\n", flag->comma, flag->nbr);
 	if (flag->comma && !flag->nbr)
 		return (addr);
 	if (flag->zero)

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:21:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 14:41:05 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 16:31:47 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	ft_printwchar(char c, t_flag *flag)
 {
 	empty_buffer(flag);
 	write(1, &c, 1);
-	//	flag->charn += 1;
 }
 
 void	ft_putchar(wchar_t c, t_flag *flag)

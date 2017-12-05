@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 16:34:25 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 16:43:57 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_printf(const char *restrict list, ...)
 		else if (list[i] != '%')
 			ft_putnstr((char *)&list[i], flag, &i);
 		if (flag->instantquit != 0)
-			return (-1);
+			return (free_main(flag, -1));
 	}
 	va_end(argp);
 	write(1, flag->printed, ft_strlen(flag->printed));

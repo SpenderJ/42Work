@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 16:35:35 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 16:37:10 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		p(va_list argp, const char *arg, int *index, t_flag *flag)
 	flag->larg -= flag->point;
 	flag->larg -= 2;
 	ft_print_memory(str, 1, flag);
+	free(str);
 	larg_flag_after(flag);
 	return (0);
 }
