@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 16:52:40 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 16:29:15 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct		t_flag
 	int			instantquit;
 }					t_flag;
 
+int			big_s2(va_list argp, wint_t *tmp, int b, t_flag *flag);
 void		ft_putchar_s(wchar_t c, t_flag *flag);
 void		ft_puts(char *str, t_flag *flag);
 void		larg_flag_before_s(t_flag *flag);
