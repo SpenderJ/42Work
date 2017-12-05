@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/04 17:06:16 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 10:37:13 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ int		c(va_list argp, const char *arg, int *index, t_flag *flag)
 	flag->larg = flag->larg - 1;
 	if (arg[0] == 'C' || flag->l)
 		return (big_c(argp, arg, index, flag));
-	larg_flag_before(flag);
+	larg_flag_before_s(flag);
 	i = va_arg(argp, int);
-	empty_buffer(flag);
 	if (i == 0)
 	{
-		write(1, flag->printed, flag->charn);
+		if (flag->printed[0] != '\0')
+			write(1, flag->printed, flag->charn);
 		write(1, &i, 1);
 		flag->charn += 1;
 		free (flag->printed);
@@ -68,6 +68,6 @@ int		c(va_list argp, const char *arg, int *index, t_flag *flag)
 	else
 		ft_printwchar(i, flag);
 	flag->charn += 1;
-	larg_flag_after(flag);
+	larg_flag_after_s(flag);
 	return (0);
 }
