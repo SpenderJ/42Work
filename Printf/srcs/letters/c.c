@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 16:45:28 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 18:23:48 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ static int	big_c(va_list argp, const char *arg, int *index, t_flag *flag)
 		free(s);
 		return (0);
 	}
+	return (big_c2(argp, s, i, flag));
+}
+
+int		big_c2(va_list argp, wint_t *s, int i, t_flag *flag)
+{
 	if (ft_wstrlen(s[0]) == -1 && (flag->instantquit = LEAVE))
 	{
 		free(s);
@@ -47,7 +52,7 @@ static int	big_c(va_list argp, const char *arg, int *index, t_flag *flag)
 	return (0);
 }
 
-int		c(va_list argp, const char *arg, int *index, t_flag *flag)
+int			c(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	unsigned char	i;
 
@@ -67,7 +72,7 @@ int		c(va_list argp, const char *arg, int *index, t_flag *flag)
 		larg_flag_after(flag);
 		return (0);
 	}
-	else if(arg[0] == 'C' || flag->l)
+	else if (arg[0] == 'C' || flag->l)
 		ft_printwchar(i, flag);
 	else
 		ft_printwchar(i, flag);

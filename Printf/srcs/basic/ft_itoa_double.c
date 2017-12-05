@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:55:55 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 16:31:21 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 18:15:15 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,15 @@ static char	*add_next(char *str, int index, double nbr)
 	return (str);
 }
 
-char		*ft_itoa_double(double n, int index)
+char		*ft_itoa_double(double nbr, int index)
 {
 	int							neg;
 	char						*str;
 	double						c;
 	double						i;
-	double						nbr;
 
 	c = 0;
 	i = 1;
-	nbr = n;
 	neg = 0;
 	if ((str = goodmalloc(nbr, index)) == NULL)
 		return (NULL);

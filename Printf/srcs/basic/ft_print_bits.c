@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/18 16:36:28 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 16:31:29 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 18:14:15 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void		ft_print_bits(void *buf, t_flag *flag)
 
 	i = -1;
 	ptr = (char*)buf;
-	while (ptr[++i] != '\0' && (j = 8) == 8) 
+	while (ptr[++i] != '\0' && (j = 8) == 8)
 	{
 		while (--j >= 0)
 		{

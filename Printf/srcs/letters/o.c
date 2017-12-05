@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 17:48:26 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 18:26:51 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	parser_o_flags(t_flag *flag, char *tmp)
 	flag->larg -= flag->point;
 }
 
-int		o(va_list argp, const char *arg, int *index, t_flag *flag)
+int			o(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	char		*tmp;
 	uintmax_t	sent;

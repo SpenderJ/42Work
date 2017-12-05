@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:25:53 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 16:32:32 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 18:15:58 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ size_t		ft_strlen(char *str)
 	}
 }
 
-int		ft_wstrlen(wint_t c)
+int			ft_wstrlen(wint_t c)
 {
 	if (c <= 0x7F)
 		return (1);
