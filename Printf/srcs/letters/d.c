@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 18:26:38 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 18:43:36 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void		larg_flag_before_d(t_flag *flag)
 	char	*str;
 	int		i;
 
+	i = -1;
 	flag->nbr < 0 ? flag->larg -= 1 : flag->larg;
 	flag->comma ? flag->zero = 0 : flag->zero;
 	flag->pos ? flag->larg -= 1 : flag->larg;
@@ -26,10 +27,8 @@ void		larg_flag_before_d(t_flag *flag)
 	flag->point -= flag->tilt;
 	flag->point < 0 ? flag->point = 0 : flag->point;
 	flag->larg -= flag->point;
-	if ((i = -1) && ((str = malloc(sizeof(char) * (flag->larg + flag->tilt +
-						flag->point + 30))) == NULL))
+	if ((str = ft_strnew(flag->larg + flag->tilt + flag->point + 30)) == NULL)
 		return ;
-	str[0] = '\0';
 	flag->zero && !flag->neg ? (flag->c = '0') :
 		(flag->c = ' ');
 	flag->space && flag->nbr > 0 && !flag->pos ? (str[++i] = ' ') : flag->larg;

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 18:27:26 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 18:33:17 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ int		x(va_list argp, const char *arg, int *index, t_flag *flag)
 {
 	uintmax_t		tmp;
 	char			*fnl;
-	int				i;
 	int				b;
 
-	i = -1;
 	b = 0;
 	(void)index;
 	length_modif_uox(argp, flag, &tmp);
@@ -36,6 +34,14 @@ int		x(va_list argp, const char *arg, int *index, t_flag *flag)
 	flag->larg -= flag->point;
 	flag->diez ? flag->larg = flag->larg - 2 : flag->larg;
 	b == -1 ? flag->larg += 1 : flag->larg;
+	return (x2(b, fnl, arg, flag));
+}
+
+int		x2(int b, char *fnl, const char *arg, t_flag *flag)
+{
+	int		i;
+
+	i = -1;
 	if (!flag->zero)
 		larg_flag_before(flag);
 	if (flag->diez != 0 && fnl[0] != '0')

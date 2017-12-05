@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 18:27:29 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 18:33:14 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct		s_flag
 	int				instantquit;
 }					t_flag;
 
+int					x2(int b, char *fnl, const char *arg, t_flag *flag);
 int					big_c2(va_list argp, wint_t *s, int i, t_flag *flag);
 void				ft_putnstr_free(void *str, t_flag *flag, int *c);
 int					big_s2(va_list argp, wint_t *tmp, int b, t_flag *flag);

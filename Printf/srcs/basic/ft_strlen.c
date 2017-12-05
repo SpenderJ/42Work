@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:25:53 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 18:15:58 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/05 18:36:00 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ size_t		ft_strlen(char *str)
 	while (42)
 	{
 		if (!(*i & 0x000000ff))
-			return result;
+			return (result);
 		if (!(*i & 0x0000ff00))
-			return result + 1;
+			return (result + 1);
 		if (!(*i & 0x00ff0000))
-			return result + 2;
+			return (result + 2);
 		if (!(*i & 0xff000000))
-			return result + 3;
+			return (result + 3);
 		result += 4;
 		++i;
 	}
