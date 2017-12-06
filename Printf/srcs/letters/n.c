@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 16:36:38 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/06 07:32:59 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int		n(va_list argp, const char *arg, int *index, t_flag *flag)
 	(void)arg;
 	(void)flag;
 	res = va_arg(argp, int *);
-	*res = *index - 1;
+	*res = flag->charn;
 	return (0);
 }
