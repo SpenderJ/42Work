@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 12:44:26 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/06 07:42:56 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/06 08:28:27 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		ft_printf(const char *restrict list, ...)
 	if ((flag = malloc(sizeof(t_flag))) == NULL ||
 			((flag->printed = ft_strdup("")) == NULL))
 		return (0);
+	flag->color = 0;
 	flag->charn = 0;
 	while (list[++i] != '\0')
 	{

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/06 07:59:55 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/06 09:08:35 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,20 @@
 #  define LLNEGMAX -9223372036854775807
 # endif
 
+# ifndef COLOR_ERROR
+#  define COLOR_ERROR "Color not supported, please enter an int between 0 and"
+# endif
+
+# ifndef COLOR_ERROR2
+#  define COLOR_ERROR2 "10, color has not been changed. Usage %b[nb[0-9]]"
+# endif
+
 # ifndef LEAVE
 #  define LEAVE -1
 # endif
 
 /*
-** Bonus are defined are intialized at  0 which means that theyr are not
+** Bonus are defined are intialized at  0 which means that they are not
 ** If you wnt to activate them, you just have to put an other int value
 ** Except 0, you oculd maybe try to put 1 or anything else like 42
 ** Why 42? Because it's the reason of life. You don't think so?
@@ -30,7 +38,15 @@
 */
 
 # ifndef BONUS
-#  define BONUS 0
+#  define BONUS 42
+# endif
+
+# ifndef SUCCESS
+#  define SUCCESS 1
+# endif
+
+# ifndef ERROR
+#  define ERROR -1
 # endif
 
 # include <wchar.h>
@@ -40,6 +56,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <inttypes.h>
+# include <fcntl.h>
 
 typedef struct		s_flag
 {
@@ -64,8 +81,10 @@ typedef struct		s_flag
 	int				cpy;
 	char			*printed;
 	int				instantquit;
+	int				color;
 }					t_flag;
 
+int					ft_putsterr(char *str);
 int					x2(int b, char *fnl, const char *arg, t_flag *flag);
 int					big_c2(va_list argp, wint_t *s, int i, t_flag *flag);
 void				ft_putnstr_free(void *str, t_flag *flag, int *c);

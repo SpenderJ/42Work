@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:23:13 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 18:16:17 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/06 09:03:51 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,12 @@ void	ft_putnstr_free(void *str, t_flag *flag, int *c)
 		*c += (n - 1);
 	free(str);
 	return ;
+}
+
+int		ft_putsterr(char *str)
+{
+	if (!str)
+		return (-1);
+	write(2, str, ft_strlen(str));
+	return (ERROR);
 }
