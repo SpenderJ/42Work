@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/05 18:33:14 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/06 07:59:55 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,18 @@
 
 # ifndef LEAVE
 #  define LEAVE -1
+# endif
+
+/*
+** Bonus are defined are intialized at  0 which means that theyr are not
+** If you wnt to activate them, you just have to put an other int value
+** Except 0, you oculd maybe try to put 1 or anything else like 42
+** Why 42? Because it's the reason of life. You don't think so?
+** Nethermind, better clone an other Printf
+*/
+
+# ifndef BONUS
+#  define BONUS 0
 # endif
 
 # include <wchar.h>
