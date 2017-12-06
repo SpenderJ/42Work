@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/06 09:53:37 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/06 09:58:25 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@
 */
 
 /*
-** If you need a special color or policy, you can change the ANSI code of the 
+** If you need a special color or policy, you can change the ANSI code of the
 ** 9th, it is called PERSONNALIZED and it is made to be PERSONNALIZED.
 ** So feel free to configure your brand new Printf
 */
