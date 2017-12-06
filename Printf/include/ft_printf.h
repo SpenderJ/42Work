@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/06 09:08:35 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/06 09:53:37 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 # endif
 
 # ifndef COLOR_ERROR
-#  define COLOR_ERROR "Color not supported, please enter an int between 0 and"
+#  define COLOR_ERROR "Color not supported, please enter an int between 0 and "
 # endif
 
 # ifndef COLOR_ERROR2
-#  define COLOR_ERROR2 "10, color has not been changed. Usage %b[nb[0-9]]"
+#  define COLOR_ERROR2 "10, color has not been changed. Usage %b[nb[0-9]]\n"
 # endif
 
 # ifndef LEAVE
@@ -47,6 +47,64 @@
 
 # ifndef ERROR
 #  define ERROR -1
+# endif
+
+/*
+**                       COLOR DEFINE :D
+**                       ________________
+**
+**					###   ###   #      ###   ###
+**				   #     #  ##  #     #  ##  # #
+**				  #     #    #  #    #    #  # #
+**				  #     #   #   #    #   #  ###
+**				  #     #   #  #     #   #  # #
+**					###   ###   ####   ###   #  #
+*/
+
+/*
+** If you need a special color or policy, you can change the ANSI code of the 
+** 9th, it is called PERSONNALIZED and it is made to be PERSONNALIZED.
+** So feel free to configure your brand new Printf
+*/
+
+# ifndef BLACK
+#  define BLACK "\033[30m"
+# endif
+
+# ifndef DEFAULT
+#  define DEFAULT "\033[0m"
+# endif
+
+# ifndef RED
+#  define RED "\033[31m"
+# endif
+
+# ifndef GREEN
+#  define GREEN "\033[32m"
+# endif
+
+# ifndef YELLOW
+#  define YELLOW "\033[33m"
+# endif
+
+# ifndef BLUE
+#  define BLUE "\033[34m"
+# endif
+
+# ifndef MAGENTA
+#  define MAGENTA "\033[35m"
+# endif
+
+# ifndef CYAN
+#  define CYAN "\033[36m"
+# endif
+
+# ifndef WHITE
+#  define WHITE "\033[37m"
+# endif
+
+# ifndef PERSONNALIZED
+#  define PERSONNALIZED "\033[39m"
 # endif
 
 # include <wchar.h>
