@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/06 09:58:25 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/06 10:34:07 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 */
 
 # ifndef BONUS
-#  define BONUS 42
+#  define BONUS 0
 # endif
 
 # ifndef SUCCESS
@@ -142,6 +142,7 @@ typedef struct		s_flag
 	int				color;
 }					t_flag;
 
+int					ft_printtab(char **tab);
 int					ft_putsterr(char *str);
 int					x2(int b, char *fnl, const char *arg, t_flag *flag);
 int					big_c2(va_list argp, wint_t *s, int i, t_flag *flag);

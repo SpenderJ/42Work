@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/06 13:06:32 by juspende          #+#    #+#              #
-#    Updated: 2017/12/05 20:24:09 by juspende         ###   ########.fr        #
+#    Updated: 2017/12/06 10:30:38 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRCS	=	srcs/ft_printf.c				\
 			srcs/basic/ft_strcat.c			\
 			srcs/basic/ft_strncat.c			\
 			srcs/basic/ft_putstr.c			\
+			srcs/basic/ft_printtab.c		\
 			srcs/basic/ft_putchar.c			\
 			srcs/basic/lenght_modif.c		\
 			srcs/basic/int_len.c			\

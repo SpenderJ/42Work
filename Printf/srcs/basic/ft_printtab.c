@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   i.c                                                :+:      :+:    :+:   */
+/*   ft_printtab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/06 10:25:39 by juspende         ###   ########.fr       */
+/*   Created: 2017/12/06 10:26:43 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/06 10:32:03 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/ft_printf.h"
 
-int		i(va_list argp, const char *arg, int *index, t_flag *flag)
+int		ft_printtab(char **tab)
 {
-	d(argp, arg, index, flag);
+	int		i;
+
+	i = -1;
+	if (!tab || !tab[0])
+		return (0);
+	while (tab[++i])
+	{
+		write(1, tab[i], ft_strlen(tab[i]));
+		write(1, "\n", 1);
+	}
 	return (0);
 }
