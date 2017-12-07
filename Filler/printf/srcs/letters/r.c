@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_1.c                                           :+:      :+:    :+:   */
+/*   r.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/06 16:20:38 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 19:52:42 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/05 16:37:19 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "../../include/ft_printf.h"
 
-int		play_1(t_info *info, t_piece *piece)
+int		r(va_list argp, const char *arg, int *index, t_flag *flag)
 {
-	ft_get_map(info, piece);
-	ft_get_piece(piece);
-	if (algo(info, piece) == 0)
-		info->end = SUCCESS;
-	attack_swap(info);
-	send_info(info);
-	if (info->end)
-		return (SUCCESS);
-	return (KEEP_GOING);
+	(void)argp;
+	(void)arg;
+	(void)index;
+	(void)flag;
+	if (flag->larg)
+		*index = *index + int_len(flag->larg) - 1;
+	flag->larg -= 1;
+	larg_flag_before(flag);
+	ft_putchar(arg[0], flag);
+	larg_flag_after(flag);
+	return (-1);
 }

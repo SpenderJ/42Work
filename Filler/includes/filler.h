@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 18:58:17 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 20:02:07 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@
 # include <fcntl.h>
 # include "get_next_line.h"
 # include "../libft/libft.h"
+# include "../printf/include/ft_printf.h"
 
 typedef struct	s_info
 {
@@ -97,6 +98,8 @@ typedef struct	s_piece
 }				t_piece;
 
 int		main(void);
+void	attack_swap(t_info *info);
+void	send_info(t_info *info);
 int		algo(t_info *info, t_piece *piece);
 int		try_value(t_piece *piece, t_info *info, int i, int j);
 void	ft_get_piece(t_piece *piece);

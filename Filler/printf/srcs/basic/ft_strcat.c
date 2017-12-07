@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_1.c                                           :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/06 16:20:38 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 19:52:42 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/06 14:28:53 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/05 17:51:33 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "../../include/ft_printf.h"
 
-int		play_1(t_info *info, t_piece *piece)
+char	*ft_strcat(char *dest, char *src)
 {
-	ft_get_map(info, piece);
-	ft_get_piece(piece);
-	if (algo(info, piece) == 0)
-		info->end = SUCCESS;
-	attack_swap(info);
-	send_info(info);
-	if (info->end)
-		return (SUCCESS);
-	return (KEEP_GOING);
+	char	*ptr;
+
+	ptr = dest;
+	while (*ptr)
+		++ptr;
+	while ((*ptr++ = *src++))
+		;
+	return (dest);
 }

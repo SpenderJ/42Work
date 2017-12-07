@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_1.c                                           :+:      :+:    :+:   */
+/*   swap_attack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/06 16:20:38 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 19:52:42 by juspende         ###   ########.fr       */
+/*   Created: 2017/12/07 19:49:24 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/07 19:55:20 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
 
-int		play_1(t_info *info, t_piece *piece)
+void	attack_swap(t_info *info)
 {
-	ft_get_map(info, piece);
-	ft_get_piece(piece);
-	if (algo(info, piece) == 0)
-		info->end = SUCCESS;
-	attack_swap(info);
-	send_info(info);
-	if (info->end)
-		return (SUCCESS);
-	return (KEEP_GOING);
+	if (info->attack == UPLEFT)
+		info->attack = DOWNLEFT;
+	else if (info->attack == DOWNRIGHT)
+		info->attack = UPRIGHT;
+	else if (info->attack == UPRIGHT)
+		info->attack = DOWNRIGHT;
+	else if (info->attack == DOWNLEFT)
+		info->attack = UPLEFT;
 }

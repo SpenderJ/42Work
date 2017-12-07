@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2017/12/07 18:46:39 by juspende         ###   ########.fr        #
+#    Updated: 2017/12/07 20:01:43 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ RM		=	rm -f
 SRC		=	srcs/filler.c			\
 			srcs/get_next_line.c	\
 			srcs/fill_info_struct.c	\
+			srcs/swap_attack.c		\
 			srcs/play_1.c			\
+			srcs/print.c			\
 			srcs/get_piece.c		\
 			srcs/attack.c			\
 			srcs/get_map.c			\
@@ -39,16 +41,19 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@make -C libft/
-	@$(CC) $(CFLAGS) $(SRC) -o $(NAME) ./libft/libft.a
+	@make -C printf/
+	@$(CC) $(CFLAGS) $(SRC) -o $(NAME) ./libft/libft.a ./printf/printf.a
 	@echo  "$(NAME): exe \033[32m[✔]\033[0m"
 
 clean:
-	@make clean -C libft
+	@make clean -C libft/
+	@make clean -C printf/
 	@$(RM) $(OBJ)
 	@echo "$(NAME): $@ \033[32m[✔]\033[0m"
 
 fclean: clean
 	@make fclean -C libft/
+	@make fclean -C printf/
 	@$(RM) $(NAME)
 	@echo "$(NAME): $@ \033[32m[✔]\033[0m"
 

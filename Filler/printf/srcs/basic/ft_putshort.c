@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_1.c                                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/06 16:20:38 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 19:52:42 by juspende         ###   ########.fr       */
+/*   Created: 2017/07/04 15:06:32 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/05 16:32:04 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include <unistd.h>
+#include "../../include/ft_printf.h"
 
-int		play_1(t_info *info, t_piece *piece)
+void	ft_putshort(short int nb, t_flag *flag)
 {
-	ft_get_map(info, piece);
-	ft_get_piece(piece);
-	if (algo(info, piece) == 0)
-		info->end = SUCCESS;
-	attack_swap(info);
-	send_info(info);
-	if (info->end)
-		return (SUCCESS);
-	return (KEEP_GOING);
+	unsigned short int	i;
+
+	if (nb < 0)
+	{
+		ft_putchar('-', flag);
+		i = -nb;
+	}
+	else
+		i = nb;
+	if (i > 9)
+	{
+		ft_putshort(i / 10, flag);
+		ft_putshort(i % 10, flag);
+	}
+	else
+		ft_putchar(i + '0', flag);
 }

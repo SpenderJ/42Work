@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 16:48:27 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 19:04:52 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 19:46:17 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ static int	check_value(t_piece *piece, t_info *info, int i, int j)
 
 	over = 0;
 	y = -1;
-	while (++y < piece->y && (x = -1) == -1)
-		while (++x < piece->x &&
+	while (++y < piece->ypiece && (x = -1) == -1)
+		while (++x < piece->xpiece &&
 				(over += check_mate(piece, info, y + i, x + j)))
 			if ((ft_occuped(info->map, y + i, x + j, info->letter) == 1) &&
 					piece->piece[y][x] == FREE_SPACE)
@@ -51,9 +51,9 @@ static int	check_value(t_piece *piece, t_info *info, int i, int j)
 
 int		try_value(t_piece *piece, t_info *info, int i, int j)
 {
-	if (i + piece->y > info->ymap)
+	if (i + piece->ypiece > info->ymap)
 		return (FAIL);
-	else if (j + piece->x > info->xmap)
+	else if (j + piece->xpiece > info->xmap)
 		return (FAIL);
 	else
 		return (check_value(piece, info, i, j));

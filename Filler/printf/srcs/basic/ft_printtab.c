@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_1.c                                           :+:      :+:    :+:   */
+/*   ft_printtab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/06 16:20:38 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 19:52:42 by juspende         ###   ########.fr       */
+/*   Created: 2017/12/06 10:26:43 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/06 10:32:03 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "../../include/ft_printf.h"
 
-int		play_1(t_info *info, t_piece *piece)
+int		ft_printtab(char **tab)
 {
-	ft_get_map(info, piece);
-	ft_get_piece(piece);
-	if (algo(info, piece) == 0)
-		info->end = SUCCESS;
-	attack_swap(info);
-	send_info(info);
-	if (info->end)
-		return (SUCCESS);
-	return (KEEP_GOING);
+	int		i;
+
+	i = -1;
+	if (!tab || !tab[0])
+		return (0);
+	while (tab[++i])
+	{
+		write(1, tab[i], ft_strlen(tab[i]));
+		write(1, "\n", 1);
+	}
+	return (0);
 }

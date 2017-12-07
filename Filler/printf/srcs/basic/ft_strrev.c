@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_1.c                                           :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/06 16:20:38 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 19:52:42 by juspende         ###   ########.fr       */
+/*   Created: 2017/07/05 12:11:25 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/05 16:32:45 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "../../include/ft_printf.h"
 
-int		play_1(t_info *info, t_piece *piece)
+char	*ft_strrev(char *str)
 {
-	ft_get_map(info, piece);
-	ft_get_piece(piece);
-	if (algo(info, piece) == 0)
-		info->end = SUCCESS;
-	attack_swap(info);
-	send_info(info);
-	if (info->end)
-		return (SUCCESS);
-	return (KEEP_GOING);
+	int		i;
+	int		a;
+	char	c;
+
+	i = 0;
+	a = 0;
+	while (str[i] != '\0')
+		i = i + 1;
+	i = i - 1;
+	while (i >= a)
+	{
+		c = str[i];
+		str[i] = str[a];
+		str[a] = c;
+		a = a + 1;
+		i = i - 1;
+	}
+	return (str);
 }
