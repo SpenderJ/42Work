@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 16:20:38 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/06 18:17:30 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 14:07:42 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 int		play_2(t_info *info, t_piece *piece)
 {
+	ft_get_map(info, piece);
 	ft_get_piece(piece);
-	ft_get_map(info);
+	ft_putnbr(0);
+	ft_putchar(' ');
+	ft_putnbr(0);
+	ft_putchar('\n');
 	return (0);
 }

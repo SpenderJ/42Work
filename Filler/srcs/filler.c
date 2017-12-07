@@ -6,18 +6,11 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 14:03:34 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/06 17:10:57 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 15:17:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
-
-/*
-** TO DO :
-**
-** Check sur des maps > 100 -> 1000 ou plus
-** Verifier la vitesse du atoi
-*/
 
 static void	init_struct(t_info *info, t_piece *piece)
 {
@@ -25,6 +18,8 @@ static void	init_struct(t_info *info, t_piece *piece)
 	info->ymap = 0;
 	info->xmap = 0;
 	info->letter = 0;
+	info->end = 0;
+	info->attack = 0;
 	piece->ypiece = 0;
 	piece->xpiece = 0;
 	piece->y = 0;

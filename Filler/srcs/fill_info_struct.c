@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 15:23:54 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/06 16:11:51 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 15:10:39 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_info_player(t_info *info)
 
 	get_next_line(0, &line);
 	info->player = ft_atoi(&line[10]);
+	free(line);
 }
 
 void	ft_info_letter(t_info *info)
@@ -28,11 +29,14 @@ void	ft_info_letter(t_info *info)
 
 void	ft_info_xy(t_info *info)
 {
+	int		i;
 	char	*line;
 
 	get_next_line(0, &line);
 	info->ymap = ft_atoi(&line[8]);
-	info->xmap = ft_atoi(&line[11]);
+	i = 8 + int_len(info->ymap) + 1;
+	info->xmap = ft_atoi(&line[i]);
+	free(line);
 }
 
 void	fill_info_struct(t_info *info)

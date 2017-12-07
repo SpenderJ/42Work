@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/06 18:47:54 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 15:52:57 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,30 @@
 
 # ifndef WRONG_INPUT
 #  define WRONG_INPUT "TO BE CONFIGURED GROS FDP"
+# endif
+
+# ifndef Attack_Succes_Time_To_Launch_The_New_map
+#  define Attack_Succes_Time_To_Launch_The_New_map 1
+# endif
+
+# ifndef Keep_Going
+#  define Keep_Going 0
+# endif
+
+# ifndef UPLEFT
+#  define UPLEFT 0
+# endif
+
+# ifndef UPRIGHT
+#  define UPRIGHT 2
+# endif
+
+# ifndef DOWNRIGHT
+#  define DOWNRIGHT 1
+# endif
+
+# ifndef DOWNLEFT
+#  define DOWNLEFT 3
 # endif
 
 # include <stdio.h>
@@ -26,9 +50,13 @@ typedef struct	s_info
 {
 	int		player;
 	int		letter;
+	int		finalx;
+	int		finaly;
 	int		ymap;
 	int		xmap;
 	char	**map;
+	int		end;
+	int		attack;
 }				t_info;
 
 typedef struct	s_piece
