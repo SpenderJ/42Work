@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/06 13:06:32 by juspende          #+#    #+#              #
-#    Updated: 2017/12/07 20:00:51 by juspende         ###   ########.fr        #
+#    Updated: 2017/12/07 20:15:49 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CFLAGS	= -Wall -Wextra -O3
 INCLUDE	= /include/ft_printf.h
 
 %.o: %.c
-		gcc $(CFLAGS) -I$(INCLUDE) -o $@ -c $<
+		@gcc $(CFLAGS) -I$(INCLUDE) -o $@ -c $<
 
 SRCS	=	srcs/ft_printf.c				\
 			srcs/basic/ft_putint.c			\
@@ -38,7 +38,7 @@ SRCS	=	srcs/ft_printf.c				\
 			srcs/basic/int_len.c			\
 			srcs/basic/ft_strdup.c			\
 			srcs/basic/ft_putuint.c			\
-			srcs/basic/ft_strlen.c			\
+			srcs/basic/ft_printf_strlen.c	\
 			srcs/basic/ft_strrev.c			\
 			srcs/basic/ft_strchr.c			\
 			srcs/basic/ft_getnbr_base.c		\

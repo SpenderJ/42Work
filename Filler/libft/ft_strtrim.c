@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:13:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/09 13:17:07 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 20:20:40 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strtrim(char const *s)
 	c = 0;
 	if (!s)
 		return (NULL);
-	len = ft_strlen(s);
+	len = ft_strrlen(s);
 	sd = 0;
 	se = len - 1;
 	while (s[sd] && (s[sd] == ' ' || s[sd] == '\t' || s[sd] == '\n'))

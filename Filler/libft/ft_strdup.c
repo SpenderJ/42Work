@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:26:35 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/12 03:56:31 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 20:19:49 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *src)
 	char	*dup;
 
 	i = 0;
-	dup = (char *)malloc(ft_strlen(src) + 1);
+	dup = (char *)malloc(ft_strrlen(src) + 1);
 	if (dup == NULL)
 		return (NULL);
 	else

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/06 17:38:37 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 20:18:07 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef	struct	s_list
 
 int				int_len2(uintmax_t c);
 int				int_len(intmax_t c);
-void			ft_putsterr(const char *s);
+void			ft_putsterrr(const char *s);
 int				ft_sqrt(int c);
 void			ft_print_words_tables(char **tab);
 int				ft_toupper(int c);
@@ -39,7 +39,7 @@ int				ft_isprint(int c);
 int				ft_atoi(const char *str);
 char			*ft_strstr(const char *str1, const char *str2);
 char			*ft_strnstr(const char *str1, const char *str2, size_t nb);
-size_t			ft_strlen(const char *str);
+size_t			ft_strrlen(const char *str);
 int				ft_strcmp(const char *str1, const char *str2);
 int				ft_strncmp(const char *str1, const char *str2, size_t nb);
 char			*ft_strrchr(const char *str, int c);
@@ -81,7 +81,7 @@ char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
 void			ft_putchar(char c);
-void			ft_putstr(char const *s);
+void			ft_putstrr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
 void			ft_putchar_fd(char c, int fd);

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:30:35 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/01 09:45:36 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 20:19:29 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strchr(const char *s, int c)
 	while (s[i])
 	{
 		if (c == 0)
-			return ((char *)(s + ft_strlen(s)));
+			return ((char *)(s + ft_strrlen(s)));
 		if (s[i] == (char)c)
 			return ((char *)(s + i));
 		i++;

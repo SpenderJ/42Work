@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 14:03:34 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 19:46:32 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 20:18:27 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ int			main(void)
 		while (play_2(&info, &piece) != 0)
 			;
 	else
-		ft_putsterr(WRONG_INPUT);
+		ft_putsterrr(WRONG_INPUT);
 	return (0);
 }

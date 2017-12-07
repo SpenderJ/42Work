@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2017/12/07 20:01:43 by juspende         ###   ########.fr        #
+#    Updated: 2017/12/07 20:10:30 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@make -C libft/
 	@make -C printf/
-	@$(CC) $(CFLAGS) $(SRC) -o $(NAME) ./libft/libft.a ./printf/printf.a
+	@$(CC) $(CFLAGS) $(SRC) -o $(NAME) ./libft/libft.a ./printf/libftprintf.a
 	@echo  "$(NAME): exe \033[32m[✔]\033[0m"
 
 clean:

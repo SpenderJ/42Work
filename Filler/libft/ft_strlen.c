@@ -6,13 +6,13 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:25:53 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/06 16:08:15 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 20:17:08 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
+size_t		ft_strrlen(const char *str)
 {
 	size_t		result;
 	uint32_t	*i;
