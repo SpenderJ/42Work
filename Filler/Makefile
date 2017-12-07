@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2017/12/07 16:51:38 by juspende         ###   ########.fr        #
+#    Updated: 2017/12/07 18:46:39 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC		=	srcs/filler.c			\
 			srcs/get_piece.c		\
 			srcs/attack.c			\
 			srcs/get_map.c			\
+			srcs/value.c			\
 			srcs/play_2.c			\
 
 OBJ			= $(SRC:.c=.o)

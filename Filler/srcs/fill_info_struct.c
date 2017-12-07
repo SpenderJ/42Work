@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 15:23:54 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 17:27:06 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 19:01:13 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,13 @@ void	ft_info_player(t_info *info)
 	char	*line;
 
 	get_next_line(0, &line);
-	info->player = ft_atoi(&line[10]);
+	info->player = ft_atoi(line + 10);
 	free(line);
 }
 
 void	ft_info_letter(t_info *info)
 {
-	info->player == 1 ? (info->letter = 'O') :
-		(info->letter = 'X');
+	info->letter = info->player ? 'O' : 'X';
 }
 
 void	ft_info_xy(t_info *info)

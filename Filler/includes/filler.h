@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 17:47:39 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/07 18:58:17 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@
 #  define WRONG_INPUT "TO BE CONFIGURED GROS FDP"
 # endif
 
-# ifndef Attack_Succes_Time_To_Launch_The_New_map
-#  define Attack_Succes_Time_To_Launch_The_New_map 1
+# ifndef ATTACK_SUCCESS_TIME_TO_LAUNCH_THE_NEW_MAP
+#  define ATTACK_SUCCESS_TIME_TO_LAUNCH_THE_NEW_MAP 1
+# endif
+
+# ifndef KEEP_GOING
+#  define KEEP_GOING 0
 # endif
 
 # ifndef SUCCESS
@@ -33,8 +37,8 @@
 #  define OPPON_CHAR(Value) (Value == 'O' ? 'O' : 'C')
 # endif
 
-# ifndef Keep_Going
-#  define Keep_Going 0
+# ifndef KEEP_GOING
+#  define KEEP_GOING 0
 # endif
 
 # ifndef UPLEFT
@@ -61,8 +65,8 @@
 #  define FREE_SPACE '*'
 # endif
 
-# ifndef One_Or_Nothing
-#  define One_Or_Nothing(Value) (Value == 1 ? 1 : 0)
+# ifndef ONE_OR_NOTHING
+#  define ONE_OR_NOTHING(Value) (Value == 1 ? 1 : 0)
 # endif
 
 # include <stdio.h>
@@ -93,6 +97,8 @@ typedef struct	s_piece
 }				t_piece;
 
 int		main(void);
+int		algo(t_info *info, t_piece *piece);
+int		try_value(t_piece *piece, t_info *info, int i, int j);
 void	ft_get_piece(t_piece *piece);
 void	ft_get_map(t_info *info, t_piece *piece);
 int		play_1(t_info *info, t_piece *piece);
