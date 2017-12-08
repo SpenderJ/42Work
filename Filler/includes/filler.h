@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 20:09:45 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/08 15:06:43 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@
 
 # ifndef KEEP_GOING
 #  define KEEP_GOING 0
+# endif
+
+# ifndef P1
+#  define P1 'O'
+# endif
+
+# ifndef P2
+#  define P2 'X'
 # endif
 
 # ifndef SUCCESS
@@ -78,6 +86,7 @@ typedef struct	s_info
 {
 	int		player;
 	char	letter;
+	char	letter_enemy;
 	int		finalx;
 	int		finaly;
 	int		ymap;
@@ -93,10 +102,13 @@ typedef struct	s_piece
 	int		xpiece;
 	int		y;
 	int		x;
+	int		x_enemy;
+	int		y_enemy;
 	char	**piece;
 }				t_piece;
 
 int		main(void);
+void	set_values(int i, int j, t_info *info, t_piece *piece);
 int		ft_printf(const char *list, ...);
 void	attack_swap(t_info *info);
 void	send_info(t_info *info);

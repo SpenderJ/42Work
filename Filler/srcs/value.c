@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 16:48:27 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 19:46:17 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/08 15:13:50 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,15 @@ static int	check_value(t_piece *piece, t_info *info, int i, int j)
 					piece->piece[y][x] == FREE_SPACE)
 				return (FAIL);
 	return (ONE_OR_NOTHING(over));
+}
+
+void		initialize_algo(t_info *info, t_piece *piece, int i, int j)
+{
+	while (++i < info->ymap && (j = -1) == -1)
+		while (++j < info->xmap)
+			if (info->map[i][j] == P1 || info->map[i][j] == P2)
+				set_values(i, j, info, piece);
+	info->attack = (piece->y_enemy > piece->y ? 1 : 0);
 }
 
 int		try_value(t_piece *piece, t_info *info, int i, int j)

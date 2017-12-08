@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 17:13:44 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 19:02:11 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/08 15:13:54 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,12 @@ void	ft_get_map(t_info *info, t_piece *piece)
 	free(line);
 	info->map = ft_strsplit(tmp, '\n');
 	free(tmp);
+}
+
+void	set_values(int i, int j, t_info *info, t_piece *piece)
+{
+	info->map[i][j] == info->letter_enemy ? (piece->y_enemy = i) :
+		(piece->y = i);
+	info->map[i][j] == info->letter_enemy ? (piece->x_enemy = j) :
+		(piece->x = i);
 }

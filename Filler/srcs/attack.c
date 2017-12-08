@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 14:30:10 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 19:49:39 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/08 14:43:05 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int		algo_up_right(t_info *info, t_piece *piece, int i, int j)
 
 static int		algo_down_right(t_info *info, t_piece *piece, int i, int j)
 {
-	while (--i > 0 && (j = (info->xmap + 1) == info->xmap + 1))
+	while (--i > 0 && (j = (info->xmap + 1)) == info->xmap + 1)
 		while (--j > 0)
 			if (try_value(piece, info, i, j) == 1 && (info->finalx = j) == j &&
 					(info->finaly = i) == i)
@@ -54,6 +54,7 @@ static int		algo_up_left(t_info *info, t_piece *piece, int i, int j)
 
 int				algo(t_info *info, t_piece *piece)
 {
+	dprintf(2, "On attaque\n");
 	if (info->attack == UPLEFT)
 		return (algo_up_left(info, piece, -1, 0));
 	else if (info->attack == DOWNRIGHT)
