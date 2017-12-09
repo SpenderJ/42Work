@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 14:03:34 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 20:18:27 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/09 11:00:53 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ int			main(void)
 
 	init_struct(&info, &piece);
 	fill_info_struct(&info);
+	ft_get_map(&info, &piece);
+	ft_get_piece(&piece);
+	initialize_algo(&info, &piece, -1, -1);
 	if (info.player == 1)
 		while (play_1(&info, &piece) != 0)
 			;

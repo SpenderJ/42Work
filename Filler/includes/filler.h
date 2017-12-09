@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/08 15:06:43 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/09 09:52:23 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ typedef struct	s_piece
 }				t_piece;
 
 int		main(void);
+void	initialize_algo(t_info *info, t_piece *piece, int i, int j);
 void	set_values(int i, int j, t_info *info, t_piece *piece);
 int		ft_printf(const char *list, ...);
 void	attack_swap(t_info *info);
