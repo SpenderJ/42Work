@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/09 09:52:23 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/21 15:58:38 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@
 
 # ifndef KEEP_GOING
 #  define KEEP_GOING 0
+# endif
+
+# ifndef NUM_DEC
+#  define NUM_DEC 4
 # endif
 
 # ifndef P1
@@ -107,6 +111,7 @@ typedef struct	s_piece
 	char	**piece;
 }				t_piece;
 
+//void	init_struct(t_info *info, t_piece *piece);
 int		main(void);
 void	initialize_algo(t_info *info, t_piece *piece, int i, int j);
 void	set_values(int i, int j, t_info *info, t_piece *piece);

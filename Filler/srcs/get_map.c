@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 17:13:44 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/09 11:01:05 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/21 15:41:46 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	ft_get_map(t_info *info, t_piece *piece)
 	{
 		if (ft_isdigit(line[0]) == 1 && ++c)
 		{
-			ft_strcat(tmp, line);
+			ft_strcat(tmp, line + NUM_DEC);
 			ft_strcat(tmp, "\n");
 			free(line);
 		}
 	}
-	piece->ypiece = ft_atoi(&line[7]);
-	c = 7 + int_len(piece->ypiece) + 1;
+	piece->ypiece = ft_atoi(&line[6]);
+	c = 6 + int_len(piece->ypiece) + 1;
 	piece->xpiece = ft_atoi(&line[c]);
 	free(line);
 	info->map = ft_strsplit(tmp, '\n');

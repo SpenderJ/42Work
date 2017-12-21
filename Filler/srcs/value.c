@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 16:48:27 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/09 11:02:27 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/21 17:10:48 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static int	check_mate(t_piece *piece, t_info *info, int y, int x)
 {
 	char	c;
 
+	(void)piece;
 	c = info->letter;
-	if ((info->map[y][x] | 0x20) == c)
-		if (piece->piece[y][x] == FREE_SPACE)
-			return (SUCCESS);
+	if (info->map[y][x] == c || info->map[y][x] == c + 32)
+		return (SUCCESS);
 	return (FAIL);
 }
 
@@ -41,12 +41,19 @@ static int	check_value(t_piece *piece, t_info *info, int i, int j)
 	over = 0;
 	y = -1;
 	while (++y < piece->ypiece && (x = -1) == -1)
-		while (++x < piece->xpiece &&
-				(over += check_mate(piece, info, y + i, x + j)))
-			if ((ft_occuped(info->map, y + i, x + j, info->letter) == 1) &&
-					piece->piece[y][x] == FREE_SPACE)
+	{
+		while (++x < piece->xpiece)
+		{
+			if (piece->piece[y][x] == FREE_SPACE &&
+					check_mate(piece, info, y + i, x + j) == SUCCESS)
+				++over;
+			dprintf(2, "Over = %d\n", over);
+			if ((ft_occuped(info->map, y + i, x + j, info->letter_enemy) == 1)
+					&& piece->piece[y][x] == FREE_SPACE)
 				return (FAIL);
-	return (ONE_OR_NOTHING(over));
+		}
+	}
+	return ((over == 1) ? 1 : 0);
 }
 
 void		initialize_algo(t_info *info, t_piece *piece, int i, int j)

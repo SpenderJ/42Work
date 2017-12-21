@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 17:23:31 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/09 09:55:41 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/21 14:39:22 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ void	ft_get_piece(t_piece *piece)
 	char	*tmp;
 	int		i;
 
-	i = -1;
+	i = 0;
 	if ((tmp = malloc(sizeof(char) * (((piece->xpiece + 2) *
 							(piece->ypiece + 2)) + 1))) == NULL)
 		return ;
 	tmp[0] = '\0';
-	while (get_next_line(0, &line) > 0 && ++i != piece->ypiece)
+	while (i != piece->ypiece && get_next_line(0, &line))
 	{
+		++i;
 		ft_strcat(tmp, line);
 		ft_strcat(tmp, "\n");
 		free(line);
