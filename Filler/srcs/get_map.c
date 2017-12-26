@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 17:13:44 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/21 15:41:46 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/26 13:09:44 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,10 @@ void	ft_get_map(t_info *info, t_piece *piece)
 
 void	set_values(int i, int j, t_info *info, t_piece *piece)
 {
+//	dprintf(2, "Enemy = %c\n", info->letter_enemy);
 	info->map[i][j] == info->letter_enemy ? (piece->y_enemy = i) :
 		(piece->y = i);
 	info->map[i][j] == info->letter_enemy ? (piece->x_enemy = j) :
 		(piece->x = j);
+//	dprintf(2, "Y enemy = %d, X enemy = %d\nMy Y = %d, My X = %d\n", piece->y_enemy, piece->x_enemy, piece->y, piece->x);
 }

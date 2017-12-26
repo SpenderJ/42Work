@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 15:23:54 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/21 15:34:38 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/26 13:09:32 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	ft_info_player(t_info *info)
 
 void	ft_info_letter(t_info *info)
 {
-	info->letter = info->player ? 'O' : 'X';
+	info->player == P1 ? info->letter = 'O' :
+		(info->letter = 'X');
 	info->letter == 'O' ? (info->letter_enemy = 'X') :
 		(info->letter_enemy = 'O');
 }

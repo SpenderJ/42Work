@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 14:30:10 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/21 15:50:33 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/26 13:09:26 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int		algo_up_left(t_info *info, t_piece *piece, int i, int j)
 
 int				algo(t_info *info, t_piece *piece)
 {
-	dprintf(2, "Attaque == %d\n", info->attack);
+//	dprintf(2, "Attaque == %d\n", info->attack);
 	if (info->attack == UPLEFT)
 		return (algo_up_left(info, piece, -1, 0));
 	else if (info->attack == DOWNRIGHT)
