@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2017/12/26 14:39:02 by juspende         ###   ########.fr        #
+#    Updated: 2017/12/29 17:09:32 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ NAME2	= checker
 
 RM		=	rm -f
 
-SRC2	=	check/srcs/checker.c
+SRC2	=	check/srcs/checker.c	\
+			check/srcs/get_next_line.c
 
 SRC		=	pushswap/srcs/push_swap.c
 

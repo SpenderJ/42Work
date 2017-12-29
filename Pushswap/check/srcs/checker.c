@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/29 17:01:19 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/29 18:55:01 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,34 @@ static int	int_num(int argc, char **argv)
 		{
 			while (argv[1][i] == ' ')
 				++i;
-			(argv[1][i] >= '0' && argv[1][i] <= '9') ? (++ret) : ret;
-			while ((argv[1][i] >= '0' && argv[1][i] <= '9'))
+			((argv[1][i] >= '0' && argv[1][i] <= '9') || argv[1][i] == '-')
+				? (++ret) : ret;
+			while ((argv[1][i] >= '0' && argv[1][i] <= '9') || argv[1][i] ==
+					'-')
 				++i;
 		}
 	}
 	return (ret);
 }
 
-static int	checker(int *a_list, int *b_list, int c_num)
+static int	checker(int *a_list, int *b_list, int c_num, char **argv)
 {
-	printf("Checker Hi Total number = %d\n", c_num);
-	(void)a_list;
+	char	*line;
+	int		c;
+	int		i;
+
+	c = -1;
 	(void)b_list;
-	(void)c_num;
+	while (++c < c_num && (i = -1) == -1)
+		while (++i < c_num)
+			if (a_list[i] == a_list[c] && c != i)
+				return (ft_putsterr(DOUBLE_ERROR));
+	c = 0;
+	while (argv[++c] != NULL)
+		if (ft_intlimit(argv[c]) == 0)
+			return (ft_putsterr(SIZE_ERROR));
+	while (get_next_line(1, &line) && line != NULL)
+		;
 	return (0);
 }
 
@@ -68,7 +82,7 @@ int			main(int argc, char **argv)
 		while (argv[1][++c] != '\0' && (a_list[++t] = ft_atoi(&argv[1][c])))
 			while (argv[1][c] >= '0' && argv[1][c] <= '9')
 				++c;
-	argc <= 2 ? (c = argc - 1) : c;
+	argc <= 2 ? c = 1 : c;
 	return ((argv[c] && !ft_isnum(argv[c])) ? (ft_putsterr(PARSING_ERROR)) :
-			(checker(a_list, b_list, int_num(argc, argv))));
+			(checker(a_list, b_list, int_num(argc, argv), argv)));
 }

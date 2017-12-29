@@ -6,12 +6,11 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 13:25:05 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 16:46:54 by juspende         ###   ########.fr       */
+/*   Updated: 2017/12/29 17:09:59 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft/libft.h"
-#include "get_next_line.h"
+#include "../includes/checker.h"
 
 int		get_next_line(int const fd, char **line)
 {
@@ -35,9 +34,9 @@ int		get_next_line(int const fd, char **line)
 				ft_strchr(s[fd], '\n') - s[fd]) : ft_strdup(s[fd]));
 	if (ft_strchr((rest = s[fd]), '\n'))
 		s[fd] = ft_strsub(s[fd], ft_strchr(s[fd], '\n') - s[fd] + 1,
-				ft_strlen(s[fd]));
+				ft_strrlen(s[fd]));
 	else
 		ft_strdel(&s[fd]);
 	free(rest);
-	return (!s[fd] && ft_strlen(*line) == 0 ? 0 : 1);
+	return (!s[fd] && ft_strrlen(*line) == 0 ? 0 : 1);
 }
