@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/08 14:44:05 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 16:25:17 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,18 @@
 
 # ifndef ARGUMENT_ERROR
 #  define ARGUMENT_ERROR "Cant Open Arguments, Exit of Checker"
+# endif
+
+# ifndef ENDOFARGS
+#  define ENDOFARGS 30071998
+# endif
+
+# ifndef WRONG_ARG
+#  define WRONG_ARG 84
+# endif
+
+# ifndef NO_ERROR
+#  define NO_ERROR 0
 # endif
 
 # ifndef COMMAND_ERROR
