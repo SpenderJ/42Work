@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print.h                                         :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/08 16:25:17 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 18:15:32 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@
 #  define ARGUMENT_ERROR "Cant Open Arguments, Exit of Checker"
 # endif
 
+# ifndef B_SIZE
+#  define B_SIZE 0
+# endif
+
 # ifndef ENDOFARGS
 #  define ENDOFARGS 30071998
 # endif
@@ -46,7 +50,7 @@
 # endif
 
 # ifndef COMMAND_ERROR
-#  define COMMAND_ERROR "Wrong Commad, use ./checker -h to display help. Exit"
+#  define COMMAND_ERROR "Wrong Command, use ./checker -h to display help. Exit"
 # endif
 
 # ifndef HELP_1
@@ -70,5 +74,16 @@
 # include "../../printf/include/ft_printf.h"
 
 int		main(int argc, char **argv);
+void	sa(int *a_list);
+void	sb(int *b_list);
+void	ss(int *a_list, int *b_list);
+void	pa(int *a_list, int *b_list);
+void	pb(int *a_list, int *b_list);
+void	ra(int *a_list);
+void	rb(int *b_list);
+void	rr(int *a_list, int *b_list);
+void	rra(int *a_list);
+void	rrb(int *b_list);
+void	rrr(int *a_list, int *b_list);
 
 #endif

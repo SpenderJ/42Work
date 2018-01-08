@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/08 16:28:36 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 18:35:45 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static int	get_command(char *line, int *a_list, int *b_list, int err)
 		rrb(b_list);
 	else if (ft_strcmp(line, "rrr") == 0 && (err = NO_ERROR) == NO_ERROR)
 		rrr(a_list, b_list);
-	free (line);
+	free(line);
 	return (err);
 }
 
@@ -73,9 +73,11 @@ static int	checker(int *a_list, int *b_list, int c_num, char **argv)
 	int		c;
 	int		i;
 
-	c = -1;
-	(void)b_list;
-	while (++c < c_num && (i = -1) == -1)
+	a_list[0] = c_num;
+	b_list[0] = B_SIZE;
+	c = 0;
+	ft_revint(a_list);
+	while (++c < c_num && (i = 0) == 0)
 		while (++i < c_num)
 			if (a_list[i] == a_list[c] && c != i)
 				return (ft_putsterr(DOUBLE_ERROR));
@@ -83,11 +85,20 @@ static int	checker(int *a_list, int *b_list, int c_num, char **argv)
 	while (argv[++c] != NULL)
 		if (ft_intlimit(argv[c]) == 0)
 			return (ft_putsterr(SIZE_ERROR));
-	a_list[c_num] = ENDOFARGS;
-	b_list[0] = ENDOFARGS;
 	while (get_next_line(1, &line) && line != NULL)
 		if (get_command(line, a_list, b_list, WRONG_ARG) == WRONG_ARG)
 			return (ft_putsterr(COMMAND_ERROR));
+//DEBUG TO TAKE OF
+	int	n = 0;
+	ft_printf("A_list :");
+	while (++n <= a_list[0])
+		ft_printf("%d ", a_list[n]);
+	ft_printf("\nB_list :");
+	n = 0;
+	while (++n <= b_list[0])
+		ft_printf("%d ", b_list[n]);
+	ft_printf("\n");
+//END OF DEBUG
 	return (0);
 }
 
@@ -98,19 +109,19 @@ int			main(int argc, char **argv)
 	int		*a_list;
 	int		*b_list;
 
-	if (ft_strcmp(argv[1], "-h") == 0)
+	if (argv && argv[1] && ft_strcmp(argv[1], "-h") == 0)
 		return (ft_printf("%s%s%s\n", HELP_1, HELP_2, HELP_3));
 	if ((c = 0) == 0 && argc != 2)
-		if (((a_list = ft_intnew(argc + 1)) == NULL) ||
-				((b_list = ft_intnew(argc + 1)) == NULL))
+		if (((a_list = ft_intnew(argc + 2)) == NULL) ||
+				((b_list = ft_intnew(argc + 2)) == NULL))
 			return (ft_putsterr(MALLOC_FAILED));
 	if ((t = 0) == 0 && argc == 2)
-		if (((a_list = ft_intnew(ft_countspace(argv[1]))) == NULL) ||
-				((b_list = ft_intnew(ft_countspace(argv[1]))) == NULL))
+		if (((a_list = ft_intnew(ft_countspace(argv[1]) + 1)) == NULL) ||
+				((b_list = ft_intnew(ft_countspace(argv[1]) + 1)) == NULL))
 			return (ft_putsterr(MALLOC_FAILED));
 	if (argc > 2)
 		while (argv[++c] != NULL && ft_isnum(argv[c]))
-			a_list[c - 1] = ft_atoi(argv[c]);
+			a_list[c] = ft_atoi(argv[c]);
 	if (argc == 2 && (c = -1) == -1)
 		while (argv[1][++c] != '\0' && (a_list[++t] = ft_atoi(&argv[1][c])))
 			while (argv[1][c] >= '0' && argv[1][c] <= '9')
