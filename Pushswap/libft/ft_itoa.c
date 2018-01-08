@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:55:55 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/09 15:10:17 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:46:36 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	*goodmalloc(long n)
 	return (str);
 }
 
-char		*ft_itoa(int n)
+char		*ftt_itoa(int n)
 {
 	int					neg;
 	char				*str;

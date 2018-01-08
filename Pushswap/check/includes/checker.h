@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/29 18:26:21 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:44:05 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,29 @@
 #  define ARGUMENT_ERROR "Cant Open Arguments, Exit of Checker"
 # endif
 
+# ifndef COMMAND_ERROR
+#  define COMMAND_ERROR "Wrong Commad, use ./checker -h to display help. Exit"
+# endif
+
+# ifndef HELP_1
+#  define HELP_1 "Checker Usage: ./checker [Int List] ...\n\nList of commands:"
+# endif
+
+# ifndef HELP_2
+#  define HELP_2 "\n\tsa\n\tsb\n\tss\n\tpa\n\tpb\n\tra\n\trb\n\trr\n\trra\n\t"
+# endif
+
+# ifndef HELP_3
+#  define HELP_3 "rrb\n\trrr\n\nTo have informations about each command->intra"
+# endif
+
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
 # include <limits.h>
 # include "get_next_line.h"
 # include "../../libft/libft.h"
+# include "../../printf/include/ft_printf.h"
 
 int		main(int argc, char **argv);
 

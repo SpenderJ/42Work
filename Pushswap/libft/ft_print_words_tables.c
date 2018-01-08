@@ -6,7 +6,7 @@
 /*   By: cmalfroy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 17:24:17 by cmalfroy          #+#    #+#             */
-/*   Updated: 2017/12/07 20:21:24 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:51:29 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	ft_print_words_tables(char **tab)
 	{
 		ft_putstrr(tab[i]);
 		i++;
-		ft_putchar('\n');
+		ftt_putchar('\n');
 	}
 }

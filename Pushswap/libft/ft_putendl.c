@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:19:48 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 20:20:59 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:50:32 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl(char const *s)
 {
 	ft_putstrr((char *)s);
-	ft_putchar('\n');
+	ftt_putchar('\n');
 }

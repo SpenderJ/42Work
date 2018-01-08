@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/29 18:26:15 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:49:21 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ size_t			ft_strrlen(const char *str);
 int				ft_strcmp(const char *str1, const char *str2);
 int				ft_strncmp(const char *str1, const char *str2, size_t nb);
 char			*ft_strrchr(const char *str, int c);
-char			*ft_strchr(const char *str, int c);
-char			*ft_strcat(char *dest, const char *src);
-char			*ft_strncat(char *dest, const char *src, size_t size);
+char			*ftt_strchr(const char *str, int c);
+char			*ftt_strcat(char *dest, const char *src);
+char			*ftt_strncat(char *dest, const char *src, size_t size);
 size_t			ft_strlcat(char *dest, const char *src,
 		size_t size);
 char			*ft_strcpy(char *dest, const char *src);
@@ -84,8 +84,8 @@ char			*ft_strsub(char const *s1, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
-char			*ft_itoa(int n);
-void			ft_putchar(char c);
+char			*ftt_itoa(int n);
+void			ftt_putchar(char c);
 void			ft_putstrr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
@@ -95,7 +95,7 @@ void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_swap(int *a, int *b);
 char			*ft_strrev(char *str);
-void			ft_putnbr_base(int nbr, char *base);
+void			ftt_putnbr_base(int nbr, char *base);
 void			ft_is_negative(int n);
 int				*ft_range(int min, int max);
 

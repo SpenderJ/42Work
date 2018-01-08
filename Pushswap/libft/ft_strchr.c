@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:30:35 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 20:19:29 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:48:46 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ftt_strchr(const char *s, int c)
 {
 	int		i;
 

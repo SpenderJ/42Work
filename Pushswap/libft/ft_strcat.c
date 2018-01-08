@@ -6,13 +6,13 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 14:28:53 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/09 18:09:54 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:45:58 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *restrict dest, const char *restrict src)
+char	*ftt_strcat(char *restrict dest, const char *restrict src)
 {
 	int	i;
 	int	a;

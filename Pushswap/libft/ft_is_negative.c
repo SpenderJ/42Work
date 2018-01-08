@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 11:38:57 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/09 20:57:26 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:50:55 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_is_negative(int n)
 {
 	if (n >= 0)
-		ft_putchar('P');
+		ftt_putchar('P');
 	else
-		ft_putchar('N');
+		ftt_putchar('N');
 }

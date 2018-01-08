@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:05:03 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 20:20:25 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:49:46 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s == NULL || s1 == NULL || s2 == NULL)
 		return (NULL);
 	ft_strcpy(s, s1);
-	ft_strcat(s, s2);
+	ftt_strcat(s, s2);
 	return (s);
 }

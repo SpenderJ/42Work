@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/04 15:06:32 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/08 16:42:07 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:50:19 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putnbr(int nb)
 
 	if (nb < 0)
 	{
-		ft_putchar('-');
+		ftt_putchar('-');
 		i = -nb;
 	}
 	else
@@ -29,5 +29,5 @@ void	ft_putnbr(int nb)
 		ft_putnbr(i % 10);
 	}
 	else
-		ft_putchar(i + '0');
+		ftt_putchar(i + '0');
 }
