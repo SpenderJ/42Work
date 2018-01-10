@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 17:17:19 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/08 18:31:44 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/10 17:06:27 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	pa(int *a_list, int *b_list)
 		return ;
 	tmp = b_list[b_list[0]];
 	b_list[b_list[0]] = 0;
-	--a_list[0];
+	--b_list[0];
 	++a_list[0];
 	a_list[a_list[0]] = tmp;
 }
