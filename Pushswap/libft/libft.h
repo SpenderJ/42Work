@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/08 18:35:23 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/10 17:15:09 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef	struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+int				ft_intlistsorted(int *list);
 void			ft_revint(int *list);
 int				ft_intlimit(char *str);
 int				ft_countspace(char *str);

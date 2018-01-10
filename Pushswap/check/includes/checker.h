@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/08 18:15:32 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/10 17:17:39 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,14 @@
 
 # ifndef ARGUMENT_ERROR
 #  define ARGUMENT_ERROR "Cant Open Arguments, Exit of Checker"
+# endif
+
+# ifndef OK_END
+#  define OK_END "OK"
+# endif
+
+# ifndef KO_END
+#  define KO_END "KO"
 # endif
 
 # ifndef B_SIZE
