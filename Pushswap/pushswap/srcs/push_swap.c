@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/11 16:51:55 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/11 17:48:34 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static int	int_num(int argc, char **argv)
 
 static int	pushswap(int *a_list, int *b_list)
 {
+	(void)a_list;
+	(void)b_list;
 	return (SORTED);
 }
 
@@ -51,9 +53,9 @@ static int	rank_alist(int *a_list, int c, int n, int rank)
 	if (((new_list = ft_intnew(a_list[0] + 2)) == NULL) ||
 			(new_list[SUMM] = a_list[SUMM]) < 0)
 		return (ft_putsterr(MALLOC_FAILED));
-	while (a_list[++c] < a_list[SUMM] && (n = 0) == 0)
+	while (++c < a_list[SUMM] && (n = 0) == 0)
 		if ((rank = SUMM) == SUMM)
-			while (a_list[++n] < a_list[SUMM])
+			while (++n < a_list[SUMM])
 				if (a_list[n] > a_list[c] && ++rank)
 					new_list[c] = rank;
 	free(a_list);
@@ -63,7 +65,6 @@ static int	rank_alist(int *a_list, int c, int n, int rank)
 
 static int	push_parser(int *a_list, int *b_list, int c_num, char **argv)
 {
-	char	*line;
 	int		c;
 	int		i;
 
@@ -79,7 +80,8 @@ static int	push_parser(int *a_list, int *b_list, int c_num, char **argv)
 	while (argv[++c] != NULL)
 		if (ft_intlimit(argv[c]) == 0)
 			return (ft_putsterr(SIZE_ERROR));
-	return (SORTED);
+	return ((rank_alist(a_list, 0, 0, 0) == ERROR_RANKING) ? (PUSHSWAP_ERROR) :
+			(pushswap(a_list, b_list)));
 }
 
 int			main(int argc, char **argv)
