@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2018/01/08 17:58:45 by juspende         ###   ########.fr        #
+#    Updated: 2018/01/11 16:20:22 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,18 @@ NAME2	= checker
 
 RM		=	rm -f
 
-SRC2	=	check/srcs/checker.c		\
-			check/srcs/moves/swap.c		\
-			check/srcs/moves/push.c		\
-			check/srcs/moves/rotate.c	\
-			check/srcs/moves/reverse.c	\
+SRC2	=	check/srcs/checker.c			\
+			check/srcs/moves/swap.c			\
+			check/srcs/moves/push.c			\
+			check/srcs/moves/rotate.c		\
+			check/srcs/moves/reverse.c		\
 			check/srcs/get_next_line.c
 
-SRC		=	pushswap/srcs/push_swap.c
+SRC		=	pushswap/srcs/push_swap.c		\
+			pushswap/srcs/moves/swap.c		\
+			pushswap/srcs/moves/push.c		\
+			pushswap/srcs/moves/rotate.c	\
+			pushswap/srcs/moves/reverse.c
 
 OBJ			= $(SRC:.c=.o)
 
