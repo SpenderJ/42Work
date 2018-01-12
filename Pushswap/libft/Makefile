@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/06 13:06:32 by juspende          #+#    #+#              #
-#    Updated: 2018/01/10 17:15:20 by juspende         ###   ########.fr        #
+#    Updated: 2018/01/12 16:14:34 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ INCLUDE	= /include/libft.h
 %.o: %.c
 		@gcc $(CFLAGS) -I$(INCLUDE) -o $@ -c $<
 
-SRCS	=	ft_toupper.c ft_tolower.c ft_isalpha.c ft_memalloc.c ft_memdel.c int_len.c \
+SRCS	=	ft_toupper.c ft_tolower.c ft_isalpha.c ft_memalloc.c ft_memdel.c int_len.c ft_printint.c \
 		ft_isdigit.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_strnew.c ft_strdel.c ft_intlimit.c \
 		ft_isascii.c ft_isprint.c ft_atoi.c ft_strstr.c ft_strclr.c ft_striter.c ft_countspace.c \
 		ft_strnstr.c ft_strlen.c ft_strcmp.c ft_strncmp.c ft_striteri.c ft_strmap.c ft_isnum.c \

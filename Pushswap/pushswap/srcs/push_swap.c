@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/11 17:48:34 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/12 17:57:32 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,28 @@ static int	int_num(int argc, char **argv)
 	return (ret);
 }
 
-static int	pushswap(int *a_list, int *b_list)
+static int	pushswap(int *a_list, int *b_list, int c, int n)
 {
-	(void)a_list;
-	(void)b_list;
+	int		i;
+
+	if (ft_intlistsorted(a_list) == SORTED)
+		return (SORTED);
+	while (++n < c && (i = INIT_NEG) == INIT_NEG)
+	{
+		while (a_list[++i] != n)
+			;
+		if (a_list[i] == n)
+			(i > a_list[0] / 2) ? (i = RRA) :
+				(i = RA);
+		while (i == RRA && a_list[a_list[0]] != n && ft_printf("rra\n") != 0)
+			rra(a_list);
+		while (i == RA && a_list[a_list[0]] != n && ft_printf("ra\n") != 0)
+			ra(a_list);
+		if (a_list[a_list[0]] == n && ft_printf("pb\n") != 0)
+			pb(a_list, b_list);
+	}
+	while (b_list[0] != 0 && ft_printf("pa\n") != 0)
+		pa(a_list, b_list);
 	return (SORTED);
 }
 
@@ -53,13 +71,15 @@ static int	rank_alist(int *a_list, int c, int n, int rank)
 	if (((new_list = ft_intnew(a_list[0] + 2)) == NULL) ||
 			(new_list[SUMM] = a_list[SUMM]) < 0)
 		return (ft_putsterr(MALLOC_FAILED));
-	while (++c < a_list[SUMM] && (n = 0) == 0)
+	while (++c <= a_list[SUMM] && (n = 0) == 0)
 		if ((rank = SUMM) == SUMM)
-			while (++n < a_list[SUMM])
+			while (++n <= a_list[SUMM])
 				if (a_list[n] > a_list[c] && ++rank)
 					new_list[c] = rank;
-	free(a_list);
-	a_list = new_list;
+	n = -1;
+	while (++n <= new_list[0])
+		a_list[n] = new_list[n];
+	free(new_list);
 	return (RANKED);
 }
 
@@ -81,7 +101,7 @@ static int	push_parser(int *a_list, int *b_list, int c_num, char **argv)
 		if (ft_intlimit(argv[c]) == 0)
 			return (ft_putsterr(SIZE_ERROR));
 	return ((rank_alist(a_list, 0, 0, 0) == ERROR_RANKING) ? (PUSHSWAP_ERROR) :
-			(pushswap(a_list, b_list)));
+			(pushswap(a_list, b_list, a_list[0], -1)));
 }
 
 int			main(int argc, char **argv)

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/11 17:07:00 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/12 17:59:46 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,18 @@
 
 # ifndef NO_ERROR
 #  define NO_ERROR 0
+# endif
+
+# ifndef INIT_NEG
+#  define INIT_NEG 1
+# endif
+
+# ifndef RRA
+#  define RRA 42
+# endif
+
+# ifndef RA
+#  define RA 21
 # endif
 
 # ifndef COMMAND_ERROR
