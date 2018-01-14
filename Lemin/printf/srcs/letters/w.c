@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   w.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 19:45:52 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 13:29:32 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/05 16:37:53 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "../../include/ft_printf.h"
 
-void	send_info(t_info *info)
+int		w(va_list argp, const char *arg, int *index, t_flag *flag)
 {
-	if (info->end)
-		ft_printf("%d %d\n", 0, 0);
-	else
-	{
-		ft_printf("%d %d\n", info->finalx, info->finaly);
-		dprintf(2, "%d %d\n", info->finalx, info->finaly);
-	}
+	(void)argp;
+	(void)arg;
+	(void)index;
+	(void)flag;
+	if (flag->larg)
+		*index = *index + int_len(flag->larg) - 1;
+	flag->larg -= 1;
+	larg_flag_before(flag);
+	ft_putchar(arg[0], flag);
+	larg_flag_after(flag);
+	return (-1);
 }

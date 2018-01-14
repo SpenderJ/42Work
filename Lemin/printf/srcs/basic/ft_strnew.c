@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 19:45:52 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 13:29:32 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/08 13:11:03 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/05 16:32:41 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "../../include/ft_printf.h"
 
-void	send_info(t_info *info)
+char	*ft_strnew(size_t size)
 {
-	if (info->end)
-		ft_printf("%d %d\n", 0, 0);
-	else
-	{
-		ft_printf("%d %d\n", info->finalx, info->finaly);
-		dprintf(2, "%d %d\n", info->finalx, info->finaly);
-	}
+	char	*tofill;
+	size_t	n;
+
+	n = -1;
+	if ((tofill = malloc(sizeof(char) * (size + 1))) == NULL)
+		return (NULL);
+	while (++n <= size)
+		tofill[n] = '\0';
+	return (tofill);
 }

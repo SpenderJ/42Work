@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 19:45:52 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 13:29:32 by juspende         ###   ########.fr       */
+/*   Created: 2017/12/21 17:29:40 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/21 17:29:43 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
 
-void	send_info(t_info *info)
-{
-	if (info->end)
-		ft_printf("%d %d\n", 0, 0);
-	else
-	{
-		ft_printf("%d %d\n", info->finalx, info->finaly);
-		dprintf(2, "%d %d\n", info->finalx, info->finaly);
-	}
-}
+#ifndef GET_NEXT_LINE_H_
+# define GET_NEXT_LINE_H_
+# ifndef READ_SIZE
+#  define READ_SIZE 1024
+
+# endif /* !READ_SIZE */
+#endif /* !GET_NEXT_LINE_H_ */

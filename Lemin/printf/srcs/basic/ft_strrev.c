@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 19:45:52 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 13:29:32 by juspende         ###   ########.fr       */
+/*   Created: 2017/07/05 12:11:25 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/05 16:32:45 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "../../include/ft_printf.h"
 
-void	send_info(t_info *info)
+char	*ft_strrev(char *str)
 {
-	if (info->end)
-		ft_printf("%d %d\n", 0, 0);
-	else
+	int		i;
+	int		a;
+	char	c;
+
+	i = 0;
+	a = 0;
+	while (str[i] != '\0')
+		i = i + 1;
+	i = i - 1;
+	while (i >= a)
 	{
-		ft_printf("%d %d\n", info->finalx, info->finaly);
-		dprintf(2, "%d %d\n", info->finalx, info->finaly);
+		c = str[i];
+		str[i] = str[a];
+		str[a] = c;
+		a = a + 1;
+		i = i - 1;
 	}
+	return (str);
 }

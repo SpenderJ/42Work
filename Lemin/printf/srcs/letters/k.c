@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   k.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 19:45:52 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 13:29:32 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/06 10:29:43 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "../../include/ft_printf.h"
 
-void	send_info(t_info *info)
+int		k(va_list argp, const char *arg, int *index, t_flag *flag)
 {
-	if (info->end)
-		ft_printf("%d %d\n", 0, 0);
-	else
+	char	**tab;
+
+	(void)argp;
+	(void)arg;
+	(void)index;
+	(void)flag;
+	if (BONUS)
 	{
-		ft_printf("%d %d\n", info->finalx, info->finaly);
-		dprintf(2, "%d %d\n", info->finalx, info->finaly);
+		tab = va_arg(argp, char**);
+		ft_printtab(tab);
+		return (-1);
 	}
+	if (flag->larg)
+		*index = *index + int_len(flag->larg) - 1;
+	flag->larg -= 1;
+	larg_flag_before(flag);
+	ft_putchar(arg[0], flag);
+	larg_flag_after(flag);
+	return (-1);
 }

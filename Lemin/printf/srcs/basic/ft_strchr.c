@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 19:45:52 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 13:29:32 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/06 14:30:35 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/06 07:52:38 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include <string.h>
+#include <stdlib.h>
+#include "../../include/ft_printf.h"
 
-void	send_info(t_info *info)
+int		ft_strchr(const char *s, int c)
 {
-	if (info->end)
-		ft_printf("%d %d\n", 0, 0);
-	else
+	int		i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i] != '\0')
 	{
-		ft_printf("%d %d\n", info->finalx, info->finaly);
-		dprintf(2, "%d %d\n", info->finalx, info->finaly);
+		if (s[i] == c)
+			return (i);
+		++i;
 	}
+	if (c == '\0')
+		return (i);
+	return (i);
 }

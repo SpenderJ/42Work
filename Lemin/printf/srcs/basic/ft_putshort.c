@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 19:45:52 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 13:29:32 by juspende         ###   ########.fr       */
+/*   Created: 2017/07/04 15:06:32 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/05 16:32:04 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include <unistd.h>
+#include "../../include/ft_printf.h"
 
-void	send_info(t_info *info)
+void	ft_putshort(short int nb, t_flag *flag)
 {
-	if (info->end)
-		ft_printf("%d %d\n", 0, 0);
-	else
+	unsigned short int	i;
+
+	if (nb < 0)
 	{
-		ft_printf("%d %d\n", info->finalx, info->finaly);
-		dprintf(2, "%d %d\n", info->finalx, info->finaly);
+		ft_putchar('-', flag);
+		i = -nb;
 	}
+	else
+		i = nb;
+	if (i > 9)
+	{
+		ft_putshort(i / 10, flag);
+		ft_putshort(i % 10, flag);
+	}
+	else
+		ft_putchar(i + '0', flag);
 }

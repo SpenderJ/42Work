@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   ft_printtab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 19:45:52 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 13:29:32 by juspende         ###   ########.fr       */
+/*   Created: 2017/12/06 10:26:43 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/06 10:32:03 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "../../include/ft_printf.h"
 
-void	send_info(t_info *info)
+int		ft_printtab(char **tab)
 {
-	if (info->end)
-		ft_printf("%d %d\n", 0, 0);
-	else
+	int		i;
+
+	i = -1;
+	if (!tab || !tab[0])
+		return (0);
+	while (tab[++i])
 	{
-		ft_printf("%d %d\n", info->finalx, info->finaly);
-		dprintf(2, "%d %d\n", info->finalx, info->finaly);
+		write(1, tab[i], ft_strlen(tab[i]));
+		write(1, "\n", 1);
 	}
+	return (0);
 }

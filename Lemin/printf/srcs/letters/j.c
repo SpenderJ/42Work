@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   j.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 19:45:52 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 13:29:32 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/17 11:18:40 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/06 10:25:45 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "../../include/ft_printf.h"
 
-void	send_info(t_info *info)
+int		j(va_list argp, const char *arg, int *index, t_flag *flag)
 {
-	if (info->end)
-		ft_printf("%d %d\n", 0, 0);
+	int		(*pointer)(va_list, const char*, int*, t_flag*);
+
+	*index = *index + 1;
+	flag->j = 1;
+	if (arg[1] >= 'a')
+		pointer = g_letter_parser[(int)arg[1] - 97];
 	else
-	{
-		ft_printf("%d %d\n", info->finalx, info->finaly);
-		dprintf(2, "%d %d\n", info->finalx, info->finaly);
-	}
+		pointer = g_letter_parser[(int)arg[1] - 97 + 32];
+	return ((*pointer)(argp, &arg[1], index, flag));
 }

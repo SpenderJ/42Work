@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 19:45:52 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 13:29:32 by juspende         ###   ########.fr       */
+/*   Created: 2017/07/04 15:06:32 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/06 07:22:10 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include <unistd.h>
+#include "../../include/ft_printf.h"
 
-void	send_info(t_info *info)
+void	ft_putdouble(double nb, int index, t_flag *flag)
 {
-	if (info->end)
-		ft_printf("%d %d\n", 0, 0);
-	else
-	{
-		ft_printf("%d %d\n", info->finalx, info->finaly);
-		dprintf(2, "%d %d\n", info->finalx, info->finaly);
-	}
+	int		i;
+
+	i = -1;
+	if (index == -1)
+		index = 6;
+	ft_putnstr_free(ft_itoa_double(nb, index), flag, &i);
+	return ;
 }

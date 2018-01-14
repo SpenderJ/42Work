@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 19:45:52 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 13:29:32 by juspende         ###   ########.fr       */
+/*   Created: 2017/07/04 15:06:32 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/05 16:32:14 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include <unistd.h>
+#include "../../include/ft_printf.h"
 
-void	send_info(t_info *info)
+void	ft_putuint(uintmax_t nb, t_flag *flag)
 {
-	if (info->end)
-		ft_printf("%d %d\n", 0, 0);
+	uintmax_t	i;
+
+	i = nb;
+	if (i > 9)
+	{
+		ft_putuint(i / 10, flag);
+		ft_putuint(i % 10, flag);
+	}
 	else
 	{
-		ft_printf("%d %d\n", info->finalx, info->finaly);
-		dprintf(2, "%d %d\n", info->finalx, info->finaly);
+		flag->charn += 1;
+		ft_printwchar(i + '0', flag);
 	}
 }

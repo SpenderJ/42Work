@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   ft_print_bits.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 19:45:52 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 13:29:32 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/18 16:36:28 by juspende          #+#    #+#             */
+/*   Updated: 2017/12/05 18:14:15 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include "../../include/ft_printf.h"
 
-void	send_info(t_info *info)
+void		ft_print_bits(void *buf, t_flag *flag)
 {
-	if (info->end)
-		ft_printf("%d %d\n", 0, 0);
-	else
+	char	*ptr;
+	int		i;
+	int		j;
+
+	i = -1;
+	ptr = (char*)buf;
+	while (ptr[++i] != '\0' && (j = 8) == 8)
 	{
-		ft_printf("%d %d\n", info->finalx, info->finaly);
-		dprintf(2, "%d %d\n", info->finalx, info->finaly);
+		while (--j >= 0)
+		{
+			ft_putnbr_base((ptr[i] >> j) & 1, "0123456789ABCEDF", flag);
+		}
 	}
+}
+
+void		ft_print_adress(void *buf, t_flag *flag)
+{
+	char	*ptr;
+
+	ptr = (char *)buf;
+	ft_putnbr_base(ft_atoi(ptr), "0123456789ABCDEF", flag);
 }
