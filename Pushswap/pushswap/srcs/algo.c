@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 10:46:00 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/15 13:56:41 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/15 17:07:13 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,24 +72,27 @@ int		quick_solve(int *a_list)
 	int		n;
 	int		i;
 
-	n = -1;
-	while (ft_intlistsorted(a_list) != SORTED && ++n)
+	n = 0;
+	ft_printint(a_list);
+	if ((i = find_int_position(a_list, n)) == -84)
+		return (ft_putsterr(UNKNOWN_BUG));
+	if (a_list[SUMM + 1] != a_list[0] && ft_publish(SA) != ERROR_RANKING)
+		sa(a_list);
+	if (ft_intlistsorted(a_list) == SORTED)
+		return (SORTED);
+	if (a_list[1] == SUMM)
 	{
-		if ((i = find_int_position(a_list, n)) == -84)
-			return (ft_putsterr(UNKNOWN_BUG));
-		if (i == 2 && ft_publish(SA) != ERROR_RANKING)
-			sa(a_list);
-		else
-		{
-			while (i == RR && a_list[a_list[0]] != n && ft_publish(RRA)
-					!= ERROR_RANKING)
-				rra(a_list);
-			while (i == R && a_list[a_list[0]] != n && ft_publish(RA)
-					!= ERROR_RANKING)
-				ra(a_list);
-		}
-		if (n >= a_list[0])
-			n = -1;
+		if (ft_intlistsorted(a_list) != SORTED && a_list[2] == SUMM + 1)
+			if (ft_publish(RA) != ERROR_RANKING)
+				ft_publish(SA);
+		if (ft_intlistsorted(a_list) != SORTED && a_list[2] == a_list[SUMM] - 1)
+			if (ft_publish(RRA) != ERROR_RANKING)
+				ft_publish(SA);
 	}
+	else
+		if (ft_publish(RA) != ERROR_RANKING)
+			if (ft_intlistsorted(a_list) != SORTED)
+				if (ft_publish(SA) != ERROR_RANKING)
+					return (SORTED);
 	return (SORTED);
 }

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/15 13:54:35 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/15 17:07:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	pushswap(int *a_list, int *b_list, int c, int n)
 {
 	int		i;
 
-	if (ft_intlisttruelysorted(a_list) == SORTED)
+	if (ft_intlistsorted(a_list) == SORTED)
 		return (SORTED);
 	if (a_list[0] < SPLIT)
 		return (quick_solve(a_list));
@@ -76,7 +76,7 @@ static int	rank_alist(int *a_list, int c, int n, int rank)
 	while (++c <= a_list[SUMM] && (n = 0) == 0)
 		if ((rank = SUMM) == SUMM)
 			while (++n <= a_list[SUMM])
-				if (a_list[n] > a_list[c] && ++rank)
+				if (a_list[n] < a_list[c] && ++rank)
 					new_list[c] = rank;
 	n = -1;
 	while (++n <= new_list[0])
