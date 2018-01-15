@@ -6,18 +6,29 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/10 17:12:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/12 17:50:04 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/15 13:56:08 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int		ft_intlisttruelysorted(int *list)
+{
+	int		i;
+
+	i = 0;
+	while (++i < list[0])
+		if (list[i] > list[i + 1])
+			return (1);
+	return (0);
+}
 
 int		ft_intlistsorted(int *list)
 {
 	int		i;
 
 	i = 0;
-	while (++i <= list[0])
+	while (++i < list[0])
 		if (list[i] < list[i + 1])
 			return (1);
 	return (0);

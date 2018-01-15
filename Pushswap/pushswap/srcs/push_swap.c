@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/12 17:57:32 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/15 13:54:35 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,26 @@ static int	pushswap(int *a_list, int *b_list, int c, int n)
 {
 	int		i;
 
-	if (ft_intlistsorted(a_list) == SORTED)
+	if (ft_intlisttruelysorted(a_list) == SORTED)
 		return (SORTED);
+	if (a_list[0] < SPLIT)
+		return (quick_solve(a_list));
 	while (++n < c && (i = INIT_NEG) == INIT_NEG)
 	{
-		while (a_list[++i] != n)
-			;
-		if (a_list[i] == n)
-			(i > a_list[0] / 2) ? (i = RRA) :
-				(i = RA);
-		while (i == RRA && a_list[a_list[0]] != n && ft_printf("rra\n") != 0)
+		if ((i = find_int_position(a_list, n)) == -84)
+			return (ft_putsterr(UNKNOWN_BUG));
+		i = rr_r(a_list, i);
+		while (i == RR && a_list[a_list[0]] != n && ft_publish(RRA) != S_ERR)
 			rra(a_list);
-		while (i == RA && a_list[a_list[0]] != n && ft_printf("ra\n") != 0)
+		while (i == R && a_list[a_list[0]] != n && ft_publish(RA) != S_ERR)
 			ra(a_list);
-		if (a_list[a_list[0]] == n && ft_printf("pb\n") != 0)
+		if (a_list[a_list[0]] == n && ft_publish(PB) != S_ERR)
 			pb(a_list, b_list);
 	}
-	while (b_list[0] != 0 && ft_printf("pa\n") != 0)
+	while (b_list[0] != 0 && ft_publish(PA) != S_ERR)
 		pa(a_list, b_list);
+	ft_printf("DEBUG UNDER THIS :\n");
+	ft_printint(a_list);
 	return (SORTED);
 }
 

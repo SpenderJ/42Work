@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 20:08:26 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/15 13:40:51 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 */
 
 # ifndef BONUS
-#  define BONUS 0
+#  define BONUS 42
 # endif
 
 # ifndef SUCCESS

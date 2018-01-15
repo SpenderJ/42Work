@@ -6,12 +6,68 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/12 17:59:46 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/15 13:56:39 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSHSWAP_H
 # define PUSHSWAP_H
+
+/*
+**                          COMMANDS WRITING
+**
+**
+** Here are the 11 commands that i'm allowed to use for this project
+*/
+
+# ifndef SA
+#  define SA 1
+# endif
+
+# ifndef SB
+#  define SB 2
+# endif
+
+# ifndef SS
+#  define SS 3
+# endif
+
+# ifndef PA
+#  define PA 4
+# endif
+
+# ifndef PB
+#  define PB 5
+# endif
+
+# ifndef RA
+#  define RA 6
+# endif
+
+# ifndef RB
+#  define RB 7
+# endif
+
+# ifndef RR
+#  define RR 8
+# endif
+
+# ifndef RRA
+#  define RRA 9
+# endif
+
+# ifndef RRB
+#  define RRB 10
+# endif
+
+# ifndef RRR
+#  define RRR 11
+# endif
+
+/*
+**                             END OF COMMAND LIST
+** Now all macros are used in the code
+*/
 
 # ifndef SORTED
 #  define SORTED 0
@@ -25,12 +81,24 @@
 #  define RANKED 0
 # endif
 
+# ifndef S_ERR
+#  define S_ERR 1
+# endif
+
 # ifndef ERROR_RANKING
 #  define ERROR_RANKING 1
 # endif
 
 # ifndef PUSHSWAP_ERROR
 #  define PUSHSWAP_ERROR 1
+# endif
+
+# ifndef INT_DONT_EXIST
+#  define INT_DONT_EXIST -84
+# endif
+
+# ifndef SPLIT
+#  define SPLIT 4
 # endif
 
 # ifndef SIZE_ERROR
@@ -81,12 +149,12 @@
 #  define INIT_NEG 1
 # endif
 
-# ifndef RRA
-#  define RRA 42
+# ifndef R
+#  define R 21
 # endif
 
-# ifndef RA
-#  define RA 21
+# ifndef UNKNOWN_BUG
+#  define UNKNOWN_BUG "Wow, this should have not happened... Program will exit"
 # endif
 
 # ifndef COMMAND_ERROR
@@ -124,5 +192,10 @@ void	rr(int *a_list, int *b_list);
 void	rra(int *a_list);
 void	rrb(int *b_list);
 void	rrr(int *a_list, int *b_list);
+int		list_sorted(int *a_list, int *b_list);
+int		find_int_position(int *list, int to_find);
+int		rr_r(int *a_list, int pos);
+int		quick_solve(int *a_list);
+int		ft_publish(int command);
 
 #endif
