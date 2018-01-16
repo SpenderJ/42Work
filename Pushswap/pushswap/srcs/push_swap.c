@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/15 17:07:16 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/16 16:04:12 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	pushswap(int *a_list, int *b_list, int c, int n)
 {
 	int		i;
 
-	if (ft_intlistsorted(a_list) == SORTED)
+	if (ft_intlisttruelysorted(a_list) == SORTED)
 		return (SORTED);
 	if (a_list[0] < SPLIT)
 		return (quick_solve(a_list));
@@ -76,8 +76,8 @@ static int	rank_alist(int *a_list, int c, int n, int rank)
 	while (++c <= a_list[SUMM] && (n = 0) == 0)
 		if ((rank = SUMM) == SUMM)
 			while (++n <= a_list[SUMM])
-				if (a_list[n] < a_list[c] && ++rank)
-					new_list[c] = rank;
+				if (a_list[n] < a_list[c])
+					new_list[c] = ++rank;
 	n = -1;
 	while (++n <= new_list[0])
 		a_list[n] = new_list[n];
@@ -93,7 +93,7 @@ static int	push_parser(int *a_list, int *b_list, int c_num, char **argv)
 	a_list[0] = c_num;
 	b_list[0] = B_SIZE;
 	c = 0;
-	ft_revint(a_list);
+//	ft_revint(a_list);
 	while (++c < c_num && (i = 0) == 0)
 		while (++i < c_num)
 			if (a_list[i] == a_list[c] && c != i)

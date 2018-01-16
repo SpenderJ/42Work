@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 10:46:00 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/15 17:07:13 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/16 16:06:14 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,30 +69,21 @@ int		ft_publish(int command)
 
 int		quick_solve(int *a_list)
 {
-	int		n;
-	int		i;
-
-	n = 0;
 	ft_printint(a_list);
-	if ((i = find_int_position(a_list, n)) == -84)
-		return (ft_putsterr(UNKNOWN_BUG));
-	if (a_list[SUMM + 1] != a_list[0] && ft_publish(SA) != ERROR_RANKING)
-		sa(a_list);
-	if (ft_intlistsorted(a_list) == SORTED)
+	if (a_list[SUMM + 1] == SUMM && a_list[2] == a_list[0] - 1 &&
+			ft_publish(RRA) != ERROR_RANKING)
+		ft_publish(SA);
+	else if (a_list[SUMM + 1] == SUMM + 1 && a_list[2] == a_list[0] - 1 &&
+			ft_publish(RRA) != ERROR_RANKING)
 		return (SORTED);
-	if (a_list[1] == SUMM)
-	{
-		if (ft_intlistsorted(a_list) != SORTED && a_list[2] == SUMM + 1)
-			if (ft_publish(RA) != ERROR_RANKING)
-				ft_publish(SA);
-		if (ft_intlistsorted(a_list) != SORTED && a_list[2] == a_list[SUMM] - 1)
-			if (ft_publish(RRA) != ERROR_RANKING)
-				ft_publish(SA);
-	}
-	else
-		if (ft_publish(RA) != ERROR_RANKING)
-			if (ft_intlistsorted(a_list) != SORTED)
-				if (ft_publish(SA) != ERROR_RANKING)
-					return (SORTED);
+	else if (a_list[SUMM + 1] == SUMM + 1 && a_list[2] == SUMM &&
+			ft_publish(SA) != ERROR_RANKING)
+		return (SORTED);
+	else if (a_list[SUMM + 1] == a_list[0] - 1 && a_list[2] == SUMM &&
+			ft_publish(RRA) != ERROR_RANKING)
+		ft_publish(RRA);
+	else if (a_list[SUMM + 1] == a_list[0] - 1 && a_list[2] == SUMM + 1 &&
+			ft_publish(SA) != ERROR_RANKING && ft_publish(RA) != ERROR_RANKING)
+		ft_publish(RA);
 	return (SORTED);
 }
