@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/17 09:15:18 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/17 10:02:38 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ static int	checker(int *a_list, int *b_list, int c_num, char **argv)
 	b_list[0] = B_SIZE;
 	c = 0;
 	ft_revint(a_list);
-	while (++c < c_num && (i = 0) == 0)
-		while (++i < c_num)
+	while (++c <= c_num && (i = 0) == 0)
+		while (++i <= c_num)
 			if (a_list[i] == a_list[c] && c != i)
 				return (ft_putsterr(DOUBLE_ERROR));
 	c = 0;

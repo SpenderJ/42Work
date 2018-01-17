@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/17 07:59:44 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/17 09:39:48 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,5 +197,6 @@ int		find_int_position(int *list, int to_find);
 int		rr_r(int *a_list, int pos);
 int		quick_solve(int *a_list);
 int		ft_publish(int command);
+int		free_pushswap(int *a_list, int *b_list, int ret);
 
 #endif
