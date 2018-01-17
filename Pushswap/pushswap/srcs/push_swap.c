@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/17 09:14:05 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/17 09:30:19 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,8 @@ static int	pushswap(int *a_list, int *b_list, int c, int n)
 		return (SORTED);
 	if (a_list[0] < SPLIT)
 		return (quick_solve(a_list));
-	while (++n < c - 2 && (i = INIT_NEG) == INIT_NEG)
+	while (++n < c - 2 && (i = find_int_position(a_list, n)) != INT_DONT_EXIST)
 	{
-		if ((i = find_int_position(a_list, n)) == -84)
-			return (ft_putsterr(UNKNOWN_BUG));
 		i = rr_r(a_list, i);
 		if (a_list[0] > 1 && a_list[a_list[0] - 1] == n &&
 				ft_publish(SA) != S_ERR)
