@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 10:46:00 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/17 08:22:57 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/17 09:19:10 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,33 +43,32 @@ int		rr_r(int *a_list, int pos)
 int		ft_publish(int command)
 {
 	if (command == SA)
-		return (ft_printf("%b2sa\n%b0"));
+		return (ft_printf("sa\n"));
 	else if (command == SB)
-		return (ft_printf("%b2sb\n%b0"));
+		return (ft_printf("sb\n"));
 	else if (command == SS)
-		return (ft_printf("%b3ss\n%b0"));
+		return (ft_printf("ss\n"));
 	else if (command == PA)
-		return (ft_printf("%b4pa\n%b0"));
+		return (ft_printf("pa\n"));
 	else if (command == PB)
-		return (ft_printf("%b4pb\n%b0"));
+		return (ft_printf("pb\n"));
 	else if (command == RA)
-		return (ft_printf("%b5ra\n%b0"));
+		return (ft_printf("ra\n"));
 	else if (command == RB)
-		return (ft_printf("%b5rb\n%b0"));
+		return (ft_printf("rb\n"));
 	else if (command == RR)
-		return (ft_printf("%b3rr\n%b0"));
+		return (ft_printf("rr\n"));
 	else if (command == RRA)
-		return (ft_printf("%b6rra\n%b0"));
+		return (ft_printf("rra\n"));
 	else if (command == RRB)
-		return (ft_printf("%b6rrb\n%b0"));
+		return (ft_printf("rrb\n"));
 	else if (command == RRR)
-		return (ft_printf("%b3rrr\n%b0"));
+		return (ft_printf("rrr\n"));
 	return (ERROR_RANKING);
 }
 
 int		quick_solve(int *a_list)
 {
-	ft_printint(a_list);
 	if (a_list[SUMM + 1] == SUMM && a_list[2] == a_list[0] - 1 &&
 			ft_publish(RRA) != ERROR_RANKING)
 		ft_publish(SA);

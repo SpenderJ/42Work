@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/17 08:55:58 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/17 09:14:05 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ static int	pushswap(int *a_list, int *b_list, int c, int n)
 	{
 		if ((i = find_int_position(a_list, n)) == -84)
 			return (ft_putsterr(UNKNOWN_BUG));
-		printf("On cherche %d, sa position est %d :\n", n, i);
-		ft_printint(a_list);
 		i = rr_r(a_list, i);
 		if (a_list[0] > 1 && a_list[a_list[0] - 1] == n &&
 				ft_publish(SA) != S_ERR)
@@ -69,8 +67,6 @@ static int	pushswap(int *a_list, int *b_list, int c, int n)
 		sa(a_list);
 	while (b_list[0] != 0 && ft_publish(PA) != S_ERR)
 		pa(a_list, b_list);
-	ft_printf("DEBUG UNDER THIS :\n");
-	ft_printint(a_list);
 	return (SORTED);
 }
 
