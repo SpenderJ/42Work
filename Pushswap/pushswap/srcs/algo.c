@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 10:46:00 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/16 16:06:14 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/17 08:22:57 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int		find_int_position(int *list, int tofind)
 int		rr_r(int *a_list, int pos)
 {
 	if (pos > a_list[0] / 2)
-		return (RR);
-	else
 		return (R);
+	else
+		return (RR);
 }
 
 int		ft_publish(int command)

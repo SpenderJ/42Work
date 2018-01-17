@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/16 16:04:12 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/17 08:55:58 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,21 @@ static int	pushswap(int *a_list, int *b_list, int c, int n)
 {
 	int		i;
 
+	ft_revint(a_list);
 	if (ft_intlisttruelysorted(a_list) == SORTED)
 		return (SORTED);
 	if (a_list[0] < SPLIT)
 		return (quick_solve(a_list));
-	while (++n < c && (i = INIT_NEG) == INIT_NEG)
+	while (++n < c - 2 && (i = INIT_NEG) == INIT_NEG)
 	{
 		if ((i = find_int_position(a_list, n)) == -84)
 			return (ft_putsterr(UNKNOWN_BUG));
+		printf("On cherche %d, sa position est %d :\n", n, i);
+		ft_printint(a_list);
 		i = rr_r(a_list, i);
+		if (a_list[0] > 1 && a_list[a_list[0] - 1] == n &&
+				ft_publish(SA) != S_ERR)
+			sa(a_list);
 		while (i == RR && a_list[a_list[0]] != n && ft_publish(RRA) != S_ERR)
 			rra(a_list);
 		while (i == R && a_list[a_list[0]] != n && ft_publish(RA) != S_ERR)
@@ -59,6 +65,8 @@ static int	pushswap(int *a_list, int *b_list, int c, int n)
 		if (a_list[a_list[0]] == n && ft_publish(PB) != S_ERR)
 			pb(a_list, b_list);
 	}
+	if (a_list[0] == 2 && a_list[1] < a_list[2] && ft_publish(SA) != S_ERR)
+		sa(a_list);
 	while (b_list[0] != 0 && ft_publish(PA) != S_ERR)
 		pa(a_list, b_list);
 	ft_printf("DEBUG UNDER THIS :\n");
@@ -93,7 +101,6 @@ static int	push_parser(int *a_list, int *b_list, int c_num, char **argv)
 	a_list[0] = c_num;
 	b_list[0] = B_SIZE;
 	c = 0;
-//	ft_revint(a_list);
 	while (++c < c_num && (i = 0) == 0)
 		while (++i < c_num)
 			if (a_list[i] == a_list[c] && c != i)
