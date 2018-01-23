@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/23 12:28:50 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/23 14:27:13 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,25 @@ int		ds(int *a_list, int *b_list)
 	while (i == R && a_list[a_list[0]] != t && ft_publish(RA) != S_ERR)
 		ra(a_list);
 	a = t - 1;
-	while (a_list[0] != 0 && ft_publish(RRA) != S_ERR)
+//	printf("FIN PREMIERE ETAPE\n");
+	while (a_list[1] != t && ft_publish(RRA) != S_ERR)
 	{
+		rra(a_list);
 //		printf("ETAT DES LISTES :\nListe A :\n");
 //		ft_printint(a_list);
 //		printf("Liste B :\n");
 //		ft_printint(b_list);
 //		printf("On recherche %d\n", a);
-//		rra(a_list);
-		if (find_int_position(a_list, a) == INT_DONT_EXIST &&
-				(i = find_int_position(b_list, a)) != INT_DONT_EXIST)
+		if (a_list[a_list[0]] != a && ft_publish(PB) != S_ERR &&
+				find_int_position(a_list, a) != INT_DONT_EXIST)
+			pb(a_list, b_list);
+		else if (find_int_position(a_list, a) == INT_DONT_EXIST &&
+				(find_int_position(b_list, a) != INT_DONT_EXIST))
 		{
-			i = rr_r(b_list, i);
+			if (ft_publish(PB) != S_ERR)
+				pb(a_list, b_list);
+			if ((i = find_int_position(b_list, a)) != INT_DONT_EXIST)
+				i = rr_r(b_list, i);
 			while (i == RR && b_list[b_list[0]] != a && ft_publish(RRB) != S_ERR)
 				rrb(b_list);
 			while (i == R && b_list[b_list[0]] != a && ft_publish(RB) != S_ERR)
@@ -69,8 +76,6 @@ int		ds(int *a_list, int *b_list)
 				pa(a_list, b_list);
 			--a;
 		}
-		else if (a_list[a_list[0]] != a && ft_publish(PB) != S_ERR)
-			pb(a_list, b_list);
 		else
 			--a;
 //		printf("Liste A :\n");
