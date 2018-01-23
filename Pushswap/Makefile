@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2018/01/17 09:43:01 by juspende         ###   ########.fr        #
+#    Updated: 2018/01/17 13:50:39 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC2	=	check/srcs/checker.c			\
 SRC		=	pushswap/srcs/push_swap.c		\
 			pushswap/srcs/algo.c			\
 			pushswap/srcs/free.c			\
+			pushswap/srcs/ds.c				\
 			pushswap/srcs/moves/swap.c		\
 			pushswap/srcs/moves/push.c		\
 			pushswap/srcs/moves/rotate.c	\

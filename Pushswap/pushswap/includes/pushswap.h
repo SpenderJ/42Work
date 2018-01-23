@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/17 09:39:48 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/23 11:57:38 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,10 @@
 
 # ifndef SPLIT
 #  define SPLIT 4
+# endif
+
+# ifndef BIG
+#  define BIG 10
 # endif
 
 # ifndef SIZE_ERROR
@@ -198,5 +202,6 @@ int		rr_r(int *a_list, int pos);
 int		quick_solve(int *a_list);
 int		ft_publish(int command);
 int		free_pushswap(int *a_list, int *b_list, int ret);
+int		ds(int *a_list, int *b_list);
 
 #endif
