@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/24 13:32:23 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/24 15:43:02 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/24 18:43:14 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,35 +18,30 @@ int		ft_placeint(int *list, int nb)
 	int		min;
 
 	i = 0;
-	min = 30071998;
+	min = 1;
+	printf("PLACEINT\n");
 	while (++i <= list[0])
-		if (list[i] < min)
+		if (list[i] < list[min])
 			min = i;
+	printf("PLACEINT DEBUG\n");
 	if (list[0] == 1)
-	{
-		printf("DAC\n");
 		return (list[1]);
-	}
-	if (nb < list[min])
-	{
-		printf("MIN\n");
+	else if (nb < list[min])
 		return (list[min]);
-	}
 	i = min;
+	printf("[[PLACEINT DEBUG]]\n");
 	while (nb > list[i])
 	{
-		if (i == list[0])
-			i = 1;
+		if (i != 1)
+			--i;
 		else
-			++i;
+			i = list[0];
 		if (i == min)
 		{
-			printf("TG\n");
-			printf("FDP\n");
-			return (min == 1 ? list[list[0]] : list[min - 1]);
+			printf("JSUIS RELOU\n");
+			return (min == 0 ? list[0] : list[min]);
 		}
 	}
-	printf("INSERTION APRES %d\n", list[i]);
 	return (list[i]);
 }
 
@@ -56,23 +51,29 @@ int			ft_posint(int *list, int nb)
 	int			min;
 
 	i = 0;
-	min = 30071998;
+	min = 1;
 	while (++i <= list[0])
-		if (list[i] < min)
+		if (list[i] < list[min])
 			min = i;
 	if (list[0] == 1)
 		return (1);
-	if (nb < list[min])
+	else if (nb < list[min])
 		return (min);
 	i = min;
+	printf("[[PRINTINT DEBUG START]\n\n");
 	while (nb > list[i])
 	{
-		if (i == list[0])
-			i = 1;
+	printf("In While Number = %d list[i] = %d, i = %d\n", nb, list[i], i); 
+		if (i != 1)
+			--i;
 		else
-			++i;
+			i = list[0];
 		if (i == min)
-			return (min == 1 ? list[list[0]] : list[min - 1]);
+		{
+			printf("[PRINTINT BOUCLE ENTIERE] RETURNED = %d\n", min);
+			return (min == 0 ? 0 : min);
+		}
 	}
+	printf("[PRINTINT RANKING] END POF NORMAL\n");
 	return (i);
 }
