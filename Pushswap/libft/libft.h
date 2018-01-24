@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/15 13:51:25 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/24 15:32:21 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 typedef	struct	s_list
 {
@@ -24,6 +25,8 @@ typedef	struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+int				ft_posint(int *list, int nb);
+int				ft_placeint(int *list, int nb);
 void			ft_printint(int *list);
 int				ft_intlisttruelysorted(int *list);
 int				ft_intlistsorted(int *list);
