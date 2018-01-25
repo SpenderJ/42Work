@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/24 19:32:58 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/25 13:07:36 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,117 +30,53 @@
 ** On va le mettre au sommet de b pour le repush dans a.
 */
 
-int		ds(int *a_list, int *b_list)
+int			ds(int *a_list, int *b_list)
 {
-	int		n;
+	int		summ;
+	int		init;
 	int		c;
-	int		t;
-	int		i;
-	int		a;
+	int		nb;
+	int		rest;
 
-	n = 0;
-	t = a_list[0] - 1;
-	c = a_list[0];
 	ft_revint(a_list);
-	if ((i = find_int_position(a_list, t)) != INT_DONT_EXIST)
-		i = rr_r(a_list, i);
-	while (i == RR && a_list[a_list[0]] != t && ft_publish(RRA) != S_ERR)
-		rra(a_list);
-	while (i == R && a_list[a_list[0]] != t && ft_publish(RA) != S_ERR)
-		ra(a_list);
-	a = t - 1;
-//	printf("FIN PREMIERE ETAPE\n");
-	while (a_list[1] != t && ft_publish(RRA) != S_ERR)
+	summ = a_list[0];
+	init = a_list[1];
+	c = summ;
+/* The following while is working.
+** Making the A pile split into 2 lists of equal size
+** In case of impair basic size A + 1 == B
+*/
+	while (a_list[a_list[0]] != init)
 	{
-		rra(a_list);
-//		ft_printf("ETAT DES LISTES :\nListe A :\n");
-//		ft_printint(a_list);
-//		ft_printf("Liste B :\n");
-//		ft_printint(b_list);
-//		ft_printf("On recherche %d\n", a);
-		if (a_list[a_list[0]] != a &&
-				find_int_position(a_list, a) != INT_DONT_EXIST)
-		{
-/* Deplacement de b pour inserer directement la donnee triee
-** Afin d'economiser des deplacements
-*/
-			if (b_list[0] >= 1)
-			{
-//				ft_printf("\n\n[NEW FEATURE]\n");
-//				ft_printf("PLACEINT\n\nSEARCHED=%d\nB_LIST: ", a_list[a_list[0]]);
-//				ft_printint(b_list);
-				i = ft_placeint(b_list, a_list[a_list[0]]);
-//				ft_printf("PLACEINT END:b_list END -> %d\n", i);
-//				ft_printf("POSINT\n\n%d IS TO BE AT %dth Grade\n", a_list[a_list[0]], ft_posint(b_list, a_list[a_list[0]]));
-//				ft_printf("B_LIST:");
-//				ft_printint(b_list);
-				n = rr_r(b_list, ft_posint(b_list, a_list[a_list[0]]));
-				while (n == RR && b_list[b_list[0]] != i && ft_publish(RRB) != S_ERR)
-					rrb(b_list);
-				while (n == R && b_list[b_list[0]] != i && ft_publish(RB) != S_ERR)
-					rb(b_list);
-//				ft_printf("END OF MOVING: B_LIST:");
-//				ft_printint(b_list);
-//				ft_printf("[END OF NEW FEATURE PB]\n\n\n");
-//				if (b_list[0] > 2 && b_list[b_list[0]] > b_list[b_list[0] - 1])
-//					return (printf("On a bug\n"));
-			//	return (0);
-			}
-			if (ft_publish(PB) != S_ERR)
-				pb(a_list, b_list);
-//			ft_printf("EOF PB\nA_list:");
-//			ft_printint(a_list);
-//			ft_printf("B_list:");
-//			ft_printint(b_list);
-//			ft_printf("\n\n");
-/* On fait un petit swap pour si la liste ne contenait au'un ou au'on a un max
-** sans sa mon b ne serait trie dans tout les cas ce aui diminuerait les perfs
-*/
-		}
-		else if (find_int_position(a_list, a) == INT_DONT_EXIST &&
-				(find_int_position(b_list, a) != INT_DONT_EXIST))
-		{
-			i = ft_placeint(b_list, a_list[a_list[0]]);
-			n = rr_r(b_list, ft_posint(b_list, a_list[a_list[0]]));
-			while (n == RR && b_list[b_list[0]] != i && ft_publish(RRB) != S_ERR)
-				rrb(b_list);
-			while (n == R && b_list[b_list[0]] != i && ft_publish(RB) != S_ERR)
-				rb(b_list);
-			if (ft_publish(PB) != S_ERR)
-				pb(a_list, b_list);
-			if ((i = find_int_position(b_list, a)) != INT_DONT_EXIST)
-				i = rr_r(b_list, i);
-			while (i == RR && b_list[b_list[0]] != a && ft_publish(RRB) != S_ERR)
-				rrb(b_list);
-			while (i == R && b_list[b_list[0]] != a && ft_publish(RB) != S_ERR)
-				rb(b_list);
-			if (b_list[b_list[0]] == a && ft_publish(PA) != S_ERR)
-				pa(a_list, b_list);
-			--a;
-		}
-		else
-			--a;
-//		ft_printf("Liste A :");
-//		ft_printint(a_list);
-//		ft_printf("Liste B :");
-//		ft_printint(b_list);
+		if (a_list[a_list[0]] < (summ / 2) && ft_publish(PB) != S_ERR)
+			pb(a_list, b_list);
+		else if (ft_publish(RA) != S_ERR)
+			ra(a_list);
 	}
-	t = c;
-//	return (0);
-	while (--t >= 0)
+	while (ft_intlistsorted(a_list) != SORTED || b_list[0] != 0)
 	{
-		if ((i = find_int_position(b_list, t)) != INT_DONT_EXIST)
-			i = rr_r(b_list, i);
-		while (i == RR && b_list[b_list[0]] != t && ft_publish(RRB) != S_ERR)
-			rrb(b_list);
-		while (i == R && b_list[b_list[0]] != t && ft_publish(RB) != S_ERR)
-			rb(b_list);
-		if (b_list[b_list[0]] == t && ft_publish(PB) != S_ERR)
+		c = summ;
+		while ((c /= 2) > 0 && (nb = b_list[0]) == b_list[0])
+		{
+
+			init = b_list[1];
+			while (b_list[b_list[0]] != init)
+			{
+			if ((b_list[b_list[0]] > c) && ft_publish(PA) != S_ERR)
+				pa(a_list, b_list);
+			else if (ft_publish(RB) != S_ERR)
+				rb(b_list);
+			}
+		}
+		while (b_list[0] != 0 && ft_publish(PA) != S_ERR)
 			pa(a_list, b_list);
-//		ft_printf("Liste A :\n");
-//		ft_printint(a_list);
-//		ft_printf("Liste B :\n");
-//		ft_printint(b_list);
+		while (nb-- > 0 && ft_publish(RA) != S_ERR)
+			ra(a_list);
+		ft_printf("A_list:");
+		ft_printint(a_list);
+		ft_printf("B_list:");
+		ft_printint(b_list);
+		return (0);
 	}
 	return (SORTED);
 }
