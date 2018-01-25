@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/25 17:02:00 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/25 17:31:20 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,22 @@
 ** Si le nombre que l'on cherche a deja etait push dans b.
 ** On va le mettre au sommet de b pour le repush dans a.
 */
+
+static int	parse_again_with_medians(int *a_list, int *b_list)
+{
+/* This function is a really effcient solver. It is used after the medians When
+** we need to sort a lot of numbers by itterationg not too much.
+*/
+	return (SORTED);
+}
+
+static int	selective_sort(int *a_list, int *b_list)
+{
+/* This function is a quick solver low efficient, but efficient for few numbers
+** It is used in case the number of number to sort is reallly little.
+*/
+	return (SORTED);
+}
 
 int			ds(int *a_list, int *b_list)
 {
@@ -85,7 +101,7 @@ int			ds(int *a_list, int *b_list)
 	while (med_table[1] != ENDED)
 	{
 /* Creating all the different med. And sorting our B_list into 'tas' */
-		while (b_list[0] > 2)
+		while (b_list[0] >= 2)
 		{
 			++med_table[MED_NUM];
 			med_table[med_table[MED_NUM]] = med_table[med_table[MED_NUM] - 1] / 2;
@@ -126,15 +142,18 @@ int			ds(int *a_list, int *b_list)
 
 		ft_printf("Liste A :");
 		ft_printint(a_list);
-		while (med_table[med_table[MED_NUM]]-- > 0 && ft_publish(PB) != S_ERR)
-			pb(a_list, b_list);
-		ft_printf("Liste A :");
-		ft_printint(a_list);
-		ft_printf("Liste B :");
-		ft_printint(b_list);
-		med_table[med_table[MED_NUM]] = 0;
-		ft_printf("Mediane Table :");
-		ft_printint(med_table);
+		while (med_table[MED_NUM] > 1)
+		{
+			while (med_table[med_table[MED_NUM]]-- > 0 && ft_publish(PB) != S_ERR)
+				pb(a_list, b_list);
+			{
+				if (b_list[0] < LOW_SIZE_TO_SORT)
+					selective_sort(a_list, b_list);
+				else
+					parse_again_with_medians(a_list, b_list);
+			}
+		}
+
 
 /* Where are we? We sorted the first list and pushed back our b_list into A.
 ** Now it's time to push what we had in b in A and put it at the beginning.

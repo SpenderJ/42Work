@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/25 14:48:04 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/25 17:27:00 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,10 @@
 
 # ifndef SORTED
 #  define SORTED 0
+# endif
+
+# ifndef LOW_SIZE_TO_SORT
+#  define LOW_SIZE_TO_SORT 15
 # endif
 
 # ifndef MED_NUM
