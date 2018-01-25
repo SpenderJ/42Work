@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/25 13:07:36 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/25 15:04:23 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,19 @@ int			ds(int *a_list, int *b_list)
 {
 	int		summ;
 	int		init;
-	int		c;
-	int		nb;
-	int		rest;
+	int		*med_table;
 
 	ft_revint(a_list);
 	summ = a_list[0];
 	init = a_list[1];
-	c = summ;
-/* The following while is working.
-** Making the A pile split into 2 lists of equal size
-** In case of impair basic size A + 1 == B
-*/
+
+/* Med_Table[0] == At how many med we defined */
+
+	med_table = ft_intnew(a_list[0]);
+	med_table[MED_NUM] = MED_NUM;
+
+/* The following while is working.*/
+
 	while (a_list[a_list[0]] != init)
 	{
 		if (a_list[a_list[0]] < (summ / 2) && ft_publish(PB) != S_ERR)
@@ -53,30 +54,83 @@ int			ds(int *a_list, int *b_list)
 		else if (ft_publish(RA) != S_ERR)
 			ra(a_list);
 	}
-	while (ft_intlistsorted(a_list) != SORTED || b_list[0] != 0)
-	{
-		c = summ;
-		while ((c /= 2) > 0 && (nb = b_list[0]) == b_list[0])
-		{
 
+/* Filling the median table with the first value */
+
+	med_table[1] = summ;
+	++med_table[MED_NUM];
+
+/* Automatising the first half moves for the first part */
+
+/* Reminder:
+ *
+** "med_table[med_table[MED_NUM]] = med_table[med_table[MED_NUM - 1]] / 2"
+
+** Meaning:
+
+** We set the value of next median by dividing the size of the old one by 2.
+*/
+
+	ft_printf("a_list :");
+	ft_printint(a_list);
+	ft_printf("b_list :");
+	ft_printint(b_list);
+
+/* Now it's time to have our main action for the 250 most little numbers (if 500 numbers sent).
+** This while is waiting that everything is sorted. When everything will be
+** We will set the value of med_table[2] at a negative value defined in .h
+** I'm sure it cant create confusion because med can only be positive
+*/
+
+	while (med_table[1] != ENDED)
+	{
+/* Creating all the different med. And sorting our B_list into 'tas' */
+		while (b_list[0] > 2)
+		{
+			++med_table[MED_NUM];
+			med_table[med_table[MED_NUM]] = med_table[med_table[MED_NUM] - 1] / 2;
 			init = b_list[1];
 			while (b_list[b_list[0]] != init)
 			{
-			if ((b_list[b_list[0]] > c) && ft_publish(PA) != S_ERR)
-				pa(a_list, b_list);
-			else if (ft_publish(RB) != S_ERR)
-				rb(b_list);
+				if (b_list[b_list[0]] > med_table[med_table[MED_NUM]] && ft_publish(PA) != S_ERR)
+					pa(a_list, b_list);
+				else if (ft_publish(RB) != S_ERR)
+					rb(b_list);
 			}
 		}
-		while (b_list[0] != 0 && ft_publish(PA) != S_ERR)
+/* Why decrease med_table, because there is an empty case at the end.
+*/
+		while (med_table[MED_NUM] == 0 && MED_NUM > 1)
+			--med_table[MED_NUM];
+		if (MED_NUM == 1)
+			med_table[1] = ENDED;
+		med_table[1] = ENDED;
+
+/* Time to push to a_list the rest of b */
+
+		if (med_table[MED_NUM] != 1)
+			return (ft_printf("Error\n"));
+		else if (ft_publish(PA) != S_ERR && ft_publish(RA) != S_ERR)
+		{
+			med_table[med_table[MED_NUM]] = 0;
+			--med_table[MED_NUM];
 			pa(a_list, b_list);
-		while (nb-- > 0 && ft_publish(RA) != S_ERR)
 			ra(a_list);
-		ft_printf("A_list:");
-		ft_printint(a_list);
-		ft_printf("B_list:");
-		ft_printint(b_list);
-		return (0);
+		}
+
+/* Finally we are going to push what we got in A under our mediane */
+
+		while (med_table[med_table[MED_NUM]]-- > 0 && ft_publish(PB) != S_ERR)
+			pb(a_list, b_list);
+		return (ft_printf("Succes 1\n"));
+
+/* Where are we? We sorted the first list and pushed back our b_list into A.
+** Now it's time to push what we had in b in A and put it at the beginning.
+*/
 	}
+	ft_printf("a_list :");
+	ft_printint(a_list);
+	ft_printf("b_list :");
+	ft_printint(b_list);
 	return (SORTED);
 }

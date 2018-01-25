@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/24 19:34:01 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/25 14:48:04 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,14 @@
 #  define SORTED 0
 # endif
 
+# ifndef MED_NUM
+#  define MED_NUM 0
+# endif
+
+# ifndef EMPTY
+#  define EMPTY 0
+# endif
+
 # ifndef SUMM
 #  define SUMM 0
 # endif
@@ -103,6 +111,10 @@
 
 # ifndef BIG
 #  define BIG 1
+# endif
+
+# ifndef ENDED
+#  define ENDED -30071998
 # endif
 
 # ifndef SIZE_ERROR
