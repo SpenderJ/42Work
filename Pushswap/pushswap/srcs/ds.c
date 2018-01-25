@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/25 17:31:20 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/25 17:47:18 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,17 @@ int			ds(int *a_list, int *b_list)
 				else
 					parse_again_with_medians(a_list, b_list);
 			}
+			while (b_list[0] != 0 && ft_publish(PA) != S_ERR && ft_publish(RA) != S_ERR)
+			{
+				pa(a_list, b_list);
+				ra(a_list);
+			}
 		}
+
+/* For me in future, if you need to get the last one not sorted just go to 0 and
+** take the next one zero, then you just have to push until 0 show up at the END
+** of the list, you'll know that you pushed enough
+*/
 
 
 /* Where are we? We sorted the first list and pushed back our b_list into A.
