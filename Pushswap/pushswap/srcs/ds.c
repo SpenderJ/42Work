@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/25 15:04:23 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/25 17:02:00 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ int			ds(int *a_list, int *b_list)
 		{
 			++med_table[MED_NUM];
 			med_table[med_table[MED_NUM]] = med_table[med_table[MED_NUM] - 1] / 2;
+			ft_printf("Med_table :");
+			ft_printint(med_table);
 			init = b_list[1];
 			while (b_list[b_list[0]] != init)
 			{
@@ -100,19 +102,21 @@ int			ds(int *a_list, int *b_list)
 		}
 /* Why decrease med_table, because there is an empty case at the end.
 */
-		while (med_table[MED_NUM] == 0 && MED_NUM > 1)
-			--med_table[MED_NUM];
-		if (MED_NUM == 1)
-			med_table[1] = ENDED;
-		med_table[1] = ENDED;
 
 /* Time to push to a_list the rest of b */
 
-		if (med_table[MED_NUM] != 1)
+		if (med_table[med_table[MED_NUM]] != 0)
+		{
+			printf("MED TABLE :");
+			ft_printint(med_table);
+			ft_printf("Liste A :");
+			ft_printint(a_list);
+			ft_printf("Liste B :");
+			ft_printint(b_list);
 			return (ft_printf("Error\n"));
+		}
 		else if (ft_publish(PA) != S_ERR && ft_publish(RA) != S_ERR)
 		{
-			med_table[med_table[MED_NUM]] = 0;
 			--med_table[MED_NUM];
 			pa(a_list, b_list);
 			ra(a_list);
@@ -120,9 +124,17 @@ int			ds(int *a_list, int *b_list)
 
 /* Finally we are going to push what we got in A under our mediane */
 
+		ft_printf("Liste A :");
+		ft_printint(a_list);
 		while (med_table[med_table[MED_NUM]]-- > 0 && ft_publish(PB) != S_ERR)
 			pb(a_list, b_list);
-		return (ft_printf("Succes 1\n"));
+		ft_printf("Liste A :");
+		ft_printint(a_list);
+		ft_printf("Liste B :");
+		ft_printint(b_list);
+		med_table[med_table[MED_NUM]] = 0;
+		ft_printf("Mediane Table :");
+		ft_printint(med_table);
 
 /* Where are we? We sorted the first list and pushed back our b_list into A.
 ** Now it's time to push what we had in b in A and put it at the beginning.
