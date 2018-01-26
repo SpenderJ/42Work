@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/25 18:59:24 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 09:58:22 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ static int	parse_again_with_medians(int *a_list, int *b_list)
 /* This function is a really effcient solver. It is used after the medians When
 ** we need to sort a lot of numbers by itterationg not too much.
 */
+	(void)a_list;
+	(void)b_list;
 	return (SORTED);
 }
 
@@ -43,6 +45,28 @@ static int	selective_sort(int *a_list, int *b_list)
 /* This function is a quick solver low efficient, but efficient for few numbers
 ** It is used in case the number of number to sort is reallly little.
 */
+	int		min;
+	int		c;
+
+	while (b_list[0] != EMPTY)
+	{
+		c = 0;
+		min = 1;
+		while (++c <= b_list[0])
+			b_list[c] < b_list[min] ? (min = c) : c;
+		c = rr_r(b_list, c);
+		min = b_list[min];
+		while (c == RR && b_list[b_list[0]] != min && ft_publish(RRB) != S_ERR)
+			rrb(b_list);
+		while (c == R && b_list[b_list[0]] != min && ft_publish(RB) != S_ERR)
+			rb(b_list);
+		if (b_list[b_list[0]] == min && ft_publish(PA) != S_ERR &&
+				ft_publish(RA) != S_ERR)
+		{
+			pa(a_list, b_list);
+			ra(a_list);
+		}
+	}
 	return (SORTED);
 }
 
@@ -118,45 +142,49 @@ int			ds(int *a_list, int *b_list)
 		}
 /* Why decrease med_table, because there is an empty case at the end.
 */
+		--med_table[MED_NUM];
 
-/* Time to push to a_list the rest of b */
+/* We just clear the first stack in b */
 
-		if (med_table[med_table[MED_NUM]] != 0)
-		{
-			printf("MED TABLE :");
-			ft_printint(med_table);
-			ft_printf("Liste A :");
-			ft_printint(a_list);
-			ft_printf("Liste B :");
-			ft_printint(b_list);
-			return (ft_printf("Error\n"));
-		}
+		if (b_list[0] != 1)
+			return (ft_putsterr(UNKNOWN_BUG));
 		else if (ft_publish(PA) != S_ERR && ft_publish(RA) != S_ERR)
 		{
-			--med_table[MED_NUM];
 			pa(a_list, b_list);
 			ra(a_list);
+			--med_table[MED_NUM];
+			med_table[med_table[MED_NUM] + 1] = 0;
 		}
 
 /* Finally we are going to push what we got in A under our mediane */
 
+		ft_printf("Med Table :");
+		ft_printint(med_table);
 		ft_printf("Liste A :");
 		ft_printint(a_list);
+		ft_printf("Liste B :");
+		ft_printint(b_list);
 		while (med_table[MED_NUM] > 1)
 		{
 			while (med_table[med_table[MED_NUM]]-- > 0 && ft_publish(PB) != S_ERR)
 				pb(a_list, b_list);
+			if (b_list[0] < LOW_SIZE_TO_SORT)
+				selective_sort(a_list, b_list);
+			else
+				parse_again_with_medians(a_list, b_list);
+			if (b_list[0] != EMPTY)
 			{
-				if (b_list[0] < LOW_SIZE_TO_SORT)
-					selective_sort(a_list, b_list);
-				else
-					parse_again_with_medians(a_list, b_list);
+				ft_printf("[Etat avant crash]:\n\n");
+				ft_printf("Med_Table :");
+				ft_printint(med_table);
+				ft_printf("A_list :");
+				ft_printint(a_list);
+				ft_printf("B_list :");
+				ft_printint(b_list);
+				return (ft_putsterr(UNKNOWN_BUG));
 			}
-			while (b_list[0] != 0 && ft_publish(PA) != S_ERR && ft_publish(RA) != S_ERR)
-			{
-				pa(a_list, b_list);
-				ra(a_list);
-			}
+			else if (--med_table[MED_NUM])
+				med_table[med_table[MED_NUM] + 1] = 0;
 		}
 
 /* For me in future, if you need to get the last one not sorted just go to 0 and
