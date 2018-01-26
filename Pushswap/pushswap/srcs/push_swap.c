@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 12:56:06 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 17:02:25 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ static int	pushswap(int *a_list, int *b_list, int c, int n)
 		sa(a_list);
 	while (b_list[0] != 0 && ft_publish(PA) != S_ERR)
 		pa(a_list, b_list);
-	ft_printint(a_list);
 	return (free_pushswap(a_list, b_list, SORTED));
 }
 

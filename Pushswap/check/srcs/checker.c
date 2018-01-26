@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/17 13:48:32 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 17:11:49 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ int			main(int argc, char **argv)
 	int		*a_list;
 	int		*b_list;
 
+	ft_printf("%s\n", argv[1]);
 	if (argv && argv[1] && ft_strcmp(argv[1], "-h") == 0)
 		return (ft_printf("%s%s%s\n", HELP_1, HELP_2, HELP_3));
 	if ((c = 0) == 0 && argc != 2)

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 16:56:10 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 17:02:37 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ static int	parse_again_with_medians(int *a_list, int *b_list)
 	med_table[MED_NUM] = MED_NUM;
 	med_table[1] = ft_intmax(b_list);
 	++med_table[MED_NUM];
-	while (b_list[0] >= 2)
+	while (b_list[0] >= 2 && ++med_table[MED_NUM])
 	{
-		++med_table[MED_NUM];
-		med_table[med_table[MED_NUM]] = (ft_intmax(b_list) + ft_intmin(b_list)) / 2;
+		med_table[med_table[MED_NUM]] =
+			(ft_intmax(b_list) + ft_intmin(b_list)) / 2;
 		init = b_list[1];
 		while (b_list[b_list[0]] != init)
 		{
@@ -38,6 +38,11 @@ static int	parse_again_with_medians(int *a_list, int *b_list)
 		}
 	}
 	--med_table[MED_NUM];
+	return (parse_again_with_medians2(a_list, b_list, med_table));
+}
+
+int			parse_again_with_medians2(int *a_list, int *b_list, int *med_table)
+{
 	if (b_list[0] == 1 && ft_publish(PA) != S_ERR && ft_publish(RA) != S_ERR)
 	{
 		pa(a_list, b_list);
@@ -47,7 +52,8 @@ static int	parse_again_with_medians(int *a_list, int *b_list)
 	}
 	while (med_table[MED_NUM] > 1)
 	{
-		while (a_list[a_list[0]] <= med_table[med_table[MED_NUM]] && ft_publish(PB) != S_ERR)
+		while (a_list[a_list[0]] <= med_table[med_table[MED_NUM]] &&
+				ft_publish(PB) != S_ERR)
 			pb(a_list, b_list);
 		if (b_list[0] < LOW_SIZE_TO_SORT)
 			selective_sort(a_list, b_list);
@@ -59,7 +65,7 @@ static int	parse_again_with_medians(int *a_list, int *b_list)
 	return (SORTED);
 }
 
-int		selective_sort(int *a_list, int *b_list)
+int			selective_sort(int *a_list, int *b_list)
 {
 	int		min;
 	int		c;
@@ -117,7 +123,7 @@ int			ds2(int *a_list, int *b_list, int summ)
 		else
 			parse_again_with_medians(a_list, b_list);
 	}
-	while(a_list[a_list[0]] > summ / 2)
+	while (a_list[a_list[0]] > summ / 2)
 	{
 		while (a_list[a_list[0]] >= (summ / 2) && ft_publish(PB) != S_ERR)
 			pb(a_list, b_list);
@@ -126,6 +132,5 @@ int			ds2(int *a_list, int *b_list, int summ)
 		else
 			parse_again_with_medians(a_list, b_list);
 	}
-	ft_printint(a_list);
 	return (SORTED);
 }

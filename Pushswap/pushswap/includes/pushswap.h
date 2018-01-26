@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 16:53:38 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 17:03:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@
 # endif
 
 # ifndef LOW_SIZE_TO_SORT
-#  define LOW_SIZE_TO_SORT 15
+#  define LOW_SIZE_TO_SORT 18
 # endif
 
 # ifndef MED_NUM
@@ -114,7 +114,7 @@
 # endif
 
 # ifndef BIG
-#  define BIG 1
+#  define BIG 70
 # endif
 
 # ifndef ENDED
@@ -222,5 +222,5 @@ int		ds(int *a_list, int *b_list);
 int		ds2(int *a_list, int *b_list, int summ);
 int		selective_sort(int *a_list, int *b_list);
 int		rank_alist(int *a_list, int c, int n, int rank);
-
+int		parse_again_with_medians2(int *a_list, int *b_list, int *med_table);
 #endif
