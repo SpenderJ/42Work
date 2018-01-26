@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 12:06:42 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 14:16:45 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,26 @@ static int	parse_again_with_medians(int *a_list, int *b_list)
 	 */
 	int		*med_table;
 	int		init;
+	int		sorted;
 
+	sorted = a_list[1];
 	med_table = ft_intnew(b_list[0]);
 	med_table[MED_NUM] = MED_NUM;
-	med_table[1] = b_list[0];
+	med_table[1] = ft_intmax(b_list);
 	++med_table[MED_NUM];
 
 	/* MED_TABLE INITIALIZATION DONE
 	*/
 
-	ft_printf("Debug of the reccursive\n");
+	ft_printf("RECCURSIVE Debug of the reccursive\n");
 	while (b_list[0] >= 2)
 	{
 		++med_table[MED_NUM];
-		med_table[med_table[MED_NUM]] = med_table[med_table[MED_NUM] - 1] / 2;
+		med_table[med_table[MED_NUM]] = (ft_intmax(b_list) + ft_intmin(b_list)) / 2;
 		init = b_list[1];
-		ft_printf("Med_Table = ");
+		ft_printf("RECCURSIVE A_list :");
+		ft_printint(a_list);
+		ft_printf("RECCURSIVE Med_Table = ");
 		ft_printint(med_table);
 		while (b_list[b_list[0]] != init)
 		{
@@ -62,6 +66,8 @@ static int	parse_again_with_medians(int *a_list, int *b_list)
 			else if (ft_publish(RB) != S_ERR)
 				rb(b_list);
 		}
+		ft_printf("RECCURSIVE B_list :");
+		ft_printint(b_list);
 	}
 	--med_table[MED_NUM];
 	if (b_list[0] == 1 && ft_publish(PA) != S_ERR &&
@@ -74,11 +80,11 @@ static int	parse_again_with_medians(int *a_list, int *b_list)
 	}
 	else
 	{
-		ft_printf("Etat des listes A:");
+		ft_printf("RECCURSIVE Etat des listes A:");
 		ft_printint(a_list);
-		ft_printf("liste B:");
+		ft_printf("RECCURSIVE liste B:");
 		ft_printint(b_list);
-		ft_printf("Median :");
+		ft_printf("RECCURSIVE Median :");
 		ft_printint(med_table);
 		return (ft_putsterr(UNKNOWN_BUG));
 	}
@@ -109,6 +115,10 @@ static int	parse_again_with_medians(int *a_list, int *b_list)
 			med_table[med_table[MED_NUM] + 1] = 0;
 		}
 	}
+	ft_printf("RECCURSIVE END A_list :");
+	ft_printint(a_list);
+	ft_printf("RECCURSIVE END B_list :");
+	ft_printint(b_list);
 	return (SORTED);
 }
 
@@ -204,7 +214,7 @@ int			ds(int *a_list, int *b_list)
 		while (b_list[0] >= 2)
 		{
 			++med_table[MED_NUM];
-			med_table[med_table[MED_NUM]] = med_table[med_table[MED_NUM] - 1] / 2;
+			med_table[med_table[MED_NUM]] = (med_table[med_table[MED_NUM] - 1] / 2);
 			ft_printf("Med_table :");
 			ft_printint(med_table);
 			init = b_list[1];
@@ -230,7 +240,7 @@ int			ds(int *a_list, int *b_list)
 			ft_printint(b_list);
 			ft_printf("Median :");
 			ft_printint(med_table);
-			return (ft_putsterr(UNKNOWN_BUG));
+			return (ft_putsterr(COMMAND_ERROR));
 		}
 		else if (ft_publish(PA) != S_ERR && ft_publish(RA) != S_ERR)
 		{
@@ -257,10 +267,11 @@ int			ds(int *a_list, int *b_list)
 			else
 			{
 				ft_printf("First launch of new feature\nb_list = ");
-				ft_printint(b_list);
-				return (0);
+				ft_printint(a_list);
 				parse_again_with_medians(a_list, b_list);
 			}
+			ft_printf("ITTERATIVE MED_TABLE =");
+			ft_printint(med_table);
 			if (b_list[0] != EMPTY)
 			{
 				ft_printf("[Etat avant crash]:\n\n");

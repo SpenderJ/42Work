@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 11:01:12 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 12:56:06 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static int	pushswap(int *a_list, int *b_list, int c, int n)
 	return (free_pushswap(a_list, b_list, SORTED));
 }
 
-static int	rank_alist(int *a_list, int c, int n, int rank)
+int			rank_alist(int *a_list, int c, int n, int rank)
 {
 	int	*new_list;
 
