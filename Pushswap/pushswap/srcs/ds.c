@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 14:16:45 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 15:34:31 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,13 +234,30 @@ int			ds(int *a_list, int *b_list)
 
 		if (b_list[0] != 1)
 		{
-			ft_printf("Etat des listes A:");
+			while (a_list[a_list[0]] < summ / 2)
+			{
+				while (a_list[a_list[0]] < (summ / 2) && ft_publish(PB) != S_ERR)
+					pb(a_list, b_list);
+				if (b_list[0] < LOW_SIZE_TO_SORT)
+					selective_sort(a_list, b_list);
+				else
+					parse_again_with_medians(a_list, b_list);
+			}
+			ft_printf("[END]\na_list :");
 			ft_printint(a_list);
-			ft_printf("liste B:");
+			ft_printf("b_list :");
 			ft_printint(b_list);
-			ft_printf("Median :");
-			ft_printint(med_table);
-			return (ft_putsterr(COMMAND_ERROR));
+			while(a_list[a_list[0]] > summ / 2)
+			{
+				while (a_list[a_list[0]] >= (summ / 2) && ft_publish(PB) != S_ERR)
+					pb(a_list, b_list);
+				if (b_list[0] < LOW_SIZE_TO_SORT)
+					selective_sort(a_list, b_list);
+				else
+					parse_again_with_medians(a_list, b_list);
+			}
+			ft_printint(a_list);
+			return (SORTED);
 		}
 		else if (ft_publish(PA) != S_ERR && ft_publish(RA) != S_ERR)
 		{
@@ -260,7 +277,7 @@ int			ds(int *a_list, int *b_list)
 		ft_printint(b_list);
 		while (med_table[MED_NUM] > 1)
 		{
-			while (a_list[a_list[0]] <= med_table[med_table[MED_NUM]] && ft_publish(PB) != S_ERR)
+			while (a_list[a_list[0]] < med_table[med_table[MED_NUM]] && ft_publish(PB) != S_ERR)
 				pb(a_list, b_list);
 			if (b_list[0] < LOW_SIZE_TO_SORT)
 				selective_sort(a_list, b_list);
