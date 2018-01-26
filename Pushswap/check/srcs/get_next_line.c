@@ -5,38 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/02 13:25:05 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/08 14:52:16 by juspende         ###   ########.fr       */
+/*   Created: 2018/01/26 18:36:55 by juspende          #+#    #+#             */
+/*   Updated: 2018/01/26 19:24:43 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../includes/get_next_line.h"
 
-int		get_next_line(int const fd, char **line)
+int			get_next_line(const int fd, char **line)
 {
-	int				ret;
-	char			*rest;
+	static char		*c[2147483647];
 	char			buffer[BUFF_SIZE + 1];
-	static char		*s[2147483648];
+	char			*tmp;
+	ssize_t			b;
+	int				endl;
 
-	if (!line || fd < 0 || !(s[fd] = !s[fd] ? ft_strnew(1) : s[fd]))
+	if (fd < 0 || (!c[fd] && !(c[fd] = ft_strnew(1))) || !line)
 		return (-1);
-	while (!ft_strchr(s[fd], '\n') && (ret = read(fd, buffer, BUFF_SIZE)) > 0)
+	while (!ftt_strchr(c[fd], '\n') && (b = read(fd, buffer, BUFF_SIZE)) > 0)
 	{
-		rest = s[fd];
-		buffer[ret] = '\0';
-		s[fd] = ft_strjoin(rest, buffer);
-		free(rest);
+		buffer[b] = '\0';
+		tmp = c[fd];
+		c[fd] = ft_strjoin(c[fd], buffer);
+		ft_strdel(&tmp);
 	}
-	if (ret == -1)
-		return (-1);
-	*line = (ftt_strchr(s[fd], '\n') ? ft_strsub(s[fd], 0,
-				ftt_strchr(s[fd], '\n') - s[fd]) : ft_strdup(s[fd]));
-	if (ft_strchr((rest = s[fd]), '\n'))
-		s[fd] = ft_strsub(s[fd], ftt_strchr(s[fd], '\n') - s[fd] + 1,
-				ft_strrlen(s[fd]));
+	if (b == -1 || !*(tmp = c[fd]))
+		return (b == -1 ? -1 : 0);
+	if ((endl = (ftt_strchr(c[fd], '\n') > 0)))
+		*line = ft_strsub(c[fd], 0, ftt_strchr(c[fd], '\n') - c[fd]);
 	else
-		ft_strdel(&s[fd]);
-	free(rest);
-	return (!s[fd] && ft_strrlen(*line) == 0 ? 0 : 1);
+		*line = ft_strdup(c[fd]);
+	c[fd] = ft_strsub(c[fd], (unsigned int)(ft_strlen(*line) + endl),
+			(size_t)(ft_strlen(c[fd]) - (ft_strlen(*line) + endl)));
+	ft_strdel(&tmp);
+	return (!(!c[fd] && !ft_strlen(*line)));
 }

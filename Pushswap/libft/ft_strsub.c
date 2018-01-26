@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:00:54 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 20:20:08 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 19:24:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char	*c;
-	size_t	i;
+	char		*c;
+	size_t		i;
 
 	if (s == NULL || start > ft_strrlen(s))
 		return (NULL);

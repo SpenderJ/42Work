@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/10 17:17:39 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 19:54:19 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@
 
 # ifndef OK_END
 #  define OK_END "OK"
+# endif
+
+# ifndef I
+#  define I 2147483647
 # endif
 
 # ifndef KO_END

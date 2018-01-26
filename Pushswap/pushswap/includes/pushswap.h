@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 17:03:16 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 19:50:24 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,10 @@
 
 # ifndef ENDED
 #  define ENDED -30071998
+# endif
+
+# ifndef I
+#  define I 2147483647
 # endif
 
 # ifndef SIZE_ERROR

@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aliandie <aliandie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/15 16:31:14 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/26 16:47:41 by juspende         ###   ########.fr       */
+/*   Created: 2014/11/14 14:12:23 by aliandie          #+#    #+#             */
+/*   Updated: 2018/01/26 18:39:48 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# define BUFF_SIZE 6
 
-# include <fcntl.h>
-# include "../../libft/libft.h"
+# include "checker.h"
+# include <stdlib.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <unistd.h>
 
-# define BUFF_SIZE 8
-
-int					get_next_line(int const fd, char **line);
+int		get_next_line(int const fd, char **line);
 
 #endif

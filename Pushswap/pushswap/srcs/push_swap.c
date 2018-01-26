@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 17:02:25 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 20:18:56 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,31 +107,31 @@ static int	push_parser(int *a_list, int *b_list, int c_num, char **argv)
 			(pushswap(a_list, b_list, a_list[0], -1)));
 }
 
-int			main(int argc, char **argv)
+int			main(int ac, char **av)
 {
 	int		c;
 	int		t;
 	int		*a_list;
 	int		*b_list;
 
-	if (argv && argv[1] && ft_strcmp(argv[1], "-h") == 0)
+	if (av && av[1] && ft_strcmp(av[1], "-h") == 0)
 		return (ft_printf("%s%s%s\n", HELP_1, HELP_2, HELP_3));
-	if ((c = 0) == 0 && argc != 2)
-		if (((a_list = ft_intnew(argc + 2)) == NULL) ||
-				((b_list = ft_intnew(argc + 2)) == NULL))
+	if ((c = 0) == 0 && ac != 2)
+		if (((a_list = ft_intnew(ac + 2)) == NULL) ||
+				((b_list = ft_intnew(ac + 2)) == NULL))
 			return (ft_putsterr(MALLOC_FAILED));
-	if ((t = 0) == 0 && argc == 2)
-		if (((a_list = ft_intnew(ft_countspace(argv[1]) + 1)) == NULL) ||
-				((b_list = ft_intnew(ft_countspace(argv[1]) + 1)) == NULL))
+	if (((t = 0) == 0) && ac == 2)
+		if (((a_list = ft_intnew(ft_countspace(av[1]) + 1)) == NULL) ||
+				((b_list = ft_intnew(ft_countspace(av[1]) + 1)) == NULL))
 			return (ft_putsterr(MALLOC_FAILED));
-	if (argc > 2)
-		while (argv[++c] != NULL && ft_isnum(argv[c]))
-			a_list[c] = ft_atoi(argv[c]);
-	if (argc == 2 && (c = -1) == -1)
-		while (argv[1][++c] != '\0' && (a_list[++t] = ft_atoi(&argv[1][c])))
-			while (argv[1][c] >= '0' && argv[1][c] <= '9')
+	if (ac > 2)
+		while (av[++c] != NULL && ft_isnum(av[c]))
+			a_list[c] = ft_atoi(av[c]);
+	if (ac == 2 && av[1] && ((c = -1) == -1))
+		while (av[1][++c] != '\0' && ((a_list[++t] = ft_atoi(&av[1][c])) <= I))
+			while (av[1][c] >= '0' && av[1][c] <= '9')
 				++c;
-	argc <= 2 ? c = 1 : c;
-	return ((argv[c] && !ft_isnum(argv[c])) ? (ft_putsterr(PARSING_ERROR)) :
-			(push_parser(a_list, b_list, int_num(argc, argv), argv)));
+	ac <= 2 ? c = 1 : c;
+	return ((av[c] && !ft_isnum(av[c])) ? (ft_putsterr(PARSING_ERROR)) :
+			(push_parser(a_list, b_list, int_num(ac, av), av)));
 }

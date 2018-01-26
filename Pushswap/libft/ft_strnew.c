@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 13:11:03 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 12:53:31 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 20:00:05 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ int		*ft_intnew(size_t size)
 	n = -1;
 	if ((tofill = malloc(sizeof(int) * (size + 1))) == NULL)
 		return (NULL);
-	while (++n <= size)
-		tofill[n] = 0;
 	return (tofill);
 }
 

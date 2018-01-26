@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 17:11:49 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 19:53:51 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,40 +85,42 @@ static int	checker(int *a_list, int *b_list, int c_num, char **argv)
 	while (argv[++c] != NULL)
 		if (ft_intlimit(argv[c]) == 0)
 			return (ft_putsterr(SIZE_ERROR));
-	while (get_next_line(1, &line) && line != NULL)
+	while (get_next_line(0, &line) && line != NULL)
 		if (get_command(line, a_list, b_list, WRONG_ARG) == WRONG_ARG)
 			return (ft_putsterr(COMMAND_ERROR));
-	return (b_list[0] == 0 && ft_intlistsorted(a_list) == 0 ? 
+	b_list[0] == 0 && ft_intlistsorted(a_list) == 0 ?
 			ft_printf("%s\n", OK_END) :
-			ft_printf("%s\n", KO_END));
+			ft_printf("%s\n", KO_END);
+	free(a_list);
+	free(b_list);
+	return (0);
 }
 
-int			main(int argc, char **argv)
+int			main(int ac, char **av)
 {
 	int		c;
 	int		t;
 	int		*a_list;
 	int		*b_list;
 
-	ft_printf("%s\n", argv[1]);
-	if (argv && argv[1] && ft_strcmp(argv[1], "-h") == 0)
+	if (av && av[1] && ft_strcmp(av[1], "-h") == 0)
 		return (ft_printf("%s%s%s\n", HELP_1, HELP_2, HELP_3));
-	if ((c = 0) == 0 && argc != 2)
-		if (((a_list = ft_intnew(argc + 2)) == NULL) ||
-				((b_list = ft_intnew(argc + 2)) == NULL))
+	if ((c = 0) == 0 && ac != 2)
+		if (((a_list = ft_intnew(ac + 2)) == NULL) ||
+				((b_list = ft_intnew(ac + 2)) == NULL))
 			return (ft_putsterr(MALLOC_FAILED));
-	if ((t = 0) == 0 && argc == 2)
-		if (((a_list = ft_intnew(ft_countspace(argv[1]) + 1)) == NULL) ||
-				((b_list = ft_intnew(ft_countspace(argv[1]) + 1)) == NULL))
+	if ((t = 0) == 0 && ac == 2)
+		if (((a_list = ft_intnew(ft_countspace(av[1]) + 1)) == NULL) ||
+				((b_list = ft_intnew(ft_countspace(av[1]) + 1)) == NULL))
 			return (ft_putsterr(MALLOC_FAILED));
-	if (argc > 2)
-		while (argv[++c] != NULL && ft_isnum(argv[c]))
-			a_list[c] = ft_atoi(argv[c]);
-	if (argc == 2 && (c = -1) == -1)
-		while (argv[1][++c] != '\0' && (a_list[++t] = ft_atoi(&argv[1][c])))
-			while (argv[1][c] >= '0' && argv[1][c] <= '9')
+	if (ac > 2)
+		while (av[++c] != NULL && ft_isnum(av[c]))
+			a_list[c] = ft_atoi(av[c]);
+	if (ac == 2 && (c = -1) == -1)
+		while (av[1][++c] != '\0' && (a_list[++t] = ft_atoi(&av[1][c])) <= I)
+			while (av[1][c] >= '0' && av[1][c] <= '9')
 				++c;
-	argc <= 2 ? c = 1 : c;
-	return ((argv[c] && !ft_isnum(argv[c])) ? (ft_putsterr(PARSING_ERROR)) :
-			(checker(a_list, b_list, int_num(argc, argv), argv)));
+	ac <= 2 ? c = 1 : c;
+	return ((av[c] && !ft_isnum(av[c])) ? (ft_putsterr(PARSING_ERROR)) :
+			(checker(a_list, b_list, int_num(ac, av), av)));
 }

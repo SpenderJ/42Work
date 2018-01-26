@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 17:02:37 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 17:44:53 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int			parse_again_with_medians2(int *a_list, int *b_list, int *med_table)
 		--med_table[MED_NUM];
 		med_table[med_table[MED_NUM] + 1] = 0;
 	}
+	free(med_table);
 	return (SORTED);
 }
 
@@ -132,5 +133,7 @@ int			ds2(int *a_list, int *b_list, int summ)
 		else
 			parse_again_with_medians(a_list, b_list);
 	}
+	free(a_list);
+	free(b_list);
 	return (SORTED);
 }
