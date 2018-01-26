@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 09:58:22 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 10:35:23 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,10 @@ int			ds(int *a_list, int *b_list)
 ** We set the value of next median by dividing the size of the old one by 2.
 */
 
+/* REMINDER:
+** MEdians define the range, so you have to make "-"
+*/
+
 	ft_printf("a_list :");
 	ft_printint(a_list);
 	ft_printf("b_list :");
@@ -166,7 +170,7 @@ int			ds(int *a_list, int *b_list)
 		ft_printint(b_list);
 		while (med_table[MED_NUM] > 1)
 		{
-			while (med_table[med_table[MED_NUM]]-- > 0 && ft_publish(PB) != S_ERR)
+			while (a_list[a_list[0]] <= med_table[med_table[MED_NUM]] && ft_publish(PB) != S_ERR)
 				pb(a_list, b_list);
 			if (b_list[0] < LOW_SIZE_TO_SORT)
 				selective_sort(a_list, b_list);
