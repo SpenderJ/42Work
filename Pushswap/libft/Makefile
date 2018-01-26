@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/06 13:06:32 by juspende          #+#    #+#              #
-#    Updated: 2018/01/24 13:39:21 by juspende         ###   ########.fr        #
+#    Updated: 2018/01/26 14:00:52 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ SRCS	=	ft_toupper.c ft_tolower.c ft_isalpha.c ft_memalloc.c ft_memdel.c int_len.
 		ft_memcpy.c ft_memset.c ft_bzero.c ft_strsplit.c ft_itoa.c ft_putchar.c ft_sqrt.c \
 		ft_putstr.c ft_putnbr.c ft_putendl.c ft_putchar_fd.c ft_putstr_fd.c ft_is_negative.c \
 		ft_putnbr_fd.c ft_putendl_fd.c ft_lstadd.c ft_lstdel.c ft_putnbr_base.c ft_range.c \
-		ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_swap.c ft_strrev.c ft_print_words_tables.c ft_placeint.c \
+		ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_swap.c ft_strrev.c ft_print_words_tables.c ft_placeint.c ft_intmaxmin.c \
 
 all:	$(NAME)
 
