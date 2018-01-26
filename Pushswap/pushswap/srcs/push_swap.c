@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 20:18:56 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 20:38:42 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ int			main(int ac, char **av)
 			a_list[c] = ft_atoi(av[c]);
 	if (ac == 2 && av[1] && ((c = -1) == -1))
 		while (av[1][++c] != '\0' && ((a_list[++t] = ft_atoi(&av[1][c])) <= I))
-			while (av[1][c] >= '0' && av[1][c] <= '9')
+			while (av[1][c] >= '0' && av[1][c] <= '9' && av[1][c + 1])
 				++c;
 	ac <= 2 ? c = 1 : c;
 	return ((av[c] && !ft_isnum(av[c])) ? (ft_putsterr(PARSING_ERROR)) :
