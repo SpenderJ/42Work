@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/25 17:27:00 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/26 11:57:25 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,5 +219,6 @@ int		quick_solve(int *a_list);
 int		ft_publish(int command);
 int		free_pushswap(int *a_list, int *b_list, int ret);
 int		ds(int *a_list, int *b_list);
+int		selective_sort(int *a_list, int *b_list);
 
 #endif
