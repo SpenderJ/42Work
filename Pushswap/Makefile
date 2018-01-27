@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2018/01/27 13:56:27 by juspende         ###   ########.fr        #
+#    Updated: 2018/01/27 18:59:07 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ all: $(NAME) $(NAME2)
 $(NAME): $(OBJ)
 	@make -C libft/
 	@make -C printf/
+	@make -C free_all/
 	@$(CC) $(CFLAGS) $(SRC) -o $(NAME) ./libft/libft.a ./printf/libftprintf.a
 	@echo "$(NAME): exe \033[32m[✔]\033[0m"
 
@@ -60,6 +61,7 @@ $(NAME2): $(OBJ2)
 clean:
 	@make clean -C libft/
 	@make clean -C printf/
+	@make clean -C free_all/
 	@$(RM) $(OBJ)
 	@$(RM) $(OBJ2)
 	@echo "$(NAME): $@ \033[32m[✔]\033[0m"
@@ -68,6 +70,7 @@ clean:
 fclean: clean
 	@make fclean -C libft/
 	@make fclean -C printf/
+	@make fclean -C free_all/
 	@$(RM) $(NAME)
 	@$(RM) $(NAME2)
 	@echo "$(NAME): $@ \033[32m[✔]\033[0m"
