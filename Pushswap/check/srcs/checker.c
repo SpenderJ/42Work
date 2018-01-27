@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/27 14:03:11 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:52:22 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static int	checker(int *a_list, int *b_list, int c_num, char **argv)
 	while (argv[++c] != NULL)
 		if (ft_intlimit(argv[c]) == 0)
 			return (ft_putsterr(SIZE_ERROR));
-	while (get_next_line(0, &line) && line != NULL)
+	while ((get_next_line(0, &line)) == 1)
 		if (get_command(line, a_list, b_list, WRONG_ARG) == WRONG_ARG)
 			return (ft_putsterr(COMMAND_ERROR));
 	b_list[0] == 0 && ft_intlistsorted(a_list) == 0 ?
