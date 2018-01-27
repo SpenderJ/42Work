@@ -6,15 +6,16 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 18:36:55 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 19:24:43 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/27 14:03:24 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include "../includes/get_next_line.h"
 
 int			get_next_line(const int fd, char **line)
 {
-	static char		*c[2147483647];
+	static char		*c[OPEN_MAX + 1];
 	char			buffer[BUFF_SIZE + 1];
 	char			*tmp;
 	ssize_t			b;
@@ -35,8 +36,8 @@ int			get_next_line(const int fd, char **line)
 		*line = ft_strsub(c[fd], 0, ftt_strchr(c[fd], '\n') - c[fd]);
 	else
 		*line = ft_strdup(c[fd]);
-	c[fd] = ft_strsub(c[fd], (unsigned int)(ft_strlen(*line) + endl),
-			(size_t)(ft_strlen(c[fd]) - (ft_strlen(*line) + endl)));
+	c[fd] = ft_strsub(c[fd], (unsigned int)(ft_strrlen(*line) + endl),
+			(size_t)(ft_strrlen(c[fd]) - (ft_strrlen(*line) + endl)));
 	ft_strdel(&tmp);
-	return (!(!c[fd] && !ft_strlen(*line)));
+	return (!(!c[fd] && !ft_strrlen(*line)));
 }

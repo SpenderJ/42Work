@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2018/01/26 20:19:16 by juspende         ###   ########.fr        #
+#    Updated: 2018/01/27 13:56:27 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ INCLUDE		= /includes/push_swap.h
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -O3
+CFLAGS		= -Wall -Wextra -Werror -g3
 
 %.o: %.c
 			@gcc $(CFLAGS) -I$(INCLUDE) -o $@ -c $<
