@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/27 16:48:16 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/27 19:07:38 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@
 # include "get_next_line.h"
 # include "../../libft/libft.h"
 # include "../../printf/include/ft_printf.h"
+# include "../../free_all/include/ft_freeall.h"
 
 int		main(int argc, char **argv);
 void	sa(int *a_list);
