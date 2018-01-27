@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 13:19:53 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/27 10:41:19 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/27 15:12:26 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ void	ft_strdel(char **as)
 {
 	if (!as)
 		return ;
-	*as = NULL;
 	free(*as);
+	*as = NULL;
 }
