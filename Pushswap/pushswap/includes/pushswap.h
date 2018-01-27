@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 20:33:09 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/27 17:41:48 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,10 @@
 #  define MED_NUM 0
 # endif
 
+# ifndef A_E
+#  define A_E -30071998
+# endif
+
 # ifndef EMPTY
 #  define EMPTY 0
 # endif
@@ -130,7 +134,7 @@
 # endif
 
 # ifndef DOUBLE_ERROR
-#  define DOUBLE_ERROR "Each number in argument has to be unique, Exit"
+#  define DOUBLE_ERROR "Error in numbers in argument, Exit"
 # endif
 
 # ifndef PARSING_ERROR

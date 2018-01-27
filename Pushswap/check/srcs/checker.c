@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/27 15:04:59 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/27 17:25:38 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@ static int	int_num(int argc, char **argv)
 	{
 		while (argv[1][i] != '\0')
 		{
-			while (argv[1][i] == ' ')
+			while (argv[1][i] == ' ' && argv[1][i] != '\0')
 				++i;
-			((argv[1][i] >= '0' && argv[1][i] <= '9') || argv[1][i] == '-')
+			((argv[1][i] >= '0' && argv[1][i] <= '9') || argv[1][i] == '-' ||
+			 argv[1][i] == '+')
 				? (++ret) : ret;
 			while ((argv[1][i] >= '0' && argv[1][i] <= '9') || argv[1][i] ==
-					'-')
+					'-' || argv[1][i] == '+')
 				++i;
 		}
 	}
@@ -79,7 +80,7 @@ static int	checker(int *a_list, int *b_list, int c_num, char **argv)
 	ft_revint(a_list);
 	while (++c <= c_num && (i = 0) == 0)
 		while (++i <= c_num)
-			if (a_list[i] == a_list[c] && c != i)
+			if ((a_list[i] == a_list[c] && c != i) || a_list[i] == A_E)
 				return (ft_putsterr(DOUBLE_ERROR));
 	c = 0;
 	while (argv[++c] != NULL)
@@ -117,8 +118,8 @@ int			main(int ac, char **av)
 		while (av[++c] != NULL && ft_isnum(av[c]))
 			a_list[c] = ft_atoi(av[c]);
 	if (ac == 2 && (c = -1) == -1)
-		while (av[1][++c] != '\0' && (a_list[++t] = ft_atoi(&av[1][c])) <= I)
-			while (av[1][c] >= '0' && av[1][c] <= '9' && av[1][c + 1])
+		while (av[1][++c] != '\0' && (a_list[++t] = ft_atoi(&av[1][c])) != A_E)
+			while (ft_charnum(av[1][c]) && av[1][c + 1])
 				++c;
 	ac <= 2 ? c = 1 : c;
 	return ((av[c] && !ft_isnum(av[c])) ? (ft_putsterr(PARSING_ERROR)) :

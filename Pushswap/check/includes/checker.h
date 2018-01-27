@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 19:54:19 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/27 16:48:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # endif
 
 # ifndef DOUBLE_ERROR
-#  define DOUBLE_ERROR "Each number in argument has to be unique, Exit"
+#  define DOUBLE_ERROR "Error in int_list, Exit"
 # endif
 
 # ifndef PARSING_ERROR
@@ -47,6 +47,10 @@
 
 # ifndef B_SIZE
 #  define B_SIZE 0
+# endif
+
+# ifndef A_E
+#  define A_E -30071998
 # endif
 
 # ifndef ENDOFARGS

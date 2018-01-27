@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/29 15:05:58 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/29 17:31:34 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/27 16:22:11 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,11 @@ int		ft_isnum(char *str)
 				&& str[i] != '-')
 			return (0);
 	return (1);
+}
+
+int		ft_charnum(char c)
+{
+	if ((c >= '0' && c <= '9') || c == '+' || c == '-')
+		return (1);
+	return (0);
 }
