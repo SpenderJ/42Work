@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/27 19:06:07 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/28 13:03:38 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,19 +81,19 @@ static int	checker(int *a_list, int *b_list, int c_num, char **argv)
 	while (++c <= c_num && (i = 0) == 0)
 		while (++i <= c_num)
 			if (((a_list[i] == a_list[c] && c != i) || a_list[i] == A_E)
-					&& !ft_freeall("%b%b", a_list, b_list))
+					&& !ft_freeall("%a%a", a_list, b_list))
 				return (ft_putsterr(DOUBLE_ERROR));
 	c = 0;
 	while (argv[++c] != NULL)
-		if (ft_intlimit(argv[c]) == 0 && !ft_freeall("%b%b", a_list, b_list))
+		if (ft_intlimit(argv[c]) == 0 && !ft_freeall("%a%a", a_list, b_list))
 			return (ft_putsterr(SIZE_ERROR));
 	while ((get_next_line(0, &line)) == 1)
 		if (get_command(line, a_list, b_list, WRONG_ARG) == WRONG_ARG &&
-				!ft_freeall("%b%b", a_list, b_list))
+				!ft_freeall("%a%a", a_list, b_list))
 			return (ft_putsterr(COMMAND_ERROR));
 	b_list[0] == 0 && ft_intlistsorted(a_list) == 0 ? ft_printf("%s\n", OK_END)
 		: ft_printf("%s\n", KO_END);
-	ft_freeall("%b%b", a_list, b_list);
+	ft_freeall("%a%a", a_list, b_list);
 	return (0);
 }
 
@@ -121,7 +121,7 @@ int			main(int ac, char **av)
 		while (av[1][++c] != '\0' && (a_list[++t] = ft_atoi(&av[1][c])) != A_E)
 			while (ft_charnum(av[1][c]) && av[1][c + 1])
 				++c;
-	ac <= 2 ? c = 1 : c;
-	return ((av[c] && !ft_isnum(av[c])) ? (ft_putsterr(PARSING_ERROR)) :
-			(checker(a_list, b_list, int_num(ac, av), av)));
+	return ((av[ac <= 2 ? (c = 1) : c] && !ft_isnum(av[c])) ?
+			(ft_putsterr(PARSING_ERROR)) && !ft_freeall("%a%a", a_list, b_list)
+			: (checker(a_list, b_list, int_num(ac, av), av)));
 }

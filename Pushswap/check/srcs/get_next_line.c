@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 18:36:55 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/27 15:15:50 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/28 13:03:41 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,8 @@ int			get_next_line(const int fd, char **line)
 		c[fd] = ft_strjoin(c[fd], buffer);
 		ft_strdel(&tmp);
 	}
-	if (b == -1 || !*(tmp = c[fd]))
-	{
-		free(c[fd]);
+	if ((b == -1 || !*(tmp = c[fd])) && !ft_freeall("%b", c[fd]))
 		return (b == -1 ? -1 : 0);
-	}
 	if ((endl = (ftt_strchr(c[fd], '\n') > 0)))
 		*line = ft_strsub(c[fd], 0, ftt_strchr(c[fd], '\n') - c[fd]);
 	else
