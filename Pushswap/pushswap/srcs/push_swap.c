@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/27 17:42:19 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/28 13:24:35 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	pushswap(int *a_list, int *b_list, int c, int n)
 
 	if (ft_intlisttruelysorted(a_list) == SORTED)
 		return (free_pushswap(a_list, b_list, SORTED));
-	if (a_list[0] < SPLIT || a_list[0] > BIG)
+	if ((a_list[0] < SPLIT && !ft_freeall("%a", b_list)) || a_list[0] > BIG)
 		return (a_list[0] < SPLIT ? quick_solve(a_list) : ds(a_list, b_list));
 	ft_revint(a_list);
 	while (++n < c - 2 && (i = find_int_position(a_list, n)) != INT_DONT_EXIST)
@@ -98,14 +98,18 @@ static int	push_parser(int *a_list, int *b_list, int c_num, char **argv)
 	c = 0;
 	while (++c <= c_num && (i = 0) == 0)
 		while (++i <= c_num)
-			if ((a_list[i] == a_list[c] && c != i) || a_list[i] == A_E)
+			if (((a_list[i] == a_list[c] && c != i) || a_list[i] == A_E) &&
+					!ft_freeall("%a%a", a_list, b_list))
 				return (ft_putsterr(DOUBLE_ERROR));
 	c = 0;
 	while (argv[++c] != NULL)
-		if (ft_intlimit(argv[c]) == 0)
+		if (ft_intlimit(argv[c]) == 0 && !ft_freeall("%a%a", a_list, b_list))
 			return (ft_putsterr(SIZE_ERROR));
-	return ((rank_alist(a_list, 0, 0, 0) == ERROR_RANKING) ? (PUSHSWAP_ERROR) :
-			(pushswap(a_list, b_list, a_list[0], -1)));
+	if (rank_alist(a_list, 0, 0, 0) == ERROR_RANKING && !ft_freeall("%a%a",
+				a_list, b_list))
+		return (PUSHSWAP_ERROR);
+	else
+		return (pushswap(a_list, b_list, a_list[0], -1));
 }
 
 int			main(int ac, char **av)
@@ -132,7 +136,7 @@ int			main(int ac, char **av)
 		while (av[1][++c] != '\0' && (a_list[++t] = ft_atoi(&av[1][c])) != A_E)
 			while (ft_charnum(av[1][c]) && av[1][c + 1])
 				++c;
-	ac <= 2 ? c = 1 : c;
-	return ((av[c] && !ft_isnum(av[c])) ? (ft_putsterr(PARSING_ERROR)) :
-			(push_parser(a_list, b_list, int_num(ac, av), av)));
+	return ((av[ac <= 2 ? (c = 1) : c] && !ft_isnum(av[c])) ?
+			(ft_putsterr(PARSING_ERROR) && !ft_freeall("%a%a", a_list, b_list))
+			: (push_parser(a_list, b_list, int_num(ac, av), av)));
 }

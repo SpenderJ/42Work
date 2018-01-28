@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/27 17:41:48 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/28 13:07:02 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,6 +206,7 @@
 # include <fcntl.h>
 # include <limits.h>
 # include "../../libft/libft.h"
+# include "../../free_all/include/ft_freeall.h"
 # include "../../printf/include/ft_printf.h"
 
 int		main(int argc, char **argv);
