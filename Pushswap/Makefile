@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2018/01/27 19:08:38 by juspende         ###   ########.fr        #
+#    Updated: 2018/01/28 13:49:27 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,9 +45,13 @@ CFLAGS		= -Wall -Wextra -Werror -g3
 %.o: %.c
 			@gcc $(CFLAGS) -I$(INCLUDE) -o $@ -c $<
 
-all: $(NAME) $(NAME2)
+all: pushswap $(NAME) $(NAME2)
+
+pushswap:
+	@echo "\n\n\033[36m[PushSwap Project:]\033[0m\n\n"
 
 $(NAME): $(OBJ)
+	@echo "\n\033[33m[Compiling Files]\033[0m\n"
 	@make -C libft/
 	@make -C printf/
 	@make -C free_all/
@@ -57,8 +61,10 @@ $(NAME): $(OBJ)
 $(NAME2): $(OBJ2)
 	@$(CC) $(CFLAGS) $(SRC2) -o $(NAME2) ./libft/libft.a ./printf/libftprintf.a ./free_all/libfree.a
 	@echo "$(NAME2): exe \033[32m[✔]\033[0m"
+	@echo "\n\n\033[31m[Compilation Ended Succesfully]\033[0m\n"
 
 clean:
+	@echo "\n\033[33m[Cleaning Workspace]\033[0m\n"
 	@make clean -C libft/
 	@make clean -C printf/
 	@make clean -C free_all/
@@ -68,6 +74,7 @@ clean:
 	@echo "$(NAME2): $@ \033[32m[✔]\033[0m"
 
 fclean: clean
+	@echo "\n\033[33m[Removing Executables]\033[0m\n"
 	@make fclean -C libft/
 	@make fclean -C printf/
 	@make fclean -C free_all/
@@ -76,6 +83,6 @@ fclean: clean
 	@echo "$(NAME): $@ \033[32m[✔]\033[0m"
 	@echo "$(NAME2): $@ \033[32m[✔]\033[0m"
 
-re: fclean all
+re: pushswap fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re pushswap
