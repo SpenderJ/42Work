@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/28 13:07:02 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/29 17:25:40 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,14 @@
 #  define S_ERR 1
 # endif
 
+# ifndef NO_ERROR
+#  define NO_ERROR 0
+# endif
+
+# ifndef ERROR
+#  define ERROR 1
+# endif
+
 # ifndef ERROR_RANKING
 #  define ERROR_RANKING 1
 # endif
@@ -114,11 +122,11 @@
 # endif
 
 # ifndef SPLIT
-#  define SPLIT 4
+#  define SPLIT -10
 # endif
 
 # ifndef BIG
-#  define BIG 70
+#  define BIG 5
 # endif
 
 # ifndef ENDED
@@ -163,6 +171,10 @@
 
 # ifndef ENDOFARGS
 #  define ENDOFARGS 30071998
+# endif
+
+# ifndef SIZE
+#  define SIZE 22000
 # endif
 
 # ifndef WRONG_ARG
@@ -221,15 +233,19 @@ void	rr(int *a_list, int *b_list);
 void	rra(int *a_list);
 void	rrb(int *b_list);
 void	rrr(int *a_list, int *b_list);
+void	optimize_output(int *op);
 int		list_sorted(int *a_list, int *b_list);
 int		find_int_position(int *list, int to_find);
 int		rr_r(int *a_list, int pos);
 int		quick_solve(int *a_list);
 int		ft_publish(int command);
 int		free_pushswap(int *a_list, int *b_list, int ret);
-int		ds(int *a_list, int *b_list);
-int		ds2(int *a_list, int *b_list, int summ);
-int		selective_sort(int *a_list, int *b_list);
+int		ds(int *a_list, int *b_list, int *op);
+int		ds2(int *a_list, int *b_list, int summ, int *op);
+int		selective_sort(int *a_list, int *b_list, int *op);
 int		rank_alist(int *a_list, int c, int n, int rank);
-int		parse_again_with_medians2(int *a_list, int *b_list, int *med_table);
+int		parse_again_with_medians2(int *a_list, int *b_list, int *med_table,
+		int *op);
+int		pushswap2(int *a_list, int *b_list, int c, int n);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 17:56:50 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/10 17:04:16 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/29 12:32:21 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	rra(int *a_list)
 
 	if (a_list[0] <= 1)
 		return ;
-	i = 0;
 	tmp = a_list[1];
+	i = 0;
 	while (++i < a_list[0])
 		a_list[i] = a_list[i + 1];
 	a_list[a_list[0]] = tmp;

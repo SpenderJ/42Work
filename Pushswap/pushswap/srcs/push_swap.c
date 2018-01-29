@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/28 15:26:34 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/29 19:10:06 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	int_num(int argc, char **argv)
 			while (argv[1][i] == ' ')
 				++i;
 			((argv[1][i] >= '0' && argv[1][i] <= '9') || argv[1][i] == '-' ||
-			 argv[1][i] == '+')
+			argv[1][i] == '+')
 				? (++ret) : ret;
 			while ((argv[1][i] >= '0' && argv[1][i] <= '9') || argv[1][i] ==
 					'-' || argv[1][i] == '+')
@@ -42,26 +42,21 @@ static int	int_num(int argc, char **argv)
 
 static int	pushswap(int *a_list, int *b_list, int c, int n)
 {
-	int		i;
+	int		*op;
 
 	if (ft_intlisttruelysorted(a_list) == SORTED)
 		return (free_pushswap(a_list, b_list, SORTED));
+	if (a_list[0] > BIG)
+		if (((op = ft_intnew((a_list[0] * 2 * 10))) == NULL)
+				&& !ft_freeall("%a%a", a_list, b_list))
+			return (ft_putsterr(MALLOC_FAILED));
 	if ((a_list[0] < SPLIT && !ft_freeall("%a", b_list)) || a_list[0] > BIG)
-		return (a_list[0] < SPLIT ? quick_solve(a_list) : ds(a_list, b_list));
-	ft_revint(a_list);
-	while (++n < c - 2 && (i = find_int_position(a_list, n)) != INT_DONT_EXIST)
 	{
-		i = rr_r(a_list, i);
-		if (a_list[0] > 1 && a_list[a_list[0] - 1] == n &&
-				ft_publish(SA) != S_ERR)
-			sa(a_list);
-		while (i == RR && a_list[a_list[0]] != n && ft_publish(RRA) != S_ERR)
-			rra(a_list);
-		while (i == R && a_list[a_list[0]] != n && ft_publish(RA) != S_ERR)
-			ra(a_list);
-		if (a_list[a_list[0]] == n && ft_publish(PB) != S_ERR)
-			pb(a_list, b_list);
+		return (a_list[0] < SPLIT ? quick_solve(a_list) :
+			ds(a_list, b_list, op));
 	}
+	ft_revint(a_list);
+	pushswap2(a_list, b_list, c, n);
 	if (a_list[0] == 2 && a_list[1] < a_list[2] && ft_publish(SA) != S_ERR)
 		sa(a_list);
 	while (b_list[0] != 0 && ft_publish(PA) != S_ERR)
@@ -73,9 +68,9 @@ int			rank_alist(int *a_list, int c, int n, int rank)
 {
 	int	*new_list;
 
-	if (((new_list = ft_intnew(a_list[0] + 2)) == NULL) ||
-			(new_list[SUMM] = a_list[SUMM]) < 0)
+	if (((new_list = ft_intnew(a_list[0] + 2)) == NULL))
 		return (ft_putsterr(MALLOC_FAILED));
+	new_list[SUMM] = a_list[SUMM];
 	while (++c <= a_list[SUMM] && (n = 0) == 0)
 		if ((rank = SUMM) == SUMM)
 			while (++n <= a_list[SUMM])
@@ -119,8 +114,6 @@ int			main(int ac, char **av)
 	int		*a_list;
 	int		*b_list;
 
-	if (av && av[1] && ft_strcmp(av[1], "-h") == 0)
-		return (ft_printf("%s%s%s\n", HELP_1, HELP_2, HELP_3));
 	if ((c = 0) == 0 && ac != 2)
 		if (((a_list = ft_intnew(ac + 2)) == NULL) ||
 				((b_list = ft_intnew(ac + 2)) == NULL))
@@ -136,7 +129,8 @@ int			main(int ac, char **av)
 		while (av[1][++c] != '\0' && (a_list[++t] = ft_atoi(&av[1][c])) != A_E)
 			while (ft_charnum(av[1][c]) && av[1][c + 1])
 				++c;
-	return ((av[ac <= 2 ? (c = 1) : c] && !ft_isnum(av[c])) ?
+	ac <= 2 ? (c = 1) : c;
+	return ((av[c] && !ft_isnum(av[c])) ?
 			(ft_putsterr(PARSING_ERROR) && !ft_freeall("%a%a", a_list, b_list))
 			: (push_parser(a_list, b_list, int_num(ac, av), av)));
 }

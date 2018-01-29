@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/26 14:01:17 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/28 14:14:09 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/29 19:01:53 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	int_num(int argc, char **argv)
 			while (argv[1][i] == ' ' && argv[1][i] != '\0')
 				++i;
 			((argv[1][i] >= '0' && argv[1][i] <= '9') || argv[1][i] == '-' ||
-			 argv[1][i] == '+')
+			argv[1][i] == '+')
 				? (++ret) : ret;
 			while ((argv[1][i] >= '0' && argv[1][i] <= '9') || argv[1][i] ==
 					'-' || argv[1][i] == '+')
@@ -104,8 +104,6 @@ int			main(int ac, char **av)
 	int		*a_list;
 	int		*b_list;
 
-	if (av && av[1] && ft_strcmp(av[1], "-h") == 0)
-		return (ft_printf("%s%s%s\n", HELP_1, HELP_2, HELP_3));
 	if ((c = 0) == 0 && ac != 2)
 		if (((a_list = ft_intnew(ac + 2)) == NULL) ||
 				((b_list = ft_intnew(ac + 2)) == NULL))
@@ -121,7 +119,8 @@ int			main(int ac, char **av)
 		while (av[1][++c] != '\0' && (a_list[++t] = ft_atoi(&av[1][c])) != A_E)
 			while (ft_charnum(av[1][c]) && av[1][c + 1])
 				++c;
-	return ((av[ac <= 2 ? (c = 1) : c] && !ft_isnum(av[c])) ?
-			(ft_putsterr(PARSING_ERROR)) && !ft_freeall("%a%a", a_list, b_list)
+	ac <= 2 ? (c = 1) : c;
+	return ((av[c] && !ft_isnum(av[c])) ? (ft_putsterr(PARSING_ERROR)) &&
+			!ft_freeall("%a%a", a_list, b_list)
 			: (checker(a_list, b_list, int_num(ac, av), av)));
 }

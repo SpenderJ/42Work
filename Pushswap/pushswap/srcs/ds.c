@@ -6,13 +6,13 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:48:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/28 15:26:17 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/29 18:53:49 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pushswap.h"
 
-static int	parse_again_with_medians(int *a_list, int *b_list)
+static int	parse_again_with_medians(int *a_list, int *b_list, int *op)
 {
 	int		*med_table;
 	int		init;
@@ -31,19 +31,21 @@ static int	parse_again_with_medians(int *a_list, int *b_list)
 		while (b_list[b_list[0]] != init)
 		{
 			if (b_list[b_list[0]] > med_table[med_table[MED_NUM]] &&
-					ft_publish(PA) != S_ERR)
+					(op[++op[0]] = PA) == PA)
 				pa(a_list, b_list);
-			else if (ft_publish(RB) != S_ERR)
+			else if ((op[++op[0]] = RB) == RB)
 				rb(b_list);
 		}
 	}
 	--med_table[MED_NUM];
-	return (parse_again_with_medians2(a_list, b_list, med_table));
+	return (parse_again_with_medians2(a_list, b_list, med_table, op));
 }
 
-int			parse_again_with_medians2(int *a_list, int *b_list, int *med_table)
+int			parse_again_with_medians2(int *a_list, int *b_list, int *med_table,
+		int *op)
 {
-	if (b_list[0] == 1 && ft_publish(PA) != S_ERR && ft_publish(RA) != S_ERR)
+	if (b_list[0] == 1 && (op[++op[0]] = PA) == PA &&
+			(op[++op[0]] = RA) == RA)
 	{
 		pa(a_list, b_list);
 		ra(a_list);
@@ -53,12 +55,12 @@ int			parse_again_with_medians2(int *a_list, int *b_list, int *med_table)
 	while (med_table[MED_NUM] > 1)
 	{
 		while (a_list[a_list[0]] <= med_table[med_table[MED_NUM]] &&
-				ft_publish(PB) != S_ERR)
+				(op[++op[0]] = PB) == PB)
 			pb(a_list, b_list);
 		if (b_list[0] < LOW_SIZE_TO_SORT)
-			selective_sort(a_list, b_list);
+			selective_sort(a_list, b_list, op);
 		else
-			parse_again_with_medians(a_list, b_list);
+			parse_again_with_medians(a_list, b_list, op);
 		--med_table[MED_NUM];
 		med_table[med_table[MED_NUM] + 1] = 0;
 	}
@@ -66,7 +68,7 @@ int			parse_again_with_medians2(int *a_list, int *b_list, int *med_table)
 	return (SORTED);
 }
 
-int			selective_sort(int *a_list, int *b_list)
+int			selective_sort(int *a_list, int *b_list, int *op)
 {
 	int		min;
 	int		c;
@@ -79,12 +81,13 @@ int			selective_sort(int *a_list, int *b_list)
 			b_list[c] < b_list[min] ? (min = c) : c;
 		c = rr_r(b_list, c);
 		min = b_list[min];
-		while (c == RR && b_list[b_list[0]] != min && ft_publish(RRB) != S_ERR)
+		while (c == RR && b_list[b_list[0]] != min && (op[++op[0]] = RRB)
+				== RRB)
 			rrb(b_list);
-		while (c == R && b_list[b_list[0]] != min && ft_publish(RB) != S_ERR)
+		while (c == R && b_list[b_list[0]] != min && (op[++op[0]] = RB) == RB)
 			rb(b_list);
-		if (b_list[b_list[0]] == min && ft_publish(PA) != S_ERR &&
-				ft_publish(RA) != S_ERR)
+		if (b_list[b_list[0]] == min && (op[++op[0]] = PA) == PA &&
+				(op[++op[0]] = RA) == RA)
 		{
 			pa(a_list, b_list);
 			ra(a_list);
@@ -93,7 +96,7 @@ int			selective_sort(int *a_list, int *b_list)
 	return (SORTED);
 }
 
-int			ds(int *a_list, int *b_list)
+int			ds(int *a_list, int *b_list, int *op)
 {
 	int		summ;
 	int		init;
@@ -101,39 +104,41 @@ int			ds(int *a_list, int *b_list)
 	ft_revint(a_list);
 	summ = a_list[0];
 	init = a_list[1];
+	op[0] = 0;
 	while (a_list[a_list[0]] != init)
 	{
-		if (a_list[a_list[0]] < (summ / 2) && ft_publish(PB) != S_ERR)
+		if (a_list[a_list[0]] < (summ / 2) && (op[++op[0]] = PB) == PB)
 			pb(a_list, b_list);
-		else if (ft_publish(RA) != S_ERR)
+		else if ((op[++op[0]] = RA) == RA)
 			ra(a_list);
 	}
-	while (b_list[0] != EMPTY && ft_publish(PA) != S_ERR)
+	while (b_list[0] != EMPTY && (op[++op[0]] = PA) == PA)
 		pa(a_list, b_list);
-	return (ds2(a_list, b_list, summ));
+	return (ds2(a_list, b_list, summ, op));
 }
 
-int			ds2(int *a_list, int *b_list, int summ)
+int			ds2(int *a_list, int *b_list, int summ, int *op)
 {
 	while (a_list[a_list[0]] < summ / 2)
 	{
-		while (a_list[a_list[0]] < (summ / 2) && ft_publish(PB) != S_ERR)
+		while (a_list[a_list[0]] < (summ / 2) && (op[++op[0]] = PB) == PB)
 			pb(a_list, b_list);
 		if (b_list[0] < LOW_SIZE_TO_SORT)
-			selective_sort(a_list, b_list);
+			selective_sort(a_list, b_list, op);
 		else
-			parse_again_with_medians(a_list, b_list);
+			parse_again_with_medians(a_list, b_list, op);
 	}
-	while (a_list[a_list[0]] > summ / 2)
+	while (a_list[a_list[0]] >= summ / 2)
 	{
-		while (a_list[a_list[0]] >= (summ / 2) && ft_publish(PB) != S_ERR)
+		while (a_list[a_list[0]] >= (summ / 2) && (op[++op[0]] = PB) == PB)
 			pb(a_list, b_list);
 		if (b_list[0] < LOW_SIZE_TO_SORT)
-			selective_sort(a_list, b_list);
+			selective_sort(a_list, b_list, op);
 		else
-			parse_again_with_medians(a_list, b_list);
+			parse_again_with_medians(a_list, b_list, op);
 	}
 	free(a_list);
 	free(b_list);
+	optimize_output(op);
 	return (SORTED);
 }

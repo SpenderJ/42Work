@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2018/01/28 13:49:27 by juspende         ###   ########.fr        #
+#    Updated: 2018/01/29 14:33:04 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,20 +30,26 @@ SRC		=	pushswap/srcs/push_swap.c		\
 			pushswap/srcs/moves/swap.c		\
 			pushswap/srcs/moves/push.c		\
 			pushswap/srcs/moves/rotate.c	\
+			pushswap/srcs/buffer.c			\
 			pushswap/srcs/moves/reverse.c
 
 OBJ			= $(SRC:.c=.o)
 
 OBJ2		= $(SRC2:.c=.o)
 
-INCLUDE		= /includes/push_swap.h
+DEPS		= $(OBJ:.o=.d)
+
+DEPS2		= $(OBJ2:.o=.d)
+
+INCLUDE		= /includes
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror -g3
+CFLAGS		= -Wall -Wextra -Werror
 
 %.o: %.c
-			@gcc $(CFLAGS) -I$(INCLUDE) -o $@ -c $<
+	@$(CC) $(CFLAGS) -I$(INCLUDE) -MM -MT $@ -MF $(patsubst %.o,%.d,$@) $<
+	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
 
 all: pushswap $(NAME) $(NAME2)
 
@@ -84,5 +90,8 @@ fclean: clean
 	@echo "$(NAME2): $@ \033[32m[✔]\033[0m"
 
 re: pushswap fclean all
+
+-include $(DEPS)
+-include $(DEPS2)
 
 .PHONY: all clean fclean re pushswap

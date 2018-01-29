@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/27 18:39:28 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/28 14:10:45 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/29 19:02:38 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,13 @@
 # include <inttypes.h>
 # include <fcntl.h>
 
-// INT *
-
 # ifndef INT
 #  define INT 'a'
 # endif
 
-// CHAR *
-
 # ifndef CHAR
 #  define CHAR 'b'
 # endif
-
-// CHAR **
 
 # ifndef CHARR
 #  define CHARR 'c'
