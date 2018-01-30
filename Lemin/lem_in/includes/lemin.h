@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/28 17:14:51 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/29 11:55:19 by juspende         ###   ########.fr       */
+/*   Updated: 2018/01/30 13:16:00 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,9 @@ typedef struct		s_ant
 /* Functions
 */
 
+int			list_len(t_tnl *list);
+void		free_ant(t_ant *list);
+void		free_graph(t_graph *list);
 void		print_tnl(char*);
 void		free_ant(t_ant*);
 void		free_graph(t_graph*);
