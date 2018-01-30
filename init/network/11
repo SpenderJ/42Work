@@ -1,0 +1,5 @@
+1  10.13.254.254 (10.13.254.254)  1.440 ms  0.753 ms  1.173 ms
+2  nat-1 (10.60.1.11)  0.369 ms  0.247 ms  0.284 ms
+3  dc3 (62.210.35.1)  1.809 ms  1.659 ms  1.935 ms
+
+A l'aide de nat1 et de son ip en () on observe que l'on passe de notre reseau local au grand monde du world wide web

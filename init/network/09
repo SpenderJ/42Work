@@ -1,0 +1,4 @@
+En effectuant la commande : nslookup 42.fr nous trouvons 4 ip
+En la faisant depuis les DNS de google : nslookup 42.fr 8.8.8.8 mous n'en avons plus que 2
+Si depuis 42 nous essayons de nous connecter via les deux ip exterieurs a 42 nous ne pouvons pas car le reseau ne peut s'interroger lui meme
+C'est pourquoi depuis 42 nous trouvons 2 Adresse en plus qui sont les locales.

@@ -1,0 +1,3 @@
+/etc/resolv.conf 
+C'est l'endroit ou est stocke l'adresse IP du serveur dns pour que le pc sache lequel utiliser.
+/etc contient par definition presque l'ensemble des fichiers de configuration. Facile a localiser du coup.
