@@ -1,0 +1,3 @@
+kill -9 $!
+#kill -9 $! will kill the last backgroudn command
+#kill [PID] will kill a specific command

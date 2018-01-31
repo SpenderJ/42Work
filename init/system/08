@@ -1,0 +1,3 @@
+En vous rendant dans le home de l'user, exemple vim /home/juspende 
+Il y aura un fichier .ssh, il contiendra si vous en avez autorise un fichier du type
+autorised key qui continedra les cles rsa autorisees a se connecter via ssh

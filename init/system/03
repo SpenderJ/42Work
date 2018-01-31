@@ -1,0 +1,4 @@
+/etc/hostname
+
+Est le fichier dans lequel on peut trouver le nom de l'OS, en le modifiant, on
+rend cela permmanent.

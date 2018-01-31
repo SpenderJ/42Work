@@ -1,0 +1,8 @@
+# Download Screen + put yourself in sudo
+
+screen tail -f /var/log/syslog
+
+# control a d to leave
+# screen -r to get back to the command
+# OR tail -f /var/log/syslog&
+

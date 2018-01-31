@@ -1,0 +1,3 @@
+iptables -L
+
+# Since you have no server setted up you won't see much
