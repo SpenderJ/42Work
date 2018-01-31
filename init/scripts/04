@@ -8,5 +8,5 @@
 file=$(find /etc -mindepth 1 -maxdepth 1 -name "crontab" -mtime -1)
 
 if [ "$file" ] ; then
-	echo "/etc/crontab has been modified in last 24h" && mail -s "Alert, /etc/crontab eddited" root
+	echo "/etc/crontab has been modified in last 24h" | mail -s "Alert, /etc/crontab eddited" root
 fi
