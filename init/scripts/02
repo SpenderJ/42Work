@@ -1,2 +1,15 @@
-apt-get upgrade >> /var/log/update_script.log
-apt-get update >> /var/log/update_script.log
+#!/bin/bash
+
+apt-get upgrades -y >> /var/log/update_script.log
+apt-get updates -y >> /var/log/update_script.log
+
+# As root, open "crontab -e"
+# At the end of the file add this : 
+# "0 4 7 * * bash $LOCATION_OF_SCRIPT >/dev/null 2>&1"
+#
+# This command will make a cron job running at these dates:
+# 2018-02-07 04:00:00 UTC
+# 2018-03-07 04:00:00 UTC
+# 2018-04-07 04:00:00 UTC
+# 2018-05-07 04:00:00 UTC
+# 2018-06-07 04:00:00 UTC

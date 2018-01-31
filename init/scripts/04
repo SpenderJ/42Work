@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Make crontab -e
+#
+# Add :"0 0 * * * bash /home/juspende/42Work/init/scripts/04 >/dev/null 2>&1"
+# you can replace the pwd by the loction of the scripts
+#
+file=$(find /etc -mindepth 1 -maxdepth 1 -name "crontab" -mtime -1)
+
+if [ "$file" ] ; then
+	echo "/etc/crontab has been modified in last 24h" && mail -s "Alert, /etc/crontab eddited" root
+fi

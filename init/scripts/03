@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ "$#" -eq 1 ] && [ -d $1 ]; then
+	ls -1S $1
+fi
