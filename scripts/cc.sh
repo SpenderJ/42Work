@@ -95,7 +95,7 @@ try:
       next_frame = elapsed / time_per_frame
     if frame >= next_frame:
       buf += line
-	except KeyboardInterrupt:
+	except KeyboardInterrupt
 	pass
 EOF
 ) < <(obtainium $video | bunzip2 -q 2> /dev/null)
