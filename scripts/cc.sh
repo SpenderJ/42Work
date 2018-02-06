@@ -18,10 +18,15 @@ green='\x1b[38;5;10m'
 purp='\x1b[38;5;171m'
 echo -en '\x1b[s'  # Save cursor.
 
+trap ctrl_c INT
+
+function ctrl_c() {
+echo "";
+}
+
 has?() { hash $1 2>/dev/null; }
 cleanup() { (( audpid > 1 )) && kill $audpid 2>/dev/null; }
-#quit() { echo -e "\x1b[2J \x1b[0H ${purp}<3 \x1b[?25h \x1b[u \x1b[m"; }
-quit() { echo -e "FDPPPPP\n"; }
+quit() { echo -e "\x1b[2J \x1b[0H ${purp}<3 \x1b[?25h \x1b[u \x1b[m"; }
 
 usage () {
   echo -en "${green}Rick Astley performs ♪ Never Gonna Give You Up ♪ on STDOUT."
@@ -95,7 +100,7 @@ try:
       next_frame = elapsed / time_per_frame
     if frame >= next_frame:
       buf += line
-	  except KeyboardInterrupt:
-	  pass
+#	  except KeyboardInterrupt:
+#	  pass
 EOF
 ) < <(obtainium $video | bunzip2 -q 2> /dev/null)
