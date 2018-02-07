@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   node.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/06 13:14:00 by juspende          #+#    #+#             */
-/*   Updated: 2018/02/06 17:18:52 by juspende         ###   ########.fr       */
+/*   Created: 2018/02/06 13:19:14 by juspende          #+#    #+#             */
+/*   Updated: 2018/02/06 13:19:17 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef NODE_H
+# define NODE_H
 
-# ifndef BUFF_SIZE
-#  define BUFF_SIZE 6
-# endif
+typedef struct	s_neighbor
+{
+	int					i_node;
+	struct s_neighbor	*next;
+}				t_neighbor;
 
-# include "lemin.h"
-# include <stdlib.h>
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <unistd.h>
-
-int		get_next_line(int const fd, char **line);
+typedef struct	s_node
+{
+	char		*name;
+	t_neighbor	*neighbors;
+	int			time_available;
+	int			reached;
+	int			time_reach;
+	int			previous;
+}				t_node;
 
 #endif

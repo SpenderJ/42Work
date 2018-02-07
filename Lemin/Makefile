@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/21 17:29:07 by juspende          #+#    #+#              #
-#    Updated: 2018/01/30 13:22:53 by juspende         ###   ########.fr        #
+#    Updated: 2018/02/06 17:18:21 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,26 +14,26 @@ NAME	= lem-in
 
 RM		= rm -f
 
-SRC		=	lem_in/srcs/list_op.c		\
-			lem_in/srcs/list_op2.c		\
-			lem_in/srcs/main.c			\
-			lem_in/srcs/parcour.c		\
+SRC		=	lem_in/srcs/main.c			\
+			lem_in/srcs/input.c			\
+			lem_in/srcs/line.c			\
+			lem_in/srcs/move1.c			\
+			lem_in/srcs/move2.c			\
+			lem_in/srcs/neighbor.c		\
+			lem_in/srcs/node.c			\
 			lem_in/srcs/parsing.c		\
-			lem_in/srcs/rank.c			\
-			lem_in/srcs/tell_me.c		\
-			lem_in/srcs/tool.c			\
-			lem_in/srcs/tool2.c			\
+			lem_in/srcs/pathfinding.c	\
 			lem_in/srcs/get_next_line/get_next_line.c
 
-OBJ		= $(SRCS:.c=.o)
+OBJ		= $(SRC:.c=.o)
 
-INCLUDE	= /includes/lemin.h
+INCLUDE	= /lem_in/includes
 
 CC		= gcc
 
 DEPS	= $(OBJ:.o=.d)
 
-CFLAGS	= -Wall -Wextra -Werror -g3
+CFLAGS	= -Wall -Wextra -Werror
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -I$(INCLUDE) -MM -MT $@ -MF $(patsubst %.o,%.d,$@) $<

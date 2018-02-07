@@ -5,59 +5,70 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/29 11:38:50 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/30 13:31:44 by juspende         ###   ########.fr       */
+/*   Created: 2018/02/06 13:41:16 by juspende          #+#    #+#             */
+/*   Updated: 2018/02/07 12:17:42 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lemin.h"
 
-int				start_end(t_graph *for_graph)
+int		main(void)
 {
-	int			end;
-	int			start;
-	t_graph		*tmp;
-	t_tnl		*tnl;
+	t_s s;
 
-	tmp = for_graph;
-	end = 0;
-	start = 0;
-	while (tmp)
-	{
-		tnl = tmp->tunls;
-		if (tmp->is_start == 1 && tmp->tunls != NULL)
-			if (ft_strcmp(tmp->index, tnl->dest->index))
-				start = 1;
-		if (tmp->is_end == 1 && tmp->tunls != NULL)
-			if (ft_strcmp(tmp->index, tnl->dest->index))
-				end = 1;
-		tmp = tmp->nxt;
-	}
-	return (end && start);
+	s.moves = NULL;
+	if (input(&s) == -1 || find_moves(&s) == -1)
+		return (QUIT);
+	s.moves = list_moves_to_moves(&s.list_moves);
+	sort_moves(s.moves, s.list_moves.nb_moves);
+	print_lines(s.lines, s.nb_lines);
+	print_moves(s.nodes, s.moves, s.list_moves.nb_moves);
+	ft_printf("\n");
+	free_all(&s.lines, &s.nodes, s.nb_nodes_expected, s.moves);
+	return (SUCCESS);
 }
 
-int				main()
+int		input(t_s *s)
 {
-	t_ant		*for_ants;
-	t_graph		*for_graph;
-	t_graph		*new_graph;
+	s->lines.first = NULL;
+	s->lines.last = NULL;
+	get_input(&s->lines, &s->nb_nodes_expected);
+	s->nodes = alloc_nodes(s->nb_nodes_expected);
+	parse_lines(s);
+	if (s->nb_ants < 0 || s->nodes[0].name == NULL || s->nodes[1].name == NULL)
+	{
+		free_all(&s->lines, &s->nodes, s->nb_nodes_expected, s->moves);
+		return (ERROR_RETURN);
+	}
+	return (SUCCESS);
+}
 
-	for_ants = NULL;
-	for_graph = NULL;
-	new_graph = NULL;
-	if ((for_ants = parsing_ant(for_ants)) == NULL)
-		return (84);
-	if ((for_graph = parsing_graph(for_graph, 0)) == NULL)
-		return (84);
-	if (!(start_end(for_graph)))
-		return (84);
-	if ((for_ants = add_start(for_ants, for_graph)) == NULL)
-		return (84);
-	new_graph = get_end(for_graph);
-	if ((new_graph = give_rank(new_graph, 0)) == NULL)
-		return (84);
-	lets_play(for_ants);
-	free_ant(for_ants);
-	free_graph(for_graph);
-	return (0);
+int		find_moves(t_s *s)
+{
+	int i;
+
+	s->list_moves.first = NULL;
+	s->list_moves.last = NULL;
+	s->list_moves.nb_moves = 0;
+	i = 0;
+	while (++i <= s->nb_ants)
+	{
+		if (find_path(s->nodes, s->nb_nodes, &s->list_moves, i) == -1)
+		{
+			free_all(&s->lines, &s->nodes, s->nb_nodes_expected, s->moves);
+			return (ERROR_RETURN);
+		}
+	}
+	return (SUCCESS);
+}
+
+void	free_all(t_lines *lines, t_node **nodes, int nb_nodes_expected,
+t_move *moves)
+{
+	if (lines)
+		free_lines(lines);
+	if (nodes && nb_nodes_expected)
+		free_nodes(nodes, nb_nodes_expected);
+	if (moves)
+		free(moves);
 }
