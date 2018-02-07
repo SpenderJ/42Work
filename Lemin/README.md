@@ -27,6 +27,11 @@ tube (la salle réceptrice doit être libre).
 
 Ce projet est en cours de correction.
 
+If you want to test our project, you just have to
+
+```
+./lem-in < [Name of the Map]
+```
 
 ## Contributing
 
