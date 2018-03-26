@@ -1,0 +1,90 @@
+body {
+    background-image: url(https://www.walldevil.com/wallpapers/w07/windows-98-microsoft-windows-vintage-90s-computers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table {
+    width: 100%;
+}
+
+.size {
+    position: relative;
+    width: 5%;
+    height: 80%;
+    margin: 0;
+}
+
+.style2 {
+    position: relative;
+    width: 5%;
+
+}
+
+.nbr {
+    position: absolute;
+    bottom: 1px;
+    left: 1px;
+    font-size: 0.8vw;
+}
+
+.elem {
+    margin: 30% 30%;
+    font-size: 1.1vw;
+    font-weight: bold;
+}
+
+.mass {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    font-size: 0.8vw;
+}
+.invisible {
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+    box-shadow: 0px 0px 0px #000;
+}
+td {
+    position: relative;
+    height:60%;
+    width:80%;
+    border: 1px solid;
+    box-shadow: 2px 2px 12px #dba4f4;
+}
+p.cop-font {
+    font-style: italic;
+    font-family: 'Lucida Console', Monaco, monospace;
+    text-align: right;
+}
+
+/* COLORS */
+.orange {
+    background: rgba(255, 210, 105, 0.8);
+}
+.dark-blue {
+    background: rgba(90, 115, 255, 0.8);
+}
+.blue {
+    background: rgba(130, 235, 250, 0.8);
+}
+.grey {
+    background: rgba(170, 185, 185, 0.8);
+}
+.green {
+    background: rgba(70, 250, 110, 0.8);
+}
+.dark-green {
+    background: rgba(60, 130, 75, 0.8);
+}
+.purple {
+    background: rgba(175, 90, 195, 0.8);
+}
+.red {
+    background: rgba(250, 50, 105, 0.8);
+}
+.pink {
+    background: rgba(255, 170, 195, 0.8);
+}
+.dark-orange {
+    background: rgba(255, 115, 0, 0.8);
+}

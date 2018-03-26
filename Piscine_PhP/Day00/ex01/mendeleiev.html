@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mendeleiev Table</title>
+    <meta charset="utf-8">
+</head>
+
+<style>
+
+    body {
+        background-image: url(https://www.walldevil.com/wallpapers/w07/windows-98-microsoft-windows-vintage-90s-computers.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    table {
+        width: 100%;
+    }
+
+    .size {
+        position: relative;
+        width: 5%;
+        height: 80%;
+        margin: 0;
+    }
+
+    .style2 {
+        position: relative;
+        width: 5%;
+
+    }
+
+    .nbr {
+        position: absolute;
+        bottom: 1px;
+        left: 1px;
+        font-size: 0.8vw;
+    }
+
+    .elem {
+        margin: 30% 30%;
+        font-size: 1.1vw;
+        font-weight: bold;
+    }
+
+    .mass {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        font-size: 0.8vw;
+    }
+    .invisible {
+        background-color: rgba(0,0,0,0);
+        border-color: rgba(0,0,0,0);
+        box-shadow: 0px 0px 0px #000;
+    }
+    td {
+        position: relative;
+        height:60%;
+        width:80%;
+        border: 1px solid;
+        box-shadow: 2px 2px 12px #dba4f4;
+    }
+    p.cop-font {
+        font-style: italic;
+        font-family: 'Lucida Console', Monaco, monospace;
+        text-align: right;
+    }
+
+    /* COLORS */
+    .orange {
+        background: rgba(255, 210, 105, 0.8);
+    }
+    .dark-blue {
+        background: rgba(90, 115, 255, 0.8);
+    }
+    .blue {
+        background: rgba(130, 235, 250, 0.8);
+    }
+    .grey {
+        background: rgba(170, 185, 185, 0.8);
+    }
+    .green {
+        background: rgba(70, 250, 110, 0.8);
+    }
+    .dark-green {
+        background: rgba(60, 130, 75, 0.8);
+    }
+    .purple {
+        background: rgba(175, 90, 195, 0.8);
+    }
+    .red {
+        background: rgba(250, 50, 105, 0.8);
+    }
+    .pink {
+        background: rgba(255, 170, 195, 0.8);
+    }
+    .dark-orange {
+        background: rgba(255, 115, 0, 0.8);
+    }
+
+</style>
+
+<body>
+<table contenteditable="true">
+    <center><h1 style="color: white">Mendeleiev Table</h1></center>
+    <tr>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+        <td class="style2 invisible"></td>
+    </tr>
+    <tr>
+        <td class="size grey"><div class="mass">1,007</div><div class="elem">H</div><div class="nbr">1</div></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size dark-blue"><div class="nbr">2</div><div class="elem">He</div><div class="mass">4,002</div></td>
+    </tr>
+    <tr>
+        <td class="size orange"><div class="nbr">3</div><div class="elem">Li</div><div class="mass">6,941</div></td>
+        <td class="size red"><div class="nbr">4</div><div class="elem">Be</div><div class="mass">9,012</div></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size green"><div class="nbr">5</div><div class="elem">B</div><div class="mass">10,811</div></td>
+        <td class="size grey"><div class="nbr">6</div><div class="elem">C</div><div class="mass">12,010</div></td>
+        <td class="size grey"><div class="nbr">7</div><div class="elem">N</div><div class="mass">14,006</div></td>
+        <td class="size grey"><div class="nbr">8</div><div class="elem">O</div><div class="mass">15,999</div></td>
+        <td class="size blue"><div class="nbr">9</div><div class="elem">F</div><div class="mass">18,998</div></td>
+        <td class="size dark-blue"><div class="nbr">10</div><div class="elem">Ne</div><div class="mass">20,179</div></td>
+    </tr>
+    <tr>
+        <td class="size orange"><div class="nbr">11</div><div class="elem">Na</div><div class="mass">22,989</div></td>
+        <td class="size red"><div class="nbr">12</div><div class="elem">Mg</div><div class="mass">24,305</div></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size dark-green"><div class="nbr">13</div><div class="elem">Al</div><div class="mass">26,981</div></td>
+        <td class="size green"><div class="nbr">14</div><div class="elem">Si</div><div class="mass">28,085</div></td>
+        <td class="size grey"><div class="nbr">15</div><div class="elem">P</div><div class="mass">30,973</div></td>
+        <td class="size grey"><div class="nbr">16</div><div class="elem">S</div><div class="mass">32,06</div></td>
+        <td class="size blue"><div class="nbr">17</div><div class="elem">Cl</div><div class="mass">35,45</div></td>
+        <td class="size dark-blue"><div class="nbr">18</div><div class="elem">Ar</div><div class="mass">39,948</div></td>
+    </tr>
+    <tr>
+        <td class="size orange"><div class="nbr">19</div><div class="elem">K</div><div class="mass">39,098</div></td>
+        <td class="size red"><div class="nbr">20</div><div class="elem">Ca</div><div class="mass">40,078</div></td>
+        <td class="size purple"><div class="nbr">21</div><div class="elem">Sc</div><div class="mass">44,955</div></td>
+        <td class="size purple"><div class="nbr">22</div><div class="elem">Ti</div><div class="mass">47,867</div></td>
+        <td class="size purple"><div class="nbr">23</div><div class="elem">V</div><div class="mass">50,941</div></td>
+        <td class="size purple"><div class="nbr">24</div><div class="elem">Cr</div><div class="mass">51,996</div></td>
+        <td class="size purple"><div class="nbr">25</div><div class="elem">Mn</div><div class="mass">54,938</div></td>
+        <td class="size purple"><div class="nbr">26</div><div class="elem">Fe</div><div class="mass">55,845</div></td>
+        <td class="size purple"><div class="nbr">27</div><div class="elem">Co</div><div class="mass">58,933</div></td>
+        <td class="size purple"><div class="nbr">28</div><div class="elem">Ni</div><div class="mass">58,693</div></td>
+        <td class="size purple"><div class="nbr">29</div><div class="elem">Cu</div><div class="mass">63,546</div></td>
+        <td class="size purple"><div class="nbr">30</div><div class="elem">Zn</div><div class="mass">65,38</div></td>
+        <td class="size dark-green"><div class="nbr">31</div><div class="elem">Ga</div><div class="mass">69,723</div></td>
+        <td class="size green"><div class="nbr">32</div><div class="elem">Ge</div><div class="mass">72,63</div></td>
+        <td class="size green"><div class="nbr">33</div><div class="elem">As</div><div class="mass">74,921</div></td>
+        <td class="size grey"><div class="nbr">34</div><div class="elem">Se</div><div class="mass">78,96</div></td>
+        <td class="size blue"><div class="nbr">35</div><div class="elem">Br</div><div class="mass">79,904</div></td>
+        <td class="size dark-blue"><div class="nbr">36</div><div class="elem">Kr</div><div class="mass">83,789</div></td>
+    </tr>
+    <tr>
+        <td class="size orange"><div class="nbr">37</div><div class="elem">Rb</div><div class="mass">85,467</div></td>
+        <td class="size red"><div class="nbr">38</div><div class="elem">Sr</div><div class="mass">87,62</div></td>
+        <td class="size purple"><div class="nbr">39</div><div class="elem">Y</div><div class="mass">88,905</div></td>
+        <td class="size purple"><div class="nbr">40</div><div class="elem">Zr</div><div class="mass">91,224</div></td>
+        <td class="size purple"><div class="nbr">41</div><div class="elem">Nb</div><div class="mass">92,906</div></td>
+        <td class="size purple"><div class="nbr">42</div><div class="elem">Mo</div><div class="mass">95,96</div></td>
+        <td class="size purple"><div class="nbr">43</div><div class="elem">Tc</div><div class="mass">98</div></td>
+        <td class="size purple"><div class="nbr">44</div><div class="elem">Ru</div><div class="mass">101</div></td>
+        <td class="size purple"><div class="nbr">45</div><div class="elem">Rh</div><div class="mass">102,90</div></td>
+        <td class="size purple"><div class="nbr">46</div><div class="elem">Pd</div><div class="mass">106,42</div></td>
+        <td class="size purple"><div class="nbr">47</div><div class="elem">Ag</div><div class="mass">107,87</div></td>
+        <td class="size purple"><div class="nbr">48</div><div class="elem">Cd</div><div class="mass">112,41</div></td>
+        <td class="size dark-green"><div class="nbr">49</div><div class="elem">In</div><div class="mass">114,82</div></td>
+        <td class="size dark-green"><div class="nbr">50</div><div class="elem">Sn</div><div class="mass">118,71</div></td>
+        <td class="size green"><div class="nbr">51</div><div class="elem">Sb</div><div class="mass">121,76</div></td>
+        <td class="size green"><div class="nbr">52</div><div class="elem">Te</div><div class="mass">127,6</div></td>
+        <td class="size blue"><div class="nbr">53</div><div class="elem">I</div><div class="mass">126,9</div></td>
+        <td class="size dark-blue"><div class="nbr">54</div><div class="elem">Xe</div><div class="mass">131,29</div></td>
+    </tr>
+    <tr>
+        <td class="size orange"><div class="nbr">55</div><div class="elem">Cs</div><div class="mass">132,90</div></td>
+        <td class="size red"><div class="nbr">56</div><div class="elem">Ba</div><div class="mass">137,32</div></td>
+        <td class="size pink"><div class="nbr"></div><div class="elem">57-71</div><div class="mass"></div></td>
+        <td class="size purple"><div class="nbr">72</div><div class="elem">Hf</div><div class="mass">178,49</div></td>
+        <td class="size purple"><div class="nbr">73</div><div class="elem">Ta</div><div class="mass">180,49</div></td>
+        <td class="size purple"><div class="nbr">74</div><div class="elem">W</div><div class="mass">183,84</div></td>
+        <td class="size purple"><div class="nbr">75</div><div class="elem">Re</div><div class="mass">186,20</div></td>
+        <td class="size purple"><div class="nbr">76</div><div class="elem">Os</div><div class="mass">190,23</div></td>
+        <td class="size purple"><div class="nbr">77</div><div class="elem">Ir</div><div class="mass">192,21</div></td>
+        <td class="size purple"><div class="nbr">78</div><div class="elem">Pt</div><div class="mass">195,08</div></td>
+        <td class="size purple"><div class="nbr">79</div><div class="elem">Au</div><div class="mass">196,96</div></td>
+        <td class="size purple"><div class="nbr">80</div><div class="elem">Hg</div><div class="mass">200,59</div></td>
+        <td class="size dark-green"><div class="nbr">81</div><div class="elem">Tl</div><div class="mass">204,38</div></td>
+        <td class="size dark-green"><div class="nbr">82</div><div class="elem">Pb</div><div class="mass">207,2</div></td>
+        <td class="size dark-green"><div class="nbr">83</div><div class="elem">Bi</div><div class="mass">208,98</div></td>
+        <td class="size green"><div class="nbr">84</div><div class="elem">Po</div><div class="mass">209</div></td>
+        <td class="size blue"><div class="nbr">85</div><div class="elem">At</div><div class="mass">210</div></td>
+        <td class="size dark-blue"><div class="nbr">86</div><div class="elem">Rn</div><div class="mass">222</div></td>
+    </tr>
+    <tr>
+        <td class="size orange"><div class="nbr">87</div><div class="elem">Fr</div><div class="mass">223</div></td>
+        <td class="size red"><div class="nbr">88</div><div class="elem">Ra</div><div class="mass">226</div></td>
+        <td class="size dark-orange"><div class="nbr"></div><div class="elem">89-103</div><div class="mass"></div></td>
+        <td class="size purple"><div class="nbr">104</div><div class="elem">Rf</div><div class="mass">267</div></td>
+        <td class="size purple"><div class="nbr">105</div><div class="elem">Db</div><div class="mass">268</div></td>
+        <td class="size purple"><div class="nbr">106</div><div class="elem">Sg</div><div class="mass">271</div></td>
+        <td class="size purple"><div class="nbr">107</div><div class="elem">Bh</div><div class="mass">272</div></td>
+        <td class="size purple"><div class="nbr">108</div><div class="elem">Hs</div><div class="mass">270</div></td>
+        <td class="size purple"><div class="nbr">109</div><div class="elem">Mt</div><div class="mass">276</div></td>
+        <td class="size purple"><div class="nbr">110</div><div class="elem">Ds</div><div class="mass">281</div></td>
+        <td class="size purple"><div class="nbr">111</div><div class="elem">Rg</div><div class="mass">280</div></td>
+        <td class="size purple"><div class="nbr">112</div><div class="elem">Cn</div><div class="mass">285</div></td>
+        <td class="size dark-green"><div class="nbr">113</div><div class="elem">Uut</div><div class="mass">284</div></td>
+        <td class="size dark-green"><div class="nbr">114</div><div class="elem">Fl</div><div class="mass">289</div></td>
+        <td class="size dark-green"><div class="nbr">115</div><div class="elem">Uup</div><div class="mass">288</div></td>
+        <td class="size dark-green"><div class="nbr">116</div><div class="elem">Lv</div><div class="mass">293</div></td>
+        <td class="size blue"><div class="nbr">117</div><div class="elem">uus</div><div class="mass">294</div></td>
+        <td class="size dark-blue"><div class="nbr">118</div><div class="elem">Uuo</div><div class="mass">294</div></td>
+    </tr>
+    <tr>
+        <td class="size invisible"></td>
+    </tr>
+    <tr>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size pink"><div class="nbr">57</div><div class="elem">La</div><div class="mass">138,9</div></td>
+        <td class="size pink"><div class="nbr">58</div><div class="elem">Ce</div><div class="mass">140,11</div></td>
+        <td class="size pink"><div class="nbr">59</div><div class="elem">Pr</div><div class="mass">140,9</div></td>
+        <td class="size pink"><div class="nbr">60</div><div class="elem">Nd</div><div class="mass">144,24</div></td>
+        <td class="size pink"><div class="nbr">61</div><div class="elem">Pm</div><div class="mass">145</div></td>
+        <td class="size pink"><div class="nbr">62</div><div class="elem">Sm</div><div class="mass">150,36</div></td>
+        <td class="size pink"><div class="nbr">63</div><div class="elem">Eu</div><div class="mass">151,964</div></td>
+        <td class="size pink"><div class="nbr">64</div><div class="elem">Gd</div><div class="mass">157,25</div></td>
+        <td class="size pink"><div class="nbr">65</div><div class="elem">Td</div><div class="mass">158,92</div></td>
+        <td class="size pink"><div class="nbr">66</div><div class="elem">Dy</div><div class="mass">162,5</div></td>
+        <td class="size pink"><div class="nbr">67</div><div class="elem">Ho</div><div class="mass">164,93</div></td>
+        <td class="size pink"><div class="nbr">68</div><div class="elem">Er</div><div class="mass">167,25</div></td>
+        <td class="size pink"><div class="nbr">69</div><div class="elem">Tm</div><div class="mass">168,93</div></td>
+        <td class="size pink"><div class="nbr">70</div><div class="elem">Yb</div><div class="mass">173,05</div></td>
+        <td class="size pink"><div class="nbr">71</div><div class="elem">Lu</div><div class="mass">174,97</div></td>
+    </tr>
+    <tr>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size invisible"></td>
+        <td class="size dark-orange"><div class="nbr">89</div><div class="elem">Ac</div><div class="mass">227</div></td>
+        <td class="size dark-orange"><div class="nbr">90</div><div class="elem">Th</div><div class="mass">232.03</div></td>
+        <td class="size dark-orange"><div class="nbr">91</div><div class="elem">Pa</div><div class="mass">231,03</div></td>
+        <td class="size dark-orange"><div class="nbr">92</div><div class="elem">U</div><div class="mass">238,02</div></td>
+        <td class="size dark-orange"><div class="nbr">93</div><div class="elem">Np</div><div class="mass">237</div></td>
+        <td class="size dark-orange"><div class="nbr">94</div><div class="elem">Pu</div><div class="mass">244</div></td>
+        <td class="size dark-orange"><div class="nbr">95</div><div class="elem">Am</div><div class="mass">243</div></td>
+        <td class="size dark-orange"><div class="nbr">96</div><div class="elem">Cm</div><div class="mass">247</div></td>
+        <td class="size dark-orange"><div class="nbr">97</div><div class="elem">Bk</div><div class="mass">247</div></td>
+        <td class="size dark-orange"><div class="nbr">98</div><div class="elem">Cf</div><div class="mass">251</div></td>
+        <td class="size dark-orange"><div class="nbr">99</div><div class="elem">Es</div><div class="mass">252</div></td>
+        <td class="size dark-orange"><div class="nbr">100</div><div class="elem">Fm</div><div class="mass">257</div></td>
+        <td class="size dark-orange"><div class="nbr">101</div><div class="elem">Md</div><div class="mass">258</div></td>
+        <td class="size dark-orange"><div class="nbr">102</div><div class="elem">No</div><div class="mass">259</div></td>
+        <td class="size dark-orange"><div class="nbr">103</div><div class="elem">Lr</div><div class="mass">262</div></td>
+    </tr>
+</table>
+</body>
+</html>

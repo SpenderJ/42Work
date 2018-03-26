@@ -1,0 +1,46 @@
+body {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/52/Kebab.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#menu-deroulant, #menu-deroulant ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#menu-deroulant {
+    text-align: center;
+}
+
+#menu-deroulant li {
+    display: inline-block;
+    background-color: white;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+#menu-deroulant ul li {
+    display: inherit;
+}
+
+#menu-deroulant ul {
+    position: absolute;
+    left: -999em;
+    text-align: left;
+    z-index: 1000;
+}
+
+#menu-deroulant li:hover ul {
+    left: auto;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 10px;
+}
+
+#menu-deroulant li:hover {
+    background-color: darkred;
+}

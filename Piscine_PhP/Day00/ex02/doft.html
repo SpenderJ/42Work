@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="doft.css">
+    <title>Day of the 42</title>
+</head>
+<body>
+<div class="side_up">
+    <img id="day_of_the_42" src="ressources/day_of_the_42.png">
+    <img  id="loupe" src="ressources/loupe.png">
+    <div id="side_right">
+        <a href="http://www.disney.com">
+        <img id="reload" src="ressources/reload.png" title="Recommencer au début" />
+        </a>
+    <a href="http://www.relaischateaux.com">
+        <img id="close" src="ressources/close.gif" title="Déconnecter" />
+    </a>
+    </div>
+
+</div>
+<div>
+    <div class="colonne dimension_1">
+        <img class="col-right" src="ressources/arrow.png" title="Avancer">
+        <img class="col-right" src="ressources/main.png" title="Prendre">
+        <img id="oeil" src="ressources/oeil.png" title="Regarder">
+        <img class="col-right" src="ressources/outil.png" title="Utiliser">
+        <img class="col-right" src="ressources/chat-icon.png" title="Parler">
+    </div>
+    <div class="colonne dimension_2">
+        <map name="center-map">
+            <area shape="rect" coords="320,320,520,550" href="http://www.ikea.com/" title="chaise">
+            <area shape="rect" coords="780,305,985,485" href="http://www.apple.com/" title="mac">
+        </map>
+        <img id="cluster" src="ressources/cluster.jpg" usemap="#center-map">
+    </div>
+    <div class="colonne dimension_3">
+        <img class="col-right"  width="100" src="ressources/book.png">
+        <img class="col-right" width="100" src="ressources/towel.png">
+        <div id="brick"></div>
+    </div>
+</div>
+<div id = "form">
+    <form id="intro" >
+        Vous <span>entrez</span> alors dans une grande piece remplie </br><em>d'ordinateur...</em></br>
+        -Bonjour vous etes nouveau ici?
+    </form>
+    <input  id="field" type="text" name="nom">
+    <input id="reponse" type="submit" value="Repondre">
+</div>
+</body>
+</html>
