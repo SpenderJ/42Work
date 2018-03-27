@@ -7,7 +7,7 @@
  */
 
 if (count($argv) != 4) {
-    echo "Invalid Parameters\n";
+    echo "Incorrect Parameters\n";
     return ;
 }
 
@@ -19,12 +19,13 @@ if ($b == '+')
 else if ($b == '-')
     echo $a - $c;
 else if ($b == '*')
-    echo $a * cd
-$c;
-else if ($b == '/')
+    echo $a * $c;
+else if ($b == '/' && $c != 0)
     echo $a / $c;
-else if ($b == '%')
-    echo $a % $c;
+else if ($b == '%' && $c != 0)
+	echo $a % $c;
+else
+	echo "Incorrect Parameters";
 echo "\n";
 
 ?>
