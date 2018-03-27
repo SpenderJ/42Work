@@ -25,12 +25,16 @@ tube (la salle réceptrice doit être libre).
 
 ## Running the tests
 
-Ce projet est en cours de correction.
+Mark: 123/100.
 
 If you want to test our project, you just have to
 
 ```
 ./lem-in < [Name of the Map]
+
+To display help:
+
+./lem-in -h
 ```
 
 ## Contributing
