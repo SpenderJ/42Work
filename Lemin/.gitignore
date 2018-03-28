@@ -1,0 +1,11 @@
+.idea/
+cmake-build-debug/
+out/
+obj/
+lem-in
+*.dev
+*.san
+*.a
+*.o
+*.d
+*.out
