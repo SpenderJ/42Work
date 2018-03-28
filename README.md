@@ -1,6 +1,17 @@
 # 42
-My First Year in 42
 
-Read me will be updated later on
+Whenever a project is Marked a bot will directly add the mark of the project.
 
-Topatc: https://gist.githubusercontent.com/zii/e4677a045fce9127a37a/raw/85550813dd315c0f140d7781512888332299dce3/ito10.c
+## Exams
+                  - 5 Exams Validated 93/100
+
+## Projects Done:
+                  - 42 Commandements
+                  - Piscine Reloaded 100/100 
+                  - Libft 125/100
+                  - Fillit 100/100
+                  - Get_Next_Line 121/100
+                  - Init 95/100
+                  - Ft_Printf 104/100
+                  - Push_Swap 80/100
+                  - Lem_In 123/100
