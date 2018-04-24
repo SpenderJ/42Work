@@ -21,7 +21,7 @@ static void	ft_ext_three(t_asm *strukt, char *s, int line, t_instruction *t)
 		t->i++;
 	if (s[t->i] == 'r')
 	{
-		t->tmp = (char)ft_atoi(s + t->i + 1);
+		t->tmp = (char) ft_atoi(s + t->i + 1);
 		ft_write(strukt, &t->tmp, 1);
 		strukt->size += 1;
 	}
@@ -50,7 +50,7 @@ static void	ft_ext_two(t_asm *strukt, char *s, int line, t_instruction *t)
 	}
 	else
 	{
-		t->tmp = (unsigned short)ft_atoi(s + t->i);
+		t->tmp = (unsigned short) ft_atoi(s + t->i);
 		ft_write_us(t->tmp, strukt);
 		strukt->size += 2;
 	}
@@ -81,7 +81,7 @@ void		ft_ldi_lldi(t_asm *strukt, char *s, char opcode, int line)
 		ft_ext_one(strukt, s, line, &t);
 	else if (s[t.i] == 'r')
 	{
-		t.tmp = (char)ft_atoi(s + t.i + 1);
+		t.tmp = (char) ft_atoi(s + t.i + 1);
 		ft_write(strukt, &t.tmp, 1);
 		strukt->size += 1;
 	}
@@ -90,7 +90,7 @@ void		ft_ldi_lldi(t_asm *strukt, char *s, char opcode, int line)
 	ft_ext_three(strukt, s, line, &t);
 	while (s[t.i] == ' ' || s[t.i] == '\t')
 		t.i++;
-	t.tmp = (char)ft_atoi(s + t.i + 1);
+	t.tmp = (char) ft_atoi(s + t.i + 1);
 	ft_write(strukt, &t.tmp, 1);
 	strukt->size += 1;
 }

@@ -22,7 +22,7 @@ static void	ft_ext_two(t_asm *strukt, char *s, int line, t_instruction *t)
 	}
 	else
 	{
-		t->tmp = (unsigned short)ft_atoi(s + t->i);
+		t->tmp = (unsigned short) ft_atoi(s + t->i);
 		ft_write_us(t->tmp, strukt);
 		strukt->size += 2;
 	}
@@ -41,7 +41,7 @@ static void	ft_ext_one(t_asm *strukt, char *s, int line, t_instruction *t)
 	}
 	else if (s[t->i] == 'r')
 	{
-		t->tmp = (char)ft_atoi(s + t->i + 1);
+		t->tmp = (char) ft_atoi(s + t->i + 1);
 		ft_write(strukt, &t->tmp, 1);
 		strukt->size += 1;
 	}
@@ -67,7 +67,7 @@ void		ft_and_xor_or(t_asm *strukt, char *s, char opcode, int line)
 	ft_write(strukt, &t.inst, 1);
 	ft_ext_one(strukt, s, line, &t);
 	ft_ext_one(strukt, s, line, &t);
-	t.tmp = (char)ft_atoi(s + t.i + 1);
+	t.tmp = (char) ft_atoi(s + t.i + 1);
 	ft_write(strukt, &t.tmp, 1);
 	strukt->size += 1;
 }

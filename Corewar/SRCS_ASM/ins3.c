@@ -50,7 +50,7 @@ static void	ft_ext_three(t_asm *strukt, char *s, int line, t_instruction *t)
 	}
 	else
 	{
-		t->tmp = (char)ft_atoi(s + t->i + 1);
+		t->tmp = (char) ft_atoi(s + t->i + 1);
 		ft_write(strukt, &t->tmp, 1);
 		strukt->size += 1;
 	}
@@ -66,7 +66,7 @@ static void	ft_ext_two(t_asm *strukt, char *s, int line, t_instruction *t)
 	}
 	else
 	{
-		t->tmp = (unsigned short)ft_atoi(s + t->i);
+		t->tmp = (unsigned short) ft_atoi(s + t->i);
 		ft_write_us(t->tmp, strukt);
 		strukt->size += 2;
 	}
@@ -81,7 +81,7 @@ static void	ft_ext_one(t_asm *strukt, char *s, t_instruction *t, char *opcode)
 	ft_write(strukt, &t->inst, 1);
 	t->inst = ft_write_codage(s + t->i, strukt);
 	ft_write(strukt, &t->inst, 1);
-	t->tmp = (char)ft_atoi(s + t->i + 1);
+	t->tmp = (char) ft_atoi(s + t->i + 1);
 	ft_write(strukt, &t->tmp, 1);
 	strukt->size += 1;
 	while (s[t->i] != SEPARATOR_CHAR)
@@ -107,7 +107,7 @@ void		ft_sti(t_asm *strukt, char *s, char opcode, int line)
 	}
 	else if (s[t.i] == 'r')
 	{
-		t.tmp = (char)ft_atoi(s + t.i + 1);
+		t.tmp = (char) ft_atoi(s + t.i + 1);
 		ft_write(strukt, &t.tmp, 1);
 		strukt->size += 1;
 	}

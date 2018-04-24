@@ -6,7 +6,7 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/11 15:18:07 by vtennero          #+#    #+#             */
-/*   Updated: 2018/04/24 11:21:28 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 11:43:40 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "op.h"
 # include "../LIBFT/libft.h"
-# include "../LIBFT/ft_printf/ft_printf.h"
+# include "../printf/include/ft_printf.h"
 
 # define PROG_NAME_LENGTH (128)
 # define COMMENT_LENGTH (2048)

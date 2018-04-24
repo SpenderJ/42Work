@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/05 11:28:46 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/05 11:28:47 by tpacaly          ###   ########.fr       */
+/*   Created: 2017/11/08 13:09:15 by juspende          #+#    #+#             */
+/*   Updated: 2017/11/09 11:43:06 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_memdel(void **ap)
 {
-	if (ap == NULL)
-		return ;
-	free(*ap);
-	*ap = NULL;
+	if (*ap != NULL)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }

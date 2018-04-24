@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strduuup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/04 11:29:49 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/04 11:29:51 by tpacaly          ###   ########.fr       */
+/*   Created: 2017/11/06 14:26:35 by juspende          #+#    #+#             */
+/*   Updated: 2018/01/29 18:57:45 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(const char *str)
 {
-	char	*str;
-	int		index;
+	char		*new;
+	int			i;
 
-	index = 0;
-	while (src[index])
-		index++;
-	str = (char *)malloc(sizeof(*str) * index + 1);
-	if (str == NULL)
-		return (NULL);
-	index = 0;
-	while (src[index] != '\0')
+	new = (char *)malloc(sizeof(str));
+	i = 0;
+	while (str[i] != '\0')
 	{
-		str[index] = src[index];
-		index++;
+		new[i] = str[i];
+		i++;
 	}
-	str[index] = '\0';
-	return (str);
+	new[i] = '\0';
+	return (new);
 }

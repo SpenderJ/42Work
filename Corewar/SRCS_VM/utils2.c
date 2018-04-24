@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 09:51:58 by juspende          #+#    #+#             */
-/*   Updated: 2018/04/24 10:46:04 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 12:48:06 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,33 +76,6 @@ void	print_arg(char *arg, int len, int option)
 		}
 	}
 	ft_printf("\n");
-}
-
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putnbr(21474);
-		ft_putnbr(83648);
-	}
-	else
-	{
-		if (nb < 0 && nb > -2147483648)
-		{
-			ft_putchar('-');
-			ft_putnbr(-nb);
-		}
-		if (nb >= 10)
-		{
-			ft_putnbr(nb / 10);
-			ft_putnbr(nb % 10);
-		}
-		if (nb < 10 && nb >= 0)
-			ft_putchar(nb + 48);
-		else
-			;
-	}
 }
 
 int	ft_b_strncmp(const char *s1, const char *s2, size_t n)

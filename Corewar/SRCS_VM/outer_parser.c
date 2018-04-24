@@ -19,7 +19,7 @@ int			is_valid_num(char *str)
 
 	if ((i = 0) == 0 && str)
 	{
-		len = ft_strlen(str);
+		len = fttt_strlen(str);
 		while (i < len)
 		{
 			if (!(str[i] >= '0' && str[i] <= '9'))
@@ -61,7 +61,7 @@ int			is_valid_player(char *arg)
 	int		len;
 
 	// ft_printf("player to check = %s\n", arg);
-	len = ft_strlen(arg);
+	len = fttt_strlen(arg);
 	// ft_printf("arg : %s\n", arg);
 	// ft_printf("arg : %c\n", arg[len]);
 	// ft_printf("arg : %c\n", arg[len - 1]);

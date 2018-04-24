@@ -6,7 +6,7 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/14 14:09:37 by vtennero          #+#    #+#             */
-/*   Updated: 2018/04/24 10:01:35 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 12:38:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void			print_usage(void)
 {
-	ft_dprintf(2, "Usage: ./corewar [-dump N || -v] \
-			[-n N] <champion1.cor> <...>\n");
+	ft_putstr_fd("Usage: ./corewar [-dump N || -v] \
+			[-n N] <champion1.cor> <...>\n", 2);
 }
 
 static t_gen	*init_params(t_gen *params, char **av, int n_arg)
