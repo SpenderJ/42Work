@@ -6,7 +6,7 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/11 15:18:07 by vtennero          #+#    #+#             */
-/*   Updated: 2018/04/11 15:18:25 by vtennero         ###   ########.fr       */
+/*   Updated: 2018/04/24 11:21:28 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char		        *ft_b_strjoin_clr(char *a, char *b, int d, int len);
 char		        *ft_b_strjoin(char *a, char *b, int len_a, int len_b);
 char        	    *ft_strndup_c(const char *s1, int n);
 void        	    *ft_memset(void *b, int c, size_t n);
-void        	    *ft_bzero(void *b, size_t n);
+void        	    *ft_bzero_degeu(void *b, size_t n);
 void        	    ft_putchar(char c);
 void        	    ft_putnbr(int nb);
 int                 ft_b_strncmp(const char *s1, const char *s2, size_t n);

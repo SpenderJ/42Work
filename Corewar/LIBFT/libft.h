@@ -6,7 +6,7 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 11:27:16 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/24 09:19:45 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 11:15:32 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <fcntl.h>
 # include "../includes/op.h"
 
+char		*ft_strnew(size_t i);
 void		ft_bzero(void *s, size_t n);
 void		ft_put(char *str, char c, char fd, char bool_free);
 int			ft_strcmp(const char *s1, const char *s2);

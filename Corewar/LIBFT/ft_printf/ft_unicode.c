@@ -6,7 +6,7 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/30 15:26:32 by vtennero          #+#    #+#             */
-/*   Updated: 2018/01/30 17:57:56 by vtennero         ###   ########.fr       */
+/*   Updated: 2018/04/24 11:20:17 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char		*ft_is_unicode_c(t_params *arg, int var)
 
 	str = NULL;
 	wc = (wchar_t)var;
-	ft_bzero(wca, MB_CUR_MAX + 1);
+	ft_bzero_degeu(wca, MB_CUR_MAX + 1);
 	if (var < 0 || (var >= 0xd800 && var < 0xe000) || var > 0x10ffff)
 	{
 		arg->flags[ERR] = 1;

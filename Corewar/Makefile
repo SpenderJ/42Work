@@ -18,6 +18,7 @@ SRCS_GEN = LIBFT/ft_atoi.c \
 		   LIBFT/ft_strchr.c \
 		   LIBFT/ft_put.c \
 		   LIBFT/ft_strsplit.c \
+		   LIBFT/ft_bzero.c \
 		   LIBFT/ft_itoa_base.c \
 		   LIBFT/ft_atoi_base.c \
 		   LIBFT/ft_printf/ft_printf.c \
@@ -58,6 +59,7 @@ SRCS_VM  = 	SRCS_VM/main.c \
 			SRCS_VM/outer_parser.c \
 			SRCS_VM/player_builder.c \
 			SRCS_VM/player_builder_set_number.c \
+			SRCS_VM/arena.c \
 			$(SRCS_GEN)
 
 OBJ_VM = $(SRCS_VM:.c=.o)

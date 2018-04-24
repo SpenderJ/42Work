@@ -6,7 +6,7 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/07 13:46:36 by vtennero          #+#    #+#             */
-/*   Updated: 2018/01/30 15:01:22 by vtennero         ###   ########.fr       */
+/*   Updated: 2018/04/24 11:20:54 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,6 @@ char				*ft_llutoa(unsigned long long n);
 char				*ft_llutoa_base(unsigned long long n, const char *base);
 char				*ft_strjoin_clr(char *a, char *b, int d);
 void				*ft_memset(void *b, int c, size_t n);
-void				*ft_bzero(void *b, size_t n);
+void				*ft_bzero_degeu(void *b, size_t n);
 char				*ft_strnew(size_t size);
 #endif

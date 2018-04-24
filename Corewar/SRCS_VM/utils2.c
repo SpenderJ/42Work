@@ -1,98 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/14 14:10:02 by vtennero          #+#    #+#             */
-/*   Updated: 2018/04/24 10:44:31 by juspende         ###   ########.fr       */
+/*   Created: 2018/04/24 09:51:58 by juspende          #+#    #+#             */
+/*   Updated: 2018/04/24 10:46:04 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/vm.h"
-
-
-void		ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-static void	ft_strjoin_clr_free(char *tmp1, char *tmp2, int d)
-{
-	if (d == 0)
-		free(tmp1);
-	else if (d == 1)
-		free(tmp2);
-	else if (d == 2)
-	{
-		free(tmp1);
-		free(tmp2);
-	}
-}
-
-char		*ft_b_strjoin_clr(char *a, char *b, int d, int len)
-{
-	char	*s;
-	size_t	i;
-	char	*tmp1;
-	char	*tmp2;
-
-	ft_printf("joinclr\n");
-	tmp1 = a;
-	tmp2 = b;
-	if (!(s = (char *)malloc(sizeof(char) * (len + len + 1))))
-		return (NULL);
-	i = 0;
-	while (a && *a)
-		s[i++] = *a++;
-	while (b && *b)
-		s[i++] = *b++;
-	s[i] = '\0';
-	ft_strjoin_clr_free(tmp1, tmp2, d);
-	return (s);
-}
-
-char		*ft_b_strjoin(char *a, char *b, int len_a, int len_b)
-{
-	char	*s;
-	int		i;
-	int		j;
-	char	*tmp1;
-	char	*tmp2;
-
-	tmp1 = a;
-	tmp2 = b;
-	if (!(s = (char *)malloc(sizeof(char) * (len_a + len_b + 1))))
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (i++ < len_a)
-		s[i] = a[i];
-	while (j < len_b)
-		s[i++] = b[j++];
-	s[i] = '\0';
-	free(tmp1);
-	return (s);
-}
-
-char	*ft_strndup_c(const char *s1, int n)
-{
-	char	*t;
-	int		i;
-
-	i = 0;
-	t = (char *)malloc(sizeof(*t) * n + 1);
-	if (!t)
-		return (NULL);
-	while (i < n)
-	{
-		t[i] = s1[i];
-		i++;
-	}
-	t[n] = '\0';
-	return (t);
-}
 
 void	print_params(t_gen *params)
 {
@@ -132,45 +50,30 @@ void	print_params(t_gen *params)
 void	print_arg(char *arg, int len, int option)
 {
 	int	i;
-	
-	i = 0;
-	if (option == 'c')
+
+	if ((i = -1) == -1 && option == 'c')
 	{
-	// ft_printf("Print Arg\nCHAR mode\n");
-	while (i < len)
-	{
-		if (arg[i] == 0)
-			ft_printf("%c", '.');
-		else
-			ft_printf("%c", arg[i]);
-		i++;
-	}
+		//ft_printf("Print Arg\nCHAR mode\n");
+		while (++i < len)
+			arg[i] == 0 ? ft_printf("%c", '.') : ft_printf("%c", arg[i]);
 	}
 	else if (option == 'h')
 	{
-	// ft_printf("Print Arg\nHEX mode\n|");
-	while (i < len)
-	{
-		if (arg[i] == 0)
-			ft_printf(".");
-		else
-			ft_printf("%x", arg[i]);
+		//ft_printf("Print Arg\nHEX mode\n|");
+		while (++i < len)
+		{
+			arg[i] == 0 ? ft_printf(".") : ft_printf("%x", arg[i]);
 			ft_printf("|");
-		i++;
-	}
+		}
 	}
 	else if (option == 'd')
 	{
-	// ft_printf("Print Arg\nDEC mode\n|");
-	while (i < len)
-	{
-		if (arg[i] == 0)
-			ft_printf(".");
-		else
-			ft_printf("%d", arg[i]);
+		// ft_printf("Print Arg\nDEC mode\n|");
+		while (++i < len)
+		{
+			arg[i] == 0 ? ft_printf(".") : ft_printf("%d", arg[i]);
 			ft_printf("|");
-		i++;
-	}
+		}
 	}
 	ft_printf("\n");
 }

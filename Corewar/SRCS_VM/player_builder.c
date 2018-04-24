@@ -6,37 +6,36 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/14 14:09:55 by vtennero          #+#    #+#             */
-/*   Updated: 2018/04/17 17:47:44 by vtennero         ###   ########.fr       */
+/*   Updated: 2018/04/24 10:45:37 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/vm.h"
 
-void		get_prog_size(char *arg)
+void			get_prog_size(char *arg)
 {
-	int		i;
-	int		len;
-	char	tab[8 + 1];
+	int			i;
+	int			len;
+	char		tab[8 + 1];
 
-	i = 0;
+	i = -1;
 	len = 8;
-	while (i < len)
+	while (++i < len)
 	{
 		tab[i] = arg[i];
 		ft_printf("%d|", arg[i]);
-		i++;
 	}
 	tab[8] = '\0';
 	ft_printf("\n");
 	// ft_printf("%d\n", ft_atoi_base(tab, "013456789abcdef"));
 }
 
-t_player    *fill_player(char *file, t_player *player)
+t_player		*fill_player(char *file, t_player *player)
 {
-	int         i;
-	int         name_start;
-	int         comment_start;
-	int         instructions_start;
+	int			i;
+	int			name_start;
+	int			comment_start;
+	int			instructions_start;
 
 	i = 0;
 	if (check_name_header(file) == 0)
@@ -51,8 +50,10 @@ t_player    *fill_player(char *file, t_player *player)
 	instructions_start = comment_start + COMMENT_LENGTH;
 
 	player->name = inner_parser(file + name_start, comment_start - name_start);
-	player->comment = inner_parser(file + comment_start, instructions_start - comment_start);
-	player->instructions = inner_parser(file + instructions_start, player->len - instructions_start);
+	player->comment = inner_parser(file + comment_start,
+			instructions_start - comment_start);
+	player->instructions = inner_parser(file + instructions_start,
+			player->len - instructions_start);
 	player->next = NULL;
 	get_prog_size(file + name_start + PROG_NAME_LENGTH);
 	// player->name = NULL;
@@ -68,13 +69,13 @@ t_player    *fill_player(char *file, t_player *player)
 	return (player);
 }
 
-char    *get_file(t_player *player, int fd)
+char			*get_file(t_player *player, int fd)
 {
-	int     ret;
-	char    buf[BUFF_SIZE + 1];
-	char    *str;
-	int     set;
-	int     len_a;
+	int			ret;
+	char		buf[BUFF_SIZE + 1];
+	char		*str;
+	int			set;
+	int			len_a;
 
 	set = 0;
 	player->len = 0;
@@ -97,11 +98,11 @@ char    *get_file(t_player *player, int fd)
 	return (str);
 }
 
-t_player    *init_player(t_player *list, char *arg, int pl_nbr, int o)
+t_player		*init_player(t_player *list, char *arg, int pl_nbr, int o)
 {
-	t_player    *new_player;
-	int         fd;
-	char        *file;
+	t_player	*new_player;
+	int			fd;
+	char		*file;
 
 	if (!(new_player = (t_player *)malloc(sizeof(t_player))))
 		return (NULL);
@@ -120,34 +121,34 @@ t_player    *init_player(t_player *list, char *arg, int pl_nbr, int o)
 	return (new_player);
 }
 
-t_player    *init_players(t_gen *params, char **av, int n_arg)
+t_player		*init_players(t_gen *params, char **av, int n_arg)
 {
-	t_player    *list_of_players;
-	int         i;
-	int         o;
-	int         pl_number;
+	t_player	*list_of_players;
+	int			i;
+	int			o;
+	int			pl_number;
 
 	i = 1;
 	list_of_players = NULL;
-    // ft_printf("n_arg = %d\n", n_arg);
+	// ft_printf("n_arg = %d\n", n_arg);
 	while (i <= n_arg)
 	{
 		pl_number = 1;
-        if ((ft_strcmp("-n", av[i]) == 0))
-        {
-            if ((pl_number = is_numbered_player(params, i, n_arg, av)))
-		    {
-			    i +=2;
-			    o = 1;
-		    }
-            else
-                return (NULL);
-        }
-        else if (!(is_valid_player(av[i])))
+		if ((ft_strcmp("-n", av[i]) == 0))
+		{
+			if ((pl_number = is_numbered_player(params, i, n_arg, av)))
+			{
+				i +=2;
+				o = 1;
+			}
+			else
+				return (NULL);
+		}
+		else if (!(is_valid_player(av[i])))
 			return (NULL);
 		params->nb_players += 1;
 		list_of_players = init_player(list_of_players, av[i], pl_number, o--);
 		i++;
 	}
-    return (list_of_players);
+	return (list_of_players);
 }

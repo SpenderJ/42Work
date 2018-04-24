@@ -6,7 +6,7 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/25 14:28:03 by vtennero          #+#    #+#             */
-/*   Updated: 2018/01/30 14:45:57 by vtennero         ###   ########.fr       */
+/*   Updated: 2018/04/24 11:19:51 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void		ft_is_perc(char **buf, char *format, int *index, va_list lst)
 	t_params	arg;
 
 	i = 1;
-	ft_bzero(&arg, sizeof(t_params));
+	ft_bzero_degeu(&arg, sizeof(t_params));
 	*index += 1;
 	while (format[i] != '\0')
 	{

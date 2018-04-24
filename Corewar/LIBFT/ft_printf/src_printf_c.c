@@ -6,7 +6,7 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/19 15:50:22 by vtennero          #+#    #+#             */
-/*   Updated: 2018/04/19 15:50:23 by vtennero         ###   ########.fr       */
+/*   Updated: 2018/04/24 11:19:25 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	*ft_memset(void *b, int c, size_t n)
 	return (str);
 }
 
-void	*ft_bzero(void *b, size_t n)
+void	*ft_bzero_degeu(void *b, size_t n)
 {
 	ft_memset(b, 0, n);
 	return (b);

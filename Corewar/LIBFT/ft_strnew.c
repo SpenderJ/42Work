@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_params.c                                 :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/30 14:49:56 by vtennero          #+#    #+#             */
-/*   Updated: 2018/04/24 11:19:06 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/08 13:11:03 by juspende          #+#    #+#             */
+/*   Updated: 2018/04/24 11:08:39 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-t_params	*ft_create_params(void)
+char	*ft_strnew(size_t size)
 {
-	t_params	*arg;
+	char	*tofill;
+	size_t	n;
 
-	arg = (t_params *)malloc(sizeof(t_params));
-	if (arg)
-		return (arg);
-	else
+	n = -1;
+	if ((tofill = malloc(sizeof(char) * (size + 1))) == NULL)
 		return (NULL);
-}
-
-t_params	*ft_set_zero_params(t_params *arg)
-{
-	ft_bzero_degeu(arg, sizeof(t_params));
-	return (arg);
+	while (++n <= size)
+		tofill[n] = '\0';
+	return (tofill);
 }
