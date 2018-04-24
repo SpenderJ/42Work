@@ -6,11 +6,11 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 09:42:45 by juspende          #+#    #+#             */
-/*   Updated: 2018/04/24 11:44:31 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 12:55:43 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/vm.h"
+#include "../includes/corewar.h"
 
 int			check_name_header(char *arg)
 {

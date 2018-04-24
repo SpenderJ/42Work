@@ -6,11 +6,11 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 09:46:35 by juspende          #+#    #+#             */
-/*   Updated: 2018/04/24 09:47:29 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 12:56:21 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/vm.h"
+#include "../includes/corewar.h"
 
 t_player		*add_player_to_list(t_player *new, t_player *list)
 {

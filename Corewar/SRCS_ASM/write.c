@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 14:25:30 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/05 14:25:41 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:55:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 void			ft_write(t_asm *strukt, const void *tmp, size_t len)
 {

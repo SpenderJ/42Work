@@ -6,11 +6,11 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 09:43:35 by juspende          #+#    #+#             */
-/*   Updated: 2018/04/24 10:03:22 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 12:56:03 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/vm.h"
+#include "../includes/corewar.h"
 
 int			is_valid_num(char *str)
 {

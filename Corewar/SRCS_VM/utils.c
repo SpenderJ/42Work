@@ -6,11 +6,11 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/14 14:10:02 by vtennero          #+#    #+#             */
-/*   Updated: 2018/04/24 12:48:22 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 12:56:27 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/vm.h"
+#include "../includes/corewar.h"
 
 static void	ft_strjoin_clr_free(char *tmp1, char *tmp2, int d)
 {

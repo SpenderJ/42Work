@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 10:11:13 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/06 13:08:11 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:55:02 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 void			ft_open_check_and_get_file(t_asm *strukt, char *cpp)
 {

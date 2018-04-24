@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 14:53:25 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/05 14:53:44 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:53:55 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 static void		ft_less_ext(t_asm *s_asm, int line, int *i)
 {

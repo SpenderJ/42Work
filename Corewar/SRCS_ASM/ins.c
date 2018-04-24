@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 12:53:06 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/06 13:07:57 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:54:14 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 void	ft_write_magic_number(t_asm *strukt)
 {

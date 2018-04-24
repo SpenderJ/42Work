@@ -6,11 +6,11 @@
 /*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/14 14:09:37 by vtennero          #+#    #+#             */
-/*   Updated: 2018/04/24 12:38:16 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 12:55:50 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/vm.h"
+#include "../includes/corewar.h"
 
 void			print_usage(void)
 {

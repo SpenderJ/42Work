@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 12:52:32 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/06 12:52:48 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:53:29 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 static void	ft_compare_macro(void)
 {

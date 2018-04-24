@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 12:36:29 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/06 12:36:41 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:54:50 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 void		ft_aff(t_asm *strukt, char *s)
 {

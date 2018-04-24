@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 14:49:26 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/06 13:02:09 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:53:43 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 char	ft_is_r(char *s, char *nbr, char *inst, int *index)
 {

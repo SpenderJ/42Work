@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 13:52:34 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/06 13:12:47 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:54:26 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 void		ft_live(t_asm *strukt, char *s, int line)
 {

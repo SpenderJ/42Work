@@ -6,11 +6,11 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 09:51:58 by juspende          #+#    #+#             */
-/*   Updated: 2018/04/24 12:48:06 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 12:56:34 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/vm.h"
+#include "../includes/corewar.h"
 
 void	print_params(t_gen *params)
 {

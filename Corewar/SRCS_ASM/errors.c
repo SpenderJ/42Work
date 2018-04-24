@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 10:11:20 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/06 13:03:32 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:53:49 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 void		ft_exit(char *str)
 {

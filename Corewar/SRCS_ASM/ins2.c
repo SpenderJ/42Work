@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 13:51:35 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/05 13:51:50 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:54:19 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 static char	ft_find_command(char *str, t_asm *strukt, int i, int j)
 {

@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arena.c                                            :+:      :+:    :+:   */
+/*   arena.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/24 09:16:30 by juspende          #+#    #+#             */
-/*   Updated: 2018/04/24 12:59:37 by juspende         ###   ########.fr       */
+/*   Created: 2018/04/24 09:17:30 by juspende          #+#    #+#             */
+/*   Updated: 2018/04/24 12:58:02 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/corewar.h"
+#ifndef ARENA_H
+# define ARENA_H
 
-static t_arena	g_arena_stack;
-t_arena			*g_arena = &g_arena_stack;
+# include <stdlib.h>
+/*
+ * ** TODO: Add all others includes necessary
+ * */
 
-int		arena(int ac, char **av)
+typedef struct	s_arena
 {
-	(void)ac;
-	(void)av;
-	ft_bzero(g_arena, sizeof(t_arena));
-	return (0);
-}
+	uint8_t		mem[MEM_SIZE];
+	int32_t		cycle_to_die;
+	int32_t		cycle_total;
+}				t_arena;
+
+#endif

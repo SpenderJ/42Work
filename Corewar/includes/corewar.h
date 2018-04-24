@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arena.h                                            :+:      :+:    :+:   */
+/*   corewar.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/24 09:17:30 by juspende          #+#    #+#             */
-/*   Updated: 2018/04/24 09:18:15 by juspende         ###   ########.fr       */
+/*   Created: 2018/04/24 12:50:30 by juspende          #+#    #+#             */
+/*   Updated: 2018/04/24 12:59:02 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARENA_H
-# define ARENA_H
+#ifndef COREWAR_H
+# define COREWAR_H
 
-# include <stdlib.h>
-# include "../includes/op.h"
-/*
- * ** TODO: Add all others includes necessary
- * */
-
-typedef struct	s_arena
-{
-	uint8_t		mem[MEM_SIZE];
-	int32_t		cycle_to_die;
-	int32_t		cycle_total;
-}				t_arena;
+#include "corewar/arena.h"
+#include "corewar/asm.h"
+#include "corewar/vm.h"
+#include "corewar/op.h"
+#include "../printf/include/ft_printf.h"
+#include "../LIBFT/libft.h"
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 14:57:25 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/05 14:58:33 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:54:07 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 static void		ft_bool(int i, char *bool_op, char *bool_dir)
 {

@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 13:56:06 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/05 13:56:20 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:54:38 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 static void	ft_ext_two(t_asm *strukt, char *s, int line, t_instruction *t)
 {

@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 14:53:57 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/05 14:54:00 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:54:01 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 int		ft_size_file(t_asm *s_asm)
 {

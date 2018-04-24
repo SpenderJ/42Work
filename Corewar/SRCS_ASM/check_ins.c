@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 14:48:58 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/05 14:49:15 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:53:36 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 static char	ft_check_dir_else(char *s, char *nbr, char *inst, int *index)
 {

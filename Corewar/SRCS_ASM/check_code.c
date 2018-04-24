@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 12:12:07 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/05 12:12:08 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:53:14 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 static char	ft_check_char_label(char cara)
 {

@@ -6,11 +6,11 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 12:21:01 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/05 12:21:02 by tpacaly          ###   ########.fr       */
+/*   Updated: 2018/04/24 12:55:09 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
+#include "../includes/corewar.h"
 
 void			ft_print_file(char **tab_file)
 {
