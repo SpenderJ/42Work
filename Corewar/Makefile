@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2018/04/24 13:36:28 by juspende         ###   ########.fr        #
+#    Updated: 2018/04/24 13:53:37 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ INCLUDE		= /includes
 
 CC			= gcc
 
-CFLAGS		= 
+CFLAGS		= -Wall -Wextra
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -I$(INCLUDE) -MM -MT $@ -MF $(patsubst %.o,%.d,$@) $<
@@ -87,6 +87,8 @@ clean:
 	@make clean -C printf/
 	@$(RM) $(OBJ)
 	@$(RM) $(OBJ2)
+	@$(RM) $(DEPS)
+	@$(RM) $(DEPS2)
 	@echo "$(NAME): $@ \033[32m[✔]\033[0m"
 	@echo "$(NAME2): $@ \033[32m[✔]\033[0m"
 

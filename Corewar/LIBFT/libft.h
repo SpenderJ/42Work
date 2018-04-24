@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/04/24 13:33:26 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 14:00:07 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef	struct	ss_list
 	struct ss_list	*next;
 }				tt_list;
 
+char			**ft_strsplit(char const *str, char c);
 int				ft_charnum(char c);
 int				ft_intmin(int *list);
 int				ft_intmax(int *list);
