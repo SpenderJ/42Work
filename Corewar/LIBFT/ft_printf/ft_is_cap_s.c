@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_is_cap_s.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vtennero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 13:23:19 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/27 14:13:52 by juspende         ###   ########.fr       */
+/*   Created: 2018/01/30 19:23:01 by vtennero          #+#    #+#             */
+/*   Updated: 2018/01/30 19:23:08 by vtennero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_is_cap_s(t_params *arg, va_list lst)
 {
-	unsigned char	*str;
-
-	str = s;
-	while (n--)
-		*str++ = '\0';
+	arg->flags[L] = 1;
+	return (ft_is_s(arg, lst));
 }

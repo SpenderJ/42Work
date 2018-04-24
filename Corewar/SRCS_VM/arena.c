@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   arena.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 13:23:19 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/27 14:13:52 by juspende         ###   ########.fr       */
+/*   Created: 2018/04/24 09:16:30 by juspende          #+#    #+#             */
+/*   Updated: 2018/04/24 09:18:30 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+# include "../includes/arena.h"
+# include "../includes/op.h"
+# include "../LIBFT/libft.h"
 
-void	ft_bzero(void *s, size_t n)
+static t_arena	g_arena_stack;
+t_arena			*g_arena = &g_arena_stack;
+
+int		main(int ac, char **av)
 {
-	unsigned char	*str;
-
-	str = s;
-	while (n--)
-		*str++ = '\0';
+	ft_bzero(g_arena, sizeof(t_arena));
+	return (0);
 }

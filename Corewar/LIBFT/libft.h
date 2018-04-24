@@ -6,7 +6,7 @@
 /*   By: tpacaly <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 11:27:16 by tpacaly           #+#    #+#             */
-/*   Updated: 2018/04/11 15:28:26 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 09:19:45 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_atoi(const char *str);
 char		*ft_itoa_base(int value, int base);
 char		**ft_strsplit(char *str);
+int			ft_atoi_base(const char *s, const char *base);
 
 #endif
