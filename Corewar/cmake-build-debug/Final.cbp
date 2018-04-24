@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/juspende/GitHub/Final/cmake-build-debug"/>
+				<Option working_dir="/Users/juspende/GitHub/Corewar/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/juspende/GitHub/Final/cmake-build-debug"/>
+				<Option working_dir="/Users/juspende/GitHub/Corewar/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/juspende/GitHub/Final/cmake-build-debug"/>
+				<Option working_dir="/Users/juspende/GitHub/Corewar/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Final">
-				<Option output="/Users/juspende/GitHub/Final/cmake-build-debug/Final" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/juspende/GitHub/Final/cmake-build-debug"/>
+				<Option output="/Users/juspende/GitHub/Corewar/cmake-build-debug/Final" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/juspende/GitHub/Corewar/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 Final"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Final"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Final/fast">
-				<Option output="/Users/juspende/GitHub/Final/cmake-build-debug/Final" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/juspende/GitHub/Final/cmake-build-debug"/>
+				<Option output="/Users/juspende/GitHub/Corewar/cmake-build-debug/Final" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/juspende/GitHub/Corewar/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,500 +75,500 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 Final/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Final/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Final/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/juspende/GitHub/Corewar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_atoi.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_atoi.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_bzero.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_bzero.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_countspace.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_countspace.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_intlimit.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_intlimit.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_intlistsorted.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_intlistsorted.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_intmaxmin.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_intmaxmin.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_is_negative.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_is_negative.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_isalnum.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_isalnum.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_isalpha.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_isalpha.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_isascii.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_isascii.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_isdigit.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_isdigit.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_isnum.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_isnum.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_isprint.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_isprint.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_itoa.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_itoa.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_lstadd.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_lstadd.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_lstdel.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_lstdel.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_lstdelone.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_lstdelone.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_lstiter.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_lstiter.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_lstmap.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_lstmap.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_lstnew.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_lstnew.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_memalloc.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_memalloc.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_memccpy.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_memccpy.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_memchr.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_memchr.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_memcmp.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_memcmp.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_memcpy.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_memcpy.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_memdel.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_memdel.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_memmove.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_memmove.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_memset.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_memset.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_placeint.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_placeint.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_print_words_tables.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_print_words_tables.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_printint.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_printint.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_putchar.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_putchar.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_putchar_fd.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_putchar_fd.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_putendl.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_putendl.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_putendl_fd.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_putendl_fd.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_putnbr.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_putnbr.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_putnbr_base.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_putnbr_base.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_putnbr_fd.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_putnbr_fd.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_putsterr.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_putsterr.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_putstr.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_putstr.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_putstr_fd.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_putstr_fd.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_range.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_range.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_revint.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_revint.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_sqrt.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_sqrt.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strcat.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strcat.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strchr.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strchr.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strclr.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strclr.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strcmp.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strcmp.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strcpy.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strcpy.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strdel.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strdel.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strdup.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strdup.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strequ.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strequ.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_striter.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_striter.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_striteri.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_striteri.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strjoin.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strjoin.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strlcat.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strlcat.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strlen.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strlen.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strmap.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strmap.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strmapi.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strmapi.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strncat.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strncat.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strncmp.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strncmp.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strncpy.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strncpy.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strnequ.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strnequ.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strnew.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strnew.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strnstr.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strnstr.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strrchr.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strrchr.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strrev.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strrev.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strstr.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strstr.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strsub.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strsub.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_strtrim.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_strtrim.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_swap.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_swap.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_tolower.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_tolower.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/ft_toupper.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/ft_toupper.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/int_len.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/int_len.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/LIBFT/libft.h">
+		<Unit filename="/Users/juspende/GitHub/Corewar/LIBFT/libft.h">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/check_code.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/check_code.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/check_filedots.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/check_filedots.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/check_head.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/check_head.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/check_ins.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/check_ins.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/check_ins2.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/check_ins2.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/errors.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/errors.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/ft_label.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/ft_label.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/ft_label2.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/ft_label2.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/ft_opdir.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/ft_opdir.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/ins.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/ins.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/ins2.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/ins2.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/ins3.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/ins3.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/ins4.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/ins4.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/ins5.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/ins5.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/ins6.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/ins6.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/ins7.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/ins7.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/ins8.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/ins8.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/main.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/main.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/utils.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/utils.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_ASM/write.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_ASM/write.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_VM/arena.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_VM/arena.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_VM/inner_parser.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_VM/inner_parser.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_VM/main.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_VM/main.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_VM/outer_parser.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_VM/outer_parser.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_VM/player_builder.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_VM/player_builder.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_VM/player_builder_set_number.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_VM/player_builder_set_number.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_VM/utils.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_VM/utils.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/SRCS_VM/utils2.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/SRCS_VM/utils2.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/includes/arena.h">
+		<Unit filename="/Users/juspende/GitHub/Corewar/includes/arena.h">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/includes/asm.h">
+		<Unit filename="/Users/juspende/GitHub/Corewar/includes/asm.h">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/includes/op.h">
+		<Unit filename="/Users/juspende/GitHub/Corewar/includes/op.h">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/includes/vm.h">
+		<Unit filename="/Users/juspende/GitHub/Corewar/includes/vm.h">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/include/ft_printf.h">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/include/ft_printf.h">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/free_all.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/free_all.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_atoi.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_atoi.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_getnbr_base.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_getnbr_base.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_getnbr_base_ui.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_getnbr_base_ui.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_itoa.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_itoa.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_itoa_double.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_itoa_double.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_print_bits.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_print_bits.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_print_memory.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_print_memory.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_printf_strlen.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_printf_strlen.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_printtab.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_printtab.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_putchar.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_putchar.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_putdouble.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_putdouble.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_putint.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_putint.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_putlong.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_putlong.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_putnbr_base.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_putnbr_base.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_putshort.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_putshort.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_putstr.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_putstr.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_putuint.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_putuint.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_strcat.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_strcat.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_strchr.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_strchr.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_strdup.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_strdup.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_strncat.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_strncat.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_strnew.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_strnew.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/ft_strrev.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/ft_strrev.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/int_len.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/int_len.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/larg_flag.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/larg_flag.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/basic/lenght_modif.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/basic/lenght_modif.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/ft_printf.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/ft_printf.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/a.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/a.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/b.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/b.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/c.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/c.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/d.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/d.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/e.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/e.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/f.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/f.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/g.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/g.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/h.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/h.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/i.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/i.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/j.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/j.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/k.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/k.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/l.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/l.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/m.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/m.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/n.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/n.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/o.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/o.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/p.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/p.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/q.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/q.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/r.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/r.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/s.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/s.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/t.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/t.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/u.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/u.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/v.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/v.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/w.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/w.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/x.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/x.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/y.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/y.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/printf/srcs/letters/z.c">
+		<Unit filename="/Users/juspende/GitHub/Corewar/printf/srcs/letters/z.c">
 			<Option target="Final"/>
 		</Unit>
-		<Unit filename="/Users/juspende/GitHub/Final/CMakeLists.txt">
+		<Unit filename="/Users/juspende/GitHub/Corewar/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2018/04/24 13:03:44 by juspende         ###   ########.fr        #
+#    Updated: 2018/04/24 13:36:28 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,11 +54,11 @@ DEPS		= $(OBJ:.o=.d)
 
 DEPS2		= $(OBJ2:.o=.d)
 
-INCLUDE		= /includes/
+INCLUDE		= /includes
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra
+CFLAGS		= 
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -I$(INCLUDE) -MM -MT $@ -MF $(patsubst %.o,%.d,$@) $<

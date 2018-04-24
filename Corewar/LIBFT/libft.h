@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:28:47 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/27 16:22:26 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 13:33:26 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 # include <unistd.h>
 # include <stdio.h>
 
-typedef	struct	s_list
+typedef	struct	ss_list
 {
 	void			*content;
 	size_t			content_size;
-	struct s_list	*next;
-}				t_list;
+	struct ss_list	*next;
+}				tt_list;
 
 int				ft_charnum(char c);
 int				ft_intmin(int *list);
@@ -74,12 +74,12 @@ void			*ft_memccpy(void *dest, const void *src, int c, size_t size);
 void			*ft_memcpy(void *dest, const void *src, size_t size);
 void			*ft_memset(void *s, int c, size_t size);
 void			ft_bzero(void *s, size_t size);
-t_list			*ft_lstnew(void const *content, size_t content_size);
-t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void			ft_lstadd(t_list **alstm, t_list *new1);
-void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+tt_list			*ft_lstnew(void const *content, size_t content_size);
+tt_list			*ft_lstmap(tt_list *lst, tt_list *(*f)(tt_list *elem));
+void			ft_lstdelone(tt_list **alst, void (*del)(void *, size_t));
+void			ft_lstdel(tt_list **alst, void (*del)(void *, size_t));
+void			ft_lstadd(tt_list **alstm, tt_list *new1);
+void			ft_lstiter(tt_list *lst, void (*f)(tt_list *elem));
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
 char			*ft_strnew(size_t size);

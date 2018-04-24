@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 3.9)
-project(Final)
+project(Corewar)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Final
+add_executable(Corewar
         includes/arena.h
         includes/asm.h
+        includes/corewar.h
         includes/op.h
         includes/vm.h
         LIBFT/ft_atoi.c

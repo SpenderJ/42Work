@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/juspende/GitHub/Final
+CMAKE_SOURCE_DIR = /Users/juspende/GitHub/Corewar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/juspende/GitHub/Final/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/juspende/GitHub/Corewar/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juspende/GitHub/Final/cmake-build-debug/CMakeFiles /Users/juspende/GitHub/Final/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juspende/GitHub/Corewar/cmake-build-debug/CMakeFiles /Users/juspende/GitHub/Corewar/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juspende/GitHub/Final/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juspende/GitHub/Corewar/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Final
+# Target rules for targets named Corewar
 
 # Build rule for target.
-Final: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Final
-.PHONY : Final
+Corewar: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Corewar
+.PHONY : Corewar
 
 # fast build rule for target.
-Final/fast:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/build
-.PHONY : Final/fast
+Corewar/fast:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/build
+.PHONY : Corewar/fast
 
 LIBFT/ft_atoi.o: LIBFT/ft_atoi.c.o
 
@@ -129,7 +129,7 @@ LIBFT/ft_atoi.o: LIBFT/ft_atoi.c.o
 
 # target to build an object file
 LIBFT/ft_atoi.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_atoi.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_atoi.c.o
 .PHONY : LIBFT/ft_atoi.c.o
 
 LIBFT/ft_atoi.i: LIBFT/ft_atoi.c.i
@@ -138,7 +138,7 @@ LIBFT/ft_atoi.i: LIBFT/ft_atoi.c.i
 
 # target to preprocess a source file
 LIBFT/ft_atoi.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_atoi.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_atoi.c.i
 .PHONY : LIBFT/ft_atoi.c.i
 
 LIBFT/ft_atoi.s: LIBFT/ft_atoi.c.s
@@ -147,7 +147,7 @@ LIBFT/ft_atoi.s: LIBFT/ft_atoi.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_atoi.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_atoi.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_atoi.c.s
 .PHONY : LIBFT/ft_atoi.c.s
 
 LIBFT/ft_bzero.o: LIBFT/ft_bzero.c.o
@@ -156,7 +156,7 @@ LIBFT/ft_bzero.o: LIBFT/ft_bzero.c.o
 
 # target to build an object file
 LIBFT/ft_bzero.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_bzero.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_bzero.c.o
 .PHONY : LIBFT/ft_bzero.c.o
 
 LIBFT/ft_bzero.i: LIBFT/ft_bzero.c.i
@@ -165,7 +165,7 @@ LIBFT/ft_bzero.i: LIBFT/ft_bzero.c.i
 
 # target to preprocess a source file
 LIBFT/ft_bzero.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_bzero.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_bzero.c.i
 .PHONY : LIBFT/ft_bzero.c.i
 
 LIBFT/ft_bzero.s: LIBFT/ft_bzero.c.s
@@ -174,7 +174,7 @@ LIBFT/ft_bzero.s: LIBFT/ft_bzero.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_bzero.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_bzero.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_bzero.c.s
 .PHONY : LIBFT/ft_bzero.c.s
 
 LIBFT/ft_countspace.o: LIBFT/ft_countspace.c.o
@@ -183,7 +183,7 @@ LIBFT/ft_countspace.o: LIBFT/ft_countspace.c.o
 
 # target to build an object file
 LIBFT/ft_countspace.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_countspace.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_countspace.c.o
 .PHONY : LIBFT/ft_countspace.c.o
 
 LIBFT/ft_countspace.i: LIBFT/ft_countspace.c.i
@@ -192,7 +192,7 @@ LIBFT/ft_countspace.i: LIBFT/ft_countspace.c.i
 
 # target to preprocess a source file
 LIBFT/ft_countspace.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_countspace.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_countspace.c.i
 .PHONY : LIBFT/ft_countspace.c.i
 
 LIBFT/ft_countspace.s: LIBFT/ft_countspace.c.s
@@ -201,7 +201,7 @@ LIBFT/ft_countspace.s: LIBFT/ft_countspace.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_countspace.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_countspace.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_countspace.c.s
 .PHONY : LIBFT/ft_countspace.c.s
 
 LIBFT/ft_intlimit.o: LIBFT/ft_intlimit.c.o
@@ -210,7 +210,7 @@ LIBFT/ft_intlimit.o: LIBFT/ft_intlimit.c.o
 
 # target to build an object file
 LIBFT/ft_intlimit.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_intlimit.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_intlimit.c.o
 .PHONY : LIBFT/ft_intlimit.c.o
 
 LIBFT/ft_intlimit.i: LIBFT/ft_intlimit.c.i
@@ -219,7 +219,7 @@ LIBFT/ft_intlimit.i: LIBFT/ft_intlimit.c.i
 
 # target to preprocess a source file
 LIBFT/ft_intlimit.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_intlimit.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_intlimit.c.i
 .PHONY : LIBFT/ft_intlimit.c.i
 
 LIBFT/ft_intlimit.s: LIBFT/ft_intlimit.c.s
@@ -228,7 +228,7 @@ LIBFT/ft_intlimit.s: LIBFT/ft_intlimit.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_intlimit.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_intlimit.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_intlimit.c.s
 .PHONY : LIBFT/ft_intlimit.c.s
 
 LIBFT/ft_intlistsorted.o: LIBFT/ft_intlistsorted.c.o
@@ -237,7 +237,7 @@ LIBFT/ft_intlistsorted.o: LIBFT/ft_intlistsorted.c.o
 
 # target to build an object file
 LIBFT/ft_intlistsorted.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_intlistsorted.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_intlistsorted.c.o
 .PHONY : LIBFT/ft_intlistsorted.c.o
 
 LIBFT/ft_intlistsorted.i: LIBFT/ft_intlistsorted.c.i
@@ -246,7 +246,7 @@ LIBFT/ft_intlistsorted.i: LIBFT/ft_intlistsorted.c.i
 
 # target to preprocess a source file
 LIBFT/ft_intlistsorted.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_intlistsorted.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_intlistsorted.c.i
 .PHONY : LIBFT/ft_intlistsorted.c.i
 
 LIBFT/ft_intlistsorted.s: LIBFT/ft_intlistsorted.c.s
@@ -255,7 +255,7 @@ LIBFT/ft_intlistsorted.s: LIBFT/ft_intlistsorted.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_intlistsorted.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_intlistsorted.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_intlistsorted.c.s
 .PHONY : LIBFT/ft_intlistsorted.c.s
 
 LIBFT/ft_intmaxmin.o: LIBFT/ft_intmaxmin.c.o
@@ -264,7 +264,7 @@ LIBFT/ft_intmaxmin.o: LIBFT/ft_intmaxmin.c.o
 
 # target to build an object file
 LIBFT/ft_intmaxmin.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_intmaxmin.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_intmaxmin.c.o
 .PHONY : LIBFT/ft_intmaxmin.c.o
 
 LIBFT/ft_intmaxmin.i: LIBFT/ft_intmaxmin.c.i
@@ -273,7 +273,7 @@ LIBFT/ft_intmaxmin.i: LIBFT/ft_intmaxmin.c.i
 
 # target to preprocess a source file
 LIBFT/ft_intmaxmin.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_intmaxmin.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_intmaxmin.c.i
 .PHONY : LIBFT/ft_intmaxmin.c.i
 
 LIBFT/ft_intmaxmin.s: LIBFT/ft_intmaxmin.c.s
@@ -282,7 +282,7 @@ LIBFT/ft_intmaxmin.s: LIBFT/ft_intmaxmin.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_intmaxmin.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_intmaxmin.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_intmaxmin.c.s
 .PHONY : LIBFT/ft_intmaxmin.c.s
 
 LIBFT/ft_is_negative.o: LIBFT/ft_is_negative.c.o
@@ -291,7 +291,7 @@ LIBFT/ft_is_negative.o: LIBFT/ft_is_negative.c.o
 
 # target to build an object file
 LIBFT/ft_is_negative.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_is_negative.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_is_negative.c.o
 .PHONY : LIBFT/ft_is_negative.c.o
 
 LIBFT/ft_is_negative.i: LIBFT/ft_is_negative.c.i
@@ -300,7 +300,7 @@ LIBFT/ft_is_negative.i: LIBFT/ft_is_negative.c.i
 
 # target to preprocess a source file
 LIBFT/ft_is_negative.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_is_negative.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_is_negative.c.i
 .PHONY : LIBFT/ft_is_negative.c.i
 
 LIBFT/ft_is_negative.s: LIBFT/ft_is_negative.c.s
@@ -309,7 +309,7 @@ LIBFT/ft_is_negative.s: LIBFT/ft_is_negative.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_is_negative.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_is_negative.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_is_negative.c.s
 .PHONY : LIBFT/ft_is_negative.c.s
 
 LIBFT/ft_isalnum.o: LIBFT/ft_isalnum.c.o
@@ -318,7 +318,7 @@ LIBFT/ft_isalnum.o: LIBFT/ft_isalnum.c.o
 
 # target to build an object file
 LIBFT/ft_isalnum.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isalnum.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isalnum.c.o
 .PHONY : LIBFT/ft_isalnum.c.o
 
 LIBFT/ft_isalnum.i: LIBFT/ft_isalnum.c.i
@@ -327,7 +327,7 @@ LIBFT/ft_isalnum.i: LIBFT/ft_isalnum.c.i
 
 # target to preprocess a source file
 LIBFT/ft_isalnum.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isalnum.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isalnum.c.i
 .PHONY : LIBFT/ft_isalnum.c.i
 
 LIBFT/ft_isalnum.s: LIBFT/ft_isalnum.c.s
@@ -336,7 +336,7 @@ LIBFT/ft_isalnum.s: LIBFT/ft_isalnum.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_isalnum.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isalnum.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isalnum.c.s
 .PHONY : LIBFT/ft_isalnum.c.s
 
 LIBFT/ft_isalpha.o: LIBFT/ft_isalpha.c.o
@@ -345,7 +345,7 @@ LIBFT/ft_isalpha.o: LIBFT/ft_isalpha.c.o
 
 # target to build an object file
 LIBFT/ft_isalpha.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isalpha.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isalpha.c.o
 .PHONY : LIBFT/ft_isalpha.c.o
 
 LIBFT/ft_isalpha.i: LIBFT/ft_isalpha.c.i
@@ -354,7 +354,7 @@ LIBFT/ft_isalpha.i: LIBFT/ft_isalpha.c.i
 
 # target to preprocess a source file
 LIBFT/ft_isalpha.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isalpha.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isalpha.c.i
 .PHONY : LIBFT/ft_isalpha.c.i
 
 LIBFT/ft_isalpha.s: LIBFT/ft_isalpha.c.s
@@ -363,7 +363,7 @@ LIBFT/ft_isalpha.s: LIBFT/ft_isalpha.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_isalpha.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isalpha.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isalpha.c.s
 .PHONY : LIBFT/ft_isalpha.c.s
 
 LIBFT/ft_isascii.o: LIBFT/ft_isascii.c.o
@@ -372,7 +372,7 @@ LIBFT/ft_isascii.o: LIBFT/ft_isascii.c.o
 
 # target to build an object file
 LIBFT/ft_isascii.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isascii.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isascii.c.o
 .PHONY : LIBFT/ft_isascii.c.o
 
 LIBFT/ft_isascii.i: LIBFT/ft_isascii.c.i
@@ -381,7 +381,7 @@ LIBFT/ft_isascii.i: LIBFT/ft_isascii.c.i
 
 # target to preprocess a source file
 LIBFT/ft_isascii.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isascii.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isascii.c.i
 .PHONY : LIBFT/ft_isascii.c.i
 
 LIBFT/ft_isascii.s: LIBFT/ft_isascii.c.s
@@ -390,7 +390,7 @@ LIBFT/ft_isascii.s: LIBFT/ft_isascii.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_isascii.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isascii.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isascii.c.s
 .PHONY : LIBFT/ft_isascii.c.s
 
 LIBFT/ft_isdigit.o: LIBFT/ft_isdigit.c.o
@@ -399,7 +399,7 @@ LIBFT/ft_isdigit.o: LIBFT/ft_isdigit.c.o
 
 # target to build an object file
 LIBFT/ft_isdigit.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isdigit.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isdigit.c.o
 .PHONY : LIBFT/ft_isdigit.c.o
 
 LIBFT/ft_isdigit.i: LIBFT/ft_isdigit.c.i
@@ -408,7 +408,7 @@ LIBFT/ft_isdigit.i: LIBFT/ft_isdigit.c.i
 
 # target to preprocess a source file
 LIBFT/ft_isdigit.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isdigit.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isdigit.c.i
 .PHONY : LIBFT/ft_isdigit.c.i
 
 LIBFT/ft_isdigit.s: LIBFT/ft_isdigit.c.s
@@ -417,7 +417,7 @@ LIBFT/ft_isdigit.s: LIBFT/ft_isdigit.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_isdigit.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isdigit.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isdigit.c.s
 .PHONY : LIBFT/ft_isdigit.c.s
 
 LIBFT/ft_isnum.o: LIBFT/ft_isnum.c.o
@@ -426,7 +426,7 @@ LIBFT/ft_isnum.o: LIBFT/ft_isnum.c.o
 
 # target to build an object file
 LIBFT/ft_isnum.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isnum.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isnum.c.o
 .PHONY : LIBFT/ft_isnum.c.o
 
 LIBFT/ft_isnum.i: LIBFT/ft_isnum.c.i
@@ -435,7 +435,7 @@ LIBFT/ft_isnum.i: LIBFT/ft_isnum.c.i
 
 # target to preprocess a source file
 LIBFT/ft_isnum.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isnum.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isnum.c.i
 .PHONY : LIBFT/ft_isnum.c.i
 
 LIBFT/ft_isnum.s: LIBFT/ft_isnum.c.s
@@ -444,7 +444,7 @@ LIBFT/ft_isnum.s: LIBFT/ft_isnum.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_isnum.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isnum.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isnum.c.s
 .PHONY : LIBFT/ft_isnum.c.s
 
 LIBFT/ft_isprint.o: LIBFT/ft_isprint.c.o
@@ -453,7 +453,7 @@ LIBFT/ft_isprint.o: LIBFT/ft_isprint.c.o
 
 # target to build an object file
 LIBFT/ft_isprint.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isprint.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isprint.c.o
 .PHONY : LIBFT/ft_isprint.c.o
 
 LIBFT/ft_isprint.i: LIBFT/ft_isprint.c.i
@@ -462,7 +462,7 @@ LIBFT/ft_isprint.i: LIBFT/ft_isprint.c.i
 
 # target to preprocess a source file
 LIBFT/ft_isprint.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isprint.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isprint.c.i
 .PHONY : LIBFT/ft_isprint.c.i
 
 LIBFT/ft_isprint.s: LIBFT/ft_isprint.c.s
@@ -471,7 +471,7 @@ LIBFT/ft_isprint.s: LIBFT/ft_isprint.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_isprint.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_isprint.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_isprint.c.s
 .PHONY : LIBFT/ft_isprint.c.s
 
 LIBFT/ft_itoa.o: LIBFT/ft_itoa.c.o
@@ -480,7 +480,7 @@ LIBFT/ft_itoa.o: LIBFT/ft_itoa.c.o
 
 # target to build an object file
 LIBFT/ft_itoa.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_itoa.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_itoa.c.o
 .PHONY : LIBFT/ft_itoa.c.o
 
 LIBFT/ft_itoa.i: LIBFT/ft_itoa.c.i
@@ -489,7 +489,7 @@ LIBFT/ft_itoa.i: LIBFT/ft_itoa.c.i
 
 # target to preprocess a source file
 LIBFT/ft_itoa.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_itoa.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_itoa.c.i
 .PHONY : LIBFT/ft_itoa.c.i
 
 LIBFT/ft_itoa.s: LIBFT/ft_itoa.c.s
@@ -498,7 +498,7 @@ LIBFT/ft_itoa.s: LIBFT/ft_itoa.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_itoa.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_itoa.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_itoa.c.s
 .PHONY : LIBFT/ft_itoa.c.s
 
 LIBFT/ft_lstadd.o: LIBFT/ft_lstadd.c.o
@@ -507,7 +507,7 @@ LIBFT/ft_lstadd.o: LIBFT/ft_lstadd.c.o
 
 # target to build an object file
 LIBFT/ft_lstadd.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstadd.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstadd.c.o
 .PHONY : LIBFT/ft_lstadd.c.o
 
 LIBFT/ft_lstadd.i: LIBFT/ft_lstadd.c.i
@@ -516,7 +516,7 @@ LIBFT/ft_lstadd.i: LIBFT/ft_lstadd.c.i
 
 # target to preprocess a source file
 LIBFT/ft_lstadd.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstadd.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstadd.c.i
 .PHONY : LIBFT/ft_lstadd.c.i
 
 LIBFT/ft_lstadd.s: LIBFT/ft_lstadd.c.s
@@ -525,7 +525,7 @@ LIBFT/ft_lstadd.s: LIBFT/ft_lstadd.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_lstadd.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstadd.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstadd.c.s
 .PHONY : LIBFT/ft_lstadd.c.s
 
 LIBFT/ft_lstdel.o: LIBFT/ft_lstdel.c.o
@@ -534,7 +534,7 @@ LIBFT/ft_lstdel.o: LIBFT/ft_lstdel.c.o
 
 # target to build an object file
 LIBFT/ft_lstdel.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstdel.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstdel.c.o
 .PHONY : LIBFT/ft_lstdel.c.o
 
 LIBFT/ft_lstdel.i: LIBFT/ft_lstdel.c.i
@@ -543,7 +543,7 @@ LIBFT/ft_lstdel.i: LIBFT/ft_lstdel.c.i
 
 # target to preprocess a source file
 LIBFT/ft_lstdel.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstdel.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstdel.c.i
 .PHONY : LIBFT/ft_lstdel.c.i
 
 LIBFT/ft_lstdel.s: LIBFT/ft_lstdel.c.s
@@ -552,7 +552,7 @@ LIBFT/ft_lstdel.s: LIBFT/ft_lstdel.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_lstdel.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstdel.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstdel.c.s
 .PHONY : LIBFT/ft_lstdel.c.s
 
 LIBFT/ft_lstdelone.o: LIBFT/ft_lstdelone.c.o
@@ -561,7 +561,7 @@ LIBFT/ft_lstdelone.o: LIBFT/ft_lstdelone.c.o
 
 # target to build an object file
 LIBFT/ft_lstdelone.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstdelone.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstdelone.c.o
 .PHONY : LIBFT/ft_lstdelone.c.o
 
 LIBFT/ft_lstdelone.i: LIBFT/ft_lstdelone.c.i
@@ -570,7 +570,7 @@ LIBFT/ft_lstdelone.i: LIBFT/ft_lstdelone.c.i
 
 # target to preprocess a source file
 LIBFT/ft_lstdelone.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstdelone.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstdelone.c.i
 .PHONY : LIBFT/ft_lstdelone.c.i
 
 LIBFT/ft_lstdelone.s: LIBFT/ft_lstdelone.c.s
@@ -579,7 +579,7 @@ LIBFT/ft_lstdelone.s: LIBFT/ft_lstdelone.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_lstdelone.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstdelone.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstdelone.c.s
 .PHONY : LIBFT/ft_lstdelone.c.s
 
 LIBFT/ft_lstiter.o: LIBFT/ft_lstiter.c.o
@@ -588,7 +588,7 @@ LIBFT/ft_lstiter.o: LIBFT/ft_lstiter.c.o
 
 # target to build an object file
 LIBFT/ft_lstiter.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstiter.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstiter.c.o
 .PHONY : LIBFT/ft_lstiter.c.o
 
 LIBFT/ft_lstiter.i: LIBFT/ft_lstiter.c.i
@@ -597,7 +597,7 @@ LIBFT/ft_lstiter.i: LIBFT/ft_lstiter.c.i
 
 # target to preprocess a source file
 LIBFT/ft_lstiter.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstiter.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstiter.c.i
 .PHONY : LIBFT/ft_lstiter.c.i
 
 LIBFT/ft_lstiter.s: LIBFT/ft_lstiter.c.s
@@ -606,7 +606,7 @@ LIBFT/ft_lstiter.s: LIBFT/ft_lstiter.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_lstiter.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstiter.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstiter.c.s
 .PHONY : LIBFT/ft_lstiter.c.s
 
 LIBFT/ft_lstmap.o: LIBFT/ft_lstmap.c.o
@@ -615,7 +615,7 @@ LIBFT/ft_lstmap.o: LIBFT/ft_lstmap.c.o
 
 # target to build an object file
 LIBFT/ft_lstmap.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstmap.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstmap.c.o
 .PHONY : LIBFT/ft_lstmap.c.o
 
 LIBFT/ft_lstmap.i: LIBFT/ft_lstmap.c.i
@@ -624,7 +624,7 @@ LIBFT/ft_lstmap.i: LIBFT/ft_lstmap.c.i
 
 # target to preprocess a source file
 LIBFT/ft_lstmap.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstmap.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstmap.c.i
 .PHONY : LIBFT/ft_lstmap.c.i
 
 LIBFT/ft_lstmap.s: LIBFT/ft_lstmap.c.s
@@ -633,7 +633,7 @@ LIBFT/ft_lstmap.s: LIBFT/ft_lstmap.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_lstmap.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstmap.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstmap.c.s
 .PHONY : LIBFT/ft_lstmap.c.s
 
 LIBFT/ft_lstnew.o: LIBFT/ft_lstnew.c.o
@@ -642,7 +642,7 @@ LIBFT/ft_lstnew.o: LIBFT/ft_lstnew.c.o
 
 # target to build an object file
 LIBFT/ft_lstnew.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstnew.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstnew.c.o
 .PHONY : LIBFT/ft_lstnew.c.o
 
 LIBFT/ft_lstnew.i: LIBFT/ft_lstnew.c.i
@@ -651,7 +651,7 @@ LIBFT/ft_lstnew.i: LIBFT/ft_lstnew.c.i
 
 # target to preprocess a source file
 LIBFT/ft_lstnew.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstnew.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstnew.c.i
 .PHONY : LIBFT/ft_lstnew.c.i
 
 LIBFT/ft_lstnew.s: LIBFT/ft_lstnew.c.s
@@ -660,7 +660,7 @@ LIBFT/ft_lstnew.s: LIBFT/ft_lstnew.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_lstnew.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_lstnew.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_lstnew.c.s
 .PHONY : LIBFT/ft_lstnew.c.s
 
 LIBFT/ft_memalloc.o: LIBFT/ft_memalloc.c.o
@@ -669,7 +669,7 @@ LIBFT/ft_memalloc.o: LIBFT/ft_memalloc.c.o
 
 # target to build an object file
 LIBFT/ft_memalloc.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memalloc.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memalloc.c.o
 .PHONY : LIBFT/ft_memalloc.c.o
 
 LIBFT/ft_memalloc.i: LIBFT/ft_memalloc.c.i
@@ -678,7 +678,7 @@ LIBFT/ft_memalloc.i: LIBFT/ft_memalloc.c.i
 
 # target to preprocess a source file
 LIBFT/ft_memalloc.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memalloc.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memalloc.c.i
 .PHONY : LIBFT/ft_memalloc.c.i
 
 LIBFT/ft_memalloc.s: LIBFT/ft_memalloc.c.s
@@ -687,7 +687,7 @@ LIBFT/ft_memalloc.s: LIBFT/ft_memalloc.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_memalloc.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memalloc.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memalloc.c.s
 .PHONY : LIBFT/ft_memalloc.c.s
 
 LIBFT/ft_memccpy.o: LIBFT/ft_memccpy.c.o
@@ -696,7 +696,7 @@ LIBFT/ft_memccpy.o: LIBFT/ft_memccpy.c.o
 
 # target to build an object file
 LIBFT/ft_memccpy.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memccpy.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memccpy.c.o
 .PHONY : LIBFT/ft_memccpy.c.o
 
 LIBFT/ft_memccpy.i: LIBFT/ft_memccpy.c.i
@@ -705,7 +705,7 @@ LIBFT/ft_memccpy.i: LIBFT/ft_memccpy.c.i
 
 # target to preprocess a source file
 LIBFT/ft_memccpy.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memccpy.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memccpy.c.i
 .PHONY : LIBFT/ft_memccpy.c.i
 
 LIBFT/ft_memccpy.s: LIBFT/ft_memccpy.c.s
@@ -714,7 +714,7 @@ LIBFT/ft_memccpy.s: LIBFT/ft_memccpy.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_memccpy.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memccpy.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memccpy.c.s
 .PHONY : LIBFT/ft_memccpy.c.s
 
 LIBFT/ft_memchr.o: LIBFT/ft_memchr.c.o
@@ -723,7 +723,7 @@ LIBFT/ft_memchr.o: LIBFT/ft_memchr.c.o
 
 # target to build an object file
 LIBFT/ft_memchr.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memchr.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memchr.c.o
 .PHONY : LIBFT/ft_memchr.c.o
 
 LIBFT/ft_memchr.i: LIBFT/ft_memchr.c.i
@@ -732,7 +732,7 @@ LIBFT/ft_memchr.i: LIBFT/ft_memchr.c.i
 
 # target to preprocess a source file
 LIBFT/ft_memchr.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memchr.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memchr.c.i
 .PHONY : LIBFT/ft_memchr.c.i
 
 LIBFT/ft_memchr.s: LIBFT/ft_memchr.c.s
@@ -741,7 +741,7 @@ LIBFT/ft_memchr.s: LIBFT/ft_memchr.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_memchr.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memchr.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memchr.c.s
 .PHONY : LIBFT/ft_memchr.c.s
 
 LIBFT/ft_memcmp.o: LIBFT/ft_memcmp.c.o
@@ -750,7 +750,7 @@ LIBFT/ft_memcmp.o: LIBFT/ft_memcmp.c.o
 
 # target to build an object file
 LIBFT/ft_memcmp.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memcmp.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memcmp.c.o
 .PHONY : LIBFT/ft_memcmp.c.o
 
 LIBFT/ft_memcmp.i: LIBFT/ft_memcmp.c.i
@@ -759,7 +759,7 @@ LIBFT/ft_memcmp.i: LIBFT/ft_memcmp.c.i
 
 # target to preprocess a source file
 LIBFT/ft_memcmp.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memcmp.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memcmp.c.i
 .PHONY : LIBFT/ft_memcmp.c.i
 
 LIBFT/ft_memcmp.s: LIBFT/ft_memcmp.c.s
@@ -768,7 +768,7 @@ LIBFT/ft_memcmp.s: LIBFT/ft_memcmp.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_memcmp.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memcmp.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memcmp.c.s
 .PHONY : LIBFT/ft_memcmp.c.s
 
 LIBFT/ft_memcpy.o: LIBFT/ft_memcpy.c.o
@@ -777,7 +777,7 @@ LIBFT/ft_memcpy.o: LIBFT/ft_memcpy.c.o
 
 # target to build an object file
 LIBFT/ft_memcpy.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memcpy.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memcpy.c.o
 .PHONY : LIBFT/ft_memcpy.c.o
 
 LIBFT/ft_memcpy.i: LIBFT/ft_memcpy.c.i
@@ -786,7 +786,7 @@ LIBFT/ft_memcpy.i: LIBFT/ft_memcpy.c.i
 
 # target to preprocess a source file
 LIBFT/ft_memcpy.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memcpy.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memcpy.c.i
 .PHONY : LIBFT/ft_memcpy.c.i
 
 LIBFT/ft_memcpy.s: LIBFT/ft_memcpy.c.s
@@ -795,7 +795,7 @@ LIBFT/ft_memcpy.s: LIBFT/ft_memcpy.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_memcpy.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memcpy.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memcpy.c.s
 .PHONY : LIBFT/ft_memcpy.c.s
 
 LIBFT/ft_memdel.o: LIBFT/ft_memdel.c.o
@@ -804,7 +804,7 @@ LIBFT/ft_memdel.o: LIBFT/ft_memdel.c.o
 
 # target to build an object file
 LIBFT/ft_memdel.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memdel.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memdel.c.o
 .PHONY : LIBFT/ft_memdel.c.o
 
 LIBFT/ft_memdel.i: LIBFT/ft_memdel.c.i
@@ -813,7 +813,7 @@ LIBFT/ft_memdel.i: LIBFT/ft_memdel.c.i
 
 # target to preprocess a source file
 LIBFT/ft_memdel.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memdel.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memdel.c.i
 .PHONY : LIBFT/ft_memdel.c.i
 
 LIBFT/ft_memdel.s: LIBFT/ft_memdel.c.s
@@ -822,7 +822,7 @@ LIBFT/ft_memdel.s: LIBFT/ft_memdel.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_memdel.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memdel.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memdel.c.s
 .PHONY : LIBFT/ft_memdel.c.s
 
 LIBFT/ft_memmove.o: LIBFT/ft_memmove.c.o
@@ -831,7 +831,7 @@ LIBFT/ft_memmove.o: LIBFT/ft_memmove.c.o
 
 # target to build an object file
 LIBFT/ft_memmove.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memmove.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memmove.c.o
 .PHONY : LIBFT/ft_memmove.c.o
 
 LIBFT/ft_memmove.i: LIBFT/ft_memmove.c.i
@@ -840,7 +840,7 @@ LIBFT/ft_memmove.i: LIBFT/ft_memmove.c.i
 
 # target to preprocess a source file
 LIBFT/ft_memmove.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memmove.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memmove.c.i
 .PHONY : LIBFT/ft_memmove.c.i
 
 LIBFT/ft_memmove.s: LIBFT/ft_memmove.c.s
@@ -849,7 +849,7 @@ LIBFT/ft_memmove.s: LIBFT/ft_memmove.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_memmove.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memmove.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memmove.c.s
 .PHONY : LIBFT/ft_memmove.c.s
 
 LIBFT/ft_memset.o: LIBFT/ft_memset.c.o
@@ -858,7 +858,7 @@ LIBFT/ft_memset.o: LIBFT/ft_memset.c.o
 
 # target to build an object file
 LIBFT/ft_memset.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memset.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memset.c.o
 .PHONY : LIBFT/ft_memset.c.o
 
 LIBFT/ft_memset.i: LIBFT/ft_memset.c.i
@@ -867,7 +867,7 @@ LIBFT/ft_memset.i: LIBFT/ft_memset.c.i
 
 # target to preprocess a source file
 LIBFT/ft_memset.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memset.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memset.c.i
 .PHONY : LIBFT/ft_memset.c.i
 
 LIBFT/ft_memset.s: LIBFT/ft_memset.c.s
@@ -876,7 +876,7 @@ LIBFT/ft_memset.s: LIBFT/ft_memset.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_memset.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_memset.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_memset.c.s
 .PHONY : LIBFT/ft_memset.c.s
 
 LIBFT/ft_placeint.o: LIBFT/ft_placeint.c.o
@@ -885,7 +885,7 @@ LIBFT/ft_placeint.o: LIBFT/ft_placeint.c.o
 
 # target to build an object file
 LIBFT/ft_placeint.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_placeint.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_placeint.c.o
 .PHONY : LIBFT/ft_placeint.c.o
 
 LIBFT/ft_placeint.i: LIBFT/ft_placeint.c.i
@@ -894,7 +894,7 @@ LIBFT/ft_placeint.i: LIBFT/ft_placeint.c.i
 
 # target to preprocess a source file
 LIBFT/ft_placeint.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_placeint.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_placeint.c.i
 .PHONY : LIBFT/ft_placeint.c.i
 
 LIBFT/ft_placeint.s: LIBFT/ft_placeint.c.s
@@ -903,7 +903,7 @@ LIBFT/ft_placeint.s: LIBFT/ft_placeint.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_placeint.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_placeint.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_placeint.c.s
 .PHONY : LIBFT/ft_placeint.c.s
 
 LIBFT/ft_print_words_tables.o: LIBFT/ft_print_words_tables.c.o
@@ -912,7 +912,7 @@ LIBFT/ft_print_words_tables.o: LIBFT/ft_print_words_tables.c.o
 
 # target to build an object file
 LIBFT/ft_print_words_tables.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_print_words_tables.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_print_words_tables.c.o
 .PHONY : LIBFT/ft_print_words_tables.c.o
 
 LIBFT/ft_print_words_tables.i: LIBFT/ft_print_words_tables.c.i
@@ -921,7 +921,7 @@ LIBFT/ft_print_words_tables.i: LIBFT/ft_print_words_tables.c.i
 
 # target to preprocess a source file
 LIBFT/ft_print_words_tables.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_print_words_tables.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_print_words_tables.c.i
 .PHONY : LIBFT/ft_print_words_tables.c.i
 
 LIBFT/ft_print_words_tables.s: LIBFT/ft_print_words_tables.c.s
@@ -930,7 +930,7 @@ LIBFT/ft_print_words_tables.s: LIBFT/ft_print_words_tables.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_print_words_tables.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_print_words_tables.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_print_words_tables.c.s
 .PHONY : LIBFT/ft_print_words_tables.c.s
 
 LIBFT/ft_printint.o: LIBFT/ft_printint.c.o
@@ -939,7 +939,7 @@ LIBFT/ft_printint.o: LIBFT/ft_printint.c.o
 
 # target to build an object file
 LIBFT/ft_printint.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_printint.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_printint.c.o
 .PHONY : LIBFT/ft_printint.c.o
 
 LIBFT/ft_printint.i: LIBFT/ft_printint.c.i
@@ -948,7 +948,7 @@ LIBFT/ft_printint.i: LIBFT/ft_printint.c.i
 
 # target to preprocess a source file
 LIBFT/ft_printint.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_printint.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_printint.c.i
 .PHONY : LIBFT/ft_printint.c.i
 
 LIBFT/ft_printint.s: LIBFT/ft_printint.c.s
@@ -957,7 +957,7 @@ LIBFT/ft_printint.s: LIBFT/ft_printint.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_printint.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_printint.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_printint.c.s
 .PHONY : LIBFT/ft_printint.c.s
 
 LIBFT/ft_putchar.o: LIBFT/ft_putchar.c.o
@@ -966,7 +966,7 @@ LIBFT/ft_putchar.o: LIBFT/ft_putchar.c.o
 
 # target to build an object file
 LIBFT/ft_putchar.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putchar.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putchar.c.o
 .PHONY : LIBFT/ft_putchar.c.o
 
 LIBFT/ft_putchar.i: LIBFT/ft_putchar.c.i
@@ -975,7 +975,7 @@ LIBFT/ft_putchar.i: LIBFT/ft_putchar.c.i
 
 # target to preprocess a source file
 LIBFT/ft_putchar.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putchar.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putchar.c.i
 .PHONY : LIBFT/ft_putchar.c.i
 
 LIBFT/ft_putchar.s: LIBFT/ft_putchar.c.s
@@ -984,7 +984,7 @@ LIBFT/ft_putchar.s: LIBFT/ft_putchar.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_putchar.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putchar.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putchar.c.s
 .PHONY : LIBFT/ft_putchar.c.s
 
 LIBFT/ft_putchar_fd.o: LIBFT/ft_putchar_fd.c.o
@@ -993,7 +993,7 @@ LIBFT/ft_putchar_fd.o: LIBFT/ft_putchar_fd.c.o
 
 # target to build an object file
 LIBFT/ft_putchar_fd.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putchar_fd.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putchar_fd.c.o
 .PHONY : LIBFT/ft_putchar_fd.c.o
 
 LIBFT/ft_putchar_fd.i: LIBFT/ft_putchar_fd.c.i
@@ -1002,7 +1002,7 @@ LIBFT/ft_putchar_fd.i: LIBFT/ft_putchar_fd.c.i
 
 # target to preprocess a source file
 LIBFT/ft_putchar_fd.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putchar_fd.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putchar_fd.c.i
 .PHONY : LIBFT/ft_putchar_fd.c.i
 
 LIBFT/ft_putchar_fd.s: LIBFT/ft_putchar_fd.c.s
@@ -1011,7 +1011,7 @@ LIBFT/ft_putchar_fd.s: LIBFT/ft_putchar_fd.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_putchar_fd.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putchar_fd.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putchar_fd.c.s
 .PHONY : LIBFT/ft_putchar_fd.c.s
 
 LIBFT/ft_putendl.o: LIBFT/ft_putendl.c.o
@@ -1020,7 +1020,7 @@ LIBFT/ft_putendl.o: LIBFT/ft_putendl.c.o
 
 # target to build an object file
 LIBFT/ft_putendl.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putendl.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putendl.c.o
 .PHONY : LIBFT/ft_putendl.c.o
 
 LIBFT/ft_putendl.i: LIBFT/ft_putendl.c.i
@@ -1029,7 +1029,7 @@ LIBFT/ft_putendl.i: LIBFT/ft_putendl.c.i
 
 # target to preprocess a source file
 LIBFT/ft_putendl.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putendl.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putendl.c.i
 .PHONY : LIBFT/ft_putendl.c.i
 
 LIBFT/ft_putendl.s: LIBFT/ft_putendl.c.s
@@ -1038,7 +1038,7 @@ LIBFT/ft_putendl.s: LIBFT/ft_putendl.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_putendl.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putendl.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putendl.c.s
 .PHONY : LIBFT/ft_putendl.c.s
 
 LIBFT/ft_putendl_fd.o: LIBFT/ft_putendl_fd.c.o
@@ -1047,7 +1047,7 @@ LIBFT/ft_putendl_fd.o: LIBFT/ft_putendl_fd.c.o
 
 # target to build an object file
 LIBFT/ft_putendl_fd.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putendl_fd.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putendl_fd.c.o
 .PHONY : LIBFT/ft_putendl_fd.c.o
 
 LIBFT/ft_putendl_fd.i: LIBFT/ft_putendl_fd.c.i
@@ -1056,7 +1056,7 @@ LIBFT/ft_putendl_fd.i: LIBFT/ft_putendl_fd.c.i
 
 # target to preprocess a source file
 LIBFT/ft_putendl_fd.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putendl_fd.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putendl_fd.c.i
 .PHONY : LIBFT/ft_putendl_fd.c.i
 
 LIBFT/ft_putendl_fd.s: LIBFT/ft_putendl_fd.c.s
@@ -1065,7 +1065,7 @@ LIBFT/ft_putendl_fd.s: LIBFT/ft_putendl_fd.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_putendl_fd.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putendl_fd.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putendl_fd.c.s
 .PHONY : LIBFT/ft_putendl_fd.c.s
 
 LIBFT/ft_putnbr.o: LIBFT/ft_putnbr.c.o
@@ -1074,7 +1074,7 @@ LIBFT/ft_putnbr.o: LIBFT/ft_putnbr.c.o
 
 # target to build an object file
 LIBFT/ft_putnbr.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putnbr.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putnbr.c.o
 .PHONY : LIBFT/ft_putnbr.c.o
 
 LIBFT/ft_putnbr.i: LIBFT/ft_putnbr.c.i
@@ -1083,7 +1083,7 @@ LIBFT/ft_putnbr.i: LIBFT/ft_putnbr.c.i
 
 # target to preprocess a source file
 LIBFT/ft_putnbr.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putnbr.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putnbr.c.i
 .PHONY : LIBFT/ft_putnbr.c.i
 
 LIBFT/ft_putnbr.s: LIBFT/ft_putnbr.c.s
@@ -1092,7 +1092,7 @@ LIBFT/ft_putnbr.s: LIBFT/ft_putnbr.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_putnbr.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putnbr.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putnbr.c.s
 .PHONY : LIBFT/ft_putnbr.c.s
 
 LIBFT/ft_putnbr_base.o: LIBFT/ft_putnbr_base.c.o
@@ -1101,7 +1101,7 @@ LIBFT/ft_putnbr_base.o: LIBFT/ft_putnbr_base.c.o
 
 # target to build an object file
 LIBFT/ft_putnbr_base.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putnbr_base.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putnbr_base.c.o
 .PHONY : LIBFT/ft_putnbr_base.c.o
 
 LIBFT/ft_putnbr_base.i: LIBFT/ft_putnbr_base.c.i
@@ -1110,7 +1110,7 @@ LIBFT/ft_putnbr_base.i: LIBFT/ft_putnbr_base.c.i
 
 # target to preprocess a source file
 LIBFT/ft_putnbr_base.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putnbr_base.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putnbr_base.c.i
 .PHONY : LIBFT/ft_putnbr_base.c.i
 
 LIBFT/ft_putnbr_base.s: LIBFT/ft_putnbr_base.c.s
@@ -1119,7 +1119,7 @@ LIBFT/ft_putnbr_base.s: LIBFT/ft_putnbr_base.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_putnbr_base.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putnbr_base.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putnbr_base.c.s
 .PHONY : LIBFT/ft_putnbr_base.c.s
 
 LIBFT/ft_putnbr_fd.o: LIBFT/ft_putnbr_fd.c.o
@@ -1128,7 +1128,7 @@ LIBFT/ft_putnbr_fd.o: LIBFT/ft_putnbr_fd.c.o
 
 # target to build an object file
 LIBFT/ft_putnbr_fd.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putnbr_fd.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putnbr_fd.c.o
 .PHONY : LIBFT/ft_putnbr_fd.c.o
 
 LIBFT/ft_putnbr_fd.i: LIBFT/ft_putnbr_fd.c.i
@@ -1137,7 +1137,7 @@ LIBFT/ft_putnbr_fd.i: LIBFT/ft_putnbr_fd.c.i
 
 # target to preprocess a source file
 LIBFT/ft_putnbr_fd.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putnbr_fd.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putnbr_fd.c.i
 .PHONY : LIBFT/ft_putnbr_fd.c.i
 
 LIBFT/ft_putnbr_fd.s: LIBFT/ft_putnbr_fd.c.s
@@ -1146,7 +1146,7 @@ LIBFT/ft_putnbr_fd.s: LIBFT/ft_putnbr_fd.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_putnbr_fd.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putnbr_fd.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putnbr_fd.c.s
 .PHONY : LIBFT/ft_putnbr_fd.c.s
 
 LIBFT/ft_putsterr.o: LIBFT/ft_putsterr.c.o
@@ -1155,7 +1155,7 @@ LIBFT/ft_putsterr.o: LIBFT/ft_putsterr.c.o
 
 # target to build an object file
 LIBFT/ft_putsterr.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putsterr.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putsterr.c.o
 .PHONY : LIBFT/ft_putsterr.c.o
 
 LIBFT/ft_putsterr.i: LIBFT/ft_putsterr.c.i
@@ -1164,7 +1164,7 @@ LIBFT/ft_putsterr.i: LIBFT/ft_putsterr.c.i
 
 # target to preprocess a source file
 LIBFT/ft_putsterr.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putsterr.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putsterr.c.i
 .PHONY : LIBFT/ft_putsterr.c.i
 
 LIBFT/ft_putsterr.s: LIBFT/ft_putsterr.c.s
@@ -1173,7 +1173,7 @@ LIBFT/ft_putsterr.s: LIBFT/ft_putsterr.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_putsterr.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putsterr.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putsterr.c.s
 .PHONY : LIBFT/ft_putsterr.c.s
 
 LIBFT/ft_putstr.o: LIBFT/ft_putstr.c.o
@@ -1182,7 +1182,7 @@ LIBFT/ft_putstr.o: LIBFT/ft_putstr.c.o
 
 # target to build an object file
 LIBFT/ft_putstr.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putstr.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putstr.c.o
 .PHONY : LIBFT/ft_putstr.c.o
 
 LIBFT/ft_putstr.i: LIBFT/ft_putstr.c.i
@@ -1191,7 +1191,7 @@ LIBFT/ft_putstr.i: LIBFT/ft_putstr.c.i
 
 # target to preprocess a source file
 LIBFT/ft_putstr.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putstr.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putstr.c.i
 .PHONY : LIBFT/ft_putstr.c.i
 
 LIBFT/ft_putstr.s: LIBFT/ft_putstr.c.s
@@ -1200,7 +1200,7 @@ LIBFT/ft_putstr.s: LIBFT/ft_putstr.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_putstr.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putstr.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putstr.c.s
 .PHONY : LIBFT/ft_putstr.c.s
 
 LIBFT/ft_putstr_fd.o: LIBFT/ft_putstr_fd.c.o
@@ -1209,7 +1209,7 @@ LIBFT/ft_putstr_fd.o: LIBFT/ft_putstr_fd.c.o
 
 # target to build an object file
 LIBFT/ft_putstr_fd.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putstr_fd.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putstr_fd.c.o
 .PHONY : LIBFT/ft_putstr_fd.c.o
 
 LIBFT/ft_putstr_fd.i: LIBFT/ft_putstr_fd.c.i
@@ -1218,7 +1218,7 @@ LIBFT/ft_putstr_fd.i: LIBFT/ft_putstr_fd.c.i
 
 # target to preprocess a source file
 LIBFT/ft_putstr_fd.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putstr_fd.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putstr_fd.c.i
 .PHONY : LIBFT/ft_putstr_fd.c.i
 
 LIBFT/ft_putstr_fd.s: LIBFT/ft_putstr_fd.c.s
@@ -1227,7 +1227,7 @@ LIBFT/ft_putstr_fd.s: LIBFT/ft_putstr_fd.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_putstr_fd.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_putstr_fd.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_putstr_fd.c.s
 .PHONY : LIBFT/ft_putstr_fd.c.s
 
 LIBFT/ft_range.o: LIBFT/ft_range.c.o
@@ -1236,7 +1236,7 @@ LIBFT/ft_range.o: LIBFT/ft_range.c.o
 
 # target to build an object file
 LIBFT/ft_range.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_range.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_range.c.o
 .PHONY : LIBFT/ft_range.c.o
 
 LIBFT/ft_range.i: LIBFT/ft_range.c.i
@@ -1245,7 +1245,7 @@ LIBFT/ft_range.i: LIBFT/ft_range.c.i
 
 # target to preprocess a source file
 LIBFT/ft_range.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_range.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_range.c.i
 .PHONY : LIBFT/ft_range.c.i
 
 LIBFT/ft_range.s: LIBFT/ft_range.c.s
@@ -1254,7 +1254,7 @@ LIBFT/ft_range.s: LIBFT/ft_range.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_range.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_range.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_range.c.s
 .PHONY : LIBFT/ft_range.c.s
 
 LIBFT/ft_revint.o: LIBFT/ft_revint.c.o
@@ -1263,7 +1263,7 @@ LIBFT/ft_revint.o: LIBFT/ft_revint.c.o
 
 # target to build an object file
 LIBFT/ft_revint.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_revint.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_revint.c.o
 .PHONY : LIBFT/ft_revint.c.o
 
 LIBFT/ft_revint.i: LIBFT/ft_revint.c.i
@@ -1272,7 +1272,7 @@ LIBFT/ft_revint.i: LIBFT/ft_revint.c.i
 
 # target to preprocess a source file
 LIBFT/ft_revint.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_revint.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_revint.c.i
 .PHONY : LIBFT/ft_revint.c.i
 
 LIBFT/ft_revint.s: LIBFT/ft_revint.c.s
@@ -1281,7 +1281,7 @@ LIBFT/ft_revint.s: LIBFT/ft_revint.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_revint.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_revint.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_revint.c.s
 .PHONY : LIBFT/ft_revint.c.s
 
 LIBFT/ft_sqrt.o: LIBFT/ft_sqrt.c.o
@@ -1290,7 +1290,7 @@ LIBFT/ft_sqrt.o: LIBFT/ft_sqrt.c.o
 
 # target to build an object file
 LIBFT/ft_sqrt.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_sqrt.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_sqrt.c.o
 .PHONY : LIBFT/ft_sqrt.c.o
 
 LIBFT/ft_sqrt.i: LIBFT/ft_sqrt.c.i
@@ -1299,7 +1299,7 @@ LIBFT/ft_sqrt.i: LIBFT/ft_sqrt.c.i
 
 # target to preprocess a source file
 LIBFT/ft_sqrt.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_sqrt.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_sqrt.c.i
 .PHONY : LIBFT/ft_sqrt.c.i
 
 LIBFT/ft_sqrt.s: LIBFT/ft_sqrt.c.s
@@ -1308,7 +1308,7 @@ LIBFT/ft_sqrt.s: LIBFT/ft_sqrt.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_sqrt.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_sqrt.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_sqrt.c.s
 .PHONY : LIBFT/ft_sqrt.c.s
 
 LIBFT/ft_strcat.o: LIBFT/ft_strcat.c.o
@@ -1317,7 +1317,7 @@ LIBFT/ft_strcat.o: LIBFT/ft_strcat.c.o
 
 # target to build an object file
 LIBFT/ft_strcat.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strcat.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strcat.c.o
 .PHONY : LIBFT/ft_strcat.c.o
 
 LIBFT/ft_strcat.i: LIBFT/ft_strcat.c.i
@@ -1326,7 +1326,7 @@ LIBFT/ft_strcat.i: LIBFT/ft_strcat.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strcat.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strcat.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strcat.c.i
 .PHONY : LIBFT/ft_strcat.c.i
 
 LIBFT/ft_strcat.s: LIBFT/ft_strcat.c.s
@@ -1335,7 +1335,7 @@ LIBFT/ft_strcat.s: LIBFT/ft_strcat.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strcat.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strcat.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strcat.c.s
 .PHONY : LIBFT/ft_strcat.c.s
 
 LIBFT/ft_strchr.o: LIBFT/ft_strchr.c.o
@@ -1344,7 +1344,7 @@ LIBFT/ft_strchr.o: LIBFT/ft_strchr.c.o
 
 # target to build an object file
 LIBFT/ft_strchr.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strchr.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strchr.c.o
 .PHONY : LIBFT/ft_strchr.c.o
 
 LIBFT/ft_strchr.i: LIBFT/ft_strchr.c.i
@@ -1353,7 +1353,7 @@ LIBFT/ft_strchr.i: LIBFT/ft_strchr.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strchr.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strchr.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strchr.c.i
 .PHONY : LIBFT/ft_strchr.c.i
 
 LIBFT/ft_strchr.s: LIBFT/ft_strchr.c.s
@@ -1362,7 +1362,7 @@ LIBFT/ft_strchr.s: LIBFT/ft_strchr.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strchr.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strchr.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strchr.c.s
 .PHONY : LIBFT/ft_strchr.c.s
 
 LIBFT/ft_strclr.o: LIBFT/ft_strclr.c.o
@@ -1371,7 +1371,7 @@ LIBFT/ft_strclr.o: LIBFT/ft_strclr.c.o
 
 # target to build an object file
 LIBFT/ft_strclr.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strclr.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strclr.c.o
 .PHONY : LIBFT/ft_strclr.c.o
 
 LIBFT/ft_strclr.i: LIBFT/ft_strclr.c.i
@@ -1380,7 +1380,7 @@ LIBFT/ft_strclr.i: LIBFT/ft_strclr.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strclr.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strclr.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strclr.c.i
 .PHONY : LIBFT/ft_strclr.c.i
 
 LIBFT/ft_strclr.s: LIBFT/ft_strclr.c.s
@@ -1389,7 +1389,7 @@ LIBFT/ft_strclr.s: LIBFT/ft_strclr.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strclr.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strclr.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strclr.c.s
 .PHONY : LIBFT/ft_strclr.c.s
 
 LIBFT/ft_strcmp.o: LIBFT/ft_strcmp.c.o
@@ -1398,7 +1398,7 @@ LIBFT/ft_strcmp.o: LIBFT/ft_strcmp.c.o
 
 # target to build an object file
 LIBFT/ft_strcmp.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strcmp.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strcmp.c.o
 .PHONY : LIBFT/ft_strcmp.c.o
 
 LIBFT/ft_strcmp.i: LIBFT/ft_strcmp.c.i
@@ -1407,7 +1407,7 @@ LIBFT/ft_strcmp.i: LIBFT/ft_strcmp.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strcmp.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strcmp.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strcmp.c.i
 .PHONY : LIBFT/ft_strcmp.c.i
 
 LIBFT/ft_strcmp.s: LIBFT/ft_strcmp.c.s
@@ -1416,7 +1416,7 @@ LIBFT/ft_strcmp.s: LIBFT/ft_strcmp.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strcmp.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strcmp.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strcmp.c.s
 .PHONY : LIBFT/ft_strcmp.c.s
 
 LIBFT/ft_strcpy.o: LIBFT/ft_strcpy.c.o
@@ -1425,7 +1425,7 @@ LIBFT/ft_strcpy.o: LIBFT/ft_strcpy.c.o
 
 # target to build an object file
 LIBFT/ft_strcpy.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strcpy.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strcpy.c.o
 .PHONY : LIBFT/ft_strcpy.c.o
 
 LIBFT/ft_strcpy.i: LIBFT/ft_strcpy.c.i
@@ -1434,7 +1434,7 @@ LIBFT/ft_strcpy.i: LIBFT/ft_strcpy.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strcpy.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strcpy.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strcpy.c.i
 .PHONY : LIBFT/ft_strcpy.c.i
 
 LIBFT/ft_strcpy.s: LIBFT/ft_strcpy.c.s
@@ -1443,7 +1443,7 @@ LIBFT/ft_strcpy.s: LIBFT/ft_strcpy.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strcpy.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strcpy.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strcpy.c.s
 .PHONY : LIBFT/ft_strcpy.c.s
 
 LIBFT/ft_strdel.o: LIBFT/ft_strdel.c.o
@@ -1452,7 +1452,7 @@ LIBFT/ft_strdel.o: LIBFT/ft_strdel.c.o
 
 # target to build an object file
 LIBFT/ft_strdel.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strdel.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strdel.c.o
 .PHONY : LIBFT/ft_strdel.c.o
 
 LIBFT/ft_strdel.i: LIBFT/ft_strdel.c.i
@@ -1461,7 +1461,7 @@ LIBFT/ft_strdel.i: LIBFT/ft_strdel.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strdel.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strdel.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strdel.c.i
 .PHONY : LIBFT/ft_strdel.c.i
 
 LIBFT/ft_strdel.s: LIBFT/ft_strdel.c.s
@@ -1470,7 +1470,7 @@ LIBFT/ft_strdel.s: LIBFT/ft_strdel.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strdel.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strdel.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strdel.c.s
 .PHONY : LIBFT/ft_strdel.c.s
 
 LIBFT/ft_strdup.o: LIBFT/ft_strdup.c.o
@@ -1479,7 +1479,7 @@ LIBFT/ft_strdup.o: LIBFT/ft_strdup.c.o
 
 # target to build an object file
 LIBFT/ft_strdup.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strdup.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strdup.c.o
 .PHONY : LIBFT/ft_strdup.c.o
 
 LIBFT/ft_strdup.i: LIBFT/ft_strdup.c.i
@@ -1488,7 +1488,7 @@ LIBFT/ft_strdup.i: LIBFT/ft_strdup.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strdup.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strdup.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strdup.c.i
 .PHONY : LIBFT/ft_strdup.c.i
 
 LIBFT/ft_strdup.s: LIBFT/ft_strdup.c.s
@@ -1497,7 +1497,7 @@ LIBFT/ft_strdup.s: LIBFT/ft_strdup.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strdup.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strdup.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strdup.c.s
 .PHONY : LIBFT/ft_strdup.c.s
 
 LIBFT/ft_strequ.o: LIBFT/ft_strequ.c.o
@@ -1506,7 +1506,7 @@ LIBFT/ft_strequ.o: LIBFT/ft_strequ.c.o
 
 # target to build an object file
 LIBFT/ft_strequ.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strequ.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strequ.c.o
 .PHONY : LIBFT/ft_strequ.c.o
 
 LIBFT/ft_strequ.i: LIBFT/ft_strequ.c.i
@@ -1515,7 +1515,7 @@ LIBFT/ft_strequ.i: LIBFT/ft_strequ.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strequ.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strequ.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strequ.c.i
 .PHONY : LIBFT/ft_strequ.c.i
 
 LIBFT/ft_strequ.s: LIBFT/ft_strequ.c.s
@@ -1524,7 +1524,7 @@ LIBFT/ft_strequ.s: LIBFT/ft_strequ.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strequ.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strequ.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strequ.c.s
 .PHONY : LIBFT/ft_strequ.c.s
 
 LIBFT/ft_striter.o: LIBFT/ft_striter.c.o
@@ -1533,7 +1533,7 @@ LIBFT/ft_striter.o: LIBFT/ft_striter.c.o
 
 # target to build an object file
 LIBFT/ft_striter.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_striter.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_striter.c.o
 .PHONY : LIBFT/ft_striter.c.o
 
 LIBFT/ft_striter.i: LIBFT/ft_striter.c.i
@@ -1542,7 +1542,7 @@ LIBFT/ft_striter.i: LIBFT/ft_striter.c.i
 
 # target to preprocess a source file
 LIBFT/ft_striter.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_striter.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_striter.c.i
 .PHONY : LIBFT/ft_striter.c.i
 
 LIBFT/ft_striter.s: LIBFT/ft_striter.c.s
@@ -1551,7 +1551,7 @@ LIBFT/ft_striter.s: LIBFT/ft_striter.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_striter.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_striter.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_striter.c.s
 .PHONY : LIBFT/ft_striter.c.s
 
 LIBFT/ft_striteri.o: LIBFT/ft_striteri.c.o
@@ -1560,7 +1560,7 @@ LIBFT/ft_striteri.o: LIBFT/ft_striteri.c.o
 
 # target to build an object file
 LIBFT/ft_striteri.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_striteri.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_striteri.c.o
 .PHONY : LIBFT/ft_striteri.c.o
 
 LIBFT/ft_striteri.i: LIBFT/ft_striteri.c.i
@@ -1569,7 +1569,7 @@ LIBFT/ft_striteri.i: LIBFT/ft_striteri.c.i
 
 # target to preprocess a source file
 LIBFT/ft_striteri.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_striteri.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_striteri.c.i
 .PHONY : LIBFT/ft_striteri.c.i
 
 LIBFT/ft_striteri.s: LIBFT/ft_striteri.c.s
@@ -1578,7 +1578,7 @@ LIBFT/ft_striteri.s: LIBFT/ft_striteri.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_striteri.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_striteri.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_striteri.c.s
 .PHONY : LIBFT/ft_striteri.c.s
 
 LIBFT/ft_strjoin.o: LIBFT/ft_strjoin.c.o
@@ -1587,7 +1587,7 @@ LIBFT/ft_strjoin.o: LIBFT/ft_strjoin.c.o
 
 # target to build an object file
 LIBFT/ft_strjoin.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strjoin.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strjoin.c.o
 .PHONY : LIBFT/ft_strjoin.c.o
 
 LIBFT/ft_strjoin.i: LIBFT/ft_strjoin.c.i
@@ -1596,7 +1596,7 @@ LIBFT/ft_strjoin.i: LIBFT/ft_strjoin.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strjoin.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strjoin.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strjoin.c.i
 .PHONY : LIBFT/ft_strjoin.c.i
 
 LIBFT/ft_strjoin.s: LIBFT/ft_strjoin.c.s
@@ -1605,7 +1605,7 @@ LIBFT/ft_strjoin.s: LIBFT/ft_strjoin.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strjoin.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strjoin.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strjoin.c.s
 .PHONY : LIBFT/ft_strjoin.c.s
 
 LIBFT/ft_strlcat.o: LIBFT/ft_strlcat.c.o
@@ -1614,7 +1614,7 @@ LIBFT/ft_strlcat.o: LIBFT/ft_strlcat.c.o
 
 # target to build an object file
 LIBFT/ft_strlcat.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strlcat.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strlcat.c.o
 .PHONY : LIBFT/ft_strlcat.c.o
 
 LIBFT/ft_strlcat.i: LIBFT/ft_strlcat.c.i
@@ -1623,7 +1623,7 @@ LIBFT/ft_strlcat.i: LIBFT/ft_strlcat.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strlcat.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strlcat.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strlcat.c.i
 .PHONY : LIBFT/ft_strlcat.c.i
 
 LIBFT/ft_strlcat.s: LIBFT/ft_strlcat.c.s
@@ -1632,7 +1632,7 @@ LIBFT/ft_strlcat.s: LIBFT/ft_strlcat.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strlcat.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strlcat.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strlcat.c.s
 .PHONY : LIBFT/ft_strlcat.c.s
 
 LIBFT/ft_strlen.o: LIBFT/ft_strlen.c.o
@@ -1641,7 +1641,7 @@ LIBFT/ft_strlen.o: LIBFT/ft_strlen.c.o
 
 # target to build an object file
 LIBFT/ft_strlen.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strlen.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strlen.c.o
 .PHONY : LIBFT/ft_strlen.c.o
 
 LIBFT/ft_strlen.i: LIBFT/ft_strlen.c.i
@@ -1650,7 +1650,7 @@ LIBFT/ft_strlen.i: LIBFT/ft_strlen.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strlen.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strlen.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strlen.c.i
 .PHONY : LIBFT/ft_strlen.c.i
 
 LIBFT/ft_strlen.s: LIBFT/ft_strlen.c.s
@@ -1659,7 +1659,7 @@ LIBFT/ft_strlen.s: LIBFT/ft_strlen.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strlen.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strlen.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strlen.c.s
 .PHONY : LIBFT/ft_strlen.c.s
 
 LIBFT/ft_strmap.o: LIBFT/ft_strmap.c.o
@@ -1668,7 +1668,7 @@ LIBFT/ft_strmap.o: LIBFT/ft_strmap.c.o
 
 # target to build an object file
 LIBFT/ft_strmap.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strmap.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strmap.c.o
 .PHONY : LIBFT/ft_strmap.c.o
 
 LIBFT/ft_strmap.i: LIBFT/ft_strmap.c.i
@@ -1677,7 +1677,7 @@ LIBFT/ft_strmap.i: LIBFT/ft_strmap.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strmap.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strmap.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strmap.c.i
 .PHONY : LIBFT/ft_strmap.c.i
 
 LIBFT/ft_strmap.s: LIBFT/ft_strmap.c.s
@@ -1686,7 +1686,7 @@ LIBFT/ft_strmap.s: LIBFT/ft_strmap.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strmap.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strmap.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strmap.c.s
 .PHONY : LIBFT/ft_strmap.c.s
 
 LIBFT/ft_strmapi.o: LIBFT/ft_strmapi.c.o
@@ -1695,7 +1695,7 @@ LIBFT/ft_strmapi.o: LIBFT/ft_strmapi.c.o
 
 # target to build an object file
 LIBFT/ft_strmapi.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strmapi.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strmapi.c.o
 .PHONY : LIBFT/ft_strmapi.c.o
 
 LIBFT/ft_strmapi.i: LIBFT/ft_strmapi.c.i
@@ -1704,7 +1704,7 @@ LIBFT/ft_strmapi.i: LIBFT/ft_strmapi.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strmapi.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strmapi.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strmapi.c.i
 .PHONY : LIBFT/ft_strmapi.c.i
 
 LIBFT/ft_strmapi.s: LIBFT/ft_strmapi.c.s
@@ -1713,7 +1713,7 @@ LIBFT/ft_strmapi.s: LIBFT/ft_strmapi.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strmapi.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strmapi.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strmapi.c.s
 .PHONY : LIBFT/ft_strmapi.c.s
 
 LIBFT/ft_strncat.o: LIBFT/ft_strncat.c.o
@@ -1722,7 +1722,7 @@ LIBFT/ft_strncat.o: LIBFT/ft_strncat.c.o
 
 # target to build an object file
 LIBFT/ft_strncat.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strncat.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strncat.c.o
 .PHONY : LIBFT/ft_strncat.c.o
 
 LIBFT/ft_strncat.i: LIBFT/ft_strncat.c.i
@@ -1731,7 +1731,7 @@ LIBFT/ft_strncat.i: LIBFT/ft_strncat.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strncat.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strncat.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strncat.c.i
 .PHONY : LIBFT/ft_strncat.c.i
 
 LIBFT/ft_strncat.s: LIBFT/ft_strncat.c.s
@@ -1740,7 +1740,7 @@ LIBFT/ft_strncat.s: LIBFT/ft_strncat.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strncat.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strncat.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strncat.c.s
 .PHONY : LIBFT/ft_strncat.c.s
 
 LIBFT/ft_strncmp.o: LIBFT/ft_strncmp.c.o
@@ -1749,7 +1749,7 @@ LIBFT/ft_strncmp.o: LIBFT/ft_strncmp.c.o
 
 # target to build an object file
 LIBFT/ft_strncmp.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strncmp.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strncmp.c.o
 .PHONY : LIBFT/ft_strncmp.c.o
 
 LIBFT/ft_strncmp.i: LIBFT/ft_strncmp.c.i
@@ -1758,7 +1758,7 @@ LIBFT/ft_strncmp.i: LIBFT/ft_strncmp.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strncmp.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strncmp.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strncmp.c.i
 .PHONY : LIBFT/ft_strncmp.c.i
 
 LIBFT/ft_strncmp.s: LIBFT/ft_strncmp.c.s
@@ -1767,7 +1767,7 @@ LIBFT/ft_strncmp.s: LIBFT/ft_strncmp.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strncmp.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strncmp.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strncmp.c.s
 .PHONY : LIBFT/ft_strncmp.c.s
 
 LIBFT/ft_strncpy.o: LIBFT/ft_strncpy.c.o
@@ -1776,7 +1776,7 @@ LIBFT/ft_strncpy.o: LIBFT/ft_strncpy.c.o
 
 # target to build an object file
 LIBFT/ft_strncpy.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strncpy.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strncpy.c.o
 .PHONY : LIBFT/ft_strncpy.c.o
 
 LIBFT/ft_strncpy.i: LIBFT/ft_strncpy.c.i
@@ -1785,7 +1785,7 @@ LIBFT/ft_strncpy.i: LIBFT/ft_strncpy.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strncpy.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strncpy.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strncpy.c.i
 .PHONY : LIBFT/ft_strncpy.c.i
 
 LIBFT/ft_strncpy.s: LIBFT/ft_strncpy.c.s
@@ -1794,7 +1794,7 @@ LIBFT/ft_strncpy.s: LIBFT/ft_strncpy.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strncpy.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strncpy.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strncpy.c.s
 .PHONY : LIBFT/ft_strncpy.c.s
 
 LIBFT/ft_strnequ.o: LIBFT/ft_strnequ.c.o
@@ -1803,7 +1803,7 @@ LIBFT/ft_strnequ.o: LIBFT/ft_strnequ.c.o
 
 # target to build an object file
 LIBFT/ft_strnequ.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strnequ.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strnequ.c.o
 .PHONY : LIBFT/ft_strnequ.c.o
 
 LIBFT/ft_strnequ.i: LIBFT/ft_strnequ.c.i
@@ -1812,7 +1812,7 @@ LIBFT/ft_strnequ.i: LIBFT/ft_strnequ.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strnequ.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strnequ.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strnequ.c.i
 .PHONY : LIBFT/ft_strnequ.c.i
 
 LIBFT/ft_strnequ.s: LIBFT/ft_strnequ.c.s
@@ -1821,7 +1821,7 @@ LIBFT/ft_strnequ.s: LIBFT/ft_strnequ.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strnequ.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strnequ.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strnequ.c.s
 .PHONY : LIBFT/ft_strnequ.c.s
 
 LIBFT/ft_strnew.o: LIBFT/ft_strnew.c.o
@@ -1830,7 +1830,7 @@ LIBFT/ft_strnew.o: LIBFT/ft_strnew.c.o
 
 # target to build an object file
 LIBFT/ft_strnew.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strnew.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strnew.c.o
 .PHONY : LIBFT/ft_strnew.c.o
 
 LIBFT/ft_strnew.i: LIBFT/ft_strnew.c.i
@@ -1839,7 +1839,7 @@ LIBFT/ft_strnew.i: LIBFT/ft_strnew.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strnew.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strnew.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strnew.c.i
 .PHONY : LIBFT/ft_strnew.c.i
 
 LIBFT/ft_strnew.s: LIBFT/ft_strnew.c.s
@@ -1848,7 +1848,7 @@ LIBFT/ft_strnew.s: LIBFT/ft_strnew.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strnew.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strnew.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strnew.c.s
 .PHONY : LIBFT/ft_strnew.c.s
 
 LIBFT/ft_strnstr.o: LIBFT/ft_strnstr.c.o
@@ -1857,7 +1857,7 @@ LIBFT/ft_strnstr.o: LIBFT/ft_strnstr.c.o
 
 # target to build an object file
 LIBFT/ft_strnstr.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strnstr.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strnstr.c.o
 .PHONY : LIBFT/ft_strnstr.c.o
 
 LIBFT/ft_strnstr.i: LIBFT/ft_strnstr.c.i
@@ -1866,7 +1866,7 @@ LIBFT/ft_strnstr.i: LIBFT/ft_strnstr.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strnstr.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strnstr.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strnstr.c.i
 .PHONY : LIBFT/ft_strnstr.c.i
 
 LIBFT/ft_strnstr.s: LIBFT/ft_strnstr.c.s
@@ -1875,7 +1875,7 @@ LIBFT/ft_strnstr.s: LIBFT/ft_strnstr.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strnstr.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strnstr.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strnstr.c.s
 .PHONY : LIBFT/ft_strnstr.c.s
 
 LIBFT/ft_strrchr.o: LIBFT/ft_strrchr.c.o
@@ -1884,7 +1884,7 @@ LIBFT/ft_strrchr.o: LIBFT/ft_strrchr.c.o
 
 # target to build an object file
 LIBFT/ft_strrchr.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strrchr.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strrchr.c.o
 .PHONY : LIBFT/ft_strrchr.c.o
 
 LIBFT/ft_strrchr.i: LIBFT/ft_strrchr.c.i
@@ -1893,7 +1893,7 @@ LIBFT/ft_strrchr.i: LIBFT/ft_strrchr.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strrchr.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strrchr.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strrchr.c.i
 .PHONY : LIBFT/ft_strrchr.c.i
 
 LIBFT/ft_strrchr.s: LIBFT/ft_strrchr.c.s
@@ -1902,7 +1902,7 @@ LIBFT/ft_strrchr.s: LIBFT/ft_strrchr.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strrchr.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strrchr.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strrchr.c.s
 .PHONY : LIBFT/ft_strrchr.c.s
 
 LIBFT/ft_strrev.o: LIBFT/ft_strrev.c.o
@@ -1911,7 +1911,7 @@ LIBFT/ft_strrev.o: LIBFT/ft_strrev.c.o
 
 # target to build an object file
 LIBFT/ft_strrev.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strrev.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strrev.c.o
 .PHONY : LIBFT/ft_strrev.c.o
 
 LIBFT/ft_strrev.i: LIBFT/ft_strrev.c.i
@@ -1920,7 +1920,7 @@ LIBFT/ft_strrev.i: LIBFT/ft_strrev.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strrev.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strrev.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strrev.c.i
 .PHONY : LIBFT/ft_strrev.c.i
 
 LIBFT/ft_strrev.s: LIBFT/ft_strrev.c.s
@@ -1929,7 +1929,7 @@ LIBFT/ft_strrev.s: LIBFT/ft_strrev.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strrev.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strrev.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strrev.c.s
 .PHONY : LIBFT/ft_strrev.c.s
 
 LIBFT/ft_strstr.o: LIBFT/ft_strstr.c.o
@@ -1938,7 +1938,7 @@ LIBFT/ft_strstr.o: LIBFT/ft_strstr.c.o
 
 # target to build an object file
 LIBFT/ft_strstr.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strstr.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strstr.c.o
 .PHONY : LIBFT/ft_strstr.c.o
 
 LIBFT/ft_strstr.i: LIBFT/ft_strstr.c.i
@@ -1947,7 +1947,7 @@ LIBFT/ft_strstr.i: LIBFT/ft_strstr.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strstr.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strstr.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strstr.c.i
 .PHONY : LIBFT/ft_strstr.c.i
 
 LIBFT/ft_strstr.s: LIBFT/ft_strstr.c.s
@@ -1956,7 +1956,7 @@ LIBFT/ft_strstr.s: LIBFT/ft_strstr.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strstr.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strstr.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strstr.c.s
 .PHONY : LIBFT/ft_strstr.c.s
 
 LIBFT/ft_strsub.o: LIBFT/ft_strsub.c.o
@@ -1965,7 +1965,7 @@ LIBFT/ft_strsub.o: LIBFT/ft_strsub.c.o
 
 # target to build an object file
 LIBFT/ft_strsub.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strsub.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strsub.c.o
 .PHONY : LIBFT/ft_strsub.c.o
 
 LIBFT/ft_strsub.i: LIBFT/ft_strsub.c.i
@@ -1974,7 +1974,7 @@ LIBFT/ft_strsub.i: LIBFT/ft_strsub.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strsub.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strsub.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strsub.c.i
 .PHONY : LIBFT/ft_strsub.c.i
 
 LIBFT/ft_strsub.s: LIBFT/ft_strsub.c.s
@@ -1983,7 +1983,7 @@ LIBFT/ft_strsub.s: LIBFT/ft_strsub.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strsub.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strsub.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strsub.c.s
 .PHONY : LIBFT/ft_strsub.c.s
 
 LIBFT/ft_strtrim.o: LIBFT/ft_strtrim.c.o
@@ -1992,7 +1992,7 @@ LIBFT/ft_strtrim.o: LIBFT/ft_strtrim.c.o
 
 # target to build an object file
 LIBFT/ft_strtrim.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strtrim.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strtrim.c.o
 .PHONY : LIBFT/ft_strtrim.c.o
 
 LIBFT/ft_strtrim.i: LIBFT/ft_strtrim.c.i
@@ -2001,7 +2001,7 @@ LIBFT/ft_strtrim.i: LIBFT/ft_strtrim.c.i
 
 # target to preprocess a source file
 LIBFT/ft_strtrim.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strtrim.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strtrim.c.i
 .PHONY : LIBFT/ft_strtrim.c.i
 
 LIBFT/ft_strtrim.s: LIBFT/ft_strtrim.c.s
@@ -2010,7 +2010,7 @@ LIBFT/ft_strtrim.s: LIBFT/ft_strtrim.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_strtrim.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_strtrim.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_strtrim.c.s
 .PHONY : LIBFT/ft_strtrim.c.s
 
 LIBFT/ft_swap.o: LIBFT/ft_swap.c.o
@@ -2019,7 +2019,7 @@ LIBFT/ft_swap.o: LIBFT/ft_swap.c.o
 
 # target to build an object file
 LIBFT/ft_swap.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_swap.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_swap.c.o
 .PHONY : LIBFT/ft_swap.c.o
 
 LIBFT/ft_swap.i: LIBFT/ft_swap.c.i
@@ -2028,7 +2028,7 @@ LIBFT/ft_swap.i: LIBFT/ft_swap.c.i
 
 # target to preprocess a source file
 LIBFT/ft_swap.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_swap.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_swap.c.i
 .PHONY : LIBFT/ft_swap.c.i
 
 LIBFT/ft_swap.s: LIBFT/ft_swap.c.s
@@ -2037,7 +2037,7 @@ LIBFT/ft_swap.s: LIBFT/ft_swap.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_swap.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_swap.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_swap.c.s
 .PHONY : LIBFT/ft_swap.c.s
 
 LIBFT/ft_tolower.o: LIBFT/ft_tolower.c.o
@@ -2046,7 +2046,7 @@ LIBFT/ft_tolower.o: LIBFT/ft_tolower.c.o
 
 # target to build an object file
 LIBFT/ft_tolower.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_tolower.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_tolower.c.o
 .PHONY : LIBFT/ft_tolower.c.o
 
 LIBFT/ft_tolower.i: LIBFT/ft_tolower.c.i
@@ -2055,7 +2055,7 @@ LIBFT/ft_tolower.i: LIBFT/ft_tolower.c.i
 
 # target to preprocess a source file
 LIBFT/ft_tolower.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_tolower.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_tolower.c.i
 .PHONY : LIBFT/ft_tolower.c.i
 
 LIBFT/ft_tolower.s: LIBFT/ft_tolower.c.s
@@ -2064,7 +2064,7 @@ LIBFT/ft_tolower.s: LIBFT/ft_tolower.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_tolower.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_tolower.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_tolower.c.s
 .PHONY : LIBFT/ft_tolower.c.s
 
 LIBFT/ft_toupper.o: LIBFT/ft_toupper.c.o
@@ -2073,7 +2073,7 @@ LIBFT/ft_toupper.o: LIBFT/ft_toupper.c.o
 
 # target to build an object file
 LIBFT/ft_toupper.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_toupper.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_toupper.c.o
 .PHONY : LIBFT/ft_toupper.c.o
 
 LIBFT/ft_toupper.i: LIBFT/ft_toupper.c.i
@@ -2082,7 +2082,7 @@ LIBFT/ft_toupper.i: LIBFT/ft_toupper.c.i
 
 # target to preprocess a source file
 LIBFT/ft_toupper.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_toupper.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_toupper.c.i
 .PHONY : LIBFT/ft_toupper.c.i
 
 LIBFT/ft_toupper.s: LIBFT/ft_toupper.c.s
@@ -2091,7 +2091,7 @@ LIBFT/ft_toupper.s: LIBFT/ft_toupper.c.s
 
 # target to generate assembly for a file
 LIBFT/ft_toupper.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/ft_toupper.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/ft_toupper.c.s
 .PHONY : LIBFT/ft_toupper.c.s
 
 LIBFT/int_len.o: LIBFT/int_len.c.o
@@ -2100,7 +2100,7 @@ LIBFT/int_len.o: LIBFT/int_len.c.o
 
 # target to build an object file
 LIBFT/int_len.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/int_len.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/int_len.c.o
 .PHONY : LIBFT/int_len.c.o
 
 LIBFT/int_len.i: LIBFT/int_len.c.i
@@ -2109,7 +2109,7 @@ LIBFT/int_len.i: LIBFT/int_len.c.i
 
 # target to preprocess a source file
 LIBFT/int_len.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/int_len.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/int_len.c.i
 .PHONY : LIBFT/int_len.c.i
 
 LIBFT/int_len.s: LIBFT/int_len.c.s
@@ -2118,7 +2118,7 @@ LIBFT/int_len.s: LIBFT/int_len.c.s
 
 # target to generate assembly for a file
 LIBFT/int_len.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/LIBFT/int_len.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/LIBFT/int_len.c.s
 .PHONY : LIBFT/int_len.c.s
 
 SRCS_ASM/check_code.o: SRCS_ASM/check_code.c.o
@@ -2127,7 +2127,7 @@ SRCS_ASM/check_code.o: SRCS_ASM/check_code.c.o
 
 # target to build an object file
 SRCS_ASM/check_code.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_code.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_code.c.o
 .PHONY : SRCS_ASM/check_code.c.o
 
 SRCS_ASM/check_code.i: SRCS_ASM/check_code.c.i
@@ -2136,7 +2136,7 @@ SRCS_ASM/check_code.i: SRCS_ASM/check_code.c.i
 
 # target to preprocess a source file
 SRCS_ASM/check_code.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_code.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_code.c.i
 .PHONY : SRCS_ASM/check_code.c.i
 
 SRCS_ASM/check_code.s: SRCS_ASM/check_code.c.s
@@ -2145,7 +2145,7 @@ SRCS_ASM/check_code.s: SRCS_ASM/check_code.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/check_code.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_code.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_code.c.s
 .PHONY : SRCS_ASM/check_code.c.s
 
 SRCS_ASM/check_filedots.o: SRCS_ASM/check_filedots.c.o
@@ -2154,7 +2154,7 @@ SRCS_ASM/check_filedots.o: SRCS_ASM/check_filedots.c.o
 
 # target to build an object file
 SRCS_ASM/check_filedots.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_filedots.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_filedots.c.o
 .PHONY : SRCS_ASM/check_filedots.c.o
 
 SRCS_ASM/check_filedots.i: SRCS_ASM/check_filedots.c.i
@@ -2163,7 +2163,7 @@ SRCS_ASM/check_filedots.i: SRCS_ASM/check_filedots.c.i
 
 # target to preprocess a source file
 SRCS_ASM/check_filedots.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_filedots.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_filedots.c.i
 .PHONY : SRCS_ASM/check_filedots.c.i
 
 SRCS_ASM/check_filedots.s: SRCS_ASM/check_filedots.c.s
@@ -2172,7 +2172,7 @@ SRCS_ASM/check_filedots.s: SRCS_ASM/check_filedots.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/check_filedots.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_filedots.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_filedots.c.s
 .PHONY : SRCS_ASM/check_filedots.c.s
 
 SRCS_ASM/check_head.o: SRCS_ASM/check_head.c.o
@@ -2181,7 +2181,7 @@ SRCS_ASM/check_head.o: SRCS_ASM/check_head.c.o
 
 # target to build an object file
 SRCS_ASM/check_head.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_head.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_head.c.o
 .PHONY : SRCS_ASM/check_head.c.o
 
 SRCS_ASM/check_head.i: SRCS_ASM/check_head.c.i
@@ -2190,7 +2190,7 @@ SRCS_ASM/check_head.i: SRCS_ASM/check_head.c.i
 
 # target to preprocess a source file
 SRCS_ASM/check_head.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_head.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_head.c.i
 .PHONY : SRCS_ASM/check_head.c.i
 
 SRCS_ASM/check_head.s: SRCS_ASM/check_head.c.s
@@ -2199,7 +2199,7 @@ SRCS_ASM/check_head.s: SRCS_ASM/check_head.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/check_head.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_head.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_head.c.s
 .PHONY : SRCS_ASM/check_head.c.s
 
 SRCS_ASM/check_ins.o: SRCS_ASM/check_ins.c.o
@@ -2208,7 +2208,7 @@ SRCS_ASM/check_ins.o: SRCS_ASM/check_ins.c.o
 
 # target to build an object file
 SRCS_ASM/check_ins.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_ins.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_ins.c.o
 .PHONY : SRCS_ASM/check_ins.c.o
 
 SRCS_ASM/check_ins.i: SRCS_ASM/check_ins.c.i
@@ -2217,7 +2217,7 @@ SRCS_ASM/check_ins.i: SRCS_ASM/check_ins.c.i
 
 # target to preprocess a source file
 SRCS_ASM/check_ins.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_ins.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_ins.c.i
 .PHONY : SRCS_ASM/check_ins.c.i
 
 SRCS_ASM/check_ins.s: SRCS_ASM/check_ins.c.s
@@ -2226,7 +2226,7 @@ SRCS_ASM/check_ins.s: SRCS_ASM/check_ins.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/check_ins.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_ins.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_ins.c.s
 .PHONY : SRCS_ASM/check_ins.c.s
 
 SRCS_ASM/check_ins2.o: SRCS_ASM/check_ins2.c.o
@@ -2235,7 +2235,7 @@ SRCS_ASM/check_ins2.o: SRCS_ASM/check_ins2.c.o
 
 # target to build an object file
 SRCS_ASM/check_ins2.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_ins2.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_ins2.c.o
 .PHONY : SRCS_ASM/check_ins2.c.o
 
 SRCS_ASM/check_ins2.i: SRCS_ASM/check_ins2.c.i
@@ -2244,7 +2244,7 @@ SRCS_ASM/check_ins2.i: SRCS_ASM/check_ins2.c.i
 
 # target to preprocess a source file
 SRCS_ASM/check_ins2.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_ins2.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_ins2.c.i
 .PHONY : SRCS_ASM/check_ins2.c.i
 
 SRCS_ASM/check_ins2.s: SRCS_ASM/check_ins2.c.s
@@ -2253,7 +2253,7 @@ SRCS_ASM/check_ins2.s: SRCS_ASM/check_ins2.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/check_ins2.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/check_ins2.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/check_ins2.c.s
 .PHONY : SRCS_ASM/check_ins2.c.s
 
 SRCS_ASM/errors.o: SRCS_ASM/errors.c.o
@@ -2262,7 +2262,7 @@ SRCS_ASM/errors.o: SRCS_ASM/errors.c.o
 
 # target to build an object file
 SRCS_ASM/errors.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/errors.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/errors.c.o
 .PHONY : SRCS_ASM/errors.c.o
 
 SRCS_ASM/errors.i: SRCS_ASM/errors.c.i
@@ -2271,7 +2271,7 @@ SRCS_ASM/errors.i: SRCS_ASM/errors.c.i
 
 # target to preprocess a source file
 SRCS_ASM/errors.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/errors.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/errors.c.i
 .PHONY : SRCS_ASM/errors.c.i
 
 SRCS_ASM/errors.s: SRCS_ASM/errors.c.s
@@ -2280,7 +2280,7 @@ SRCS_ASM/errors.s: SRCS_ASM/errors.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/errors.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/errors.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/errors.c.s
 .PHONY : SRCS_ASM/errors.c.s
 
 SRCS_ASM/ft_label.o: SRCS_ASM/ft_label.c.o
@@ -2289,7 +2289,7 @@ SRCS_ASM/ft_label.o: SRCS_ASM/ft_label.c.o
 
 # target to build an object file
 SRCS_ASM/ft_label.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ft_label.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ft_label.c.o
 .PHONY : SRCS_ASM/ft_label.c.o
 
 SRCS_ASM/ft_label.i: SRCS_ASM/ft_label.c.i
@@ -2298,7 +2298,7 @@ SRCS_ASM/ft_label.i: SRCS_ASM/ft_label.c.i
 
 # target to preprocess a source file
 SRCS_ASM/ft_label.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ft_label.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ft_label.c.i
 .PHONY : SRCS_ASM/ft_label.c.i
 
 SRCS_ASM/ft_label.s: SRCS_ASM/ft_label.c.s
@@ -2307,7 +2307,7 @@ SRCS_ASM/ft_label.s: SRCS_ASM/ft_label.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/ft_label.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ft_label.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ft_label.c.s
 .PHONY : SRCS_ASM/ft_label.c.s
 
 SRCS_ASM/ft_label2.o: SRCS_ASM/ft_label2.c.o
@@ -2316,7 +2316,7 @@ SRCS_ASM/ft_label2.o: SRCS_ASM/ft_label2.c.o
 
 # target to build an object file
 SRCS_ASM/ft_label2.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ft_label2.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ft_label2.c.o
 .PHONY : SRCS_ASM/ft_label2.c.o
 
 SRCS_ASM/ft_label2.i: SRCS_ASM/ft_label2.c.i
@@ -2325,7 +2325,7 @@ SRCS_ASM/ft_label2.i: SRCS_ASM/ft_label2.c.i
 
 # target to preprocess a source file
 SRCS_ASM/ft_label2.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ft_label2.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ft_label2.c.i
 .PHONY : SRCS_ASM/ft_label2.c.i
 
 SRCS_ASM/ft_label2.s: SRCS_ASM/ft_label2.c.s
@@ -2334,7 +2334,7 @@ SRCS_ASM/ft_label2.s: SRCS_ASM/ft_label2.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/ft_label2.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ft_label2.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ft_label2.c.s
 .PHONY : SRCS_ASM/ft_label2.c.s
 
 SRCS_ASM/ft_opdir.o: SRCS_ASM/ft_opdir.c.o
@@ -2343,7 +2343,7 @@ SRCS_ASM/ft_opdir.o: SRCS_ASM/ft_opdir.c.o
 
 # target to build an object file
 SRCS_ASM/ft_opdir.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ft_opdir.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ft_opdir.c.o
 .PHONY : SRCS_ASM/ft_opdir.c.o
 
 SRCS_ASM/ft_opdir.i: SRCS_ASM/ft_opdir.c.i
@@ -2352,7 +2352,7 @@ SRCS_ASM/ft_opdir.i: SRCS_ASM/ft_opdir.c.i
 
 # target to preprocess a source file
 SRCS_ASM/ft_opdir.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ft_opdir.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ft_opdir.c.i
 .PHONY : SRCS_ASM/ft_opdir.c.i
 
 SRCS_ASM/ft_opdir.s: SRCS_ASM/ft_opdir.c.s
@@ -2361,7 +2361,7 @@ SRCS_ASM/ft_opdir.s: SRCS_ASM/ft_opdir.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/ft_opdir.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ft_opdir.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ft_opdir.c.s
 .PHONY : SRCS_ASM/ft_opdir.c.s
 
 SRCS_ASM/ins.o: SRCS_ASM/ins.c.o
@@ -2370,7 +2370,7 @@ SRCS_ASM/ins.o: SRCS_ASM/ins.c.o
 
 # target to build an object file
 SRCS_ASM/ins.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins.c.o
 .PHONY : SRCS_ASM/ins.c.o
 
 SRCS_ASM/ins.i: SRCS_ASM/ins.c.i
@@ -2379,7 +2379,7 @@ SRCS_ASM/ins.i: SRCS_ASM/ins.c.i
 
 # target to preprocess a source file
 SRCS_ASM/ins.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins.c.i
 .PHONY : SRCS_ASM/ins.c.i
 
 SRCS_ASM/ins.s: SRCS_ASM/ins.c.s
@@ -2388,7 +2388,7 @@ SRCS_ASM/ins.s: SRCS_ASM/ins.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/ins.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins.c.s
 .PHONY : SRCS_ASM/ins.c.s
 
 SRCS_ASM/ins2.o: SRCS_ASM/ins2.c.o
@@ -2397,7 +2397,7 @@ SRCS_ASM/ins2.o: SRCS_ASM/ins2.c.o
 
 # target to build an object file
 SRCS_ASM/ins2.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins2.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins2.c.o
 .PHONY : SRCS_ASM/ins2.c.o
 
 SRCS_ASM/ins2.i: SRCS_ASM/ins2.c.i
@@ -2406,7 +2406,7 @@ SRCS_ASM/ins2.i: SRCS_ASM/ins2.c.i
 
 # target to preprocess a source file
 SRCS_ASM/ins2.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins2.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins2.c.i
 .PHONY : SRCS_ASM/ins2.c.i
 
 SRCS_ASM/ins2.s: SRCS_ASM/ins2.c.s
@@ -2415,7 +2415,7 @@ SRCS_ASM/ins2.s: SRCS_ASM/ins2.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/ins2.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins2.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins2.c.s
 .PHONY : SRCS_ASM/ins2.c.s
 
 SRCS_ASM/ins3.o: SRCS_ASM/ins3.c.o
@@ -2424,7 +2424,7 @@ SRCS_ASM/ins3.o: SRCS_ASM/ins3.c.o
 
 # target to build an object file
 SRCS_ASM/ins3.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins3.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins3.c.o
 .PHONY : SRCS_ASM/ins3.c.o
 
 SRCS_ASM/ins3.i: SRCS_ASM/ins3.c.i
@@ -2433,7 +2433,7 @@ SRCS_ASM/ins3.i: SRCS_ASM/ins3.c.i
 
 # target to preprocess a source file
 SRCS_ASM/ins3.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins3.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins3.c.i
 .PHONY : SRCS_ASM/ins3.c.i
 
 SRCS_ASM/ins3.s: SRCS_ASM/ins3.c.s
@@ -2442,7 +2442,7 @@ SRCS_ASM/ins3.s: SRCS_ASM/ins3.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/ins3.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins3.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins3.c.s
 .PHONY : SRCS_ASM/ins3.c.s
 
 SRCS_ASM/ins4.o: SRCS_ASM/ins4.c.o
@@ -2451,7 +2451,7 @@ SRCS_ASM/ins4.o: SRCS_ASM/ins4.c.o
 
 # target to build an object file
 SRCS_ASM/ins4.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins4.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins4.c.o
 .PHONY : SRCS_ASM/ins4.c.o
 
 SRCS_ASM/ins4.i: SRCS_ASM/ins4.c.i
@@ -2460,7 +2460,7 @@ SRCS_ASM/ins4.i: SRCS_ASM/ins4.c.i
 
 # target to preprocess a source file
 SRCS_ASM/ins4.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins4.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins4.c.i
 .PHONY : SRCS_ASM/ins4.c.i
 
 SRCS_ASM/ins4.s: SRCS_ASM/ins4.c.s
@@ -2469,7 +2469,7 @@ SRCS_ASM/ins4.s: SRCS_ASM/ins4.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/ins4.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins4.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins4.c.s
 .PHONY : SRCS_ASM/ins4.c.s
 
 SRCS_ASM/ins5.o: SRCS_ASM/ins5.c.o
@@ -2478,7 +2478,7 @@ SRCS_ASM/ins5.o: SRCS_ASM/ins5.c.o
 
 # target to build an object file
 SRCS_ASM/ins5.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins5.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins5.c.o
 .PHONY : SRCS_ASM/ins5.c.o
 
 SRCS_ASM/ins5.i: SRCS_ASM/ins5.c.i
@@ -2487,7 +2487,7 @@ SRCS_ASM/ins5.i: SRCS_ASM/ins5.c.i
 
 # target to preprocess a source file
 SRCS_ASM/ins5.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins5.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins5.c.i
 .PHONY : SRCS_ASM/ins5.c.i
 
 SRCS_ASM/ins5.s: SRCS_ASM/ins5.c.s
@@ -2496,7 +2496,7 @@ SRCS_ASM/ins5.s: SRCS_ASM/ins5.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/ins5.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins5.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins5.c.s
 .PHONY : SRCS_ASM/ins5.c.s
 
 SRCS_ASM/ins6.o: SRCS_ASM/ins6.c.o
@@ -2505,7 +2505,7 @@ SRCS_ASM/ins6.o: SRCS_ASM/ins6.c.o
 
 # target to build an object file
 SRCS_ASM/ins6.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins6.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins6.c.o
 .PHONY : SRCS_ASM/ins6.c.o
 
 SRCS_ASM/ins6.i: SRCS_ASM/ins6.c.i
@@ -2514,7 +2514,7 @@ SRCS_ASM/ins6.i: SRCS_ASM/ins6.c.i
 
 # target to preprocess a source file
 SRCS_ASM/ins6.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins6.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins6.c.i
 .PHONY : SRCS_ASM/ins6.c.i
 
 SRCS_ASM/ins6.s: SRCS_ASM/ins6.c.s
@@ -2523,7 +2523,7 @@ SRCS_ASM/ins6.s: SRCS_ASM/ins6.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/ins6.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins6.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins6.c.s
 .PHONY : SRCS_ASM/ins6.c.s
 
 SRCS_ASM/ins7.o: SRCS_ASM/ins7.c.o
@@ -2532,7 +2532,7 @@ SRCS_ASM/ins7.o: SRCS_ASM/ins7.c.o
 
 # target to build an object file
 SRCS_ASM/ins7.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins7.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins7.c.o
 .PHONY : SRCS_ASM/ins7.c.o
 
 SRCS_ASM/ins7.i: SRCS_ASM/ins7.c.i
@@ -2541,7 +2541,7 @@ SRCS_ASM/ins7.i: SRCS_ASM/ins7.c.i
 
 # target to preprocess a source file
 SRCS_ASM/ins7.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins7.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins7.c.i
 .PHONY : SRCS_ASM/ins7.c.i
 
 SRCS_ASM/ins7.s: SRCS_ASM/ins7.c.s
@@ -2550,7 +2550,7 @@ SRCS_ASM/ins7.s: SRCS_ASM/ins7.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/ins7.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins7.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins7.c.s
 .PHONY : SRCS_ASM/ins7.c.s
 
 SRCS_ASM/ins8.o: SRCS_ASM/ins8.c.o
@@ -2559,7 +2559,7 @@ SRCS_ASM/ins8.o: SRCS_ASM/ins8.c.o
 
 # target to build an object file
 SRCS_ASM/ins8.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins8.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins8.c.o
 .PHONY : SRCS_ASM/ins8.c.o
 
 SRCS_ASM/ins8.i: SRCS_ASM/ins8.c.i
@@ -2568,7 +2568,7 @@ SRCS_ASM/ins8.i: SRCS_ASM/ins8.c.i
 
 # target to preprocess a source file
 SRCS_ASM/ins8.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins8.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins8.c.i
 .PHONY : SRCS_ASM/ins8.c.i
 
 SRCS_ASM/ins8.s: SRCS_ASM/ins8.c.s
@@ -2577,7 +2577,7 @@ SRCS_ASM/ins8.s: SRCS_ASM/ins8.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/ins8.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/ins8.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/ins8.c.s
 .PHONY : SRCS_ASM/ins8.c.s
 
 SRCS_ASM/main.o: SRCS_ASM/main.c.o
@@ -2586,7 +2586,7 @@ SRCS_ASM/main.o: SRCS_ASM/main.c.o
 
 # target to build an object file
 SRCS_ASM/main.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/main.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/main.c.o
 .PHONY : SRCS_ASM/main.c.o
 
 SRCS_ASM/main.i: SRCS_ASM/main.c.i
@@ -2595,7 +2595,7 @@ SRCS_ASM/main.i: SRCS_ASM/main.c.i
 
 # target to preprocess a source file
 SRCS_ASM/main.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/main.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/main.c.i
 .PHONY : SRCS_ASM/main.c.i
 
 SRCS_ASM/main.s: SRCS_ASM/main.c.s
@@ -2604,7 +2604,7 @@ SRCS_ASM/main.s: SRCS_ASM/main.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/main.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/main.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/main.c.s
 .PHONY : SRCS_ASM/main.c.s
 
 SRCS_ASM/utils.o: SRCS_ASM/utils.c.o
@@ -2613,7 +2613,7 @@ SRCS_ASM/utils.o: SRCS_ASM/utils.c.o
 
 # target to build an object file
 SRCS_ASM/utils.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/utils.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/utils.c.o
 .PHONY : SRCS_ASM/utils.c.o
 
 SRCS_ASM/utils.i: SRCS_ASM/utils.c.i
@@ -2622,7 +2622,7 @@ SRCS_ASM/utils.i: SRCS_ASM/utils.c.i
 
 # target to preprocess a source file
 SRCS_ASM/utils.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/utils.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/utils.c.i
 .PHONY : SRCS_ASM/utils.c.i
 
 SRCS_ASM/utils.s: SRCS_ASM/utils.c.s
@@ -2631,7 +2631,7 @@ SRCS_ASM/utils.s: SRCS_ASM/utils.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/utils.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/utils.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/utils.c.s
 .PHONY : SRCS_ASM/utils.c.s
 
 SRCS_ASM/write.o: SRCS_ASM/write.c.o
@@ -2640,7 +2640,7 @@ SRCS_ASM/write.o: SRCS_ASM/write.c.o
 
 # target to build an object file
 SRCS_ASM/write.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/write.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/write.c.o
 .PHONY : SRCS_ASM/write.c.o
 
 SRCS_ASM/write.i: SRCS_ASM/write.c.i
@@ -2649,7 +2649,7 @@ SRCS_ASM/write.i: SRCS_ASM/write.c.i
 
 # target to preprocess a source file
 SRCS_ASM/write.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/write.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/write.c.i
 .PHONY : SRCS_ASM/write.c.i
 
 SRCS_ASM/write.s: SRCS_ASM/write.c.s
@@ -2658,7 +2658,7 @@ SRCS_ASM/write.s: SRCS_ASM/write.c.s
 
 # target to generate assembly for a file
 SRCS_ASM/write.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_ASM/write.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_ASM/write.c.s
 .PHONY : SRCS_ASM/write.c.s
 
 SRCS_VM/arena.o: SRCS_VM/arena.c.o
@@ -2667,7 +2667,7 @@ SRCS_VM/arena.o: SRCS_VM/arena.c.o
 
 # target to build an object file
 SRCS_VM/arena.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/arena.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/arena.c.o
 .PHONY : SRCS_VM/arena.c.o
 
 SRCS_VM/arena.i: SRCS_VM/arena.c.i
@@ -2676,7 +2676,7 @@ SRCS_VM/arena.i: SRCS_VM/arena.c.i
 
 # target to preprocess a source file
 SRCS_VM/arena.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/arena.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/arena.c.i
 .PHONY : SRCS_VM/arena.c.i
 
 SRCS_VM/arena.s: SRCS_VM/arena.c.s
@@ -2685,7 +2685,7 @@ SRCS_VM/arena.s: SRCS_VM/arena.c.s
 
 # target to generate assembly for a file
 SRCS_VM/arena.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/arena.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/arena.c.s
 .PHONY : SRCS_VM/arena.c.s
 
 SRCS_VM/inner_parser.o: SRCS_VM/inner_parser.c.o
@@ -2694,7 +2694,7 @@ SRCS_VM/inner_parser.o: SRCS_VM/inner_parser.c.o
 
 # target to build an object file
 SRCS_VM/inner_parser.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/inner_parser.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/inner_parser.c.o
 .PHONY : SRCS_VM/inner_parser.c.o
 
 SRCS_VM/inner_parser.i: SRCS_VM/inner_parser.c.i
@@ -2703,7 +2703,7 @@ SRCS_VM/inner_parser.i: SRCS_VM/inner_parser.c.i
 
 # target to preprocess a source file
 SRCS_VM/inner_parser.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/inner_parser.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/inner_parser.c.i
 .PHONY : SRCS_VM/inner_parser.c.i
 
 SRCS_VM/inner_parser.s: SRCS_VM/inner_parser.c.s
@@ -2712,7 +2712,7 @@ SRCS_VM/inner_parser.s: SRCS_VM/inner_parser.c.s
 
 # target to generate assembly for a file
 SRCS_VM/inner_parser.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/inner_parser.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/inner_parser.c.s
 .PHONY : SRCS_VM/inner_parser.c.s
 
 SRCS_VM/main.o: SRCS_VM/main.c.o
@@ -2721,7 +2721,7 @@ SRCS_VM/main.o: SRCS_VM/main.c.o
 
 # target to build an object file
 SRCS_VM/main.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/main.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/main.c.o
 .PHONY : SRCS_VM/main.c.o
 
 SRCS_VM/main.i: SRCS_VM/main.c.i
@@ -2730,7 +2730,7 @@ SRCS_VM/main.i: SRCS_VM/main.c.i
 
 # target to preprocess a source file
 SRCS_VM/main.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/main.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/main.c.i
 .PHONY : SRCS_VM/main.c.i
 
 SRCS_VM/main.s: SRCS_VM/main.c.s
@@ -2739,7 +2739,7 @@ SRCS_VM/main.s: SRCS_VM/main.c.s
 
 # target to generate assembly for a file
 SRCS_VM/main.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/main.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/main.c.s
 .PHONY : SRCS_VM/main.c.s
 
 SRCS_VM/outer_parser.o: SRCS_VM/outer_parser.c.o
@@ -2748,7 +2748,7 @@ SRCS_VM/outer_parser.o: SRCS_VM/outer_parser.c.o
 
 # target to build an object file
 SRCS_VM/outer_parser.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/outer_parser.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/outer_parser.c.o
 .PHONY : SRCS_VM/outer_parser.c.o
 
 SRCS_VM/outer_parser.i: SRCS_VM/outer_parser.c.i
@@ -2757,7 +2757,7 @@ SRCS_VM/outer_parser.i: SRCS_VM/outer_parser.c.i
 
 # target to preprocess a source file
 SRCS_VM/outer_parser.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/outer_parser.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/outer_parser.c.i
 .PHONY : SRCS_VM/outer_parser.c.i
 
 SRCS_VM/outer_parser.s: SRCS_VM/outer_parser.c.s
@@ -2766,7 +2766,7 @@ SRCS_VM/outer_parser.s: SRCS_VM/outer_parser.c.s
 
 # target to generate assembly for a file
 SRCS_VM/outer_parser.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/outer_parser.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/outer_parser.c.s
 .PHONY : SRCS_VM/outer_parser.c.s
 
 SRCS_VM/player_builder.o: SRCS_VM/player_builder.c.o
@@ -2775,7 +2775,7 @@ SRCS_VM/player_builder.o: SRCS_VM/player_builder.c.o
 
 # target to build an object file
 SRCS_VM/player_builder.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/player_builder.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/player_builder.c.o
 .PHONY : SRCS_VM/player_builder.c.o
 
 SRCS_VM/player_builder.i: SRCS_VM/player_builder.c.i
@@ -2784,7 +2784,7 @@ SRCS_VM/player_builder.i: SRCS_VM/player_builder.c.i
 
 # target to preprocess a source file
 SRCS_VM/player_builder.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/player_builder.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/player_builder.c.i
 .PHONY : SRCS_VM/player_builder.c.i
 
 SRCS_VM/player_builder.s: SRCS_VM/player_builder.c.s
@@ -2793,7 +2793,7 @@ SRCS_VM/player_builder.s: SRCS_VM/player_builder.c.s
 
 # target to generate assembly for a file
 SRCS_VM/player_builder.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/player_builder.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/player_builder.c.s
 .PHONY : SRCS_VM/player_builder.c.s
 
 SRCS_VM/player_builder_set_number.o: SRCS_VM/player_builder_set_number.c.o
@@ -2802,7 +2802,7 @@ SRCS_VM/player_builder_set_number.o: SRCS_VM/player_builder_set_number.c.o
 
 # target to build an object file
 SRCS_VM/player_builder_set_number.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/player_builder_set_number.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/player_builder_set_number.c.o
 .PHONY : SRCS_VM/player_builder_set_number.c.o
 
 SRCS_VM/player_builder_set_number.i: SRCS_VM/player_builder_set_number.c.i
@@ -2811,7 +2811,7 @@ SRCS_VM/player_builder_set_number.i: SRCS_VM/player_builder_set_number.c.i
 
 # target to preprocess a source file
 SRCS_VM/player_builder_set_number.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/player_builder_set_number.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/player_builder_set_number.c.i
 .PHONY : SRCS_VM/player_builder_set_number.c.i
 
 SRCS_VM/player_builder_set_number.s: SRCS_VM/player_builder_set_number.c.s
@@ -2820,7 +2820,7 @@ SRCS_VM/player_builder_set_number.s: SRCS_VM/player_builder_set_number.c.s
 
 # target to generate assembly for a file
 SRCS_VM/player_builder_set_number.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/player_builder_set_number.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/player_builder_set_number.c.s
 .PHONY : SRCS_VM/player_builder_set_number.c.s
 
 SRCS_VM/utils.o: SRCS_VM/utils.c.o
@@ -2829,7 +2829,7 @@ SRCS_VM/utils.o: SRCS_VM/utils.c.o
 
 # target to build an object file
 SRCS_VM/utils.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/utils.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/utils.c.o
 .PHONY : SRCS_VM/utils.c.o
 
 SRCS_VM/utils.i: SRCS_VM/utils.c.i
@@ -2838,7 +2838,7 @@ SRCS_VM/utils.i: SRCS_VM/utils.c.i
 
 # target to preprocess a source file
 SRCS_VM/utils.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/utils.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/utils.c.i
 .PHONY : SRCS_VM/utils.c.i
 
 SRCS_VM/utils.s: SRCS_VM/utils.c.s
@@ -2847,7 +2847,7 @@ SRCS_VM/utils.s: SRCS_VM/utils.c.s
 
 # target to generate assembly for a file
 SRCS_VM/utils.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/utils.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/utils.c.s
 .PHONY : SRCS_VM/utils.c.s
 
 SRCS_VM/utils2.o: SRCS_VM/utils2.c.o
@@ -2856,7 +2856,7 @@ SRCS_VM/utils2.o: SRCS_VM/utils2.c.o
 
 # target to build an object file
 SRCS_VM/utils2.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/utils2.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/utils2.c.o
 .PHONY : SRCS_VM/utils2.c.o
 
 SRCS_VM/utils2.i: SRCS_VM/utils2.c.i
@@ -2865,7 +2865,7 @@ SRCS_VM/utils2.i: SRCS_VM/utils2.c.i
 
 # target to preprocess a source file
 SRCS_VM/utils2.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/utils2.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/utils2.c.i
 .PHONY : SRCS_VM/utils2.c.i
 
 SRCS_VM/utils2.s: SRCS_VM/utils2.c.s
@@ -2874,7 +2874,7 @@ SRCS_VM/utils2.s: SRCS_VM/utils2.c.s
 
 # target to generate assembly for a file
 SRCS_VM/utils2.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/SRCS_VM/utils2.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/SRCS_VM/utils2.c.s
 .PHONY : SRCS_VM/utils2.c.s
 
 printf/srcs/basic/free_all.o: printf/srcs/basic/free_all.c.o
@@ -2883,7 +2883,7 @@ printf/srcs/basic/free_all.o: printf/srcs/basic/free_all.c.o
 
 # target to build an object file
 printf/srcs/basic/free_all.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/free_all.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/free_all.c.o
 .PHONY : printf/srcs/basic/free_all.c.o
 
 printf/srcs/basic/free_all.i: printf/srcs/basic/free_all.c.i
@@ -2892,7 +2892,7 @@ printf/srcs/basic/free_all.i: printf/srcs/basic/free_all.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/free_all.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/free_all.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/free_all.c.i
 .PHONY : printf/srcs/basic/free_all.c.i
 
 printf/srcs/basic/free_all.s: printf/srcs/basic/free_all.c.s
@@ -2901,7 +2901,7 @@ printf/srcs/basic/free_all.s: printf/srcs/basic/free_all.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/free_all.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/free_all.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/free_all.c.s
 .PHONY : printf/srcs/basic/free_all.c.s
 
 printf/srcs/basic/ft_atoi.o: printf/srcs/basic/ft_atoi.c.o
@@ -2910,7 +2910,7 @@ printf/srcs/basic/ft_atoi.o: printf/srcs/basic/ft_atoi.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_atoi.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_atoi.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_atoi.c.o
 .PHONY : printf/srcs/basic/ft_atoi.c.o
 
 printf/srcs/basic/ft_atoi.i: printf/srcs/basic/ft_atoi.c.i
@@ -2919,7 +2919,7 @@ printf/srcs/basic/ft_atoi.i: printf/srcs/basic/ft_atoi.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_atoi.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_atoi.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_atoi.c.i
 .PHONY : printf/srcs/basic/ft_atoi.c.i
 
 printf/srcs/basic/ft_atoi.s: printf/srcs/basic/ft_atoi.c.s
@@ -2928,7 +2928,7 @@ printf/srcs/basic/ft_atoi.s: printf/srcs/basic/ft_atoi.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_atoi.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_atoi.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_atoi.c.s
 .PHONY : printf/srcs/basic/ft_atoi.c.s
 
 printf/srcs/basic/ft_getnbr_base.o: printf/srcs/basic/ft_getnbr_base.c.o
@@ -2937,7 +2937,7 @@ printf/srcs/basic/ft_getnbr_base.o: printf/srcs/basic/ft_getnbr_base.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_getnbr_base.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_getnbr_base.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_getnbr_base.c.o
 .PHONY : printf/srcs/basic/ft_getnbr_base.c.o
 
 printf/srcs/basic/ft_getnbr_base.i: printf/srcs/basic/ft_getnbr_base.c.i
@@ -2946,7 +2946,7 @@ printf/srcs/basic/ft_getnbr_base.i: printf/srcs/basic/ft_getnbr_base.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_getnbr_base.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_getnbr_base.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_getnbr_base.c.i
 .PHONY : printf/srcs/basic/ft_getnbr_base.c.i
 
 printf/srcs/basic/ft_getnbr_base.s: printf/srcs/basic/ft_getnbr_base.c.s
@@ -2955,7 +2955,7 @@ printf/srcs/basic/ft_getnbr_base.s: printf/srcs/basic/ft_getnbr_base.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_getnbr_base.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_getnbr_base.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_getnbr_base.c.s
 .PHONY : printf/srcs/basic/ft_getnbr_base.c.s
 
 printf/srcs/basic/ft_getnbr_base_ui.o: printf/srcs/basic/ft_getnbr_base_ui.c.o
@@ -2964,7 +2964,7 @@ printf/srcs/basic/ft_getnbr_base_ui.o: printf/srcs/basic/ft_getnbr_base_ui.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_getnbr_base_ui.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_getnbr_base_ui.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_getnbr_base_ui.c.o
 .PHONY : printf/srcs/basic/ft_getnbr_base_ui.c.o
 
 printf/srcs/basic/ft_getnbr_base_ui.i: printf/srcs/basic/ft_getnbr_base_ui.c.i
@@ -2973,7 +2973,7 @@ printf/srcs/basic/ft_getnbr_base_ui.i: printf/srcs/basic/ft_getnbr_base_ui.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_getnbr_base_ui.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_getnbr_base_ui.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_getnbr_base_ui.c.i
 .PHONY : printf/srcs/basic/ft_getnbr_base_ui.c.i
 
 printf/srcs/basic/ft_getnbr_base_ui.s: printf/srcs/basic/ft_getnbr_base_ui.c.s
@@ -2982,7 +2982,7 @@ printf/srcs/basic/ft_getnbr_base_ui.s: printf/srcs/basic/ft_getnbr_base_ui.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_getnbr_base_ui.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_getnbr_base_ui.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_getnbr_base_ui.c.s
 .PHONY : printf/srcs/basic/ft_getnbr_base_ui.c.s
 
 printf/srcs/basic/ft_itoa.o: printf/srcs/basic/ft_itoa.c.o
@@ -2991,7 +2991,7 @@ printf/srcs/basic/ft_itoa.o: printf/srcs/basic/ft_itoa.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_itoa.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_itoa.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_itoa.c.o
 .PHONY : printf/srcs/basic/ft_itoa.c.o
 
 printf/srcs/basic/ft_itoa.i: printf/srcs/basic/ft_itoa.c.i
@@ -3000,7 +3000,7 @@ printf/srcs/basic/ft_itoa.i: printf/srcs/basic/ft_itoa.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_itoa.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_itoa.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_itoa.c.i
 .PHONY : printf/srcs/basic/ft_itoa.c.i
 
 printf/srcs/basic/ft_itoa.s: printf/srcs/basic/ft_itoa.c.s
@@ -3009,7 +3009,7 @@ printf/srcs/basic/ft_itoa.s: printf/srcs/basic/ft_itoa.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_itoa.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_itoa.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_itoa.c.s
 .PHONY : printf/srcs/basic/ft_itoa.c.s
 
 printf/srcs/basic/ft_itoa_double.o: printf/srcs/basic/ft_itoa_double.c.o
@@ -3018,7 +3018,7 @@ printf/srcs/basic/ft_itoa_double.o: printf/srcs/basic/ft_itoa_double.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_itoa_double.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_itoa_double.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_itoa_double.c.o
 .PHONY : printf/srcs/basic/ft_itoa_double.c.o
 
 printf/srcs/basic/ft_itoa_double.i: printf/srcs/basic/ft_itoa_double.c.i
@@ -3027,7 +3027,7 @@ printf/srcs/basic/ft_itoa_double.i: printf/srcs/basic/ft_itoa_double.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_itoa_double.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_itoa_double.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_itoa_double.c.i
 .PHONY : printf/srcs/basic/ft_itoa_double.c.i
 
 printf/srcs/basic/ft_itoa_double.s: printf/srcs/basic/ft_itoa_double.c.s
@@ -3036,7 +3036,7 @@ printf/srcs/basic/ft_itoa_double.s: printf/srcs/basic/ft_itoa_double.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_itoa_double.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_itoa_double.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_itoa_double.c.s
 .PHONY : printf/srcs/basic/ft_itoa_double.c.s
 
 printf/srcs/basic/ft_print_bits.o: printf/srcs/basic/ft_print_bits.c.o
@@ -3045,7 +3045,7 @@ printf/srcs/basic/ft_print_bits.o: printf/srcs/basic/ft_print_bits.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_print_bits.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_print_bits.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_print_bits.c.o
 .PHONY : printf/srcs/basic/ft_print_bits.c.o
 
 printf/srcs/basic/ft_print_bits.i: printf/srcs/basic/ft_print_bits.c.i
@@ -3054,7 +3054,7 @@ printf/srcs/basic/ft_print_bits.i: printf/srcs/basic/ft_print_bits.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_print_bits.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_print_bits.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_print_bits.c.i
 .PHONY : printf/srcs/basic/ft_print_bits.c.i
 
 printf/srcs/basic/ft_print_bits.s: printf/srcs/basic/ft_print_bits.c.s
@@ -3063,7 +3063,7 @@ printf/srcs/basic/ft_print_bits.s: printf/srcs/basic/ft_print_bits.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_print_bits.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_print_bits.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_print_bits.c.s
 .PHONY : printf/srcs/basic/ft_print_bits.c.s
 
 printf/srcs/basic/ft_print_memory.o: printf/srcs/basic/ft_print_memory.c.o
@@ -3072,7 +3072,7 @@ printf/srcs/basic/ft_print_memory.o: printf/srcs/basic/ft_print_memory.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_print_memory.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_print_memory.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_print_memory.c.o
 .PHONY : printf/srcs/basic/ft_print_memory.c.o
 
 printf/srcs/basic/ft_print_memory.i: printf/srcs/basic/ft_print_memory.c.i
@@ -3081,7 +3081,7 @@ printf/srcs/basic/ft_print_memory.i: printf/srcs/basic/ft_print_memory.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_print_memory.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_print_memory.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_print_memory.c.i
 .PHONY : printf/srcs/basic/ft_print_memory.c.i
 
 printf/srcs/basic/ft_print_memory.s: printf/srcs/basic/ft_print_memory.c.s
@@ -3090,7 +3090,7 @@ printf/srcs/basic/ft_print_memory.s: printf/srcs/basic/ft_print_memory.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_print_memory.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_print_memory.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_print_memory.c.s
 .PHONY : printf/srcs/basic/ft_print_memory.c.s
 
 printf/srcs/basic/ft_printf_strlen.o: printf/srcs/basic/ft_printf_strlen.c.o
@@ -3099,7 +3099,7 @@ printf/srcs/basic/ft_printf_strlen.o: printf/srcs/basic/ft_printf_strlen.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_printf_strlen.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_printf_strlen.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_printf_strlen.c.o
 .PHONY : printf/srcs/basic/ft_printf_strlen.c.o
 
 printf/srcs/basic/ft_printf_strlen.i: printf/srcs/basic/ft_printf_strlen.c.i
@@ -3108,7 +3108,7 @@ printf/srcs/basic/ft_printf_strlen.i: printf/srcs/basic/ft_printf_strlen.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_printf_strlen.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_printf_strlen.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_printf_strlen.c.i
 .PHONY : printf/srcs/basic/ft_printf_strlen.c.i
 
 printf/srcs/basic/ft_printf_strlen.s: printf/srcs/basic/ft_printf_strlen.c.s
@@ -3117,7 +3117,7 @@ printf/srcs/basic/ft_printf_strlen.s: printf/srcs/basic/ft_printf_strlen.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_printf_strlen.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_printf_strlen.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_printf_strlen.c.s
 .PHONY : printf/srcs/basic/ft_printf_strlen.c.s
 
 printf/srcs/basic/ft_printtab.o: printf/srcs/basic/ft_printtab.c.o
@@ -3126,7 +3126,7 @@ printf/srcs/basic/ft_printtab.o: printf/srcs/basic/ft_printtab.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_printtab.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_printtab.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_printtab.c.o
 .PHONY : printf/srcs/basic/ft_printtab.c.o
 
 printf/srcs/basic/ft_printtab.i: printf/srcs/basic/ft_printtab.c.i
@@ -3135,7 +3135,7 @@ printf/srcs/basic/ft_printtab.i: printf/srcs/basic/ft_printtab.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_printtab.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_printtab.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_printtab.c.i
 .PHONY : printf/srcs/basic/ft_printtab.c.i
 
 printf/srcs/basic/ft_printtab.s: printf/srcs/basic/ft_printtab.c.s
@@ -3144,7 +3144,7 @@ printf/srcs/basic/ft_printtab.s: printf/srcs/basic/ft_printtab.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_printtab.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_printtab.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_printtab.c.s
 .PHONY : printf/srcs/basic/ft_printtab.c.s
 
 printf/srcs/basic/ft_putchar.o: printf/srcs/basic/ft_putchar.c.o
@@ -3153,7 +3153,7 @@ printf/srcs/basic/ft_putchar.o: printf/srcs/basic/ft_putchar.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_putchar.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putchar.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putchar.c.o
 .PHONY : printf/srcs/basic/ft_putchar.c.o
 
 printf/srcs/basic/ft_putchar.i: printf/srcs/basic/ft_putchar.c.i
@@ -3162,7 +3162,7 @@ printf/srcs/basic/ft_putchar.i: printf/srcs/basic/ft_putchar.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_putchar.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putchar.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putchar.c.i
 .PHONY : printf/srcs/basic/ft_putchar.c.i
 
 printf/srcs/basic/ft_putchar.s: printf/srcs/basic/ft_putchar.c.s
@@ -3171,7 +3171,7 @@ printf/srcs/basic/ft_putchar.s: printf/srcs/basic/ft_putchar.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_putchar.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putchar.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putchar.c.s
 .PHONY : printf/srcs/basic/ft_putchar.c.s
 
 printf/srcs/basic/ft_putdouble.o: printf/srcs/basic/ft_putdouble.c.o
@@ -3180,7 +3180,7 @@ printf/srcs/basic/ft_putdouble.o: printf/srcs/basic/ft_putdouble.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_putdouble.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putdouble.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putdouble.c.o
 .PHONY : printf/srcs/basic/ft_putdouble.c.o
 
 printf/srcs/basic/ft_putdouble.i: printf/srcs/basic/ft_putdouble.c.i
@@ -3189,7 +3189,7 @@ printf/srcs/basic/ft_putdouble.i: printf/srcs/basic/ft_putdouble.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_putdouble.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putdouble.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putdouble.c.i
 .PHONY : printf/srcs/basic/ft_putdouble.c.i
 
 printf/srcs/basic/ft_putdouble.s: printf/srcs/basic/ft_putdouble.c.s
@@ -3198,7 +3198,7 @@ printf/srcs/basic/ft_putdouble.s: printf/srcs/basic/ft_putdouble.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_putdouble.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putdouble.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putdouble.c.s
 .PHONY : printf/srcs/basic/ft_putdouble.c.s
 
 printf/srcs/basic/ft_putint.o: printf/srcs/basic/ft_putint.c.o
@@ -3207,7 +3207,7 @@ printf/srcs/basic/ft_putint.o: printf/srcs/basic/ft_putint.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_putint.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putint.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putint.c.o
 .PHONY : printf/srcs/basic/ft_putint.c.o
 
 printf/srcs/basic/ft_putint.i: printf/srcs/basic/ft_putint.c.i
@@ -3216,7 +3216,7 @@ printf/srcs/basic/ft_putint.i: printf/srcs/basic/ft_putint.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_putint.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putint.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putint.c.i
 .PHONY : printf/srcs/basic/ft_putint.c.i
 
 printf/srcs/basic/ft_putint.s: printf/srcs/basic/ft_putint.c.s
@@ -3225,7 +3225,7 @@ printf/srcs/basic/ft_putint.s: printf/srcs/basic/ft_putint.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_putint.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putint.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putint.c.s
 .PHONY : printf/srcs/basic/ft_putint.c.s
 
 printf/srcs/basic/ft_putlong.o: printf/srcs/basic/ft_putlong.c.o
@@ -3234,7 +3234,7 @@ printf/srcs/basic/ft_putlong.o: printf/srcs/basic/ft_putlong.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_putlong.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putlong.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putlong.c.o
 .PHONY : printf/srcs/basic/ft_putlong.c.o
 
 printf/srcs/basic/ft_putlong.i: printf/srcs/basic/ft_putlong.c.i
@@ -3243,7 +3243,7 @@ printf/srcs/basic/ft_putlong.i: printf/srcs/basic/ft_putlong.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_putlong.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putlong.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putlong.c.i
 .PHONY : printf/srcs/basic/ft_putlong.c.i
 
 printf/srcs/basic/ft_putlong.s: printf/srcs/basic/ft_putlong.c.s
@@ -3252,7 +3252,7 @@ printf/srcs/basic/ft_putlong.s: printf/srcs/basic/ft_putlong.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_putlong.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putlong.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putlong.c.s
 .PHONY : printf/srcs/basic/ft_putlong.c.s
 
 printf/srcs/basic/ft_putnbr_base.o: printf/srcs/basic/ft_putnbr_base.c.o
@@ -3261,7 +3261,7 @@ printf/srcs/basic/ft_putnbr_base.o: printf/srcs/basic/ft_putnbr_base.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_putnbr_base.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putnbr_base.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putnbr_base.c.o
 .PHONY : printf/srcs/basic/ft_putnbr_base.c.o
 
 printf/srcs/basic/ft_putnbr_base.i: printf/srcs/basic/ft_putnbr_base.c.i
@@ -3270,7 +3270,7 @@ printf/srcs/basic/ft_putnbr_base.i: printf/srcs/basic/ft_putnbr_base.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_putnbr_base.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putnbr_base.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putnbr_base.c.i
 .PHONY : printf/srcs/basic/ft_putnbr_base.c.i
 
 printf/srcs/basic/ft_putnbr_base.s: printf/srcs/basic/ft_putnbr_base.c.s
@@ -3279,7 +3279,7 @@ printf/srcs/basic/ft_putnbr_base.s: printf/srcs/basic/ft_putnbr_base.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_putnbr_base.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putnbr_base.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putnbr_base.c.s
 .PHONY : printf/srcs/basic/ft_putnbr_base.c.s
 
 printf/srcs/basic/ft_putshort.o: printf/srcs/basic/ft_putshort.c.o
@@ -3288,7 +3288,7 @@ printf/srcs/basic/ft_putshort.o: printf/srcs/basic/ft_putshort.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_putshort.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putshort.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putshort.c.o
 .PHONY : printf/srcs/basic/ft_putshort.c.o
 
 printf/srcs/basic/ft_putshort.i: printf/srcs/basic/ft_putshort.c.i
@@ -3297,7 +3297,7 @@ printf/srcs/basic/ft_putshort.i: printf/srcs/basic/ft_putshort.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_putshort.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putshort.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putshort.c.i
 .PHONY : printf/srcs/basic/ft_putshort.c.i
 
 printf/srcs/basic/ft_putshort.s: printf/srcs/basic/ft_putshort.c.s
@@ -3306,7 +3306,7 @@ printf/srcs/basic/ft_putshort.s: printf/srcs/basic/ft_putshort.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_putshort.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putshort.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putshort.c.s
 .PHONY : printf/srcs/basic/ft_putshort.c.s
 
 printf/srcs/basic/ft_putstr.o: printf/srcs/basic/ft_putstr.c.o
@@ -3315,7 +3315,7 @@ printf/srcs/basic/ft_putstr.o: printf/srcs/basic/ft_putstr.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_putstr.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putstr.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putstr.c.o
 .PHONY : printf/srcs/basic/ft_putstr.c.o
 
 printf/srcs/basic/ft_putstr.i: printf/srcs/basic/ft_putstr.c.i
@@ -3324,7 +3324,7 @@ printf/srcs/basic/ft_putstr.i: printf/srcs/basic/ft_putstr.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_putstr.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putstr.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putstr.c.i
 .PHONY : printf/srcs/basic/ft_putstr.c.i
 
 printf/srcs/basic/ft_putstr.s: printf/srcs/basic/ft_putstr.c.s
@@ -3333,7 +3333,7 @@ printf/srcs/basic/ft_putstr.s: printf/srcs/basic/ft_putstr.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_putstr.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putstr.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putstr.c.s
 .PHONY : printf/srcs/basic/ft_putstr.c.s
 
 printf/srcs/basic/ft_putuint.o: printf/srcs/basic/ft_putuint.c.o
@@ -3342,7 +3342,7 @@ printf/srcs/basic/ft_putuint.o: printf/srcs/basic/ft_putuint.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_putuint.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putuint.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putuint.c.o
 .PHONY : printf/srcs/basic/ft_putuint.c.o
 
 printf/srcs/basic/ft_putuint.i: printf/srcs/basic/ft_putuint.c.i
@@ -3351,7 +3351,7 @@ printf/srcs/basic/ft_putuint.i: printf/srcs/basic/ft_putuint.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_putuint.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putuint.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putuint.c.i
 .PHONY : printf/srcs/basic/ft_putuint.c.i
 
 printf/srcs/basic/ft_putuint.s: printf/srcs/basic/ft_putuint.c.s
@@ -3360,7 +3360,7 @@ printf/srcs/basic/ft_putuint.s: printf/srcs/basic/ft_putuint.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_putuint.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_putuint.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_putuint.c.s
 .PHONY : printf/srcs/basic/ft_putuint.c.s
 
 printf/srcs/basic/ft_strcat.o: printf/srcs/basic/ft_strcat.c.o
@@ -3369,7 +3369,7 @@ printf/srcs/basic/ft_strcat.o: printf/srcs/basic/ft_strcat.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_strcat.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strcat.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strcat.c.o
 .PHONY : printf/srcs/basic/ft_strcat.c.o
 
 printf/srcs/basic/ft_strcat.i: printf/srcs/basic/ft_strcat.c.i
@@ -3378,7 +3378,7 @@ printf/srcs/basic/ft_strcat.i: printf/srcs/basic/ft_strcat.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_strcat.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strcat.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strcat.c.i
 .PHONY : printf/srcs/basic/ft_strcat.c.i
 
 printf/srcs/basic/ft_strcat.s: printf/srcs/basic/ft_strcat.c.s
@@ -3387,7 +3387,7 @@ printf/srcs/basic/ft_strcat.s: printf/srcs/basic/ft_strcat.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_strcat.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strcat.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strcat.c.s
 .PHONY : printf/srcs/basic/ft_strcat.c.s
 
 printf/srcs/basic/ft_strchr.o: printf/srcs/basic/ft_strchr.c.o
@@ -3396,7 +3396,7 @@ printf/srcs/basic/ft_strchr.o: printf/srcs/basic/ft_strchr.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_strchr.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strchr.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strchr.c.o
 .PHONY : printf/srcs/basic/ft_strchr.c.o
 
 printf/srcs/basic/ft_strchr.i: printf/srcs/basic/ft_strchr.c.i
@@ -3405,7 +3405,7 @@ printf/srcs/basic/ft_strchr.i: printf/srcs/basic/ft_strchr.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_strchr.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strchr.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strchr.c.i
 .PHONY : printf/srcs/basic/ft_strchr.c.i
 
 printf/srcs/basic/ft_strchr.s: printf/srcs/basic/ft_strchr.c.s
@@ -3414,7 +3414,7 @@ printf/srcs/basic/ft_strchr.s: printf/srcs/basic/ft_strchr.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_strchr.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strchr.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strchr.c.s
 .PHONY : printf/srcs/basic/ft_strchr.c.s
 
 printf/srcs/basic/ft_strdup.o: printf/srcs/basic/ft_strdup.c.o
@@ -3423,7 +3423,7 @@ printf/srcs/basic/ft_strdup.o: printf/srcs/basic/ft_strdup.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_strdup.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strdup.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strdup.c.o
 .PHONY : printf/srcs/basic/ft_strdup.c.o
 
 printf/srcs/basic/ft_strdup.i: printf/srcs/basic/ft_strdup.c.i
@@ -3432,7 +3432,7 @@ printf/srcs/basic/ft_strdup.i: printf/srcs/basic/ft_strdup.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_strdup.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strdup.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strdup.c.i
 .PHONY : printf/srcs/basic/ft_strdup.c.i
 
 printf/srcs/basic/ft_strdup.s: printf/srcs/basic/ft_strdup.c.s
@@ -3441,7 +3441,7 @@ printf/srcs/basic/ft_strdup.s: printf/srcs/basic/ft_strdup.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_strdup.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strdup.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strdup.c.s
 .PHONY : printf/srcs/basic/ft_strdup.c.s
 
 printf/srcs/basic/ft_strncat.o: printf/srcs/basic/ft_strncat.c.o
@@ -3450,7 +3450,7 @@ printf/srcs/basic/ft_strncat.o: printf/srcs/basic/ft_strncat.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_strncat.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strncat.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strncat.c.o
 .PHONY : printf/srcs/basic/ft_strncat.c.o
 
 printf/srcs/basic/ft_strncat.i: printf/srcs/basic/ft_strncat.c.i
@@ -3459,7 +3459,7 @@ printf/srcs/basic/ft_strncat.i: printf/srcs/basic/ft_strncat.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_strncat.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strncat.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strncat.c.i
 .PHONY : printf/srcs/basic/ft_strncat.c.i
 
 printf/srcs/basic/ft_strncat.s: printf/srcs/basic/ft_strncat.c.s
@@ -3468,7 +3468,7 @@ printf/srcs/basic/ft_strncat.s: printf/srcs/basic/ft_strncat.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_strncat.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strncat.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strncat.c.s
 .PHONY : printf/srcs/basic/ft_strncat.c.s
 
 printf/srcs/basic/ft_strnew.o: printf/srcs/basic/ft_strnew.c.o
@@ -3477,7 +3477,7 @@ printf/srcs/basic/ft_strnew.o: printf/srcs/basic/ft_strnew.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_strnew.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strnew.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strnew.c.o
 .PHONY : printf/srcs/basic/ft_strnew.c.o
 
 printf/srcs/basic/ft_strnew.i: printf/srcs/basic/ft_strnew.c.i
@@ -3486,7 +3486,7 @@ printf/srcs/basic/ft_strnew.i: printf/srcs/basic/ft_strnew.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_strnew.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strnew.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strnew.c.i
 .PHONY : printf/srcs/basic/ft_strnew.c.i
 
 printf/srcs/basic/ft_strnew.s: printf/srcs/basic/ft_strnew.c.s
@@ -3495,7 +3495,7 @@ printf/srcs/basic/ft_strnew.s: printf/srcs/basic/ft_strnew.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_strnew.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strnew.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strnew.c.s
 .PHONY : printf/srcs/basic/ft_strnew.c.s
 
 printf/srcs/basic/ft_strrev.o: printf/srcs/basic/ft_strrev.c.o
@@ -3504,7 +3504,7 @@ printf/srcs/basic/ft_strrev.o: printf/srcs/basic/ft_strrev.c.o
 
 # target to build an object file
 printf/srcs/basic/ft_strrev.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strrev.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strrev.c.o
 .PHONY : printf/srcs/basic/ft_strrev.c.o
 
 printf/srcs/basic/ft_strrev.i: printf/srcs/basic/ft_strrev.c.i
@@ -3513,7 +3513,7 @@ printf/srcs/basic/ft_strrev.i: printf/srcs/basic/ft_strrev.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/ft_strrev.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strrev.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strrev.c.i
 .PHONY : printf/srcs/basic/ft_strrev.c.i
 
 printf/srcs/basic/ft_strrev.s: printf/srcs/basic/ft_strrev.c.s
@@ -3522,7 +3522,7 @@ printf/srcs/basic/ft_strrev.s: printf/srcs/basic/ft_strrev.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/ft_strrev.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/ft_strrev.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/ft_strrev.c.s
 .PHONY : printf/srcs/basic/ft_strrev.c.s
 
 printf/srcs/basic/int_len.o: printf/srcs/basic/int_len.c.o
@@ -3531,7 +3531,7 @@ printf/srcs/basic/int_len.o: printf/srcs/basic/int_len.c.o
 
 # target to build an object file
 printf/srcs/basic/int_len.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/int_len.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/int_len.c.o
 .PHONY : printf/srcs/basic/int_len.c.o
 
 printf/srcs/basic/int_len.i: printf/srcs/basic/int_len.c.i
@@ -3540,7 +3540,7 @@ printf/srcs/basic/int_len.i: printf/srcs/basic/int_len.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/int_len.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/int_len.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/int_len.c.i
 .PHONY : printf/srcs/basic/int_len.c.i
 
 printf/srcs/basic/int_len.s: printf/srcs/basic/int_len.c.s
@@ -3549,7 +3549,7 @@ printf/srcs/basic/int_len.s: printf/srcs/basic/int_len.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/int_len.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/int_len.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/int_len.c.s
 .PHONY : printf/srcs/basic/int_len.c.s
 
 printf/srcs/basic/larg_flag.o: printf/srcs/basic/larg_flag.c.o
@@ -3558,7 +3558,7 @@ printf/srcs/basic/larg_flag.o: printf/srcs/basic/larg_flag.c.o
 
 # target to build an object file
 printf/srcs/basic/larg_flag.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/larg_flag.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/larg_flag.c.o
 .PHONY : printf/srcs/basic/larg_flag.c.o
 
 printf/srcs/basic/larg_flag.i: printf/srcs/basic/larg_flag.c.i
@@ -3567,7 +3567,7 @@ printf/srcs/basic/larg_flag.i: printf/srcs/basic/larg_flag.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/larg_flag.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/larg_flag.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/larg_flag.c.i
 .PHONY : printf/srcs/basic/larg_flag.c.i
 
 printf/srcs/basic/larg_flag.s: printf/srcs/basic/larg_flag.c.s
@@ -3576,7 +3576,7 @@ printf/srcs/basic/larg_flag.s: printf/srcs/basic/larg_flag.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/larg_flag.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/larg_flag.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/larg_flag.c.s
 .PHONY : printf/srcs/basic/larg_flag.c.s
 
 printf/srcs/basic/lenght_modif.o: printf/srcs/basic/lenght_modif.c.o
@@ -3585,7 +3585,7 @@ printf/srcs/basic/lenght_modif.o: printf/srcs/basic/lenght_modif.c.o
 
 # target to build an object file
 printf/srcs/basic/lenght_modif.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/lenght_modif.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/lenght_modif.c.o
 .PHONY : printf/srcs/basic/lenght_modif.c.o
 
 printf/srcs/basic/lenght_modif.i: printf/srcs/basic/lenght_modif.c.i
@@ -3594,7 +3594,7 @@ printf/srcs/basic/lenght_modif.i: printf/srcs/basic/lenght_modif.c.i
 
 # target to preprocess a source file
 printf/srcs/basic/lenght_modif.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/lenght_modif.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/lenght_modif.c.i
 .PHONY : printf/srcs/basic/lenght_modif.c.i
 
 printf/srcs/basic/lenght_modif.s: printf/srcs/basic/lenght_modif.c.s
@@ -3603,7 +3603,7 @@ printf/srcs/basic/lenght_modif.s: printf/srcs/basic/lenght_modif.c.s
 
 # target to generate assembly for a file
 printf/srcs/basic/lenght_modif.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/basic/lenght_modif.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/basic/lenght_modif.c.s
 .PHONY : printf/srcs/basic/lenght_modif.c.s
 
 printf/srcs/ft_printf.o: printf/srcs/ft_printf.c.o
@@ -3612,7 +3612,7 @@ printf/srcs/ft_printf.o: printf/srcs/ft_printf.c.o
 
 # target to build an object file
 printf/srcs/ft_printf.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/ft_printf.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/ft_printf.c.o
 .PHONY : printf/srcs/ft_printf.c.o
 
 printf/srcs/ft_printf.i: printf/srcs/ft_printf.c.i
@@ -3621,7 +3621,7 @@ printf/srcs/ft_printf.i: printf/srcs/ft_printf.c.i
 
 # target to preprocess a source file
 printf/srcs/ft_printf.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/ft_printf.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/ft_printf.c.i
 .PHONY : printf/srcs/ft_printf.c.i
 
 printf/srcs/ft_printf.s: printf/srcs/ft_printf.c.s
@@ -3630,7 +3630,7 @@ printf/srcs/ft_printf.s: printf/srcs/ft_printf.c.s
 
 # target to generate assembly for a file
 printf/srcs/ft_printf.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/ft_printf.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/ft_printf.c.s
 .PHONY : printf/srcs/ft_printf.c.s
 
 printf/srcs/letters/a.o: printf/srcs/letters/a.c.o
@@ -3639,7 +3639,7 @@ printf/srcs/letters/a.o: printf/srcs/letters/a.c.o
 
 # target to build an object file
 printf/srcs/letters/a.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/a.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/a.c.o
 .PHONY : printf/srcs/letters/a.c.o
 
 printf/srcs/letters/a.i: printf/srcs/letters/a.c.i
@@ -3648,7 +3648,7 @@ printf/srcs/letters/a.i: printf/srcs/letters/a.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/a.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/a.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/a.c.i
 .PHONY : printf/srcs/letters/a.c.i
 
 printf/srcs/letters/a.s: printf/srcs/letters/a.c.s
@@ -3657,7 +3657,7 @@ printf/srcs/letters/a.s: printf/srcs/letters/a.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/a.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/a.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/a.c.s
 .PHONY : printf/srcs/letters/a.c.s
 
 printf/srcs/letters/b.o: printf/srcs/letters/b.c.o
@@ -3666,7 +3666,7 @@ printf/srcs/letters/b.o: printf/srcs/letters/b.c.o
 
 # target to build an object file
 printf/srcs/letters/b.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/b.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/b.c.o
 .PHONY : printf/srcs/letters/b.c.o
 
 printf/srcs/letters/b.i: printf/srcs/letters/b.c.i
@@ -3675,7 +3675,7 @@ printf/srcs/letters/b.i: printf/srcs/letters/b.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/b.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/b.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/b.c.i
 .PHONY : printf/srcs/letters/b.c.i
 
 printf/srcs/letters/b.s: printf/srcs/letters/b.c.s
@@ -3684,7 +3684,7 @@ printf/srcs/letters/b.s: printf/srcs/letters/b.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/b.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/b.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/b.c.s
 .PHONY : printf/srcs/letters/b.c.s
 
 printf/srcs/letters/c.o: printf/srcs/letters/c.c.o
@@ -3693,7 +3693,7 @@ printf/srcs/letters/c.o: printf/srcs/letters/c.c.o
 
 # target to build an object file
 printf/srcs/letters/c.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/c.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/c.c.o
 .PHONY : printf/srcs/letters/c.c.o
 
 printf/srcs/letters/c.i: printf/srcs/letters/c.c.i
@@ -3702,7 +3702,7 @@ printf/srcs/letters/c.i: printf/srcs/letters/c.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/c.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/c.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/c.c.i
 .PHONY : printf/srcs/letters/c.c.i
 
 printf/srcs/letters/c.s: printf/srcs/letters/c.c.s
@@ -3711,7 +3711,7 @@ printf/srcs/letters/c.s: printf/srcs/letters/c.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/c.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/c.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/c.c.s
 .PHONY : printf/srcs/letters/c.c.s
 
 printf/srcs/letters/d.o: printf/srcs/letters/d.c.o
@@ -3720,7 +3720,7 @@ printf/srcs/letters/d.o: printf/srcs/letters/d.c.o
 
 # target to build an object file
 printf/srcs/letters/d.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/d.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/d.c.o
 .PHONY : printf/srcs/letters/d.c.o
 
 printf/srcs/letters/d.i: printf/srcs/letters/d.c.i
@@ -3729,7 +3729,7 @@ printf/srcs/letters/d.i: printf/srcs/letters/d.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/d.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/d.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/d.c.i
 .PHONY : printf/srcs/letters/d.c.i
 
 printf/srcs/letters/d.s: printf/srcs/letters/d.c.s
@@ -3738,7 +3738,7 @@ printf/srcs/letters/d.s: printf/srcs/letters/d.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/d.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/d.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/d.c.s
 .PHONY : printf/srcs/letters/d.c.s
 
 printf/srcs/letters/e.o: printf/srcs/letters/e.c.o
@@ -3747,7 +3747,7 @@ printf/srcs/letters/e.o: printf/srcs/letters/e.c.o
 
 # target to build an object file
 printf/srcs/letters/e.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/e.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/e.c.o
 .PHONY : printf/srcs/letters/e.c.o
 
 printf/srcs/letters/e.i: printf/srcs/letters/e.c.i
@@ -3756,7 +3756,7 @@ printf/srcs/letters/e.i: printf/srcs/letters/e.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/e.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/e.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/e.c.i
 .PHONY : printf/srcs/letters/e.c.i
 
 printf/srcs/letters/e.s: printf/srcs/letters/e.c.s
@@ -3765,7 +3765,7 @@ printf/srcs/letters/e.s: printf/srcs/letters/e.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/e.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/e.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/e.c.s
 .PHONY : printf/srcs/letters/e.c.s
 
 printf/srcs/letters/f.o: printf/srcs/letters/f.c.o
@@ -3774,7 +3774,7 @@ printf/srcs/letters/f.o: printf/srcs/letters/f.c.o
 
 # target to build an object file
 printf/srcs/letters/f.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/f.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/f.c.o
 .PHONY : printf/srcs/letters/f.c.o
 
 printf/srcs/letters/f.i: printf/srcs/letters/f.c.i
@@ -3783,7 +3783,7 @@ printf/srcs/letters/f.i: printf/srcs/letters/f.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/f.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/f.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/f.c.i
 .PHONY : printf/srcs/letters/f.c.i
 
 printf/srcs/letters/f.s: printf/srcs/letters/f.c.s
@@ -3792,7 +3792,7 @@ printf/srcs/letters/f.s: printf/srcs/letters/f.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/f.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/f.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/f.c.s
 .PHONY : printf/srcs/letters/f.c.s
 
 printf/srcs/letters/g.o: printf/srcs/letters/g.c.o
@@ -3801,7 +3801,7 @@ printf/srcs/letters/g.o: printf/srcs/letters/g.c.o
 
 # target to build an object file
 printf/srcs/letters/g.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/g.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/g.c.o
 .PHONY : printf/srcs/letters/g.c.o
 
 printf/srcs/letters/g.i: printf/srcs/letters/g.c.i
@@ -3810,7 +3810,7 @@ printf/srcs/letters/g.i: printf/srcs/letters/g.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/g.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/g.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/g.c.i
 .PHONY : printf/srcs/letters/g.c.i
 
 printf/srcs/letters/g.s: printf/srcs/letters/g.c.s
@@ -3819,7 +3819,7 @@ printf/srcs/letters/g.s: printf/srcs/letters/g.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/g.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/g.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/g.c.s
 .PHONY : printf/srcs/letters/g.c.s
 
 printf/srcs/letters/h.o: printf/srcs/letters/h.c.o
@@ -3828,7 +3828,7 @@ printf/srcs/letters/h.o: printf/srcs/letters/h.c.o
 
 # target to build an object file
 printf/srcs/letters/h.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/h.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/h.c.o
 .PHONY : printf/srcs/letters/h.c.o
 
 printf/srcs/letters/h.i: printf/srcs/letters/h.c.i
@@ -3837,7 +3837,7 @@ printf/srcs/letters/h.i: printf/srcs/letters/h.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/h.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/h.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/h.c.i
 .PHONY : printf/srcs/letters/h.c.i
 
 printf/srcs/letters/h.s: printf/srcs/letters/h.c.s
@@ -3846,7 +3846,7 @@ printf/srcs/letters/h.s: printf/srcs/letters/h.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/h.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/h.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/h.c.s
 .PHONY : printf/srcs/letters/h.c.s
 
 printf/srcs/letters/i.o: printf/srcs/letters/i.c.o
@@ -3855,7 +3855,7 @@ printf/srcs/letters/i.o: printf/srcs/letters/i.c.o
 
 # target to build an object file
 printf/srcs/letters/i.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/i.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/i.c.o
 .PHONY : printf/srcs/letters/i.c.o
 
 printf/srcs/letters/i.i: printf/srcs/letters/i.c.i
@@ -3864,7 +3864,7 @@ printf/srcs/letters/i.i: printf/srcs/letters/i.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/i.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/i.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/i.c.i
 .PHONY : printf/srcs/letters/i.c.i
 
 printf/srcs/letters/i.s: printf/srcs/letters/i.c.s
@@ -3873,7 +3873,7 @@ printf/srcs/letters/i.s: printf/srcs/letters/i.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/i.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/i.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/i.c.s
 .PHONY : printf/srcs/letters/i.c.s
 
 printf/srcs/letters/j.o: printf/srcs/letters/j.c.o
@@ -3882,7 +3882,7 @@ printf/srcs/letters/j.o: printf/srcs/letters/j.c.o
 
 # target to build an object file
 printf/srcs/letters/j.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/j.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/j.c.o
 .PHONY : printf/srcs/letters/j.c.o
 
 printf/srcs/letters/j.i: printf/srcs/letters/j.c.i
@@ -3891,7 +3891,7 @@ printf/srcs/letters/j.i: printf/srcs/letters/j.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/j.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/j.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/j.c.i
 .PHONY : printf/srcs/letters/j.c.i
 
 printf/srcs/letters/j.s: printf/srcs/letters/j.c.s
@@ -3900,7 +3900,7 @@ printf/srcs/letters/j.s: printf/srcs/letters/j.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/j.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/j.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/j.c.s
 .PHONY : printf/srcs/letters/j.c.s
 
 printf/srcs/letters/k.o: printf/srcs/letters/k.c.o
@@ -3909,7 +3909,7 @@ printf/srcs/letters/k.o: printf/srcs/letters/k.c.o
 
 # target to build an object file
 printf/srcs/letters/k.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/k.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/k.c.o
 .PHONY : printf/srcs/letters/k.c.o
 
 printf/srcs/letters/k.i: printf/srcs/letters/k.c.i
@@ -3918,7 +3918,7 @@ printf/srcs/letters/k.i: printf/srcs/letters/k.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/k.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/k.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/k.c.i
 .PHONY : printf/srcs/letters/k.c.i
 
 printf/srcs/letters/k.s: printf/srcs/letters/k.c.s
@@ -3927,7 +3927,7 @@ printf/srcs/letters/k.s: printf/srcs/letters/k.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/k.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/k.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/k.c.s
 .PHONY : printf/srcs/letters/k.c.s
 
 printf/srcs/letters/l.o: printf/srcs/letters/l.c.o
@@ -3936,7 +3936,7 @@ printf/srcs/letters/l.o: printf/srcs/letters/l.c.o
 
 # target to build an object file
 printf/srcs/letters/l.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/l.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/l.c.o
 .PHONY : printf/srcs/letters/l.c.o
 
 printf/srcs/letters/l.i: printf/srcs/letters/l.c.i
@@ -3945,7 +3945,7 @@ printf/srcs/letters/l.i: printf/srcs/letters/l.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/l.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/l.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/l.c.i
 .PHONY : printf/srcs/letters/l.c.i
 
 printf/srcs/letters/l.s: printf/srcs/letters/l.c.s
@@ -3954,7 +3954,7 @@ printf/srcs/letters/l.s: printf/srcs/letters/l.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/l.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/l.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/l.c.s
 .PHONY : printf/srcs/letters/l.c.s
 
 printf/srcs/letters/m.o: printf/srcs/letters/m.c.o
@@ -3963,7 +3963,7 @@ printf/srcs/letters/m.o: printf/srcs/letters/m.c.o
 
 # target to build an object file
 printf/srcs/letters/m.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/m.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/m.c.o
 .PHONY : printf/srcs/letters/m.c.o
 
 printf/srcs/letters/m.i: printf/srcs/letters/m.c.i
@@ -3972,7 +3972,7 @@ printf/srcs/letters/m.i: printf/srcs/letters/m.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/m.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/m.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/m.c.i
 .PHONY : printf/srcs/letters/m.c.i
 
 printf/srcs/letters/m.s: printf/srcs/letters/m.c.s
@@ -3981,7 +3981,7 @@ printf/srcs/letters/m.s: printf/srcs/letters/m.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/m.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/m.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/m.c.s
 .PHONY : printf/srcs/letters/m.c.s
 
 printf/srcs/letters/n.o: printf/srcs/letters/n.c.o
@@ -3990,7 +3990,7 @@ printf/srcs/letters/n.o: printf/srcs/letters/n.c.o
 
 # target to build an object file
 printf/srcs/letters/n.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/n.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/n.c.o
 .PHONY : printf/srcs/letters/n.c.o
 
 printf/srcs/letters/n.i: printf/srcs/letters/n.c.i
@@ -3999,7 +3999,7 @@ printf/srcs/letters/n.i: printf/srcs/letters/n.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/n.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/n.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/n.c.i
 .PHONY : printf/srcs/letters/n.c.i
 
 printf/srcs/letters/n.s: printf/srcs/letters/n.c.s
@@ -4008,7 +4008,7 @@ printf/srcs/letters/n.s: printf/srcs/letters/n.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/n.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/n.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/n.c.s
 .PHONY : printf/srcs/letters/n.c.s
 
 printf/srcs/letters/o.o: printf/srcs/letters/o.c.o
@@ -4017,7 +4017,7 @@ printf/srcs/letters/o.o: printf/srcs/letters/o.c.o
 
 # target to build an object file
 printf/srcs/letters/o.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/o.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/o.c.o
 .PHONY : printf/srcs/letters/o.c.o
 
 printf/srcs/letters/o.i: printf/srcs/letters/o.c.i
@@ -4026,7 +4026,7 @@ printf/srcs/letters/o.i: printf/srcs/letters/o.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/o.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/o.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/o.c.i
 .PHONY : printf/srcs/letters/o.c.i
 
 printf/srcs/letters/o.s: printf/srcs/letters/o.c.s
@@ -4035,7 +4035,7 @@ printf/srcs/letters/o.s: printf/srcs/letters/o.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/o.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/o.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/o.c.s
 .PHONY : printf/srcs/letters/o.c.s
 
 printf/srcs/letters/p.o: printf/srcs/letters/p.c.o
@@ -4044,7 +4044,7 @@ printf/srcs/letters/p.o: printf/srcs/letters/p.c.o
 
 # target to build an object file
 printf/srcs/letters/p.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/p.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/p.c.o
 .PHONY : printf/srcs/letters/p.c.o
 
 printf/srcs/letters/p.i: printf/srcs/letters/p.c.i
@@ -4053,7 +4053,7 @@ printf/srcs/letters/p.i: printf/srcs/letters/p.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/p.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/p.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/p.c.i
 .PHONY : printf/srcs/letters/p.c.i
 
 printf/srcs/letters/p.s: printf/srcs/letters/p.c.s
@@ -4062,7 +4062,7 @@ printf/srcs/letters/p.s: printf/srcs/letters/p.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/p.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/p.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/p.c.s
 .PHONY : printf/srcs/letters/p.c.s
 
 printf/srcs/letters/q.o: printf/srcs/letters/q.c.o
@@ -4071,7 +4071,7 @@ printf/srcs/letters/q.o: printf/srcs/letters/q.c.o
 
 # target to build an object file
 printf/srcs/letters/q.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/q.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/q.c.o
 .PHONY : printf/srcs/letters/q.c.o
 
 printf/srcs/letters/q.i: printf/srcs/letters/q.c.i
@@ -4080,7 +4080,7 @@ printf/srcs/letters/q.i: printf/srcs/letters/q.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/q.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/q.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/q.c.i
 .PHONY : printf/srcs/letters/q.c.i
 
 printf/srcs/letters/q.s: printf/srcs/letters/q.c.s
@@ -4089,7 +4089,7 @@ printf/srcs/letters/q.s: printf/srcs/letters/q.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/q.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/q.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/q.c.s
 .PHONY : printf/srcs/letters/q.c.s
 
 printf/srcs/letters/r.o: printf/srcs/letters/r.c.o
@@ -4098,7 +4098,7 @@ printf/srcs/letters/r.o: printf/srcs/letters/r.c.o
 
 # target to build an object file
 printf/srcs/letters/r.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/r.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/r.c.o
 .PHONY : printf/srcs/letters/r.c.o
 
 printf/srcs/letters/r.i: printf/srcs/letters/r.c.i
@@ -4107,7 +4107,7 @@ printf/srcs/letters/r.i: printf/srcs/letters/r.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/r.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/r.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/r.c.i
 .PHONY : printf/srcs/letters/r.c.i
 
 printf/srcs/letters/r.s: printf/srcs/letters/r.c.s
@@ -4116,7 +4116,7 @@ printf/srcs/letters/r.s: printf/srcs/letters/r.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/r.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/r.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/r.c.s
 .PHONY : printf/srcs/letters/r.c.s
 
 printf/srcs/letters/s.o: printf/srcs/letters/s.c.o
@@ -4125,7 +4125,7 @@ printf/srcs/letters/s.o: printf/srcs/letters/s.c.o
 
 # target to build an object file
 printf/srcs/letters/s.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/s.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/s.c.o
 .PHONY : printf/srcs/letters/s.c.o
 
 printf/srcs/letters/s.i: printf/srcs/letters/s.c.i
@@ -4134,7 +4134,7 @@ printf/srcs/letters/s.i: printf/srcs/letters/s.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/s.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/s.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/s.c.i
 .PHONY : printf/srcs/letters/s.c.i
 
 printf/srcs/letters/s.s: printf/srcs/letters/s.c.s
@@ -4143,7 +4143,7 @@ printf/srcs/letters/s.s: printf/srcs/letters/s.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/s.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/s.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/s.c.s
 .PHONY : printf/srcs/letters/s.c.s
 
 printf/srcs/letters/t.o: printf/srcs/letters/t.c.o
@@ -4152,7 +4152,7 @@ printf/srcs/letters/t.o: printf/srcs/letters/t.c.o
 
 # target to build an object file
 printf/srcs/letters/t.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/t.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/t.c.o
 .PHONY : printf/srcs/letters/t.c.o
 
 printf/srcs/letters/t.i: printf/srcs/letters/t.c.i
@@ -4161,7 +4161,7 @@ printf/srcs/letters/t.i: printf/srcs/letters/t.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/t.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/t.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/t.c.i
 .PHONY : printf/srcs/letters/t.c.i
 
 printf/srcs/letters/t.s: printf/srcs/letters/t.c.s
@@ -4170,7 +4170,7 @@ printf/srcs/letters/t.s: printf/srcs/letters/t.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/t.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/t.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/t.c.s
 .PHONY : printf/srcs/letters/t.c.s
 
 printf/srcs/letters/u.o: printf/srcs/letters/u.c.o
@@ -4179,7 +4179,7 @@ printf/srcs/letters/u.o: printf/srcs/letters/u.c.o
 
 # target to build an object file
 printf/srcs/letters/u.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/u.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/u.c.o
 .PHONY : printf/srcs/letters/u.c.o
 
 printf/srcs/letters/u.i: printf/srcs/letters/u.c.i
@@ -4188,7 +4188,7 @@ printf/srcs/letters/u.i: printf/srcs/letters/u.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/u.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/u.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/u.c.i
 .PHONY : printf/srcs/letters/u.c.i
 
 printf/srcs/letters/u.s: printf/srcs/letters/u.c.s
@@ -4197,7 +4197,7 @@ printf/srcs/letters/u.s: printf/srcs/letters/u.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/u.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/u.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/u.c.s
 .PHONY : printf/srcs/letters/u.c.s
 
 printf/srcs/letters/v.o: printf/srcs/letters/v.c.o
@@ -4206,7 +4206,7 @@ printf/srcs/letters/v.o: printf/srcs/letters/v.c.o
 
 # target to build an object file
 printf/srcs/letters/v.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/v.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/v.c.o
 .PHONY : printf/srcs/letters/v.c.o
 
 printf/srcs/letters/v.i: printf/srcs/letters/v.c.i
@@ -4215,7 +4215,7 @@ printf/srcs/letters/v.i: printf/srcs/letters/v.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/v.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/v.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/v.c.i
 .PHONY : printf/srcs/letters/v.c.i
 
 printf/srcs/letters/v.s: printf/srcs/letters/v.c.s
@@ -4224,7 +4224,7 @@ printf/srcs/letters/v.s: printf/srcs/letters/v.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/v.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/v.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/v.c.s
 .PHONY : printf/srcs/letters/v.c.s
 
 printf/srcs/letters/w.o: printf/srcs/letters/w.c.o
@@ -4233,7 +4233,7 @@ printf/srcs/letters/w.o: printf/srcs/letters/w.c.o
 
 # target to build an object file
 printf/srcs/letters/w.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/w.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/w.c.o
 .PHONY : printf/srcs/letters/w.c.o
 
 printf/srcs/letters/w.i: printf/srcs/letters/w.c.i
@@ -4242,7 +4242,7 @@ printf/srcs/letters/w.i: printf/srcs/letters/w.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/w.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/w.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/w.c.i
 .PHONY : printf/srcs/letters/w.c.i
 
 printf/srcs/letters/w.s: printf/srcs/letters/w.c.s
@@ -4251,7 +4251,7 @@ printf/srcs/letters/w.s: printf/srcs/letters/w.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/w.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/w.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/w.c.s
 .PHONY : printf/srcs/letters/w.c.s
 
 printf/srcs/letters/x.o: printf/srcs/letters/x.c.o
@@ -4260,7 +4260,7 @@ printf/srcs/letters/x.o: printf/srcs/letters/x.c.o
 
 # target to build an object file
 printf/srcs/letters/x.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/x.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/x.c.o
 .PHONY : printf/srcs/letters/x.c.o
 
 printf/srcs/letters/x.i: printf/srcs/letters/x.c.i
@@ -4269,7 +4269,7 @@ printf/srcs/letters/x.i: printf/srcs/letters/x.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/x.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/x.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/x.c.i
 .PHONY : printf/srcs/letters/x.c.i
 
 printf/srcs/letters/x.s: printf/srcs/letters/x.c.s
@@ -4278,7 +4278,7 @@ printf/srcs/letters/x.s: printf/srcs/letters/x.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/x.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/x.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/x.c.s
 .PHONY : printf/srcs/letters/x.c.s
 
 printf/srcs/letters/y.o: printf/srcs/letters/y.c.o
@@ -4287,7 +4287,7 @@ printf/srcs/letters/y.o: printf/srcs/letters/y.c.o
 
 # target to build an object file
 printf/srcs/letters/y.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/y.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/y.c.o
 .PHONY : printf/srcs/letters/y.c.o
 
 printf/srcs/letters/y.i: printf/srcs/letters/y.c.i
@@ -4296,7 +4296,7 @@ printf/srcs/letters/y.i: printf/srcs/letters/y.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/y.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/y.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/y.c.i
 .PHONY : printf/srcs/letters/y.c.i
 
 printf/srcs/letters/y.s: printf/srcs/letters/y.c.s
@@ -4305,7 +4305,7 @@ printf/srcs/letters/y.s: printf/srcs/letters/y.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/y.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/y.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/y.c.s
 .PHONY : printf/srcs/letters/y.c.s
 
 printf/srcs/letters/z.o: printf/srcs/letters/z.c.o
@@ -4314,7 +4314,7 @@ printf/srcs/letters/z.o: printf/srcs/letters/z.c.o
 
 # target to build an object file
 printf/srcs/letters/z.c.o:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/z.c.o
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/z.c.o
 .PHONY : printf/srcs/letters/z.c.o
 
 printf/srcs/letters/z.i: printf/srcs/letters/z.c.i
@@ -4323,7 +4323,7 @@ printf/srcs/letters/z.i: printf/srcs/letters/z.c.i
 
 # target to preprocess a source file
 printf/srcs/letters/z.c.i:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/z.c.i
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/z.c.i
 .PHONY : printf/srcs/letters/z.c.i
 
 printf/srcs/letters/z.s: printf/srcs/letters/z.c.s
@@ -4332,7 +4332,7 @@ printf/srcs/letters/z.s: printf/srcs/letters/z.c.s
 
 # target to generate assembly for a file
 printf/srcs/letters/z.c.s:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/printf/srcs/letters/z.c.s
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/printf/srcs/letters/z.c.s
 .PHONY : printf/srcs/letters/z.c.s
 
 # Help Target
@@ -4343,7 +4343,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Final"
+	@echo "... Corewar"
 	@echo "... LIBFT/ft_atoi.o"
 	@echo "... LIBFT/ft_atoi.i"
 	@echo "... LIBFT/ft_atoi.s"

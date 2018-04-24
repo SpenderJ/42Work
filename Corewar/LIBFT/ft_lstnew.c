@@ -6,17 +6,17 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 10:50:34 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/08 17:02:33 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 13:35:29 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+tt_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	t_list	*elem;
+	tt_list	*elem;
 
-	if ((elem = (t_list *)malloc(sizeof(t_list))) == 0)
+	if ((elem = (tt_list *)malloc(sizeof(tt_list))) == 0)
 		return (NULL);
 	if (content == NULL)
 	{

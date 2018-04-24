@@ -6,16 +6,16 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:58:34 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/08 16:58:39 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 13:35:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstdel(tt_list **alst, void (*del)(void *, size_t))
 {
-	t_list	*tmp;
-	t_list	*next;
+	tt_list	*tmp;
+	tt_list	*next;
 
 	tmp = *alst;
 	while (tmp != NULL)

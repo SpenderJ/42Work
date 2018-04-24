@@ -54,45 +54,45 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/juspende/GitHub/Final
+CMAKE_SOURCE_DIR = /Users/juspende/GitHub/Corewar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/juspende/GitHub/Final/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/juspende/GitHub/Corewar/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/Final.dir
+# Target rules for target CMakeFiles/Corewar.dir
 
 # All Build rule for target.
-CMakeFiles/Final.dir/all:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/depend
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/juspende/GitHub/Final/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 "Built target Final"
-.PHONY : CMakeFiles/Final.dir/all
+CMakeFiles/Corewar.dir/all:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/depend
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/juspende/GitHub/Corewar/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 "Built target Corewar"
+.PHONY : CMakeFiles/Corewar.dir/all
 
 # Include target in all.
-all: CMakeFiles/Final.dir/all
+all: CMakeFiles/Corewar.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Final.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juspende/GitHub/Final/cmake-build-debug/CMakeFiles 100
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Final.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juspende/GitHub/Final/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Final.dir/rule
+CMakeFiles/Corewar.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juspende/GitHub/Corewar/cmake-build-debug/CMakeFiles 100
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Corewar.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juspende/GitHub/Corewar/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/Corewar.dir/rule
 
 # Convenience name for target.
-Final: CMakeFiles/Final.dir/rule
+Corewar: CMakeFiles/Corewar.dir/rule
 
-.PHONY : Final
-
-# clean rule for target.
-CMakeFiles/Final.dir/clean:
-	$(MAKE) -f CMakeFiles/Final.dir/build.make CMakeFiles/Final.dir/clean
-.PHONY : CMakeFiles/Final.dir/clean
+.PHONY : Corewar
 
 # clean rule for target.
-clean: CMakeFiles/Final.dir/clean
+CMakeFiles/Corewar.dir/clean:
+	$(MAKE) -f CMakeFiles/Corewar.dir/build.make CMakeFiles/Corewar.dir/clean
+.PHONY : CMakeFiles/Corewar.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Corewar.dir/clean
 
 .PHONY : clean
 

@@ -6,15 +6,15 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:00:32 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/09 17:08:35 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 13:35:22 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+tt_list		*ft_lstmap(tt_list *lst, tt_list *(*f)(tt_list *elem))
 {
-	t_list	*new;
+	tt_list	*new;
 
 	if (lst)
 	{

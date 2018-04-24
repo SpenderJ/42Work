@@ -6,13 +6,13 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:55:30 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/08 16:57:29 by juspende         ###   ########.fr       */
+/*   Updated: 2018/04/24 13:35:13 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_lstadd(tt_list **alst, tt_list *new)
 {
 	new->next = *alst;
 	*alst = new;
