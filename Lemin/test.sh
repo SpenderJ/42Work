@@ -12,7 +12,7 @@ function padme {
 
 OUT=$(mktemp)
 function job {
-  echo -en "$(padme "$1: $2") "
+  echo -en "$(padmei "$1: $2") "
   ($3 &> ${OUT}) &
   pid=$!
   wait ${pid}
