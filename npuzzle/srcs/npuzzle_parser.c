@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 13:22:29 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/13 16:19:59 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/13 17:05:00 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,33 @@ static int	**free_old_map(int **map, int n) {
 }
 
 /*
+ * Function to verify that each map is composed of unique characters
+*/
+
+static int	**check_map_values(int nb_col, int **map) {
+	int		x, y, t_x, t_y;
+
+	t_x = -1;
+	while (++t_x < nb_col) {
+		t_y = -1;
+		while (++t_y < nb_col) {
+			x = -1;
+			while (++x < nb_col) {
+				y = -1;
+				while (++y < nb_col) {
+					if (x != t_x && y != t_y)
+						if (map[x][y] == map[t_x][t_y])
+							return (NULL);
+				}
+			}
+		}
+	}
+	return (map);
+}
+
+/*
  * Function to parse the map cleanly, checking the different potentials error
- * And managing comments.
+ * And managing comments, filling the map with the values of the sent file.
 */
 
 static int	**map_parser(int nb_col, char *buffer, int i) {
@@ -66,7 +91,7 @@ static int	**map_parser(int nb_col, char *buffer, int i) {
 				return (free_old_map(map, nb_col));
 			++n; }
 		++i; }
-	return (map);
+	return (check_map_values(nb_col, map));
 }
 
 /*
