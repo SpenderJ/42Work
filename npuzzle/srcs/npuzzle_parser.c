@@ -6,14 +6,14 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 13:22:29 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/13 16:13:02 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/13 16:18:53 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/npuzzle.h"
 
 /*
- * Function to check the number of row our map contains
+ * Function to free the map depending on hoz many colums have been allocated
 */
 
 static int	**free_old_map(int **map, int n) {
@@ -22,6 +22,11 @@ static int	**free_old_map(int **map, int n) {
 	free(map);
 	return (NULL);
 }
+
+/*
+ * Function to parse the map cleanly, checking the different potentials error
+ * And managing comments.
+*/
 
 static int	**map_parser(int nb_col, char *buffer, int i) {
 	int		**map;
@@ -36,8 +41,7 @@ static int	**map_parser(int nb_col, char *buffer, int i) {
 	n = 0;
 	while (buffer[i] != 0) {
 		if (buffer[i] == '#')
-			while (buffer[++i] != '\n')
-				;
+			while (buffer[++i] != '\n') ;
 		else {
 			if (n >= nb_col)
 				return (free_old_map(map, nb_col));
@@ -57,17 +61,17 @@ static int	**map_parser(int nb_col, char *buffer, int i) {
 					if (numbers_get != nb_col)
 						return (free_old_map(map, nb_col)); }
 				else
-					return (free_old_map(map, nb_col));
-			}
+					return (free_old_map(map, nb_col)); }
 			if (numbers_get != nb_col)
 				return (free_old_map(map, nb_col));
-			printf("%d,%d,%d,%d\n", map[n][0], map[n][1], map[n][2], map[n][3]);
-			++n;
-		}
-		++i;
-	}
+			++n; }
+		++i; }
 	return (map);
 }
+
+/*
+ * Function to parse the content of the file and know the number of column
+*/
 
 static int	**map_verifier(char *buffer)
 {
@@ -77,15 +81,13 @@ static int	**map_verifier(char *buffer)
 
 	while (buffer[++i] != 0 && nb_col == -1 && error == 0) {
 		if (buffer[i] == '#')
-			while (buffer[++i] != '\n')
-				;
+			while (buffer[++i] != '\n') ;
 		else if (buffer[i] >= '0' && buffer[i] <= '9' && nb_col == -1) {
 			nb_col = ft_atoi(&buffer[i]);
 			while (buffer[i] >= '0' && buffer[i] <= '9')
 				++i;
 			if (buffer[i] == '#')
-				while (buffer[++i] != '\n')
-					;
+				while (buffer[++i] != '\n') ;
 			if (buffer[i] != '\n' && buffer[i] != '\0')
 				error = -1; }
 		else
@@ -93,6 +95,10 @@ static int	**map_verifier(char *buffer)
 	}
 	return (error == -1 ? NULL : map_parser(nb_col, buffer, i));
 }
+
+/*
+ * Function to open and get the content of the file sent as an argument
+*/
 
 int			**npuzzle_parse(char *filename) {
 	char	*buffer;
