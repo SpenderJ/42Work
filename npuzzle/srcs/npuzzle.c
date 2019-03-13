@@ -6,11 +6,16 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:15:36 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/13 15:44:09 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/13 16:22:24 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/npuzzle.h"
+
+/*
+ * In case of error the program is returning -1, otherwise, it will return
+ * 0 in case of good work
+*/
 
 int			main(int argc, char **argv) {
 	int		**map;
