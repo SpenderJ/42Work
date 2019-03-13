@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 13:22:29 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/13 16:11:31 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/13 16:13:02 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	**map_parser(int nb_col, char *buffer, int i) {
 				;
 		else {
 			if (n >= nb_col)
-				return (NULL);
+				return (free_old_map(map, nb_col));
 			numbers_get = 0;
 			while (buffer[i] != '\n') {
 				if (buffer[i] >= '0' && buffer[i] <= '9')
@@ -55,12 +55,12 @@ static int	**map_parser(int nb_col, char *buffer, int i) {
 						++i;
 				else if (buffer[i] == '\n' || buffer[i] == '\0') {
 					if (numbers_get != nb_col)
-						return (NULL); }
+						return (free_old_map(map, nb_col)); }
 				else
-					return (NULL);
+					return (free_old_map(map, nb_col));
 			}
 			if (numbers_get != nb_col)
-				return (NULL);
+				return (free_old_map(map, nb_col));
 			printf("%d,%d,%d,%d\n", map[n][0], map[n][1], map[n][2], map[n][3]);
 			++n;
 		}
