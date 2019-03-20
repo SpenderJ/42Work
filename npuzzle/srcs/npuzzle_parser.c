@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 13:22:29 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/13 17:05:00 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/20 12:14:45 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ static int	**map_parser(int nb_col, char *buffer, int i) {
 	int		n = -1;
 	int		numbers_get = 0;
 
-	if ((map = malloc(sizeof(int*) * 4)) == NULL)
+	if ((map = malloc(sizeof(int*) * nb_col)) == NULL)
 		return (NULL);
 	while (++n < nb_col)
-		if ((map[n] = malloc(sizeof(int) * 4)) == NULL)
+		if ((map[n] = malloc(sizeof(int) * nb_col)) == NULL)
 			return (free_old_map(map, n));
 	n = 0;
 	while (buffer[i] != 0) {
@@ -98,8 +98,7 @@ static int	**map_parser(int nb_col, char *buffer, int i) {
  * Function to parse the content of the file and know the number of column
 */
 
-static int	**map_verifier(char *buffer)
-{
+static int	**map_verifier(char *buffer) {
 	int		i = -1;
 	int		error = 0;
 	int		nb_col = -1;
