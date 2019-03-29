@@ -6,11 +6,16 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:15:36 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/29 03:56:59 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/29 04:36:46 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/npuzzle.h"
+
+/*
+ * Function mainly here for debug, allows me to print an int array depending on
+ * his size
+*/
 
 static int	ft_print(int **map, int nb_col) {
 	int		x = -1;
@@ -24,6 +29,7 @@ static int	ft_print(int **map, int nb_col) {
 	}
 	return (0);
 }
+
 /*
  * In case of error the program is returning -1, otherwise, it will return
  * 0 in case of good work
@@ -38,5 +44,6 @@ int			main(int argc, char **argv) {
 	if ((map = npuzzle_parse(argv[1], &size)) == NULL)
 		return (handle_error(ILLEGAL_MAP));
 	ft_print(map, size);
+	hamming_distance(map, size);
 	return (0);
 }

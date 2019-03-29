@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2019/03/28 13:54:43 by juspende         ###   ########.fr        #
+#    Updated: 2019/03/29 04:10:16 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ RM		=	rm -f
 
 SRC		=	srcs/npuzzle.c \
 			srcs/error_handler.c \
-			srcs/npuzzle_parser.c 
+			srcs/npuzzle_parser.c \
+			srcs/hamming.c
 
 OBJ			= $(SRC:.c=.o)
 
