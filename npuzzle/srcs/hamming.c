@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 04:09:52 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/29 08:09:50 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/29 08:14:57 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,7 @@ static int	*get_weight(int **map, int **solvedMap, int mapSize) {
 		map[x0][y0 - 1] = tmp;
 	}
 
+	c_int--;
 	int c = 1;
 	while (c <= c_int) {
 		if (dir[c - 1] > dir[c]) {
