@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:17:51 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/29 06:22:34 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/29 06:49:59 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,22 @@
 #  define ILLEGAL_MAP "The map sent to the binary is not well formated"
 # endif
 
+# ifndef UP
+#  define UP 1
+# endif
+
+# ifndef RIGHT
+#  define RIGHT 2
+# endif
+
+# ifndef DOWN
+#  define DOWN 3
+# endif
+
+# ifndef LEFT
+#  define LEFT 4
+# endif
+
 /*
  * If you want to toggle a special search, welcome here, my program is
  * made to use his 3 algorithms and evaluate the number of moves of each one
@@ -67,5 +83,7 @@ int			**npuzzle_parse(char *filename, int *size);
 int			hamming_distance(int **map, int mapSize);
 int			**npuzzle_solvedmap(int mapSize);
 int			ft_print(int **map, int nb_col);
+int			isSolved(int **map, int mapSize);
+int			get0position(int *x, int *y, int **map, int mapSize);
 
 #endif
