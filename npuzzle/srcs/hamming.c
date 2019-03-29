@@ -6,36 +6,31 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 04:09:52 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/29 05:09:18 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/29 06:22:24 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/npuzzle.h"
 
-static int issolvable(int **map, int size) {
-	int i,j,k,cab=0,parity=0,perm[MAX*MAX],len;
+/*
+ * Function to free the map allocated thanks to her size, and then returning
+ * the expected value passed as third argument
+*/
 
-	for(i=0;i<size;i++)
-		for(j=0;j<size;j++)
-			if(map[i][j] == 0)
-				cab=size+size-i-j-2;
-	for(j=k=0;j<size;j++)
-		for(i=0;i<size;i++)
-			perm[k++]=map[i][j];
-	for(i=0;i<((size*size)-1);i++)
-		if(perm[i]>-1 && perm[i]!=i) {
-			for(k=i,len=-1,j=perm[k],perm[k]=-1,k=j;j>-1;j=perm[k],perm[k]=-1,k=j,len++);
-			parity+=len;
-		}
-	return (cab+parity+1)&1;
+static int	free_map(int **map, int size, int ret) {
+	int		x = -1;
+
+	while (++x < size)
+		free(map[x]);
+	free(map);
+	return (ret);
 }
 
 int		hamming_distance(int **map, int mapSize) {
+	int		**solvedMap;
 	int		distance = 0;
 
-	if (issolvable(map, mapSize) == 0)
-		printf("Non solvable\n");
-	else
-		printf("Solvable\n");
+	if ((solvedMap = npuzzle_solvedmap(mapSize)) == NULL)
+		return (free_map(map, mapSize, -1));
 	return distance;
 }

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:17:51 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/29 04:40:09 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/29 06:22:34 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,20 @@
 #  define NO_FILE_INPUT "No file sent to the binary"
 # endif
 
+# ifndef NOT_SOLVABLE
+#  define NOT_SOLVABLE "Unfortunately, your taquin can't be solved..."
+# endif
+
+# ifndef TOO_BIG
+#  define TOO_BIG "You are not allowed to pass a map bigger than the MAX value which is defined in the npuzzle.h, thanks try an other map or change MAX value"
+# endif
+
+# ifndef ERROR_RESOLVING
+#  define ERROR_RESOLVING "Unknown error during resolution, try again?"
+# endif
+
 # ifndef MAX
-#  define MAX 35
+#  define MAX 12
 # endif
 
 # ifndef ILLEGAL_MAP
@@ -53,5 +65,7 @@ int			main(int argc, char **argv);
 int			handle_error(char *descriptor);
 int			**npuzzle_parse(char *filename, int *size);
 int			hamming_distance(int **map, int mapSize);
+int			**npuzzle_solvedmap(int mapSize);
+int			ft_print(int **map, int nb_col);
 
 #endif
