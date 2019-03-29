@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 06:03:27 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/29 07:45:23 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/29 14:06:31 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,20 @@ int		**npuzzle_solvedmap(int mapSize) {
 	}
 	map[mapSize - 1][mapSize - 1] = 0;
 	return (map);
+}
+
+/*
+ * Function to get the last element in an int array 
+*/
+
+int		get_last_op(int *moves) {
+	int		i = -1;
+
+	while (moves[++i] != 0)
+		;
+	if (i != 0)
+		--i;
+	return (i);
 }
 
 /*

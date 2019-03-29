@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:17:51 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/29 06:49:59 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/29 14:23:28 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,14 @@
 
 # ifndef MAX
 #  define MAX 12
+# endif
+
+# ifndef ADD
+#  define ADD 1
+# endif
+
+# ifndef REMOVE
+#  define REMOVE -1
 # endif
 
 # ifndef ILLEGAL_MAP
@@ -85,5 +93,6 @@ int			**npuzzle_solvedmap(int mapSize);
 int			ft_print(int **map, int nb_col);
 int			isSolved(int **map, int mapSize);
 int			get0position(int *x, int *y, int **map, int mapSize);
+int			get_last_op(int *moves);
 
 #endif
