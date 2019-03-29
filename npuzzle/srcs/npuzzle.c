@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:15:36 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/29 06:31:18 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/29 07:47:50 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,9 @@ int			main(int argc, char **argv) {
 		return (handle_error(ILLEGAL_MAP));
 	if (size > MAX)
 		return (handle_error(TOO_BIG));
-	if (!issolvable(map, size))
-		return (handle_error(NOT_SOLVABLE));
+	(void)issolvable(map, size);
+//	if (!issolvable(map, size))
+//		return (handle_error(NOT_SOLVABLE));
 	if (hamming_distance(map, size) < -1)
 		return (handle_error(ERROR_RESOLVING));
 	return (0);

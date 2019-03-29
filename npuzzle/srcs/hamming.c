@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 04:09:52 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/29 07:39:08 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/29 08:09:50 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	*get_weight(int **map, int **solvedMap, int mapSize) {
 	int		x0, y0;
 	int		*dir;
 	int		up, down, left, right;
-	int		weight, direction, tmp;
+	int		weight, tmp;
 	int		c_int;
 
 	if (get0position(&x0, &y0, map, mapSize) == -1)
@@ -44,7 +44,6 @@ static int	*get_weight(int **map, int **solvedMap, int mapSize) {
 	
 	if ((dir = malloc(sizeof(int) * 5)) == NULL)
 		return (NULL);
-
 	/* 
 	 * SWAP
 	*/
@@ -137,11 +136,9 @@ static int	*get_weight(int **map, int **solvedMap, int mapSize) {
 		left = dir[c_int++];
 		tmp = map[x0][y0];
 		map[x0][y0] = map[x0][y0 - 1];
-		map[x0 - 1][y0] = tmp;
+		map[x0][y0 - 1] = tmp;
 	}
 
-
-	c_int--;
 	int c = 1;
 	while (c <= c_int) {
 		if (dir[c - 1] > dir[c]) {
@@ -153,19 +150,17 @@ static int	*get_weight(int **map, int **solvedMap, int mapSize) {
 		else
 			++c;
 	}
-
 	c = 0;
 	while (c <= c_int) {
-		if (up != -1 && up == dir[c])
+		if (up != -1 && up == dir[c] && (up = -1) == -1)
 			dir[c++] = 1;
-		else if (right != -1 && right == dir[c])
+		else if (right != -1 && right == dir[c] && (right = -1) == -1)
 			dir[c++] = 2;
-		else if (down != -1 && down == dir[c])
+		else if (down != -1 && down == dir[c] && (down = -1) == -1)
 			dir[c++] = 3;
-		else if (left != -1 && left == dir[c])
+		else if (left != -1 && left == dir[c] && (left = -1) == -1)
 			dir[c++] = 4;
 	}
-
 	return (dir);
 }
 
@@ -178,7 +173,7 @@ int		hamming_distance(int **map, int mapSize) {
 	int		**solvedMap;
 	int		distance = 0;
 	char	**queue;
-	int		q, x0, y0;
+	int		q;
 
 	q = -1;
 
@@ -196,6 +191,10 @@ int		hamming_distance(int **map, int mapSize) {
 	/*
 	 * We go for some debug
 	*/
+
+	if (isSolved(map, mapSize)) {
+		get_weight(map, solvedMap, mapSize);
+	}
 
 	return distance;
 }
