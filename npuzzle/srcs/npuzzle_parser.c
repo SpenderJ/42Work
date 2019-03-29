@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 13:22:29 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/20 12:14:45 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/29 03:56:48 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ static int	**check_map_values(int nb_col, int **map) {
 */
 
 static int	**map_parser(int nb_col, char *buffer, int i) {
-	int		**map;
 	int		n = -1;
 	int		numbers_get = 0;
+	int		**map;
 
 	if ((map = malloc(sizeof(int*) * nb_col)) == NULL)
 		return (NULL);
@@ -98,7 +98,7 @@ static int	**map_parser(int nb_col, char *buffer, int i) {
  * Function to parse the content of the file and know the number of column
 */
 
-static int	**map_verifier(char *buffer) {
+static int	**map_verifier(char *buffer, int *size) {
 	int		i = -1;
 	int		error = 0;
 	int		nb_col = -1;
@@ -117,6 +117,7 @@ static int	**map_verifier(char *buffer) {
 		else
 			error = -1;
 	}
+	*size = nb_col;
 	return (error == -1 ? NULL : map_parser(nb_col, buffer, i));
 }
 
@@ -124,7 +125,7 @@ static int	**map_verifier(char *buffer) {
  * Function to open and get the content of the file sent as an argument
 */
 
-int			**npuzzle_parse(char *filename) {
+int			**npuzzle_parse(char *filename, int *size) {
 	char	*buffer;
 
 	FILE *f = fopen(filename, "r");
@@ -138,5 +139,5 @@ int			**npuzzle_parse(char *filename) {
 	fread(buffer, fsize, 1, f);
 	fclose(f);
 	buffer[fsize] = 0;
-	return (map_verifier(buffer));
+	return map_verifier(buffer, size);
 }

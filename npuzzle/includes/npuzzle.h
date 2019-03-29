@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:17:51 by juspende          #+#    #+#             */
-/*   Updated: 2019/03/13 14:55:24 by juspende         ###   ########.fr       */
+/*   Updated: 2019/03/29 03:56:03 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include "../printf/include/ft_printf.h"
 
 # ifndef NO_FILE_INPUT
-#  define NO_FILE_INPUT "No ile sent to the binary"
+#  define NO_FILE_INPUT "No file sent to the binary"
 # endif
 
 # ifndef ILLEGAL_MAP
@@ -30,6 +30,6 @@
 
 int			main(int argc, char **argv);
 int			handle_error(char *descriptor);
-int			**npuzzle_parse(char *filename);
+int			**npuzzle_parse(char *filename, int *size);
 
 #endif
