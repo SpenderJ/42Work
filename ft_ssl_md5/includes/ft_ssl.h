@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:17:51 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/04 09:09:45 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/04 12:20:25 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,15 @@
 
 typedef struct		s_ssl
 {
-	int		input;
+	int		c_stdin;
 	int		output;
 	int		md5;
 	int		sha256;
 	int		sha512;
 	int		whirpool;
 	char	**filenames;
+	char	**to_hash;
+	int		size_printed;
 }					t_ssl;
 
 typedef struct		s_ssl_flag
@@ -56,9 +58,9 @@ typedef struct		s_ssl_flag
 	int		s;
 	int		h;
 	int		v;
-	int		i;
 }					t_ssl_flag;
 
 int		main(int argc, char **argv);
+int		io(t_ssl_flag *ssl_flag, t_ssl *ssl);
 
 #endif

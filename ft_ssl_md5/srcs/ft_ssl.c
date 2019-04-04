@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 18:36:08 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/04 10:43:05 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/04 11:04:10 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	usage(char **av)
 {
-	ft_printf("usage: %s [md5 | sha256 | sha512 | whirpool] [-pqrshvi]"
+	ft_printf("usage: %s [md5 | sha256 | sha512 | whirpool] [-pqrshv]"
 			" [filename (%d MAX)] ...\n\n"
 			"  -md5            will encrypt in md5\n"
 			"  -sha256         will encrypt in sha256\n"
@@ -27,7 +27,6 @@ static int	usage(char **av)
 			"  -s              print the sum of the given string\n"
 			"  -h              show this help\n"
 			"  -v              toggle colors and more detailled explanations\n"
-			"  -i              allow you to choose the output source\n"
 			, av[0], MAX_FILES);
 	return (EXIT_HELP);
 }
@@ -48,8 +47,6 @@ static int	opt_exh(t_ssl_flag *ssl_flag, char comp)
 	else if (comp == 'h' && (ssl_flag->h = TRUE) == TRUE)
 		ret = 0;
 	else if (comp == 'v' && (ssl_flag->v = TRUE) == TRUE)
-		ret = 0;
-	else if (comp == 'i' && (ssl_flag->i = TRUE) == TRUE)
 		ret = 0;
 	return (ret);
 }
@@ -89,16 +86,13 @@ int			main(int ac, char **av)
 	t_ssl_flag		ssl_flag;
 	t_ssl			ssl;
 
-	(void)ac;
-	(void)av;
 	ft_bzero(&ssl_flag, sizeof(t_ssl_flag));
 	ft_bzero(&ssl, sizeof(t_ssl));
 	if ((ssl.filenames = malloc(sizeof(char *) * MAX_FILES)) == NULL)
 		return (usage(av));
 	if (opt(&ssl_flag, &ssl, ac, av) == EXIT_HELP)
 		return (EXIT_HELP);
-	int i = -1;
-	while (ssl.filenames[++i] != NULL)
-		printf("%s\n", ssl.filenames[i]);
+	if (io(&ssl_flag, &ssl) == EXIT_HELP)
+		return (EXIT_HELP);
 	return (0);
 }
