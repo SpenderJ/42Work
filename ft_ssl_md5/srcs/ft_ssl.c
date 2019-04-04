@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 18:36:08 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/03 20:33:29 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/03 20:47:13 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,21 @@
 
 static int	usage(char **av)
 {
-	ft_printf("usage: %s [md5 | sha256 | sha512 | whirpool] [-pqrshvi] [filename | text]\n", av[0], av[0]);
+	ft_printf("usage: %s [md5 | sha256 | sha512 | whirpool] [-pqrshvi]"
+			" [filename | text] ...\n\n"
+			"  -md5            will encrypt in md5\n"
+			"  -sha256         will encrypt in sha256\n"
+			"  -sha512         will encrypt in sha512\n"
+			"  -whirpool       will encrypt in whirpool\n\n"
+			"  -p              echo STDIN to STDOUT and append the checksum"
+			"to STDOUT\n"
+			"  -q              quiet mode\n"
+			"  -r              reverse the format of the output\n"
+			"  -s              print the sum of the given string\n"
+			"  -h              show this help\n"
+			"  -v              toggle colors and more detailled explanations\n"
+			"  -i              allow you to choose the input source\n"
+			, av[0]);
 	return (EXIT_HELP);
 }
 
