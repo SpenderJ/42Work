@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 18:36:08 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/04 14:01:35 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/04 15:43:49 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,9 @@ int			main(int ac, char **av)
 		return (EXIT_HELP);
 	if (io(&ssl) == EXIT_HELP)
 		return (EXIT_HELP);
+	ssl.md5 == TRUE ? md5(&ssl, &ssl_flag) : 0;
+	ssl.sha256 == TRUE ? sha256(&ssl, &ssl_flag) : 0;
+	ssl.sha512 == TRUE ? sha512(&ssl, &ssl_flag) : 0;
+	ssl.whirpool == TRUE ? whirpool(&ssl, &ssl_flag) : 0;
 	return (0);
 }
