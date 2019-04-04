@@ -1,73 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_whitespaces.c                             :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/11 09:59:44 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/29 11:31:46 by juspende         ###   ########.fr       */
+/*   Created: 2016/11/04 16:24:51 by jebossue          #+#    #+#             */
+/*   Updated: 2017/10/30 14:25:19 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-static int	count_space(char *str, char c)
+static void	ft_doit(char **array, char const *s, char c, int j)
 {
-	int		i;
-	int		res;
+	int	i;
+	int start;
+	int len;
 
-	res = 0;
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == c)
-			res = res + 1;
-		i = i + 1;
-	}
-	return (res + 1);
-}
-
-static char	*str_to_next_tab(char *str, char c)
-{
-	int		i;
-	char	*final;
-
-	i = 0;
-	while (str[i] != '\0' && str[i] != c)
-		i = i + 1;
-	if ((final = malloc(sizeof(char) * (i + 1))) == NULL)
-		return (NULL);
 	i = -1;
-	while (str[++i] != '\0' && str[i] != c)
-		final[i] = str[i];
-	final[i] = '\0';
-	return (final);
+	while (s[++i])
+	{
+		len = 0;
+		while (s[i] != c && s[i])
+		{
+			if (i == 0 || s[i - 1] == c)
+			{
+				j++;
+				start = i;
+			}
+			i++;
+			len++;
+		}
+		if (i != 0 && s[i - 1] != c)
+			array[j] = ft_strsub(s, start, len);
+		if (s[i] == '\0')
+			i--;
+	}
+	array[j + 1] = NULL;
 }
 
-char		**ft_strsplit(char const *str, char c)
+char		**ft_strsplit(char const *s, char c)
 {
-	int		i;
-	char	**tab;
-	int		a;
+	char	**array;
+	int		nbrwords;
 
-	i = 0;
-	a = -1;
-	if (!str)
+	if (!s)
 		return (NULL);
-	if ((tab = malloc(sizeof(char *) * (count_space((char *)str, c) + 1)))
-			== NULL)
+	nbrwords = ft_nbrwords(s, c) + 1;
+	if ((array = (char**)malloc(sizeof(*array) * nbrwords)) == NULL)
 		return (NULL);
-	while (str[i] != '\0')
-	{
-		while (str[i] != '\0' && (str[i] == c))
-			i++;
-		if (str[i] != '\0')
-			tab[++a] = str_to_next_tab((char *)&str[i], c);
-		while (str[i] != '\0' && str[i] != c)
-			i = i + 1;
-	}
-	tab[++a] = NULL;
-	return (tab);
+	ft_doit(array, s, c, -1);
+	return (array);
 }

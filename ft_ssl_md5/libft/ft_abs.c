@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putsterr.c                                      :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/26 14:42:50 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/11 16:59:42 by juspende         ###   ########.fr       */
+/*   Created: 2017/03/28 17:23:01 by jebossue          #+#    #+#             */
+/*   Updated: 2017/03/28 17:24:58 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdint.h>
 
-int		ftt_putsterr(char *str)
+uintmax_t	ft_abs(intmax_t nbr)
 {
-	ft_putstr_fd(str, 2);
-	return (1);
+	if (nbr < 0)
+		nbr = nbr * -1;
+	return (nbr);
 }

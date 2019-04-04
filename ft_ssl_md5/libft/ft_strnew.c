@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:11:03 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/27 10:48:24 by juspende         ###   ########.fr       */
+/*   Created: 2016/11/04 12:15:52 by jebossue          #+#    #+#             */
+/*   Updated: 2016/11/22 14:13:45 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,17 @@
 
 char	*ft_strnew(size_t size)
 {
-	char	*tofill;
-	size_t	n;
+	char			*str;
+	unsigned int	i;
 
-	n = -1;
-	if ((tofill = malloc(sizeof(char) * (size + 1))) == NULL)
+	if ((str = (char *)malloc(sizeof(*str) * size + 1)) == NULL)
 		return (NULL);
-	while (++n <= size)
-		tofill[n] = '\0';
-	return (tofill);
-}
-
-int		*ft_intnew(size_t size)
-{
-	int		*tofill;
-	size_t	n;
-
-	n = -1;
-	if ((tofill = malloc(sizeof(int) * (size + 1))) == NULL)
-		return (NULL);
-	while (++n <= size)
-		tofill[n] = 0;
-	return (tofill);
-}
-
-int		*ft_intdup(int *list)
-{
-	int		*dup;
-	int		c;
-
-	dup = ft_intnew(list[0] + 1);
-	c = -1;
-	while (++c <= list[0])
-		dup[c] = list[c];
-	return (dup);
+	i = 0;
+	while (i < size)
+	{
+		str[i] = '\0';
+		i++;
+	}
+	str[size] = '\0';
+	return (str);
 }

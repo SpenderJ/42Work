@@ -5,56 +5,100 @@
 #                                                     +:+ +:+         +:+      #
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/12/06 14:09:02 by juspende          #+#    #+#              #
-#    Updated: 2019/04/03 18:37:08 by juspende         ###   ########.fr        #
+#    Created: 2019/04/03 20:29:44 by juspende          #+#    #+#              #
+#    Updated: 2019/04/03 20:39:15 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 	ft_ssl
+GREEN =		\033[1;32m
 
-RM		=	rm -f
+RED =		\033[1;31m
 
-SRC		=	srcs/ft_ssl.c 			\
-			srcs/get_next_line.c	\
+RES =		\033[0m
 
-OBJ			= $(SRC:.c=.o)
+#------------------------------------------------------------------------------#
 
-DEPS		= $(OBJ:.o=.d)
+NAME	 =		ft_ssl
 
-INCLUDE		= /includes
+SRCS	 =		ft_ssl.c		\
+				get_next_line.c	\
 
-CC			= gcc
+SRCDIR	 =	./srcs
 
-CFLAGS		= -Wall -Wextra -Werror
+OBJ		 =		$(SRCS:%.c=$(OBJDIR)/%.o)
 
-%.o: %.c
-	@$(CC) $(CFLAGS) -I$(INCLUDE) -MM -MT $@ -MF $(patsubst %.o,%.d,$@) $<
-	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
+OBJDIR 	=	./objs
 
-all: $(NAME)
+HEADER =	$(INCDIR)/ft_ssl.h	\
 
-$(NAME) : $(OBJ)
-	@echo "\n\n\033[36m[ft_ssl Project:]\033[0m\n\n"
-	@echo "\n\033[33m[Compiling Files]\033[0m\n"
-	@$(CC) $(CFLAGS) $(SRC) -o $(NAME) ./libft/libft.a ./free_all/libfree.a
-	@echo "$(NAME): exe \033[32m[✔]\033[0m"
+#------------------------------------------------------------------------------#
+
+INCDIR =	./includes
+
+LIBINCDIR =	./libft/includes
+
+LIBDIR =	./libft
+
+#------------------------------------------------------------------------------#
+
+CC =		gcc
+
+CFLAGS =	-Wall \
+			-Wextra \
+			-Werror \
+			#-fsanitize=address
+
+INCFLAGS =	-I $(INCDIR)	\
+			-I $(LIBINCDIR)
+
+LFLAGS =	-L $(LIBDIR) -lft -lncurses
+
+FLAGS =		$(CFLAGS)		\
+		$(INCFLAGS)
+
+#------------------------------------------------------------------------------#
+
+all: libft
+
+compil:
+	@$(MAKE) -C ./libft all
+	@$(MAKE) -C ./free_all/
+	@$(MAKE) $(NAME)
+
+libft:
+	@$(MAKE) -C ./libft all
+	@$(MAKE) -C ./free_all/
+	@$(MAKE) $(NAME)
+
+$(NAME): $(OBJ)
+	@echo "[$(GREEN)Ok$(RES)] Compiling : "$@
+	@$(CC) -g $(FLAGS) $(OBJ) -o $@ $(LFLAGS) ./free_all/libfree.a
+	@echo "Compilation done !"
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
+	@mkdir -p $(OBJDIR)
+	@echo "[$(GREEN)Ok$(RES)] Compiling : "$@
+	@$(CC) -g $(FLAGS) -o $@ -c $<
 
 clean:
-	@echo "\n\033[33m[Cleaning Workspace]\033[0m\n"
-	@make clean -C libft/
-	@make clean -C free_all/
-	@$(RM) $(OBJ)
-	@echo "$(NAME): $@ \033[32m[✔]\033[0m"
+	@echo "Cleaning"
+	@rm -rf $(OBJDIR)
+	@$(MAKE) -C ./libft clean
 
 fclean: clean
-	@echo "\n\033[33m[Removing Executables]\033[0m\n"
-	@make fclean -C libft/
-	@make fclean -C free_all/
-	@$(RM) $(NAME) srcs/*.d
-	@echo "$(NAME): $@ \033[32m[✔]\033[0m"
+	@rm -rf $(NAME)
+	@$(MAKE) -C ./libft fclean
 
-re: fclean all
+re: fclean
+	@$(MAKE) all
 
--include $(DEPS)
+#------------------------------------------------------------------------------#
 
-.PHONY: all clean fclean re ft_ssl
+norm:
+	@echo "Passage de la norminette : $(RED)"
+	@norminette $(SRCDIR) $(INCDIRS) $(LIBDIR) | grep -B1 Error | cat
+
+git:
+	@git add Makefile $(SRCDIR) $(INCDIR) auteur libft
+
+.PHONY: all clean re fclean git no printf check libft

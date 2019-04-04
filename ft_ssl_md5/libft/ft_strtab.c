@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strtab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/09 09:55:14 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/12 05:27:29 by juspende         ###   ########.fr       */
+/*   Created: 2017/03/28 16:06:55 by jebossue          #+#    #+#             */
+/*   Updated: 2017/03/28 16:06:58 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_sqrt(int nb)
+char	**ft_strtab(int i, int j)
 {
-	int	i;
-	int	res;
+	char	**tab;
 
-	i = 1;
-	res = 0;
-	if (nb < 0)
-		return (0);
-	while (res < nb)
+	tab = (char **)malloc(sizeof(*tab) * (i + 1));
+	tab[i + 1] = NULL;
+	i = 0;
+	while (tab[i])
 	{
-		res = i * i;
-		i = i + 1;
+		tab[i] = (char *)malloc(sizeof(tab) * (j + 1));
+		tab[i][j + 1] = '\0';
+		i++;
 	}
-	if (res > nb)
-		return (i - 1);
-	return (0);
+	return (tab);
 }

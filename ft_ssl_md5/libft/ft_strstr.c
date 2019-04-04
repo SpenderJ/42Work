@@ -3,43 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 17:15:15 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/09 18:11:34 by juspende         ###   ########.fr       */
+/*   Created: 2016/11/04 12:01:29 by jebossue          #+#    #+#             */
+/*   Updated: 2016/11/22 14:19:44 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_strcmpi2(const char *c1, const char *c2)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	int			i;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (c1[i] != '\0' && c2[i] != '\0')
+	if (needle[0] == '\0')
+		return ((char *)haystack);
+	while (haystack[i])
 	{
-		if (c1[i] != c2[i])
-			return (1);
-		i = i + 1;
-	}
-	if (c1[i] == '\0' && c2[i] != '\0')
-		return (1);
-	return (0);
-}
-
-char			*ft_strstr(const char *str, const char *to_find)
-{
-	int			i;
-
-	i = 0;
-	if (to_find[0] == '\0')
-		return ((char *)str);
-	while (str[i] != '\0')
-	{
-		if (ft_strcmpi2(&str[i], to_find) == 0)
-			return ((char *)&str[i]);
-		i = i + 1;
+		j = 0;
+		while (haystack[i + j] == needle[j] && haystack[i + j] && needle[j])
+		{
+			j++;
+		}
+		if (needle[j] == '\0')
+			return ((char *)haystack + i);
+		i++;
 	}
 	return (NULL);
 }

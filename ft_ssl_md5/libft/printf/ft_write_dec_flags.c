@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlistsorted.c                                 :+:      :+:    :+:   */
+/*   ft_write_dec_flags.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/10 17:12:54 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/27 10:54:05 by juspende         ###   ########.fr       */
+/*   Created: 2017/03/28 17:20:04 by jebossue          #+#    #+#             */
+/*   Updated: 2017/03/28 17:20:07 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include "libft.h"
 
-int		ft_intlisttruelysorted(int *list)
+char	*ft_write_dec_plus(char *buff, int is_neg)
 {
-	int		i;
-
-	i = 0;
-	while (++i < list[0])
-		if (list[i] > list[i + 1])
-			return (1);
-	return (0);
+	*buff = is_neg == TRU ? '-' : '+';
+	++buff;
+	return (buff);
 }
 
-int		ft_intlistsorted(int *list)
+char	*ft_write_dec_space(char *buff)
 {
-	int		i;
-
-	i = 0;
-	while (++i < list[0])
-		if (list[i] < list[i + 1])
-			return (1);
-	return (0);
+	*buff = ' ';
+	++buff;
+	return (buff);
 }

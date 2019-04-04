@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_memchrint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/04 11:38:57 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/08 14:50:55 by juspende         ###   ########.fr       */
+/*   Created: 2016/12/02 15:51:53 by jebossue          #+#    #+#             */
+/*   Updated: 2017/01/11 17:59:58 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_is_negative(int n)
+int	ft_memchrint(const void *s, int c, size_t n)
 {
-	if (n >= 0)
-		ftt_putchar('P');
-	else
-		ftt_putchar('N');
+	unsigned char		tmp_c;
+	size_t				i;
+	const unsigned char	*tmp_s;
+
+	tmp_c = (unsigned char)c;
+	tmp_s = (const unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		if (tmp_s[i] == tmp_c)
+			return (i);
+		++i;
+	}
+	return (-1);
 }

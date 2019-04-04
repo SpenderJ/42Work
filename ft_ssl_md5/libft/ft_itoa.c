@@ -3,63 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 14:55:55 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/08 14:46:36 by juspende         ###   ########.fr       */
+/*   Created: 2016/11/05 15:42:25 by jebossue          #+#    #+#             */
+/*   Updated: 2017/03/28 17:03:52 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
-#include <string.h>
 
-static char	*goodmalloc(long n)
+static unsigned int	ft_size_itoa(intmax_t n, unsigned int size)
 {
-	long		c;
-	long		d;
-	char		*str;
-
-	c = 1;
-	d = 0;
-	if (n < 0)
-		n = -n;
-	while (c < n)
-	{
-		c = c * 10;
-		++d;
-	}
-	str = ft_strnew((int)d + 1);
-	if (str == NULL)
-		return (NULL);
-	return (str);
+	if (n == 0)
+		return (size);
+	size = ft_size_itoa(n / 10, size + 1);
+	return (size);
 }
 
-char		*ftt_itoa(int n)
+static void			ft_get_itoa(long n, int size, char **nbr)
 {
-	int					neg;
-	char				*str;
-	long				c;
-	long				i;
-	long				nbr;
+	int	is_neg;
 
-	c = 0;
-	i = 1;
-	neg = (n >= 0) ? 1 : -1;
-	nbr = (long)n;
-	if ((str = goodmalloc(nbr)) == NULL)
-		return (NULL);
-	if (neg == -1 && (nbr = -nbr) >= 0)
-		str[c++] = '-';
-	while (i <= nbr)
-		i = i * 10;
-	if (nbr == 0)
-		str[c++] = '0';
-	while ((i = i / 10) >= 1)
+	is_neg = n < 0 ? 1 : 0;
+	if (is_neg)
 	{
-		str[c++] = (nbr / i + 48);
-		nbr = nbr - (str[c - 1] - 48) * i;
+		(*nbr)[0] = '-';
+		n = -n;
 	}
-	str[c] = '\0';
-	return (str);
+	while (n >= 10)
+	{
+		(*nbr)[size] = (n % 10) + '0';
+		n = n / 10;
+		size--;
+	}
+	(*nbr)[size] = n + '0';
+}
+
+char				*ft_itoa(intmax_t n)
+{
+	int		size;
+	char	*nbr;
+	int		is_neg;
+
+	size = ft_size_itoa(n, 0);
+	is_neg = n < 0 ? 1 : 0;
+	if (is_neg || n == 0)
+		size++;
+	if ((nbr = (char*)malloc(sizeof(char) * size + 1)) == NULL)
+		return (NULL);
+	nbr[size] = '\0';
+	size--;
+	ft_get_itoa((long)n, size, &nbr);
+	return (nbr);
 }

@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intmaxmin.c                                     :+:      :+:    :+:   */
+/*   ft_str_isdigit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/26 13:57:24 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 13:59:55 by juspende         ###   ########.fr       */
+/*   Created: 2017/11/01 11:39:08 by jebossue          #+#    #+#             */
+/*   Updated: 2017/11/01 11:40:52 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_intmax(int *list)
+int		ft_str_isdigit(const char *s)
 {
 	int		i;
-	int		max;
 
+	if (!s)
+		return (0);
 	i = 0;
-	max = list[1];
-	while (++i < list[0])
-		if (max < list[i])
-			max = list[i];
-	return (max);
-}
-
-int		ft_intmin(int *list)
-{
-	int		i;
-	int		min;
-
-	i = 0;
-	min = list[1];
-	while (++i < list[0])
-		if (min > list[i])
-			min = list[i];
-	return (min);
+	while (s[i] && ft_isdigit(s[i]))
+		i++;
+	if (s[i] && !ft_isdigit(s[i]))
+		return (0);
+	return (1);
 }

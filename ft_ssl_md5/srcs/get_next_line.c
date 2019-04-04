@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 18:36:55 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/03 18:30:59 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/03 20:35:35 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int			get_next_line(const int fd, char **line)
 
 	if (fd < 0 || (!c[fd] && !(c[fd] = ft_strnew(1))) || !line)
 		return (-1);
-	while (!ftt_strchr(c[fd], '\n') && (b = read(fd, buffer, BUFF_SIZE)) > 0)
+	while (!ft_strchr(c[fd], '\n') && (b = read(fd, buffer, BUFF_SIZE)) > 0)
 	{
 		buffer[b] = '\0';
 		tmp = c[fd];
@@ -32,12 +32,12 @@ int			get_next_line(const int fd, char **line)
 	}
 	if ((b == -1 || !*(tmp = c[fd])) && !ft_freeall("%b", c[fd]))
 		return (b == -1 ? -1 : 0);
-	if ((endl = (ftt_strchr(c[fd], '\n') > 0)))
-		*line = ft_strsub(c[fd], 0, ftt_strchr(c[fd], '\n') - c[fd]);
+	if ((endl = (ft_strchr(c[fd], '\n') > 0)))
+		*line = ft_strsub(c[fd], 0, ft_strchr(c[fd], '\n') - c[fd]);
 	else
 		*line = ft_strdup(c[fd]);
-	c[fd] = ft_strsub(c[fd], (unsigned int)(ft_strrlen(*line) + endl),
-		(size_t)(ft_strrlen(c[fd]) - (ft_strrlen(*line) + endl)));
+	c[fd] = ft_strsub(c[fd], (unsigned int)(ft_strlen(*line) + endl),
+		(size_t)(ft_strlen(c[fd]) - (ft_strlen(*line) + endl)));
 	ft_strdel(&tmp);
 	return (c[fd] != NULL);
 }

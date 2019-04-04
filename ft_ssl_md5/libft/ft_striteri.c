@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:32:03 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/09 18:19:30 by juspende         ###   ########.fr       */
+/*   Created: 2016/11/04 12:59:10 by jebossue          #+#    #+#             */
+/*   Updated: 2016/11/25 14:21:12 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int		i;
+	char			*str;
+	unsigned int	i;
 
+	str = s;
 	i = 0;
 	if (!s || !f)
 		return ;
-	while (s[i] != '\0')
+	while (*str)
 	{
-		f(i, &s[i]);
-		++i;
+		(*f)(i, str);
+		str++;
+		i++;
 	}
 }

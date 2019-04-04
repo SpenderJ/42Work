@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_base_digitlen.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/05 12:11:25 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/09 20:51:21 by juspende         ###   ########.fr       */
+/*   Created: 2017/03/28 15:56:30 by jebossue          #+#    #+#             */
+/*   Updated: 2017/03/28 15:56:33 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrev(char *str)
+int	ft_base_digitlen(uintmax_t nbr, int base)
 {
-	int		i;
-	int		a;
-	char	c;
+	int	ln;
 
-	i = 0;
-	a = 0;
-	while (str[i] != '\0')
-		i = i + 1;
-	i = i - 1;
-	while (i >= a)
+	ln = 0;
+	if (nbr == 0)
+		ln = 1;
+	while (nbr != 0)
 	{
-		c = str[i];
-		str[i] = str[a];
-		str[a] = c;
-		a = a + 1;
-		i = i - 1;
+		nbr = nbr / base;
+		++ln;
 	}
-	return (str);
+	return (ln);
 }

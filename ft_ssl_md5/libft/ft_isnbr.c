@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countspace.c                                    :+:      :+:    :+:   */
+/*   ft_isnbr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/29 15:41:12 by juspende          #+#    #+#             */
-/*   Updated: 2018/01/26 20:10:22 by juspende         ###   ########.fr       */
+/*   Created: 2017/04/14 13:02:46 by jebossue          #+#    #+#             */
+/*   Updated: 2017/10/30 13:35:54 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_countspace(char *str)
+int	ft_isnbr(int nb)
 {
-	int		i;
-	int		c;
-
-	i = -1;
-	c = 0;
-	if (!str)
-		return (0);
-	while (str[++i])
-		if (str[i] == ' ')
-			++c;
-	return (c + 1);
+	if (nb >= -2147483648 && nb <= 2147483647)
+		return (1);
+	return (0);
 }

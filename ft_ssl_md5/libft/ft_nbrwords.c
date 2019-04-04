@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_nbrwords.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 11:37:21 by juspende          #+#    #+#             */
-/*   Updated: 2017/11/09 20:59:57 by juspende         ###   ########.fr       */
+/*   Created: 2016/11/15 16:15:38 by jebossue          #+#    #+#             */
+/*   Updated: 2017/03/28 16:32:13 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		*ft_range(int min, int max)
+int	ft_nbrwords(char const *s, char c)
 {
-	int		*tab;
-	int		i;
+	int	i;
+	int ac;
 
+	ac = 0;
 	i = 0;
-	if (min >= max)
-		return (NULL);
-	if ((tab = malloc(sizeof(int) * (max - min))) == NULL)
-		return (NULL);
-	while (min + i < max)
+	if (s[0] != c)
+		ac++;
+	while (s[i])
 	{
-		tab[i] = min + i;
+		if (s[i + 1] && s[i] == c && s[i + 1] != c)
+			ac++;
 		i++;
 	}
-	return (tab);
+	return (ac);
 }

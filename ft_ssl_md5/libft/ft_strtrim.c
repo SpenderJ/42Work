@@ -3,41 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 14:13:40 by juspende          #+#    #+#             */
-/*   Updated: 2017/12/07 20:20:40 by juspende         ###   ########.fr       */
+/*   Created: 2016/11/04 14:59:52 by jebossue          #+#    #+#             */
+/*   Updated: 2016/11/25 14:24:09 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static int	ft_count(char const *s)
 {
-	int		sd;
-	int		se;
-	char	*str;
-	int		len;
-	int		c;
+	int	i;
+	int	newlen;
 
-	c = 0;
+	newlen = ft_strlen(s);
+	i = 0;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		i++;
+	while (s[newlen - 1] == ' ' || s[newlen - 1] == '\n'
+			|| s[newlen - 1] == '\t')
+		newlen--;
+	newlen = newlen - i + 1;
+	return (newlen);
+}
+
+char		*ft_strtrim(char const *s)
+{
+	char	*str;
+	int		newlen;
+	int		i;
+	int		j;
+	int		k;
+
 	if (!s)
 		return (NULL);
-	len = ft_strrlen(s);
-	sd = 0;
-	se = len - 1;
-	while (s[sd] && (s[sd] == ' ' || s[sd] == '\t' || s[sd] == '\n'))
-		++sd;
-	while (se > 0 && (s[se] == ' ' || s[se] == '\t' || s[se] == '\n') && ++c)
-		--se;
-	if (len - sd <= 0)
-		return (ft_strdup(""));
-	if ((str = ft_strnew(len - sd - c)) == NULL)
+	if ((newlen = ft_count(s)) <= 0)
+		newlen = 1;
+	if ((str = (char*)malloc(sizeof(*str) * (newlen))) == NULL)
 		return (NULL);
-	c = 0;
-	while (s[sd] != '\0' && sd <= se)
-		str[c++] = s[sd++];
-	str[c] = '\0';
+	j = 0;
+	i = 0;
+	k = 0;
+	while (s[k] == ' ' || s[k] == '\n' || s[k] == '\t')
+		k++;
+	while (i++ < newlen - 1)
+	{
+		str[j] = s[k];
+		j++;
+		k++;
+	}
+	str[j] = '\0';
 	return (str);
 }

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
+/*   ft_memadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmalfroy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jebossue <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/12 17:24:17 by cmalfroy          #+#    #+#             */
-/*   Updated: 2018/01/08 14:51:29 by juspende         ###   ########.fr       */
+/*   Created: 2017/03/28 16:04:56 by jebossue          #+#    #+#             */
+/*   Updated: 2017/03/28 16:04:58 by jebossue         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print_words_tables(char **tab)
+void	*ft_memadd(void *dest, const void *src, int beg, size_t n)
 {
-	int i;
+	unsigned int	i;
+	const char		*tmp_src;
+	char			*tmp_dest;
 
 	i = 0;
-	while (tab[i])
+	tmp_src = src;
+	tmp_dest = dest;
+	while (i < n)
 	{
-		ft_putstrr(tab[i]);
+		tmp_dest[beg] = tmp_src[i];
 		i++;
-		ftt_putchar('\n');
+		beg++;
 	}
+	return (dest);
 }
