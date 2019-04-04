@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:17:51 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/03 20:28:43 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/04 09:09:45 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@
 # define EXIT_HELP 42
 # endif
 
+#ifndef MAX_FILES
+# define MAX_FILES 10
+#endif
+
+#ifndef SEG
+# define SEG -2
+#endif
+
 #ifndef TRUE
 # define TRUE 1
 #endif
@@ -33,6 +41,11 @@ typedef struct		s_ssl
 {
 	int		input;
 	int		output;
+	int		md5;
+	int		sha256;
+	int		sha512;
+	int		whirpool;
+	char	**filenames;
 }					t_ssl;
 
 typedef struct		s_ssl_flag

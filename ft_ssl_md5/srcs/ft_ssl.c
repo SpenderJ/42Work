@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 18:36:08 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/03 20:47:13 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/04 10:43:05 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	usage(char **av)
 {
 	ft_printf("usage: %s [md5 | sha256 | sha512 | whirpool] [-pqrshvi]"
-			" [filename | text] ...\n\n"
+			" [filename (%d MAX)] ...\n\n"
 			"  -md5            will encrypt in md5\n"
 			"  -sha256         will encrypt in sha256\n"
 			"  -sha512         will encrypt in sha512\n"
@@ -27,8 +27,8 @@ static int	usage(char **av)
 			"  -s              print the sum of the given string\n"
 			"  -h              show this help\n"
 			"  -v              toggle colors and more detailled explanations\n"
-			"  -i              allow you to choose the input source\n"
-			, av[0]);
+			"  -i              allow you to choose the output source\n"
+			, av[0], MAX_FILES);
 	return (EXIT_HELP);
 }
 
@@ -61,14 +61,25 @@ static int	opt(t_ssl_flag *ssl_flag, t_ssl *ssl, int ac, char **av)
 
 	opt = 0;
 	ret = 0;
-	(void)ssl;
-	while (++opt < ac)
+	if (++opt < ac)
 	{
-		if (av[opt][0] == '-')
-			ret = opt_exh(ssl_flag, av[opt][1]);
-		if (ret == -1 || ssl_flag->h == TRUE)
+		ft_strcmp(av[opt], "md5") == 0 ? ssl->md5 = TRUE : 0;
+		ft_strcmp(av[opt], "sha256") == 0 ? ssl->sha256 = TRUE : 0;
+		ft_strcmp(av[opt], "sha512") == 0 ? ssl->sha512 = TRUE : 0;
+		ft_strcmp(av[opt], "whirpool") == 0 ? ssl->whirpool = TRUE : 0;
+		if (!ssl->md5 && !ssl->sha256 && !ssl->sha512 && !ssl->whirpool)
 			return (usage(av));
 	}
+	while (++opt < ac && av[opt][0] == '-' &&
+			(ret = opt_exh(ssl_flag, av[opt][1])) != SEG)
+		if (ret == -1 || ssl_flag->h == TRUE)
+			return (usage(av));
+	ret = 0;
+	while (opt < ac && ret < MAX_FILES)
+		ssl->filenames[ret++] = ft_strdup(av[opt++]);
+	ssl->filenames[ret] = NULL;
+	if (ret >= MAX_FILES)
+		return (usage(av));
 	return (0);
 }
 
@@ -82,7 +93,12 @@ int			main(int ac, char **av)
 	(void)av;
 	ft_bzero(&ssl_flag, sizeof(t_ssl_flag));
 	ft_bzero(&ssl, sizeof(t_ssl));
+	if ((ssl.filenames = malloc(sizeof(char *) * MAX_FILES)) == NULL)
+		return (usage(av));
 	if (opt(&ssl_flag, &ssl, ac, av) == EXIT_HELP)
 		return (EXIT_HELP);
+	int i = -1;
+	while (ssl.filenames[++i] != NULL)
+		printf("%s\n", ssl.filenames[i]);
 	return (0);
 }
