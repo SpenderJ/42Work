@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 18:36:08 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/04 11:04:10 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/04 14:01:35 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int			main(int ac, char **av)
 		return (usage(av));
 	if (opt(&ssl_flag, &ssl, ac, av) == EXIT_HELP)
 		return (EXIT_HELP);
-	if (io(&ssl_flag, &ssl) == EXIT_HELP)
+	if (io(&ssl) == EXIT_HELP)
 		return (EXIT_HELP);
 	return (0);
 }

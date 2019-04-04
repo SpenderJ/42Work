@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 10:50:41 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/04 13:57:30 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/04 14:01:37 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	file_str(int fd, char **str)
 	return (TRUE);
 }
 
-int			io(t_ssl_flag *ssl_flag, t_ssl *ssl)
+int			io(t_ssl *ssl)
 {
 	int		fd;
 	int		index;
@@ -47,31 +47,19 @@ int			io(t_ssl_flag *ssl_flag, t_ssl *ssl)
 	fd = 0;
 	index = 0;
 	i = -1;
-	(void)ssl_flag;
 	if ((ssl->to_hash = malloc(sizeof(char *) * (MAX_FILES + 1))) == NULL)
 		return (EXIT_HELP);
 	if (!isatty(fd) && file_str(fd, &ssl->to_hash[index]) > 0 && ++ssl->
 			size_printed)
 		++index;
 	ssl->c_stdin = index;
-	while (ssl->filenames[++i] != NULL)
+	while (ssl->filenames[++i] != NULL && ++ssl->size_printed)
 	{
 		if ((fd = open(ssl->filenames[i], O_RDONLY)) < 0)
-			ssl->to_hash[index] = NULL;
+			ssl->to_hash[index++] = NULL;
 		else
-			ret = file_str(fd, &ssl->to_hash[index]);
-		++ssl->size_printed;
-		++index;
+			ret = file_str(fd, &ssl->to_hash[index++]);
 	}
 	ssl->to_hash[index] = NULL;
-
-	int z = -1;
-	while (++z < ssl-> size_printed)
-	{
-		if (!ssl->to_hash[z])
-			printf("%s do not exist\n", ssl->filenames[z - ssl->c_stdin]);
-		else
-			printf("%s\n", ssl->to_hash[z]);
-	}
 	return (0);
 }
