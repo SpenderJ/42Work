@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:17:51 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/04 15:42:55 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/05 14:15:14 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,29 @@
 
 # define FT_SSL_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include "get_next_line.h"
-#include "../libft/includes/libft.h"
-#include "../free_all/include/ft_freeall.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include "get_next_line.h"
+# include "../libft/includes/libft.h"
+# include "../free_all/include/ft_freeall.h"
+# include "ft_md5.h"
 
-#ifndef EXIT_HELP
-# define EXIT_HELP 42
+# ifndef EXIT_HELP
+#  define EXIT_HELP 42
+#  endif
+
+# ifndef MAX_FILES
+#  define MAX_FILES 10
 # endif
 
-#ifndef MAX_FILES
-# define MAX_FILES 10
-#endif
+# ifndef SEG
+#  define SEG -2
+# endif
 
-#ifndef SEG
-# define SEG -2
-#endif
-
-#ifndef TRUE
-# define TRUE 1
-#endif
+# ifndef TRUE
+#  define TRUE 1
+# endif
 
 typedef struct		s_ssl
 {
