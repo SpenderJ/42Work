@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:40:13 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/05 15:01:07 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/05 19:33:59 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_reverseByte(unsigned char *buf, unsigned longs)
 {
-	unsigned int	t;
+	unsigned long	t;
 
 	while (--longs)
 	{
@@ -37,16 +37,15 @@ static void	ft_md5Init(t_md5 *md5_struct)
 	return ;
 }
 
-static void	ft_md5Update(t_md5 *md5_struct, char *to_hash, unsigned int len)
+static void	ft_md5Update(t_md5 *md5_struct, char *to_hash, unsigned long len)
 {
-	unsigned int	t;
+	unsigned long	t;
 
 	t = md5_struct->bits[0];
-	if ((md5_struct->bits[0] = t + ((unsigned int) len << 3)) < t)
+	if ((md5_struct->bits[0] = t + ((unsigned long) len << 3)) < t)
 		++md5_struct->bits[1];
 	md5_struct->bits[1] =  md5_struct->bits[1] + (len >> 29);
 	t = (t >> 3) & 0x3f;
-	printf("g pas de t?\n");
 	if (t)
 	{
 		unsigned char *p = (unsigned char *) md5_struct->in + t;
@@ -58,7 +57,7 @@ static void	ft_md5Update(t_md5 *md5_struct, char *to_hash, unsigned int len)
 		}
 		ft_memcpy(p, to_hash, t);
 		ft_reverseByte(md5_struct->in, 16);
-		ft_md5Transform(md5_struct->buf, (unsigned int *) md5_struct->in);
+		ft_md5Transform(md5_struct->buf, (unsigned long *) md5_struct->in);
 		to_hash += t;
 		len -= t;
 	}
@@ -66,7 +65,7 @@ static void	ft_md5Update(t_md5 *md5_struct, char *to_hash, unsigned int len)
 	{
 		ft_memcpy (md5_struct->in, to_hash, 64);
 		ft_reverseByte(md5_struct->in, 16);
-		ft_md5Transform(md5_struct->buf, (unsigned int *) md5_struct->in);
+		ft_md5Transform(md5_struct->buf, (unsigned long *) md5_struct->in);
 		to_hash += 64;
 		len -= 64;
 	}
@@ -92,7 +91,8 @@ void		md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
 	{
 		ft_md5Init(&md5_struct);
 		ft_md5Update(&md5_struct, ssl->to_hash[index],
-				(unsigned int)ft_strlen(ssl->to_hash[index]));
+				(unsigned long)ft_strlen(ssl->to_hash[index]));
+		printf("%u\n%u\n%u\n%u\n", md5_struct.in[0], md5_struct.in[1], md5_struct.in[2], md5_struct.in[3]);
 		ft_md5Final(hash, &md5_struct);
 	}
 	return ;

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 13:38:32 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/05 14:52:32 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/05 19:06:19 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@
 
 typedef struct		s_md5
 {
-	unsigned int	buf[4];
-	unsigned int	bits[2];
+	unsigned long	buf[4];
+	unsigned long	bits[2];
 	unsigned char	in[64];
 }					t_md5;
 
-void			ft_md5Transform(unsigned int buf[4], unsigned int const in[16]);
+void			ft_md5Transform(unsigned long buf[4], unsigned long const in[16]);
 
 #endif
