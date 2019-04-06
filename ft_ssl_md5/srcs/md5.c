@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:40:13 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/06 14:36:23 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/06 15:07:08 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,29 @@ static void	to_bytes(uint32_t val, uint8_t *bytes)
     bytes[3] = (uint8_t) (val >> 24);
 }
 
-static void	ft_md5Update(size_t offset, size_t new_len, uint8_t *msg, uint8_t *digest)
+static void	ft_md5op(uint32_t *v, uint32_t *w)
 {
-	uint32_t	h[4];
-	uint32_t	w[16];
-	uint32_t	v[9];
+	v[4] = -1;
+	while (++v[4] < 64)
+	{
+		if (v[4] < 16 && (v[6] = v[4]) == v[6])
+			v[5] = (v[1] & v[2]) | ((~v[1]) & v[3]);
+		else if (v[4] < 32 && (v[6] = (5 * v[4] + 1) % 16) == v[6])
+			v[5] = (v[3] & v[1]) | ((~v[3]) & v[2]);
+		else if (v[4] < 48 && (v[6] = (3 * v[4] + 5) % 16) == v[6])
+			v[5] = v[1] ^ v[2] ^ v[3];
+		else if ((v[6] = (7 * v[4]) % 16) == v[6])
+			v[5] = v[2] ^ (v[1] | (~v[3]));
+		v[7] = v[3];
+		v[3] = v[2];
+		v[2] = v[1];
+		v[1] = v[1] + LEFTROTATE((v[0] + v[5] + k[v[4]] + w[v[6]]), r[v[4]]);
+		v[0] = v[7];
+	}
+}
 
+static void	initialize_md5(uint32_t *h, uint32_t *v)
+{
 	h[0] = 0x67452301;
 	h[1] = 0xefcdab89;
 	h[2] = 0x98badcfe;
@@ -66,29 +83,22 @@ static void	ft_md5Update(size_t offset, size_t new_len, uint8_t *msg, uint8_t *d
 	v[1] = h[1];
 	v[2] = h[2];
 	v[3] = h[3];
+}
+
+static void	ft_md5Update(size_t offset, size_t new_len, uint8_t *msg, uint8_t *digest)
+{
+	uint32_t	h[4];
+	uint32_t	w[16];
+	uint32_t	v[9];
+
+	initialize_md5(h, v);
 	offset = 0;
 	while (offset < new_len)
 	{
 		v[4] = -1;
 		while (++v[4] < 16)
 			w[v[4]] = to_int32(msg + offset + v[4]*4);
-		v[4] = -1;
-		while (++v[4] < 64)
-		{
-			if (v[4] < 16 && (v[6] = v[4]) == v[6])
-				v[5] = (v[1] & v[2]) | ((~v[1]) & v[3]);
-			else if (v[4] < 32 && (v[6] = (5 * v[4] + 1) % 16) == v[6])
-				v[5] = (v[3] & v[1]) | ((~v[3]) & v[2]);
-			else if (v[4] < 48 && (v[6] = (3 * v[4] + 5) % 16) == v[6])
-				v[5] = v[1] ^ v[2] ^ v[3];
-			else if ((v[6] = (7 * v[4]) % 16) == v[6])
-				v[5] = v[2] ^ (v[1] | (~v[3]));
-			v[7] = v[3];
-			v[3] = v[2];
-			v[2] = v[1];
-			v[1] = v[1] + LEFTROTATE((v[0] + v[5] + k[v[4]] + w[v[6]]), r[v[4]]);
-			v[0] = v[7];
-		}
+		ft_md5op(v, w);
 		offset += (512/8);
 		h[0] += v[0];
 		h[1] += v[1];
@@ -133,8 +143,6 @@ void		md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
 	index = 0;
 	z = -1;
 	(void)ssl_flag;
-	printf("md5\n");
-	printf("Je compare [%s]\n", ssl->to_hash[index]);
 	len = ft_strlen(ssl->to_hash[index]);
 	while (++z < MD5_ROTA)
 		ft_md5((uint8_t*)ssl->to_hash[index], len, hash);
