@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:40:13 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/05 19:33:59 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/05 20:06:46 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,29 @@ static void	ft_md5Update(t_md5 *md5_struct, char *to_hash, unsigned long len)
 
 static void	ft_md5Final(unsigned char hash[16], t_md5 *md5_struct)
 {
-	(void)hash;
-	(void)md5_struct;
+	unsigned		count;
+	unsigned char	*p;
+	
+	count = (md5_struct->bits[0] >> 3) & 0x3F;
+	p = md5_struct->in + count;
+	*p++ = 0x80;
+	count = 64 - 1 - count;
+	if (count < 8)
+	{
+		ft_memset (p, 0, count);
+		ft_reverseByte(md5_struct->in, 16);
+		ft_md5Transform(md5_struct->buf, (unsigned long *) md5_struct->in);
+		ft_memset(md5_struct->in, 0, 56);
+	}
+	else
+		ft_memset (p, 0, count - 8);
+	ft_reverseByte(md5_struct->in, 14);
+	((unsigned long *) md5_struct->in)[14] = md5_struct->bits[0];
+	((unsigned long *) md5_struct->in)[15] = md5_struct->bits[1];
+	ft_md5Transform(md5_struct->buf, (unsigned long *) md5_struct->in);
+	ft_reverseByte((unsigned char *) md5_struct->buf, 4);
+	ft_memcpy(hash, md5_struct->buf, 16);
+	ft_memset(md5_struct, 0, sizeof (md5_struct));
 	return ;
 }
 
@@ -92,8 +113,8 @@ void		md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
 		ft_md5Init(&md5_struct);
 		ft_md5Update(&md5_struct, ssl->to_hash[index],
 				(unsigned long)ft_strlen(ssl->to_hash[index]));
-		printf("%u\n%u\n%u\n%u\n", md5_struct.in[0], md5_struct.in[1], md5_struct.in[2], md5_struct.in[3]);
 		ft_md5Final(hash, &md5_struct);
+		printf("%2x\n%2x\n%2x%2x%2x%2x%2x%2x%2x%2x%2x%2x%2x%2x%2x%2x",hash[0], hash[1], hash[2], hash[3], hash[4], hash[5], hash[6], hash[7], hash[8], hash[9], hash[10], hash[11], hash[12], hash[13], hash[14], hash[15]);
 	}
 	return ;
 }
