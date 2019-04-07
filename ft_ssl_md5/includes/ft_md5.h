@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 13:38:32 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/06 20:14:35 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/07 10:50:07 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,12 @@ typedef struct		s_md5
 	uint32_t	w[16];
 	uint32_t	v[9];
 }					t_md5;
+
+void		initialize_md5(t_md5 *md5_c);
+uint32_t	to_int32(const uint8_t *bytes);
+void		to_bytes(uint32_t val, uint8_t *bytes);
+void		ft_md5(uint8_t *initial, size_t len, uint8_t *digest);
+void		ft_md5Update(size_t new_len, uint8_t *msg, uint8_t *digest,
+		t_md5 *md5_c);
 
 #endif
