@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:40:13 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/06 15:07:08 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/06 17:35:43 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,68 +52,72 @@ static void	to_bytes(uint32_t val, uint8_t *bytes)
     bytes[3] = (uint8_t) (val >> 24);
 }
 
-static void	ft_md5op(uint32_t *v, uint32_t *w)
+static void	ft_md5op(t_md5 *md5_c)
 {
-	v[4] = -1;
-	while (++v[4] < 64)
+	md5_c->v[4] = -1;
+	while (++md5_c->v[4] < 64)
 	{
-		if (v[4] < 16 && (v[6] = v[4]) == v[6])
-			v[5] = (v[1] & v[2]) | ((~v[1]) & v[3]);
-		else if (v[4] < 32 && (v[6] = (5 * v[4] + 1) % 16) == v[6])
-			v[5] = (v[3] & v[1]) | ((~v[3]) & v[2]);
-		else if (v[4] < 48 && (v[6] = (3 * v[4] + 5) % 16) == v[6])
-			v[5] = v[1] ^ v[2] ^ v[3];
-		else if ((v[6] = (7 * v[4]) % 16) == v[6])
-			v[5] = v[2] ^ (v[1] | (~v[3]));
-		v[7] = v[3];
-		v[3] = v[2];
-		v[2] = v[1];
-		v[1] = v[1] + LEFTROTATE((v[0] + v[5] + k[v[4]] + w[v[6]]), r[v[4]]);
-		v[0] = v[7];
+		if (md5_c->v[4] < 16 && (md5_c->v[6] = md5_c->v[4]) == md5_c->v[6])
+			md5_c->v[5] = (md5_c->v[1] & md5_c->v[2]) | ((~md5_c->v[1]) &
+					md5_c->v[3]);
+		else if (md5_c->v[4] < 32 && (md5_c->v[6] = (5 * md5_c->v[4] + 1) % 16)
+				== md5_c->v[6])
+			md5_c->v[5] = (md5_c->v[3] & md5_c->v[1]) | ((~md5_c->v[3]) &
+					md5_c->v[2]);
+		else if (md5_c->v[4] < 48 && (md5_c->v[6] = (3 * md5_c->v[4] + 5) % 16)
+				== md5_c->v[6])
+			md5_c->v[5] = md5_c->v[1] ^ md5_c->v[2] ^ md5_c->v[3];
+		else if ((md5_c->v[6] = (7 * md5_c->v[4]) % 16) == md5_c->v[6])
+			md5_c->v[5] = md5_c->v[2] ^ (md5_c->v[1] | (~md5_c->v[3]));
+		md5_c->v[7] = md5_c->v[3];
+		md5_c->v[3] = md5_c->v[2];
+		md5_c->v[2] = md5_c->v[1];
+		md5_c->v[1] = md5_c->v[1] + LEFTROTATE((md5_c->v[0] + md5_c->v[5] +
+					k[md5_c->v[4]] + md5_c->w[md5_c->v[6]]), r[md5_c->v[4]]);
+		md5_c->v[0] = md5_c->v[7];
 	}
 }
 
-static void	initialize_md5(uint32_t *h, uint32_t *v)
+static void	initialize_md5(t_md5 *md5_c)
 {
-	h[0] = 0x67452301;
-	h[1] = 0xefcdab89;
-	h[2] = 0x98badcfe;
-	h[3] = 0x10325476;
-	v[0] = h[0];
-	v[1] = h[1];
-	v[2] = h[2];
-	v[3] = h[3];
+	md5_c->h[0] = 0x67452301;
+	md5_c->h[1] = 0xefcdab89;
+	md5_c->h[2] = 0x98badcfe;
+	md5_c->h[3] = 0x10325476;
+	md5_c->v[0] = md5_c->h[0];
+	md5_c->v[1] = md5_c->h[1];
+	md5_c->v[2] = md5_c->h[2];
+	md5_c->v[3] = md5_c->h[3];
 }
 
-static void	ft_md5Update(size_t offset, size_t new_len, uint8_t *msg, uint8_t *digest)
+static void	ft_md5Update(size_t new_len, uint8_t *msg, uint8_t *digest, t_md5 *md5_c)
 {
-	uint32_t	h[4];
-	uint32_t	w[16];
-	uint32_t	v[9];
+	size_t		offset;
 
-	initialize_md5(h, v);
+	initialize_md5(md5_c);
 	offset = 0;
 	while (offset < new_len)
 	{
-		v[4] = -1;
-		while (++v[4] < 16)
-			w[v[4]] = to_int32(msg + offset + v[4]*4);
-		ft_md5op(v, w);
+		md5_c->v[4] = -1;
+		while (++md5_c->v[4] < 16)
+			md5_c->w[md5_c->v[4]] = to_int32(msg + offset + md5_c->v[4]*4);
+		ft_md5op(md5_c);
 		offset += (512/8);
-		h[0] += v[0];
-		h[1] += v[1];
-		h[2] += v[2];
-		h[3] += v[3];
+		md5_c->h[0] += md5_c->v[0];
+		md5_c->h[1] += md5_c->v[1];
+		md5_c->h[2] += md5_c->v[2];
+		md5_c->h[3] += md5_c->v[3];
 	}
 	free(msg);
-	to_bytes(h[0], digest);
-	to_bytes(h[1], digest + 4);
-	to_bytes(h[2], digest + 8);
-	to_bytes(h[3], digest + 12);
+	to_bytes(md5_c->h[0], digest);
+	to_bytes(md5_c->h[1], digest + 4);
+	to_bytes(md5_c->h[2], digest + 8);
+	to_bytes(md5_c->h[3], digest + 12);
 }
 
 static void	ft_md5(uint8_t *initial, size_t len, uint8_t *digest)
 {
+	t_md5		md5_c;
 	uint8_t		*msg;
 	size_t		new_len;
 	size_t		offset;
@@ -130,7 +134,7 @@ static void	ft_md5(uint8_t *initial, size_t len, uint8_t *digest)
 		msg[offset] = 0;
 	to_bytes(len * 8, msg + new_len);
 	to_bytes(len >> 29, msg + new_len + 4);
-	ft_md5Update(offset, new_len, msg, digest);
+	ft_md5Update(new_len, msg, digest, &md5_c);
 }
 
 void		md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
@@ -145,7 +149,9 @@ void		md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
 	(void)ssl_flag;
 	len = ft_strlen(ssl->to_hash[index]);
 	while (++z < MD5_ROTA)
+	{
 		ft_md5((uint8_t*)ssl->to_hash[index], len, hash);
+	}
 	z = -1;
 	while (++z < 16)
 		printf("%2.2x", hash[z]);
