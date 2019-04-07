@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:40:13 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/06 17:35:43 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/06 20:11:19 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,17 +144,18 @@ void		md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
 	int				z;
 	size_t			len;
 
-	index = 0;
-	z = -1;
+	index = -1;
 	(void)ssl_flag;
-	len = ft_strlen(ssl->to_hash[index]);
-	while (++z < MD5_ROTA)
+	while (++index < ssl->size_printed)
 	{
-		ft_md5((uint8_t*)ssl->to_hash[index], len, hash);
+		z = -1;
+		len = ft_strlen(ssl->to_hash[index]);
+		while (++z < MD5_ROTA)
+			ft_md5((uint8_t*)ssl->to_hash[index], len, hash);
+		z = -1;
+		while (++z < 16)
+			printf("%2.2x", hash[z]);
+		printf("\n");
 	}
-	z = -1;
-	while (++z < 16)
-		printf("%2.2x", hash[z]);
-	puts("");
 	return ;
 }

@@ -6,32 +6,63 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 10:50:41 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/05 13:35:27 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/06 20:16:09 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ssl.h"
+
+static char	*join_str(char *s1, char *s2)
+{
+	int		i;
+	char	*final;
+	int		sum;
+	int		z;
+
+	sum = 0;
+	i = -1;
+	if (s1)
+		sum = ft_strlen(s1);
+	if (s2)
+		sum += ft_strlen(s2);
+	if (sum > 0)
+		final = malloc(sizeof(char) * sum + 1);
+	else
+		return (NULL);
+	final[0] = '\0';
+	if (s1)
+		while (s1[++i] != '\0')
+			final[i] = s1[i];
+	z = -1;
+	if (s2)
+		while (s2[++z] != '\0')
+			final[i++] = s2[z];
+	final[i] = '\0';
+	return (final);
+}
 
 static int	file_str(int fd, char **str)
 {
 	char	*tmp;
 	char	*tmp2;
 	char	*final;
+	int		ret;
 
 	tmp = NULL;
 	final = NULL;
+	ret = 1;
 	if ((tmp2 = malloc(sizeof(char) * 2)) == NULL)
 		return (0);
 	tmp2[0] = 0;
-	while (get_next_line(fd, &tmp) > 0)
+	while ((ret = get_next_line(fd, &tmp)) > 0)
 	{
-		final = ft_strjoin(tmp2, tmp);
+		final = join_str(tmp2, tmp);
 		free (tmp);
 		free (tmp2);
 		tmp2 = ft_strdup(final);
 	}
-	free (tmp2);
 	*str = ft_strdup(final);
+	free (tmp2);
 	free (final);
 	return (TRUE);
 }
