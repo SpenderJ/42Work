@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 10:50:41 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/07 15:04:01 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/07 15:05:53 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,7 @@ int			io(t_ssl *ssl, t_ssl_flag *ssl_flag)
 	int		fd;
 	int		index;
 	int		i;
-	int		ret;
 
-	ret = 1;
 	fd = 0;
 	index = 0;
 	i = -1;
@@ -91,7 +89,7 @@ int			io(t_ssl *ssl, t_ssl_flag *ssl_flag)
 		else if ((fd = open(ssl->filenames[i], O_RDONLY)) < 0)
 			ssl->to_hash[index++] = NULL;
 		else
-			ret = file_str(fd, &ssl->to_hash[index++]);
+			file_str(fd, &ssl->to_hash[index++]);
 	}
 	ssl->to_hash[index] = NULL;
 	return (0);
