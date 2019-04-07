@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 10:50:41 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/06 20:40:22 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/07 15:04:01 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static int	file_str(int fd, char **str)
 	return (TRUE);
 }
 
-int			io(t_ssl *ssl)
+int			io(t_ssl *ssl, t_ssl_flag *ssl_flag)
 {
 	int		fd;
 	int		index;
@@ -80,13 +80,15 @@ int			io(t_ssl *ssl)
 	i = -1;
 	if ((ssl->to_hash = malloc(sizeof(char *) * (MAX_FILES + 1))) == NULL)
 		return (EXIT_HELP);
-	if (!isatty(fd) && file_str(fd, &ssl->to_hash[index]) > 0 && ++ssl->
-			size_printed)
+	if ((ssl_flag->p || ssl->filenames[0] == NULL) && !isatty(fd)
+			&& file_str(fd, &ssl->to_hash[index]) > 0 && ++ssl->size_printed)
 		++index;
 	ssl->c_stdin = index;
 	while (ssl->filenames[++i] != NULL && ++ssl->size_printed)
 	{
-		if ((fd = open(ssl->filenames[i], O_RDONLY)) < 0)
+		if (ssl_flag->s && i == 0)
+			ssl->to_hash[index++] = ft_strdup(ssl->filenames[i]);
+		else if ((fd = open(ssl->filenames[i], O_RDONLY)) < 0)
 			ssl->to_hash[index++] = NULL;
 		else
 			ret = file_str(fd, &ssl->to_hash[index++]);

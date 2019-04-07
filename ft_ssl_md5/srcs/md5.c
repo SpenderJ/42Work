@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:40:13 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/07 10:51:08 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/07 14:29:48 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,23 +100,12 @@ void		md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
 	while (++index < ssl->size_printed)
 	{
 		z = -1;
-		len = ft_strlen(ssl->to_hash[index]);
-		while (++z < MD5_ROTA && ssl->to_hash[index])
-			ft_md5((uint8_t*)ssl->to_hash[index], len, hash);
-		z = -1;
-		if (ssl->c_stdin && ssl->to_hash[index] && index == 0)
-			while (++z < 16)
-				printf("%2.2x", hash[z]);
-		else if (ssl->to_hash[index])
-		{
-			ft_printf("MD5 (%s) = ", ssl->filenames[index - ssl->c_stdin]);
-			while (++z < 16)
-				printf("%2.2x", hash[z]);
-		}
-		else
-			printf("ft_ssl: md5: %s: No such file or directory", ssl->filenames[index +
-					ssl->c_stdin]);
-		printf("\n");
+		if (ssl->to_hash[index])
+			len = ft_strlen(ssl->to_hash[index]);
+		if (ssl->to_hash[index])
+			while (++z < MD5_ROTA && ssl->to_hash[index])
+				ft_md5((uint8_t*)ssl->to_hash[index], len, hash);
+		output(hash, ssl, ssl_flag, index);
 	}
 	return ;
 }
