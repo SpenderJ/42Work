@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:00:34 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/08 13:37:33 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/08 14:30:50 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,31 +23,31 @@ static int	ft_digits(int n, int base)
 	return (i);
 }
 
-static char	*itoa_base(int n, int base)
+static char	*itoa_base(uint8_t n, uint8_t base)
 {
 	int			i;
-	int			mod;
 	char		*str;
+	int			z;
 	static char	digits[31] = "0123456789abcdefghijklmnopqrst";
 
 	if (base > 30)
 		return (NULL);
 	i = ft_digits(n, base);
-	mod = n < 0;
-	if (!(str = malloc((i + 1 + mod) * sizeof(char))))
+	if (!(str = malloc((i + 1) * sizeof(char))))
 		return (NULL);
-	if (mod)
-		*str++ = '-';
 	str += i - 1;
 	*(str + 1) = '\0';
 	if (n == 0)
 		*str-- = '0';
+	z = n <= 10 ? 1 : 0;
 	while (n)
 	{
-		*str-- = digits[(n % base) * (mod ? -1 : 1)];
+		*str-- = digits[(n % base)];
 		n /= base;
 	}
-	return (str + 1 - mod);
+	if (z)
+		*str-- = '0';
+	return (str + 1);
 }
 
 static void	p_error(int code, t_ssl *ssl, int index)
@@ -103,13 +103,13 @@ void		output(uint8_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int index)
 		ft_printf("%s\n", ssl->to_hash[index]);
 	if (ssl->c_stdin && ssl->to_hash[index] && index == 0)
 		while (++z < 16)
-			ft_printf("%2.2x", hash[z]);
+			ft_printf("%s ", itoa_base(hash[z], 16));
 	else if (ssl->to_hash[index])
 	{
 		if (!ssl_flag->q && !ssl_flag->r)
 			p_success(ssl, ssl_flag, index, code);
 		while (++z < 16)
-			ft_printf("%2.2x", hash[z]);
+			ft_printf("%s", itoa_base(hash[z], 16));
 		if (ssl_flag->r && ssl_flag->s && index == 0 + ssl->c_stdin && !ssl_flag->q)
 			ft_printf(" \"%s\"", ssl->filenames[index - ssl->c_stdin]);
 		else if (ssl_flag->r && !ssl_flag->q)
