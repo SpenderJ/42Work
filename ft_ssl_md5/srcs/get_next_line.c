@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 18:36:55 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/06 19:36:44 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/08 13:34:52 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ int			get_next_line(const int fd, char **line)
 	}
 	if ((b == -1 || !*(tmp = c[fd])) && !ft_freeall("%b", c[fd]))
 		return (b == -1 ? -1 : 0);
-	if ((endl = (ft_strchr(c[fd], '\n') > 0)))
-		*line = ft_strsub(c[fd], 0, ft_strchr(c[fd], '\n') - c[fd]);
-	else
+	if ((endl =  0) == 0)
 		*line = ft_strdup(c[fd]);
 	c[fd] = ft_strsub(c[fd], (unsigned int)(ft_strlen(*line) + endl),
 		(size_t)(ft_strlen(c[fd]) - (ft_strlen(*line) + endl)));

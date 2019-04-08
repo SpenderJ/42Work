@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:00:34 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/07 19:59:21 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/08 13:37:33 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,24 +66,24 @@ static void	p_success(t_ssl *ssl, t_ssl_flag *ssl_flag, int index, int code)
 {
 	if (!ssl_flag->s || index != 0 + ssl->c_stdin)
 	{
-		code == MD5 ? ft_printf("MD5 (%s) = ",
+		code == MD5 ? ft_printf("MD5(%s)= ",
 				ssl->filenames[index - ssl->c_stdin]) : 0;
-		code == SHA256 ? ft_printf("SHA256 (%s) = ",
+		code == SHA256 ? ft_printf("SHA256(%s)= ",
 				ssl->filenames[index - ssl->c_stdin]) : 0;
-		code == SHA512 ? ft_printf("SHA512 (%s) = ",
+		code == SHA512 ? ft_printf("SHA512(%s)= ",
 				ssl->filenames[index - ssl->c_stdin]) : 0;
-		code == WHIRPOOL ? ft_printf("WHIRPOOL (%s) = ",
+		code == WHIRPOOL ? ft_printf("WHIRPOOL(%s)= ",
 				ssl->filenames[index - ssl->c_stdin]) : 0;
 	}
 	else
 	{
-		code == MD5 ? ft_printf("MD5 (\"%s\") = ",
+		code == MD5 ? ft_printf("MD5(\"%s\")= ",
 				ssl->filenames[index - ssl->c_stdin]) : 0;
-		code == SHA256 ? ft_printf("SHA256 (\"%s\") = ",
+		code == SHA256 ? ft_printf("SHA256(\"%s\")= ",
 				ssl->filenames[index - ssl->c_stdin]) : 0;
-		code == SHA512 ? ft_printf("SHA512 (\"%s\") = ",
+		code == SHA512 ? ft_printf("SHA512(\"%s\")= ",
 				ssl->filenames[index - ssl->c_stdin]) : 0;
-		code == WHIRPOOL ? ft_printf("WHIRPOOL (\"%s\") = ",
+		code == WHIRPOOL ? ft_printf("WHIRPOOL(\"%s\")= ",
 				ssl->filenames[index - ssl->c_stdin]) : 0;
 	}
 }
@@ -94,6 +94,7 @@ void		output(uint8_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int index)
 	int		code;
 
 	z = -1;
+	(void)itoa_base;
 	ssl->md5 ? code = MD5 : 0;
 	ssl->sha256 ? code = SHA256 : 0;
 	ssl->sha512 ? code = SHA512 : 0;
@@ -102,13 +103,13 @@ void		output(uint8_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int index)
 		ft_printf("%s\n", ssl->to_hash[index]);
 	if (ssl->c_stdin && ssl->to_hash[index] && index == 0)
 		while (++z < 16)
-			ft_printf("%s", itoa_base(hash[z], 16));
+			ft_printf("%2.2x", hash[z]);
 	else if (ssl->to_hash[index])
 	{
 		if (!ssl_flag->q && !ssl_flag->r)
 			p_success(ssl, ssl_flag, index, code);
 		while (++z < 16)
-			ft_printf("%s", itoa_base(hash[z], 16));
+			ft_printf("%2.2x", hash[z]);
 		if (ssl_flag->r && ssl_flag->s && index == 0 + ssl->c_stdin && !ssl_flag->q)
 			ft_printf(" \"%s\"", ssl->filenames[index - ssl->c_stdin]);
 		else if (ssl_flag->r && !ssl_flag->q)
