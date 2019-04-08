@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:40:13 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/07 15:12:23 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/07 19:24:33 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,6 @@ void		md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
 	size_t			len;
 
 	index = -1;
-	(void)ssl_flag;
 	while (++index < ssl->size_printed)
 	{
 		z = -1;

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 10:50:41 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/07 18:27:16 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/07 19:22:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ static int	file_str(int fd, char **str)
 	}
 	if (final)
 		*str = ft_strdup(final);
-	*str = NULL;
 	free (tmp2);
 	free (final);
 	return (TRUE);
