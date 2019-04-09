@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 10:50:41 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/08 13:36:13 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/08 17:54:21 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,12 @@ int			io(t_ssl *ssl, t_ssl_flag *ssl_flag)
 	int		index;
 	int		i;
 
-	fd = 0;
 	index = 0;
 	i = -1;
 	if ((ssl->to_hash = malloc(sizeof(char *) * (MAX_FILES + 1))) == NULL)
 		return (EXIT_HELP);
-	if ((ssl_flag->p || ssl->filenames[0] == NULL) && !isatty(fd)
-			&& file_str(fd, &ssl->to_hash[index]) > 0 && ++ssl->size_printed)
+	if ((ssl_flag->p || ssl->filenames[0] == NULL) && !isatty(0)
+			&& file_str(0, &ssl->to_hash[index]) > 0 && ++ssl->size_printed)
 		++index;
 	ssl->c_stdin = index;
 	while (ssl->filenames[++i] != NULL && ++ssl->size_printed)
