@@ -6,12 +6,12 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:00:34 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/10 15:19:21 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/10 16:30:50 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/ft_ssl.h"
-# include "../includes/ft_md5.h"
+#include "../includes/ft_ssl.h"
+#include "../includes/ft_md5.h"
 
 static int	ft_digits(int n, int base)
 {
@@ -54,12 +54,12 @@ static void	p_error(int code, t_ssl *ssl, int index)
 {
 	code == MD5 ? ft_printf("ft_ssl: %s: %s: No such file or directory",
 				"md5", ssl->filenames[index - ssl->c_stdin]) : 0;
-		code == SHA256 ? ft_printf("ft_ssl: %s: %s: No such file or directory",
-				"sha256", ssl->filenames[index - ssl->c_stdin]) : 0;
-		code == SHA512 ? ft_printf("ft_ssl: %s: %s: No such file or directory",
-				"sha512", ssl->filenames[index - ssl->c_stdin]) : 0;
-		code == WHIRPOOL ? ft_printf("ft_ssl: %s: %s: No such file or directory",
-				"whirpool", ssl->filenames[index - ssl->c_stdin]) : 0;
+	code == SHA256 ? ft_printf("ft_ssl: %s: %s: No such file or directory",
+			"sha256", ssl->filenames[index - ssl->c_stdin]) : 0;
+	code == SHA512 ? ft_printf("ft_ssl: %s: %s: No such file or directory",
+			"sha512", ssl->filenames[index - ssl->c_stdin]) : 0;
+	code == WHIRPOOL ? ft_printf("ft_ssl: %s: %s: No such file or directory",
+			"whirpool", ssl->filenames[index - ssl->c_stdin]) : 0;
 }
 
 static void	p_success(t_ssl *ssl, t_ssl_flag *ssl_flag, int index, int code)
@@ -88,34 +88,31 @@ static void	p_success(t_ssl *ssl, t_ssl_flag *ssl_flag, int index, int code)
 	}
 }
 
-void		output(uint8_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int index)
+void		output(uint8_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int i)
 {
 	int		z;
 	int		code;
 
 	z = -1;
-	(void)itoa_base;
 	ssl->md5 ? code = MD5 : 0;
 	ssl->sha256 ? code = SHA256 : 0;
 	ssl->sha512 ? code = SHA512 : 0;
 	ssl->whirpool ? code = WHIRPOOL : 0;
-	if (ssl->to_hash[index] && ssl_flag->p && index == 0 && ssl->c_stdin)
-		ft_printf("%s\n", ssl->to_hash[index]);
-	if (ssl->c_stdin && ssl->to_hash[index] && index == 0)
+	if (ssl->to_hash[i] && ssl_flag->p && i == 0 && ssl->c_stdin)
+		ft_printf("%s\n", ssl->to_hash[i]);
+	if (ssl->c_stdin && ssl->to_hash[i] && i == 0)
 		while (++z < 16)
 			ft_printf("%s", itoa_base(hash[z], 16));
-	else if (ssl->to_hash[index])
+	else if (ssl->to_hash[i])
 	{
-		if (!ssl_flag->q && !ssl_flag->r)
-			p_success(ssl, ssl_flag, index, code);
+		!ssl_flag->q && !ssl_flag->r ? p_success(ssl, ssl_flag, i, code) : 0;
 		while (++z < 16)
 			ft_printf("%s", itoa_base(hash[z], 16));
-		if (ssl_flag->r && ssl_flag->s && index == 0 + ssl->c_stdin && !ssl_flag->q)
-			ft_printf(" \"%s\"", ssl->filenames[index - ssl->c_stdin]);
+		if (ssl_flag->r && ssl_flag->s && i == 0 + ssl->c_stdin && !ssl_flag->q)
+			ft_printf(" \"%s\"", ssl->filenames[i - ssl->c_stdin]);
 		else if (ssl_flag->r && !ssl_flag->q)
-			ft_printf(" %s", ssl->filenames[index - ssl->c_stdin]);
+			ft_printf(" %s", ssl->filenames[i - ssl->c_stdin]);
 	}
-	else
-		p_error(code, ssl, index);
+	!ssl->to_hash[i] ? p_error(code, ssl, i) : 0;
 	printf("\n");
 }

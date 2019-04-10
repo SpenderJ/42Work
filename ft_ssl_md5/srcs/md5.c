@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:40:13 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/10 16:13:10 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/10 16:20:25 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	ft_md5op(t_md5 *md5_c)
 	}
 }
 
-void		ft_md5Update(size_t new_len, uint8_t *msg, uint8_t *digest,
+void		ft_md5update(size_t new_len, uint8_t *msg, uint8_t *digest,
 		t_md5 *md5_c)
 {
 	size_t		offset;

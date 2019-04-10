@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 10:50:41 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/08 17:54:21 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/10 16:23:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ static int	file_str(int fd, char **str)
 	while ((ret = get_next_line(fd, &tmp)) > 0)
 	{
 		final = join_str(tmp2, tmp);
-		free (tmp);
-		free (tmp2);
+		free(tmp);
+		free(tmp2);
 		tmp2 = ft_strdup(final);
 	}
 	if (final)
 		*str = ft_strdup(final);
-	free (tmp2);
-	free (final);
+	free(tmp2);
+	free(final);
 	return (TRUE);
 }
 

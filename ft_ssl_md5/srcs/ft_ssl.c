@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 18:36:08 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/10 15:33:35 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/10 16:24:45 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ static int	opt(t_ssl_flag *ssl_flag, t_ssl *ssl, int ac, char **av)
 		return (usage(av));
 	return (0);
 }
-
 
 int			main(int ac, char **av)
 {

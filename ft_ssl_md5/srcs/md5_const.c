@@ -6,12 +6,12 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 10:41:08 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/10 16:08:21 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/10 16:33:43 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../includes/ft_md5.h"
-# include "../includes/ft_ssl.h"
+#include "../includes/ft_md5.h"
+#include "../includes/ft_ssl.h"
 
 void		initialize_md5(t_md5 *md5_c)
 {
@@ -27,18 +27,16 @@ void		initialize_md5(t_md5 *md5_c)
 
 uint32_t	to_int32(const uint8_t *bytes)
 {
-	return (uint32_t) bytes[0]
-		| ((uint32_t) bytes[1] << 8)
-		| ((uint32_t) bytes[2] << 16)
-		| ((uint32_t) bytes[3] << 24);
+	return ((uint32_t)bytes[0] | ((uint32_t)bytes[1] << 8) |
+		((uint32_t)bytes[2] << 16) | ((uint32_t)bytes[3] << 24));
 }
 
 void		to_bytes(uint32_t val, uint8_t *bytes)
 {
-	bytes[0] = (uint8_t) val;
-	bytes[1] = (uint8_t) (val >> 8);
-	bytes[2] = (uint8_t) (val >> 16);
-	bytes[3] = (uint8_t) (val >> 24);
+	bytes[0] = (uint8_t)val;
+	bytes[1] = (uint8_t)(val >> 8);
+	bytes[2] = (uint8_t)(val >> 16);
+	bytes[3] = (uint8_t)(val >> 24);
 }
 
 void		ft_md5(uint8_t *initial, size_t len, uint8_t *digest)
@@ -61,5 +59,5 @@ void		ft_md5(uint8_t *initial, size_t len, uint8_t *digest)
 		msg[offset++] = 0;
 	to_bytes(len * 8, msg + new_len);
 	to_bytes(len >> 29, msg + new_len + 4);
-	ft_md5Update(new_len, msg, digest, &md5_c);
+	ft_md5update(new_len, msg, digest, &md5_c);
 }
