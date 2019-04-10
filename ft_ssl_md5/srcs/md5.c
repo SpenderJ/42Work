@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:40:13 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/08 17:43:53 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/10 16:13:10 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,17 @@ void		ft_md5Update(size_t new_len, uint8_t *msg, uint8_t *digest,
 	{
 		md5_c->v[4] = -1;
 		while (++md5_c->v[4] < 16)
-			md5_c->w[md5_c->v[4]] = to_int32(msg + offset + md5_c->v[4]*4);
+			md5_c->w[md5_c->v[4]] = to_int32(msg + offset + md5_c->v[4] * 4);
+		md5_c->v[0] = md5_c->h[0];
+		md5_c->v[1] = md5_c->h[1];
+		md5_c->v[2] = md5_c->h[2];
+		md5_c->v[3] = md5_c->h[3];
 		ft_md5op(md5_c);
-		offset += (512/8);
 		md5_c->h[0] += md5_c->v[0];
 		md5_c->h[1] += md5_c->v[1];
 		md5_c->h[2] += md5_c->v[2];
 		md5_c->h[3] += md5_c->v[3];
+		offset += (512 / 8);
 	}
 	free(msg);
 	to_bytes(md5_c->h[0], digest);
