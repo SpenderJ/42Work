@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 10:41:08 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/07 19:23:07 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/10 15:42:19 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,15 @@ void		ft_md5(uint8_t *initial, size_t len, uint8_t *digest)
 
 	msg = NULL;
 	new_len = len + 1;
-	while (new_len % (512/8) != 448/8)
+	ft_bzero(&md5_c, sizeof(t_md5));
+	while (new_len % (512 / 8) != 448 / 8)
 		++new_len;
 	msg = (uint8_t*)malloc(new_len + 8);
 	ft_memcpy(msg, initial, len);
 	msg[len] = 0x80;
 	offset = len + 1;
-	while (offset++ < new_len)
-		msg[offset] = 0;
+	while (offset < new_len)
+		msg[offset++] = 0;
 	to_bytes(len * 8, msg + new_len);
 	to_bytes(len >> 29, msg + new_len + 4);
 	ft_md5Update(new_len, msg, digest, &md5_c);
