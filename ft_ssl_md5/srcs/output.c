@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:00:34 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/08 18:07:23 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/10 15:11:33 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static char	*itoa_base(uint8_t n, uint8_t base)
 	*(str + 1) = '\0';
 	if (n == 0)
 		*str-- = '0';
-	z = n <= 10 ? 1 : 0;
+	z = n <= 16 ? 1 : 0;
 	while (n)
 	{
 		*str-- = digits[(n % base)];
@@ -103,13 +103,13 @@ void		output(uint8_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int index)
 		ft_printf("%s\n", ssl->to_hash[index]);
 	if (ssl->c_stdin && ssl->to_hash[index] && index == 0)
 		while (++z < 16)
-			printf("%2.2x", hash[z]);
+			ft_printf("%s", itoa_base(hash[z], 16));
 	else if (ssl->to_hash[index])
 	{
 		if (!ssl_flag->q && !ssl_flag->r)
 			p_success(ssl, ssl_flag, index, code);
 		while (++z < 16)
-			printf("%2.2x", hash[z]);
+			ft_printf("%s", itoa_base(hash[z], 16));
 		if (ssl_flag->r && ssl_flag->s && index == 0 + ssl->c_stdin && !ssl_flag->q)
 			ft_printf(" \"%s\"", ssl->filenames[index - ssl->c_stdin]);
 		else if (ssl_flag->r && !ssl_flag->q)
