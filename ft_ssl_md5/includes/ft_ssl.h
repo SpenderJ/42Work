@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:17:51 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/10 16:22:30 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/11 10:51:07 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ typedef struct	s_ssl_flag
 
 int				main(int argc, char **argv);
 int				io(t_ssl *ssl, t_ssl_flag *flag);
-void			output(uint8_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag,
+void			output(uint32_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag,
 				int index);
 void			md5(t_ssl *ssl, t_ssl_flag *ssl_flag);
 void			sha256(t_ssl *ssl, t_ssl_flag *ssl_flag);

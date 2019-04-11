@@ -6,48 +6,37 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:00:34 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/10 16:30:50 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/11 14:18:28 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ssl.h"
 #include "../includes/ft_md5.h"
 
-static int	ft_digits(int n, int base)
+static uint32_t		swap_int32(const uint32_t value)
 {
-	int		i;
+	uint32_t result;
 
-	i = 1;
-	while (n /= base)
-		++i;
-	return (i);
+	result = 0;
+	result |= (value & 0x000000FF) << 24;
+	result |= (value & 0x0000FF00) << 8;
+	result |= (value & 0x00FF0000) >> 8;
+	result |= (value & 0xFF000000) >> 24;
+	return (result);
 }
 
-static char	*itoa_base(uint8_t n, uint8_t base)
+static void	print_md5(uint32_t *digest)
 {
 	int			i;
-	char		*str;
-	int			z;
-	static char	digits[31] = "0123456789abcdefghijklmnopqrst";
+	uint32_t	tmp;
 
-	if (base > 30)
-		return (NULL);
-	i = ft_digits(n, base);
-	if (!(str = malloc((i + 1) * sizeof(char))))
-		return (NULL);
-	str += i - 1;
-	*(str + 1) = '\0';
-	if (n == 0)
-		*str-- = '0';
-	z = n <= 16 ? 1 : 0;
-	while (n)
+	i = -1;
+	while (++i < 16 / 4)
 	{
-		*str-- = digits[(n % base)];
-		n /= base;
+		tmp = digest[i];
+		tmp = swap_int32(tmp);
+		printf("%8.8x", tmp);
 	}
-	if (z)
-		*str-- = '0';
-	return (str + 1);
 }
 
 static void	p_error(int code, t_ssl *ssl, int index)
@@ -88,7 +77,7 @@ static void	p_success(t_ssl *ssl, t_ssl_flag *ssl_flag, int index, int code)
 	}
 }
 
-void		output(uint8_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int i)
+void		output(uint32_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int i)
 {
 	int		z;
 	int		code;
@@ -101,13 +90,11 @@ void		output(uint8_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int i)
 	if (ssl->to_hash[i] && ssl_flag->p && i == 0 && ssl->c_stdin)
 		ft_printf("%s\n", ssl->to_hash[i]);
 	if (ssl->c_stdin && ssl->to_hash[i] && i == 0)
-		while (++z < 16)
-			ft_printf("%s", itoa_base(hash[z], 16));
+		print_md5(hash);
 	else if (ssl->to_hash[i])
 	{
 		!ssl_flag->q && !ssl_flag->r ? p_success(ssl, ssl_flag, i, code) : 0;
-		while (++z < 16)
-			ft_printf("%s", itoa_base(hash[z], 16));
+		print_md5(hash);
 		if (ssl_flag->r && ssl_flag->s && i == 0 + ssl->c_stdin && !ssl_flag->q)
 			ft_printf(" \"%s\"", ssl->filenames[i - ssl->c_stdin]);
 		else if (ssl_flag->r && !ssl_flag->q)
