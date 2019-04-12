@@ -6,24 +6,23 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:40:13 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/11 14:05:28 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/12 15:30:18 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_md5.h"
 
-int					append_pad_bits_md5(uint8_t *buf, const char *word)
+static int			append_pad_bits_md5(uint8_t *buf, uint32_t osize)
 {
 	size_t		size;
 	uint32_t	inp_bitlen;
 
-	ft_printf("Append\n");
-	size = ft_strlen(word) * CHAR_BIT;
+	size = osize * CHAR_BIT;
 	while (++size % 512 != 448)
 		;
 	size /= CHAR_BIT;
-	buf[ft_strlen(word)] = 0x80;
-	inp_bitlen = ft_strlen(word) * CHAR_BIT;
+	buf[osize] = 0x80;
+	inp_bitlen = osize * CHAR_BIT;
 	ft_memcpy(buf + size, &inp_bitlen, 4);
 	return (size + 8);
 }
@@ -60,30 +59,30 @@ static void		md5_r_algo(uint32_t *bufs, uint32_t *chunk)
 static void		exec_md5_cycle(t_md5 *md5, uint8_t *word)
 {
 	int			chunk_num;
-	uint32_t	buffers[4];
+	uint32_t	buffer[4];
 	int			i;
 	int			j;
 
 	i = -1;
-	ft_printf("exec\n");
 	chunk_num = md5->len_bits / 512;
 	while (++i < chunk_num && (j = -1))
 	{
-		ft_memcpy(buffers, md5->buffer, sizeof(buffers));
-		md5_r_algo(buffers, (uint32_t*)(word + i * 64));
+		ft_memcpy(buffer, md5->buffer, sizeof(buffer));
+		md5_r_algo(buffer, (uint32_t*)(word + i * 64));
 		while (++j < 4)
-			md5->buffer[j] += buffers[j];
+			md5->buffer[j] += buffer[j];
 	}
 }
 
-uint32_t		*md5_word(const char *word, t_md5 *md5)
+static uint32_t		*md5_word(const char *word, t_md5 *md5, uint32_t size)
 {
 	uint8_t			*message;
 	uint32_t		*digest;
 
-	message = ft_memalloc(((int)ft_strlen(word) + 64) * sizeof(char));
-	ft_memcpy(message, word, ft_strlen(word));
-	md5->len_bytes = append_pad_bits_md5(message, word);
+	printf("debug %d\n", size);
+	message = ft_memalloc((size + 64) * sizeof(char));
+	ft_memcpy(message, word, size);
+	md5->len_bytes = append_pad_bits_md5(message, size);
 	md5->len_bits = md5->len_bytes * CHAR_BIT;
 	exec_md5_cycle(md5, message);
 	free(message);
@@ -100,7 +99,6 @@ void		md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
 
 	index = -1;
 	res = NULL;
-	ft_printf("passe\n");
 	while (++index < ssl->size_printed)
 	{
 		ft_bzero((void *)&md5, sizeof(t_md5 *));
@@ -108,11 +106,8 @@ void		md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
 		md5.buffer[B] = 0xefcdab89;
 		md5.buffer[C] = 0x98badcfe;
 		md5.buffer[D] = 0x10325476;
-		ft_printf("Algo\n");
-		res = md5_word(ssl->to_hash[index], &md5);
-		ft_printf("Sort algo\n");
+		res = md5_word(ssl->to_hash[index], &md5, ssl->f_size[index]);
 		output(res, ssl, ssl_flag, index);
-		ft_printf("Sort\n");
 	}
 	return ;
 }

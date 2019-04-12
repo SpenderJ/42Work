@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 18:36:08 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/10 16:24:45 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/12 11:44:58 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ int			main(int ac, char **av)
 	ft_bzero(&ssl, sizeof(t_ssl));
 	if ((ssl.filenames = malloc(sizeof(char *) * MAX_FILES)) == NULL)
 		return (usage(av));
+	if ((ssl.f_size = malloc(sizeof(uint32_t *) * MAX_FILES)) == NULL)
+		return(usage(av));
 	if (opt(&ssl_flag, &ssl, ac, av) == EXIT_HELP)
 		return (EXIT_HELP);
 	if (io(&ssl, &ssl_flag) == EXIT_HELP)

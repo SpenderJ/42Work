@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:17:51 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/11 10:51:07 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/12 15:03:26 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@
 #  define TRUE 1
 # endif
 
+# ifndef BUFSIZE
+#  define BUFSIZE 96
+# endif
+
 # define MD5 1
 # define SHA256 2
 # define SHA512 3
@@ -53,6 +57,7 @@ typedef struct	s_ssl
 	int			whirpool;
 	char		**filenames;
 	char		**to_hash;
+	uint32_t	*f_size;
 	int			size_printed;
 }				t_ssl;
 
