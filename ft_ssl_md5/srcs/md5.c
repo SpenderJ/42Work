@@ -6,13 +6,13 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:40:13 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/12 15:30:18 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/13 16:40:32 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_md5.h"
 
-static int			append_pad_bits_md5(uint8_t *buf, uint32_t osize)
+static int		append_pad_bits_md5(uint8_t *buf, uint32_t osize)
 {
 	size_t		size;
 	uint32_t	inp_bitlen;
@@ -47,12 +47,12 @@ static void		md5_r_algo(uint32_t *bufs, uint32_t *chunk)
 		else if (i < 64 && (f = I(bufs[B], bufs[C], bufs[D])))
 			g = (i * 7) % 16;
 		tmpf = f;
-		f += bufs[A] + k[i] + chunk[g];
+		f += bufs[A] + g_k[i] + chunk[g];
 		tmp = bufs[A];
 		bufs[A] = bufs[D];
 		bufs[D] = bufs[C];
 		bufs[C] = bufs[B];
-		bufs[B] += LEFTROTATE(f, r[i]);
+		bufs[B] += LEFTROTATE(f, g_r[i]);
 	}
 }
 
@@ -74,12 +74,11 @@ static void		exec_md5_cycle(t_md5 *md5, uint8_t *word)
 	}
 }
 
-static uint32_t		*md5_word(const char *word, t_md5 *md5, uint32_t size)
+static uint32_t	*md5_word(const char *word, t_md5 *md5, uint32_t size)
 {
 	uint8_t			*message;
 	uint32_t		*digest;
 
-	printf("debug %d\n", size);
 	message = ft_memalloc((size + 64) * sizeof(char));
 	ft_memcpy(message, word, size);
 	md5->len_bytes = append_pad_bits_md5(message, size);
@@ -91,7 +90,7 @@ static uint32_t		*md5_word(const char *word, t_md5 *md5, uint32_t size)
 	return (digest);
 }
 
-void		md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
+void			md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
 {
 	t_md5		md5;
 	uint32_t	*res;

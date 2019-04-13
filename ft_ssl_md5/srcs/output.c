@@ -6,14 +6,14 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:00:34 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/11 14:18:28 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/13 16:39:42 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ssl.h"
 #include "../includes/ft_md5.h"
 
-static uint32_t		swap_int32(const uint32_t value)
+static uint32_t	swap_int32(const uint32_t value)
 {
 	uint32_t result;
 
@@ -25,7 +25,7 @@ static uint32_t		swap_int32(const uint32_t value)
 	return (result);
 }
 
-static void	print_md5(uint32_t *digest)
+static void		print_md5(uint32_t *digest)
 {
 	int			i;
 	uint32_t	tmp;
@@ -39,7 +39,7 @@ static void	print_md5(uint32_t *digest)
 	}
 }
 
-static void	p_error(int code, t_ssl *ssl, int index)
+static void		p_error(int code, t_ssl *ssl, int index)
 {
 	code == MD5 ? ft_printf("ft_ssl: %s: %s: No such file or directory",
 				"md5", ssl->filenames[index - ssl->c_stdin]) : 0;
@@ -51,7 +51,7 @@ static void	p_error(int code, t_ssl *ssl, int index)
 			"whirpool", ssl->filenames[index - ssl->c_stdin]) : 0;
 }
 
-static void	p_success(t_ssl *ssl, t_ssl_flag *ssl_flag, int index, int code)
+static void		p_success(t_ssl *ssl, t_ssl_flag *ssl_flag, int index, int code)
 {
 	if (!ssl_flag->s || index != 0 + ssl->c_stdin)
 	{
@@ -77,7 +77,7 @@ static void	p_success(t_ssl *ssl, t_ssl_flag *ssl_flag, int index, int code)
 	}
 }
 
-void		output(uint32_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int i)
+void			output(uint32_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int i)
 {
 	int		z;
 	int		code;
@@ -101,5 +101,5 @@ void		output(uint32_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int i)
 			ft_printf(" %s", ssl->filenames[i - ssl->c_stdin]);
 	}
 	!ssl->to_hash[i] ? p_error(code, ssl, i) : 0;
-	printf("\n");
+	ft_printf("\n");
 }
