@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:00:34 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/13 16:39:42 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/13 18:07:54 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void		print_md5(uint32_t *digest)
 	{
 		tmp = digest[i];
 		tmp = swap_int32(tmp);
-		printf("%8.8x", tmp);
+		ft_printf("%8.8x", tmp);
 	}
 }
 
