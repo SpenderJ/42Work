@@ -29,6 +29,7 @@ os.system("echo ''")
 
 ## TEST 4
 
+os.system("echo '\"And above all,\" > file'")
 os.system("echo \"And above all,\" > file")
 os.system("echo 'echo ./ft_ssl md5 file'")
 os.system("./ft_ssl md5 file")
@@ -81,3 +82,22 @@ os.system("echo ''")
 os.system("echo 'echo \"just to be extra clear\" | ./ft_ssl md5 -r -q -p -s \"foo\" file'")
 os.system("echo \"just to be extra clear\" | ./ft_ssl md5 -r -q -p -s \"foo\" file")
 os.system("echo ''")
+
+## TEST 13
+
+os.system("echo 'echo \"https://www.youtube.com/watch?v=w-5yAtMtrSM\" > big_smoke_order_remix'")
+os.system("echo \"https://www.youtube.com/watch?v=w-5yAtMtrSM\" > big_smoke_order_remix")
+os.system("echo './ft_ssl sha256 -q big_smoke_order_remix'")
+os.system("./ft_ssl sha256 -q big_smoke_order_remix")
+os.system("echo ''")
+
+## TEST 14
+
+os.system("echo './ft_ssl sha256 -s \"wubba lubba dub dub\"'");
+os.system("./ft_ssl sha256 -s \"wubba lubba dub dub\"")
+os.system("echo ''")
+
+## Removing created files
+
+os.system("rm file")
+os.system("rm big_smoke_order_remix")
