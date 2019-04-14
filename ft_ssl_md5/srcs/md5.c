@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:40:13 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/13 16:40:32 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/14 15:58:50 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,8 @@ void			md5(t_ssl *ssl, t_ssl_flag *ssl_flag)
 		md5.buffer[B] = 0xefcdab89;
 		md5.buffer[C] = 0x98badcfe;
 		md5.buffer[D] = 0x10325476;
-		res = md5_word(ssl->to_hash[index], &md5, ssl->f_size[index]);
+		if (ssl->to_hash[index] != NULL)
+			res = md5_word(ssl->to_hash[index], &md5, ssl->f_size[index]);
 		output(res, ssl, ssl_flag, index);
 	}
 	return ;

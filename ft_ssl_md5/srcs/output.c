@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:00:34 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/13 18:07:54 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/14 15:25:16 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void			output(uint32_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int i)
 	ssl->sha512 ? code = SHA512 : 0;
 	ssl->whirpool ? code = WHIRPOOL : 0;
 	if (ssl->to_hash[i] && ssl_flag->p && i == 0 && ssl->c_stdin)
-		ft_printf("%s\n", ssl->to_hash[i]);
+		ft_printf("%s", ssl->to_hash[i]);
 	if (ssl->c_stdin && ssl->to_hash[i] && i == 0)
 		print_md5(hash);
 	else if (ssl->to_hash[i])
