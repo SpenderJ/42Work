@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 13:38:32 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/13 16:51:12 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/15 13:24:00 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@
 # define B 1
 # define C 2
 # define D 3
-# define F(B, C, D) 			((B) & (C)) | (~(B) & (D))
-# define G(B, C, D) 			((B) & (D)) | ((C) & ~(D))
-# define H(B, C, D) 			(B) ^ (C) ^ (D)
-# define I(B, C, D) 			(C) ^ (B | ~(D))
-
+# define F(B, C, D) ((B) & (C)) | (~(B) & (D))
+# define G(B, C, D) ((B) & (D)) | ((C) & ~(D))
+# define H(B, C, D) (B) ^ (C) ^ (D)
+# define I(B, C, D) (C) ^ (B | ~(D))
 # define UINT32_BIT (sizeof(uint_32_t) * 8)
 # define LEFTROTATE(x, c) (((x) << (c)) | ((x) >> (32 - (c))))
 # define MD5_ROTA 1000000

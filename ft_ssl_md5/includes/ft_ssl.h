@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:17:51 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/12 15:03:26 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/15 14:23:00 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include "get_next_line.h"
 # include "../libft/includes/libft.h"
 # include "../free_all/include/ft_freeall.h"
-# include "ft_md5.h"
 
 # ifndef EXIT_HELP
 #  define EXIT_HELP 42
@@ -71,6 +70,9 @@ typedef struct	s_ssl_flag
 	int			v;
 }				t_ssl_flag;
 
+void			init_tmp_words(uint32_t *w, uint32_t *block);
+size_t			bytenum(size_t len);
+uint32_t		swap_int32(const uint32_t value);
 int				main(int argc, char **argv);
 int				io(t_ssl *ssl, t_ssl_flag *flag);
 void			output(uint32_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag,

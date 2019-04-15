@@ -6,36 +6,35 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:00:34 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/14 15:25:16 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/15 14:22:57 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ssl.h"
 #include "../includes/ft_md5.h"
 
-static uint32_t	swap_int32(const uint32_t value)
-{
-	uint32_t result;
-
-	result = 0;
-	result |= (value & 0x000000FF) << 24;
-	result |= (value & 0x0000FF00) << 8;
-	result |= (value & 0x00FF0000) >> 8;
-	result |= (value & 0xFF000000) >> 24;
-	return (result);
-}
-
-static void		print_md5(uint32_t *digest)
+static void		print_32(uint32_t *digest, t_ssl *ssl)
 {
 	int			i;
 	uint32_t	tmp;
 
 	i = -1;
-	while (++i < 16 / 4)
+	if (ssl->md5)
 	{
-		tmp = digest[i];
-		tmp = swap_int32(tmp);
-		ft_printf("%8.8x", tmp);
+		while (++i < 16 / 4)
+		{
+			tmp = digest[i];
+			tmp = swap_int32(tmp);
+			ft_printf("%8.8x", tmp);
+		}
+	}
+	else if (ssl->sha256)
+	{
+		while (++i < 32 / 4)
+		{
+			tmp = digest[i];
+			ft_printf("%8.8x", tmp);
+		}
 	}
 }
 
@@ -90,11 +89,11 @@ void			output(uint32_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int i)
 	if (ssl->to_hash[i] && ssl_flag->p && i == 0 && ssl->c_stdin)
 		ft_printf("%s", ssl->to_hash[i]);
 	if (ssl->c_stdin && ssl->to_hash[i] && i == 0)
-		print_md5(hash);
+		print_32(hash, ssl);
 	else if (ssl->to_hash[i])
 	{
 		!ssl_flag->q && !ssl_flag->r ? p_success(ssl, ssl_flag, i, code) : 0;
-		print_md5(hash);
+		print_32(hash, ssl);
 		if (ssl_flag->r && ssl_flag->s && i == 0 + ssl->c_stdin && !ssl_flag->q)
 			ft_printf(" \"%s\"", ssl->filenames[i - ssl->c_stdin]);
 		else if (ssl_flag->r && !ssl_flag->q)
