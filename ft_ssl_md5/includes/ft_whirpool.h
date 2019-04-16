@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 17:11:30 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/15 18:19:50 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/15 19:01:50 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
  * employed).
 */
 
-static const uint64_t g_whirlpool_c[8 * 256 + R] = {
+static const uint64_t g_whirpool_c[8 * 256 + R] = {
 	LL(0x18186018c07830d8), LL(0x23238c2305af4626), LL(0xc6c63fc67ef991b8),
 	LL(0xe8e887e8136fcdfb), LL(0x878726874ca113cb), LL(0xb8b8dab8a9626d11),
 	LL(0x0101040108050209), LL(0x4f4f214f426e9e0d), LL(0x3636d836adee6c9b),
