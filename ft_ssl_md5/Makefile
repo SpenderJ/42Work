@@ -6,7 +6,7 @@
 #    By: juspende <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/03 20:29:44 by juspende          #+#    #+#              #
-#    Updated: 2019/04/15 14:17:02 by juspende         ###   ########.fr        #
+#    Updated: 2019/04/16 10:06:21 by juspende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS	 =		ft_ssl.c		\
 				md5.c			\
 				sha256.c		\
 				sha512.c		\
-				whirpool.c		\
+				whirlpool.c		\
 				output.c		\
 				global.c
 

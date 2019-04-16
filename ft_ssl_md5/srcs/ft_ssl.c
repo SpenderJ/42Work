@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 18:36:08 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/15 14:11:54 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/16 10:08:48 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	usage(char **av)
 			"  -md5            will encrypt in md5\n"
 			"  -sha256         will encrypt in sha256\n"
 			"  -sha512         will encrypt in sha512\n"
-			"  -whirpool       will encrypt in whirpool\n\n"
+			"  -whirlpool      will encrypt in whirpool\n\n"
 			"  -p              echo STDIN to STDOUT and append the checksum"
 			"to STDOUT\n"
 			"  -q              quiet mode\n"
@@ -63,8 +63,8 @@ static int	opt(t_ssl_flag *ssl_flag, t_ssl *ssl, int ac, char **av)
 		ft_strcmp(av[opt], "md5") == 0 ? ssl->md5 = TRUE : 0;
 		ft_strcmp(av[opt], "sha256") == 0 ? ssl->sha256 = TRUE : 0;
 		ft_strcmp(av[opt], "sha512") == 0 ? ssl->sha512 = TRUE : 0;
-		ft_strcmp(av[opt], "whirpool") == 0 ? ssl->whirpool = TRUE : 0;
-		if (!ssl->md5 && !ssl->sha256 && !ssl->sha512 && !ssl->whirpool)
+		ft_strcmp(av[opt], "whirlpool") == 0 ? ssl->whirlpool = TRUE : 0;
+		if (!ssl->md5 && !ssl->sha256 && !ssl->sha512 && !ssl->whirlpool)
 			return (usage(av));
 	}
 	while (++opt < ac && av[opt][0] == '-' &&
@@ -100,6 +100,6 @@ int			main(int ac, char **av)
 	ssl.md5 == TRUE ? md5(&ssl, &ssl_flag) : 0;
 	ssl.sha256 == TRUE ? sha256(&ssl, &ssl_flag) : 0;
 	ssl.sha512 == TRUE ? sha512(&ssl, &ssl_flag) : 0;
-	ssl.whirpool == TRUE ? whirpool(&ssl, &ssl_flag) : 0;
+	ssl.whirlpool == TRUE ? whirlpool(&ssl, &ssl_flag) : 0;
 	return (0);
 }

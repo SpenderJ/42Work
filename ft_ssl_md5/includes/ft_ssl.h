@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 17:17:51 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/15 17:19:38 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/16 10:27:36 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct	s_ssl
 	int			md5;
 	int			sha256;
 	int			sha512;
-	int			whirpool;
+	int			whirlpool;
 	char		**filenames;
 	char		**to_hash;
 	uint32_t	*f_size;
@@ -80,6 +80,6 @@ void			output(uint32_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag,
 void			md5(t_ssl *ssl, t_ssl_flag *ssl_flag);
 void			sha256(t_ssl *ssl, t_ssl_flag *ssl_flag);
 void			sha512(t_ssl *ssl, t_ssl_flag *ssl_flag);
-void			whirpool(t_ssl *ssl, t_ssl_flag *ssl_flag);
+void			whirlpool(t_ssl *ssl, t_ssl_flag *ssl_flag);
 
 #endif

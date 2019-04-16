@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/07 11:00:34 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/15 14:22:57 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/16 12:25:31 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void		p_error(int code, t_ssl *ssl, int index)
 	code == SHA512 ? ft_printf("ft_ssl: %s: %s: No such file or directory",
 			"sha512", ssl->filenames[index - ssl->c_stdin]) : 0;
 	code == WHIRPOOL ? ft_printf("ft_ssl: %s: %s: No such file or directory",
-			"whirpool", ssl->filenames[index - ssl->c_stdin]) : 0;
+			"whirlpool", ssl->filenames[index - ssl->c_stdin]) : 0;
 }
 
 static void		p_success(t_ssl *ssl, t_ssl_flag *ssl_flag, int index, int code)
@@ -60,7 +60,7 @@ static void		p_success(t_ssl *ssl, t_ssl_flag *ssl_flag, int index, int code)
 				ssl->filenames[index - ssl->c_stdin]) : 0;
 		code == SHA512 ? ft_printf("SHA512(%s)= ",
 				ssl->filenames[index - ssl->c_stdin]) : 0;
-		code == WHIRPOOL ? ft_printf("WHIRPOOL(%s)= ",
+		code == WHIRPOOL ? ft_printf("WHIRLPOOL(%s)= ",
 				ssl->filenames[index - ssl->c_stdin]) : 0;
 	}
 	else
@@ -71,7 +71,7 @@ static void		p_success(t_ssl *ssl, t_ssl_flag *ssl_flag, int index, int code)
 				ssl->filenames[index - ssl->c_stdin]) : 0;
 		code == SHA512 ? ft_printf("SHA512(\"%s\")= ",
 				ssl->filenames[index - ssl->c_stdin]) : 0;
-		code == WHIRPOOL ? ft_printf("WHIRPOOL(\"%s\")= ",
+		code == WHIRPOOL ? ft_printf("WHIRLPOOL(\"%s\")= ",
 				ssl->filenames[index - ssl->c_stdin]) : 0;
 	}
 }
@@ -85,7 +85,7 @@ void			output(uint32_t *hash, t_ssl *ssl, t_ssl_flag *ssl_flag, int i)
 	ssl->md5 ? code = MD5 : 0;
 	ssl->sha256 ? code = SHA256 : 0;
 	ssl->sha512 ? code = SHA512 : 0;
-	ssl->whirpool ? code = WHIRPOOL : 0;
+	ssl->whirlpool ? code = WHIRPOOL : 0;
 	if (ssl->to_hash[i] && ssl_flag->p && i == 0 && ssl->c_stdin)
 		ft_printf("%s", ssl->to_hash[i]);
 	if (ssl->c_stdin && ssl->to_hash[i] && i == 0)
