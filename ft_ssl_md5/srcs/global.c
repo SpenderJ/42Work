@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 14:15:00 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/15 14:22:50 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/17 12:38:34 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ inline size_t	bytenum(size_t len)
 	return (len);
 }
 
-inline void			init_tmp_words(uint32_t *w, uint32_t *block)
+inline void		init_tmp_words(uint32_t *w, uint32_t *block)
 {
 	uint64_t	i;
 	uint32_t	tmp_1;

@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 17:11:30 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/16 11:22:55 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/17 12:41:41 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <stdbool.h>
 # include <stdlib.h>
 # include "ft_ssl.h"
-# include "error.h"
 
 //Right rota
 
@@ -183,8 +182,6 @@ static const uint64_t t[256] =
 	0x8686228644A411C2
 };
 
-//Whirlpool object identifier (1.0.10118.3.0.55)
-
 const uint8_t whirlpoolOid[6] = {0x28, 0xCF, 0x06, 0x03, 0x00, 0x37};
 
 typedef struct	s_whirlpool
@@ -205,60 +202,5 @@ typedef struct	s_whirlpool
 	size_t size;
 	uint64_t totalSize;
 }				t_whirlpool;
-
-/**
-  * @brief Common interface for hash algorithms
-**/
-
-//Common API for hash algorithms
-
-typedef error_t (*HashAlgoCompute)(const void *data, size_t length, uint8_t *digest);
-typedef void (*HashAlgoInit)(void *context);
-typedef void (*HashAlgoUpdate)(void *context, const void *data, size_t length);
-typedef void (*HashAlgoFinal)(void *context, uint8_t *digest);
-typedef void (*HashAlgoFinalRaw)(void *context, uint8_t *digest);
-
-typedef struct	s_hashalgo
-{
-	const char *name;
-	const uint8_t *oid;
-	size_t oidSize;
-	size_t contextSize;
-	size_t blockSize;
-	size_t digestSize;
-	size_t minPadSize;
-	bool bigEndian;
-	HashAlgoCompute compute;
-	HashAlgoInit init;
-	HashAlgoUpdate update;
-	HashAlgoFinal final;
-	HashAlgoFinalRaw finalRaw;
-}				t_hashalgo;
-
-//Whirlpool related functions
-
-error_t whirlpoolCompute(const void *data, size_t length, uint8_t *digest);
-void whirlpoolInit(t_whirlpool *context);
-void whirlpoolUpdate(t_whirlpool *context, const void *data, size_t length);
-void whirlpoolFinal(t_whirlpool *context, uint8_t *digest);
-void whirlpoolProcessBlock(t_whirlpool *context);
-
-//Common interface for hash algorithms
-const t_hashalgo whirlpoolHashAlgo =
-{
-	"WHIRLPOOL",
-	whirlpoolOid,
-	sizeof(whirlpoolOid),
-	sizeof(t_whirlpool),
-	WHIRLPOOL_BLOCK_SIZE,
-	WHIRLPOOL_DIGEST_SIZE,
-	WHIRLPOOL_MIN_PAD_SIZE,
-	TRUE,
-	(HashAlgoCompute) whirlpoolCompute,
-	(HashAlgoInit) whirlpoolInit,
-	(HashAlgoUpdate) whirlpoolUpdate,
-	(HashAlgoFinal) whirlpoolFinal,
-	NULL,
-};
 
 #endif

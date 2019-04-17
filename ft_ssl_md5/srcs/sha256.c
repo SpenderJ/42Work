@@ -6,7 +6,7 @@
 /*   By: juspende <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 15:41:11 by juspende          #+#    #+#             */
-/*   Updated: 2019/04/16 10:07:05 by juspende         ###   ########.fr       */
+/*   Updated: 2019/04/17 13:14:24 by juspende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int		append_pad_bits_sha256(uint32_t *buf, uint32_t fsize)
 	return (n * 64);
 }
 
-static void			sha256_r_algo(uint32_t *buff, uint32_t *tmp_words)
+static void		sha256_r_algo(uint32_t *buff, uint32_t *tmp_words)
 {
 	uint64_t	i[7];
 
@@ -57,7 +57,7 @@ static void			sha256_r_algo(uint32_t *buff, uint32_t *tmp_words)
 	}
 }
 
-static void			exec_sha256_cycle(t_sha256 *sha256, uint32_t *word)
+static void		exec_sha256_cycle(t_sha256 *sha256, uint32_t *word)
 {
 	int				chunk_num;
 	uint32_t		buffer[8];
