@@ -3,6 +3,8 @@ from numpy import *
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Important thing, this function is concepted to be global
+
 # import our file
 input_file = "data.csv"
 output_file = "teta.txt"
@@ -13,18 +15,18 @@ try:
 except Exception as e:
     exit(e)
 # Spliting our dataset into 2 separated columns | We begin at 1 so we don't have column name
-X = dataset.iloc[0:len(dataset),0]
-Y = dataset.iloc[0:len(dataset),1]
+X = dataset.iloc[0:len(dataset), 0]
+Y = dataset.iloc[0:len(dataset), 1]
 
 # Born Definition
 
-minPrice = min(Y)
-maxPrice = max(Y)
-minKilo = min(X)
-maxKilo = max(X)
+mixY = min(Y)
+maxY = max(Y)
+minX = min(X)
+maxX = max(X)
 
-x = (X - minKilo) / (maxKilo - minKilo)
-y = (Y - minPrice) / (maxPrice - minPrice)
+x = (X - minX) / (maxX - minX)
+y = (Y - mixY) / (maxY - mixY)
 
 # Visu
 
@@ -70,14 +72,14 @@ def normalize(lstX, x):
 
 
 def denormalize(lstX, x):
-    return (x * (max(lstX) - min(lstX)) + min(lstX))
+    return x * (max(lstX) - min(lstX)) + min(lstX)
 
 
 # End
 
 # Visu print
 
-lx = [minKilo, maxKilo]
+lx = [minX, maxX]
 ly = []
 for j in lx:
     j = final_t1 * normalize(X, j) + final_t0
