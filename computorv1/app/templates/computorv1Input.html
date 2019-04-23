@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script type="text/javascript">
+    function set_openid(openid, pr)
+    {
+        u = openid.search('<username>');
+        if (u != -1) {
+            // openid requires username
+            user = prompt('Enter your ' + pr + ' equation');
+            openid = openid.substr(0, u) + user;
+        }
+        form = document.forms['login'];
+        form.elements['openid'].value = openid;
+    }
+</script>
+<h1>Nouvelle equation</h1>
+<form action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+    <p>
+        Veuillez entrer une nouvelle équation à résoudre:<br>
+        {{ form.openid(size=80) }}
+        {% for error in form.openid.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}<br>
+    </p>
+    <p><input type="submit" value="Valider"></p>
+</form>
+{% endblock %}

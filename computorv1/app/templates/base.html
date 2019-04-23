@@ -1,0 +1,23 @@
+<html>
+<head>
+    {% if title %}
+    <title>{{ title }} - ComputorV1</title>
+    {% else %}
+    <title>ComputorV1</title>
+    {% endif %}
+</head>
+<body>
+<div>Computorv1: <a href="/computorv1Input">Resoudre une equation</a></div>
+<hr>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+{% block content %}{% endblock %}
+</body>
+</html>
