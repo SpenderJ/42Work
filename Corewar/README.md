@@ -1,2 +1,0 @@
-# Final_Corewar
-frfdred
