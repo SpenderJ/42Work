@@ -1,6 +1,6 @@
 # 42
 
-Whenever a project is Marked a bot will directly add the mark of the project.
+Here is a quick overview of the project you'find in this repository, and the mark that I received.
 
 ## Not Coding Projects
                   - 42 Commandements 100/100
