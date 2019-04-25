@@ -8,7 +8,7 @@ Whenever a project is Marked a bot will directly add the mark of the project.
                   - Curriculum Vitae 92/100
 
 ## Exams
-                  - 5 Exams Validated 93/100
+                  - 5 Basics Exams Validated 93/100
 
 ## Projects Done:
                   - Piscine Reloaded 100/100 
@@ -17,9 +17,4 @@ Whenever a project is Marked a bot will directly add the mark of the project.
                   - Get_Next_Line 121/100
                   - Init 95/100
                   - Ft_Printf 104/100
-                  - Push_Swap 80/100
-                  - Lem_In 123/100
-                  - Corewar 125/100
-                  
-## Currently :
-                  - 1st Internship
+                  - Push_Swap 80/10
